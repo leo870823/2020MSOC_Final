@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="deblur.cpp" path="C:\Users\leo870823\Desktop\MSOC\Final_project\deblur.cpp"/>
+    <originFiles name="divergent.cpp" path="C:\Users\leo870823\Desktop\MSOC\Final_project\divergent.cpp"/>
+    <originFiles name="divergent.h" path="C:\Users\leo870823\Desktop\MSOC\Final_project\divergent.h"/>
+    <originFiles name="fft_top.cpp" path="C:\Users\leo870823\Desktop\MSOC\Final_project\fft_top.cpp"/>
+    <originFiles name="fft_top.h" path="C:\Users\leo870823\Desktop\MSOC\Final_project\fft_top.h"/>
+    <originFiles name="proximal.cpp" path="C:\Users\leo870823\Desktop\MSOC\Final_project\proximal.cpp"/>
+    <originFiles name="proximal.h" path="C:\Users\leo870823\Desktop\MSOC\Final_project\proximal.h"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

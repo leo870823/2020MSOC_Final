@@ -1,0 +1,22 @@
+############################################################
+## This file is generated automatically by Vivado HLS.
+## Please DO NOT edit it.
+## Copyright (C) 1986-2019 Xilinx, Inc. All Rights Reserved.
+############################################################
+open_project ISPfinal
+set_top cross_channel_deblur
+add_files deblur.cpp
+add_files divergent.cpp
+add_files divergent.h
+add_files fft_top.cpp
+add_files fft_top.h
+add_files proximal.cpp
+add_files proximal.h
+open_solution "solution1"
+set_part {xc7z020clg400-1}
+create_clock -period 10 -name default
+#source "./ISPfinal/solution1/directives.tcl"
+#csim_design
+csynth_design
+#cosim_design
+export_design -format ip_catalog

@@ -1,0 +1,418 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'leo870823' on host 'desktop-t3r8mjh' (Windows NT_amd64 version 6.2) on Fri Jan 08 20:47:15 +0800 2021
+INFO: [HLS 200-10] In directory 'C:/Users/leo870823/Desktop/MSOC/Final_project'
+Sourcing Tcl script 'C:/Users/leo870823/Desktop/MSOC/Final_project/ISPfinal/solution1/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/leo870823/Desktop/MSOC/Final_project/ISPfinal'.
+INFO: [HLS 200-10] Adding design file 'deblur.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'divergent.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'divergent.h' to the project
+INFO: [HLS 200-10] Adding design file 'fft_top.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'fft_top.h' to the project
+INFO: [HLS 200-10] Adding design file 'proximal.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'proximal.h' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/leo870823/Desktop/MSOC/Final_project/ISPfinal/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'proximal.cpp' ... 
+WARNING: [HLS 200-40] In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from proximal.cpp:1:
+In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'fft_top.cpp' ... 
+WARNING: [HLS 200-40] In file included from fft_top.cpp:95:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from fft_top.cpp:1:
+In file included from fft_top.cpp:95:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'divergent.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'deblur.cpp' ... 
+WARNING: [HLS 200-40] In file included from deblur.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from deblur.cpp:1:
+In file included from deblur.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 210.055 ; gain = 117.590
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 210.055 ; gain = 117.590
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:49 ; elapsed = 00:01:26 . Memory (MB): peak = 710.145 ; gain = 617.680
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'P2S' into 'ProxGS' (proximal.cpp:19) automatically.
+INFO: [XFORM 203-602] Inlining function 'array_initialize' into 'cross_channel_deblur' (deblur.cpp:60) automatically.
+WARNING: [SYNCHK 200-77] The top function 'cross_channel_deblur' (deblur.cpp:50) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:03:51 ; elapsed = 00:04:27 . Memory (MB): peak = 710.145 ; gain = 617.680
+INFO: [XFORM 203-1101] Packing variable 'tmp' (proximal.cpp:12) into a 32-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'MAD' (proximal.cpp:12) into a 32-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'fft_result' (proximal.cpp:12) into a 32-bit variable.
+INFO: [XFORM 203-602] Inlining function 'P2S' into 'ProxGS' (proximal.cpp:19) automatically.
+INFO: [XFORM 203-602] Inlining function 'array_initialize' into 'cross_channel_deblur' (deblur.cpp:60) automatically.
+WARNING: [XFORM 203-713] All the elements of global array 'xk'  should be updated in process function 'hls::fft<config1>', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'fft_top', detected/extracted 3 process function(s): 
+	 'dummy_proc_fe.1'
+	 'hls::fft<config1>'
+	 'dummy_proc_be.1'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (divergent.cpp:114:8) to (divergent.cpp:113:39) in function 'my_filter_v1'... converting 17 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (divergent.cpp:127:7) to (divergent.cpp:136:7) in function 'my_filter_v1'... converting 57 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (divergent.cpp:183:10) to (divergent.cpp:182:40) in function 'my_filter_v1'... converting 17 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (divergent.cpp:192:7) to (divergent.cpp:191:39) in function 'my_filter_v1'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (proximal.cpp:60:10) to (proximal.cpp:59:42) in function 'S2P'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (divergent.cpp:210:14) to (divergent.cpp:209:46) in function 'Relax'... converting 9 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'S2P' into 'ProxGS' (proximal.cpp:39) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'my_filter_v1' (divergent.cpp:52)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:06:54 ; elapsed = 00:07:31 . Memory (MB): peak = 710.145 ; gain = 617.680
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop_y_1' (divergent.cpp:125:5) in function 'my_filter_v1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop_y_4' (divergent.cpp:190:5) in function 'my_filter_v1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (divergent.cpp:23:4) in function 'my_filter_fy'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (divergent.cpp:7:4) in function 'my_filter_fx'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (deblur.cpp:26:10) in function 'cross_channel_deblur'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (deblur.cpp:8:4) in function 'array_copy'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (divergent.cpp:208:10) in function 'Relax'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:44:6) in function 'ProxGS'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:25:6) in function 'ProxGS'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:58:6) in function 'ProxGS'.
+WARNING: [XFORM 203-631] Renaming function 'hls::fft<config1>' to 'fft<config1>' (C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:557)
+INFO: [HLS 200-472] Inferring partial write operation for 'Sxf.V' (divergent.cpp:115:64)
+INFO: [HLS 200-472] Inferring partial write operation for 'Syf.V' (divergent.cpp:116:64)
+INFO: [HLS 200-472] Inferring partial write operation for 'g1.V' (divergent.cpp:137:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g2.V' (divergent.cpp:139:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g3.V' (divergent.cpp:141:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g4.V' (divergent.cpp:143:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g5.V' (divergent.cpp:145:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g6.V' (divergent.cpp:147:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g7.V' (divergent.cpp:149:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g1.V' (divergent.cpp:129:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'g2.V' (divergent.cpp:130:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g3.V' (divergent.cpp:131:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g4.V' (divergent.cpp:132:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g5.V' (divergent.cpp:133:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g6.V' (divergent.cpp:134:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g7.V' (divergent.cpp:135:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'temp_cross6.V' (divergent.cpp:172:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'temp_cross7.V' (divergent.cpp:173:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'Sxtf.V' (divergent.cpp:184:55)
+INFO: [HLS 200-472] Inferring partial write operation for 'Sytf.V' (divergent.cpp:185:55)
+INFO: [HLS 200-472] Inferring partial write operation for 'f.V' (divergent.cpp:194:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_out.V' (divergent.cpp:28:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_out.V' (divergent.cpp:12:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'out' (fft_top.cpp:161:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_1.V' (deblur.cpp:30:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_2.V' (deblur.cpp:32:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_3.V' (deblur.cpp:34:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_4.V' (deblur.cpp:36:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_5.V' (deblur.cpp:38:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_6.V' (deblur.cpp:40:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_7.V' (deblur.cpp:42:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_out.V' (deblur.cpp:12:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'x_bar.V' (divergent.cpp:212:21)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp9' (proximal.cpp:49:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'MAD' (proximal.cpp:33:42)
+INFO: [HLS 200-472] Inferring partial write operation for 'x_io.V' (proximal.cpp:64:17)
+WARNING: [HLS 200-657] Generating channel fft_config_data_V that flows backwards in the dataflow region.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:07:06 ; elapsed = 00:07:43 . Memory (MB): peak = 710.145 ; gain = 617.680
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cross_channel_deblur' ...
+WARNING: [SYN 201-103] Legalizing function name 'dummy_proc_fe.1' to 'dummy_proc_fe_1'.
+WARNING: [SYN 201-103] Legalizing function name 'fft<config1>' to 'fft_config1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'dummy_proc_be.1' to 'dummy_proc_be_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'array_copy' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 462.979 seconds; current allocated memory: 350.957 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.098 seconds; current allocated memory: 351.081 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'my_filter_fx6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.119 seconds; current allocated memory: 351.232 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 351.365 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'my_filter_fy5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.125 seconds; current allocated memory: 351.469 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.099 seconds; current allocated memory: 351.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'my_filter_v1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop_y_1_Loop_x_1'.
+WARNING: [SCHED 204-69] Unable to schedule 'store' operation ('g1_V_addr_write_ln137', divergent.cpp:137) of constant 1 on array 'g1_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'g1_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 25.
+INFO: [SCHED 204-61] Pipelining loop 'Loop_y_4_Loop_x_4'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 24.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.558 seconds; current allocated memory: 354.203 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.786 seconds; current allocated memory: 357.786 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dummy_proc_fe_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.875 seconds; current allocated memory: 358.559 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.097 seconds; current allocated memory: 358.663 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Skip scheduling the IP block.
+INFO: [HLS 200-111]  Elapsed time: 0.099 seconds; current allocated memory: 358.729 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.089 seconds; current allocated memory: 358.747 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dummy_proc_be_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.123 seconds; current allocated memory: 358.787 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.097 seconds; current allocated memory: 358.877 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.104 seconds; current allocated memory: 358.939 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.171 seconds; current allocated memory: 359.393 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProxGS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 23.
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.384 seconds; current allocated memory: 359.866 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.259 seconds; current allocated memory: 360.406 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Relax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.404 seconds; current allocated memory: 360.707 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.131 seconds; current allocated memory: 361.008 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cross_channel_deblur' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.178 seconds; current allocated memory: 361.232 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.079 seconds; current allocated memory: 362.391 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'array_copy' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'array_copy'.
+INFO: [HLS 200-111]  Elapsed time: 0.715 seconds; current allocated memory: 363.206 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'my_filter_fx6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'my_filter_fx6'.
+INFO: [HLS 200-111]  Elapsed time: 0.166 seconds; current allocated memory: 363.573 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'my_filter_fy5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'my_filter_fy5'.
+INFO: [HLS 200-111]  Elapsed time: 0.181 seconds; current allocated memory: 363.886 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'my_filter_v1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'my_filter_v1_temp_cross6_V' to 'my_filter_v1_tempbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'my_filter_v1_temp_cross7_V' to 'my_filter_v1_tempcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'my_filter_v1_cross_X' to 'my_filter_v1_crosdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'my_filter_v1_cross_Y' to 'my_filter_v1_croseOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'cross_channel_debfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_dadd_64ns_64ns_64_5_full_dsp_1' to 'cross_channel_debg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_dmul_64ns_64ns_64_6_max_dsp_1' to 'cross_channel_debhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_sitodp_32s_64_6_1' to 'cross_channel_debibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_mac_mulsub_8s_8s_16ns_16_1_1' to 'cross_channel_debjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_mac_mulsub_8s_8s_8s_16_1_1' to 'cross_channel_debkbM' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cross_channel_debfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cross_channel_debg8j': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cross_channel_debhbi': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cross_channel_debibs': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cross_channel_debjbC': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cross_channel_debkbM': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'my_filter_v1'.
+INFO: [HLS 200-111]  Elapsed time: 0.476 seconds; current allocated memory: 370.332 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dummy_proc_fe_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dummy_proc_fe_1'.
+INFO: [HLS 200-111]  Elapsed time: 2.602 seconds; current allocated memory: 372.803 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_config1_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.188 seconds; current allocated memory: 372.892 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dummy_proc_be_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dummy_proc_be_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.472 seconds; current allocated memory: 373.078 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'start_for_fft_config1_U0' to 'start_for_fft_conlbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_dummy_proc_be_1_U0' to 'start_for_dummy_pmb6' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_top'.
+INFO: [HLS 200-111]  Elapsed time: 0.195 seconds; current allocated memory: 373.503 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ProxGS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_sdiv_17ns_8s_16_21_1' to 'cross_channel_debncg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cross_channel_debncg': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ProxGS'.
+INFO: [HLS 200-111]  Elapsed time: 0.425 seconds; current allocated memory: 374.747 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Relax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'cross_channel_debibs': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Relax'.
+INFO: [HLS 200-111]  Elapsed time: 0.685 seconds; current allocated memory: 375.515 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cross_channel_deblur' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cross_channel_deblur/Img_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cross_channel_deblur/adjChImg_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cross_channel_deblur/coe_a_M_real_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cross_channel_deblur/coe_a_M_imag_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cross_channel_deblur/coe_b_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cross_channel_deblur' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_bar_V' to 'cross_channel_debocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_old_V' to 'cross_channel_debpcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_V' to 'cross_channel_debqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_1_V' to 'cross_channel_debrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_2_V' to 'cross_channel_debsc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_3_V' to 'cross_channel_debtde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_4_V' to 'cross_channel_debudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_5_V' to 'cross_channel_debvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_6_V' to 'cross_channel_debwdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_7_V' to 'cross_channel_debxdS' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cross_channel_deblur'.
+INFO: [HLS 200-111]  Elapsed time: 0.441 seconds; current allocated memory: 376.764 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.29 MHz
+INFO: [RTMG 210-278] Implementing memory 'my_filter_v1_fx_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'my_filter_v1_fxx_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_config_data_V_U(fifo_w16_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'xn_channel_U(fifo_w32_d16384_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'xk_channel_U(fifo_w32_d16384_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_status_data_V_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_fft_conlbW_U(start_for_fft_conlbW)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_dummy_pmb6_U(start_for_dummy_pmb6)' using Shift Registers.
+INFO: [RTMG 210-282] Generating pipelined core: 'cross_channel_debncg_div'
+INFO: [RTMG 210-278] Implementing memory 'ProxGS_MAD_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ProxGS_tmp9_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cross_channel_debocq_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:07:18 ; elapsed = 00:07:59 . Memory (MB): peak = 710.145 ; gain = 617.680
+INFO: [VHDL 208-304] Generating VHDL RTL for cross_channel_deblur.
+INFO: [VLOG 209-307] Generating Verilog RTL for cross_channel_deblur.
+INFO: [HLS 200-112] Total elapsed time: 479.074 seconds; peak allocated memory: 376.764 MB.
