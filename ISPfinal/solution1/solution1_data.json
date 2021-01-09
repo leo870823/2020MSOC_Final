@@ -86,7 +86,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "38596562",
+    "Latency": "38596862",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -132,7 +132,6 @@
       "impl\/vhdl\/my_filter_v1_fxx.vhd",
       "impl\/vhdl\/ProxGS.vhd",
       "impl\/vhdl\/ProxGS_MAD.vhd",
-      "impl\/vhdl\/ProxGS_tmp9.vhd",
       "impl\/vhdl\/Relax.vhd",
       "impl\/vhdl\/start_for_dummy_pmb6.vhd",
       "impl\/vhdl\/start_for_fft_conlbW.vhd",
@@ -162,7 +161,6 @@
       "impl\/verilog\/my_filter_v1_fxx.v",
       "impl\/verilog\/ProxGS.v",
       "impl\/verilog\/ProxGS_MAD.v",
-      "impl\/verilog\/ProxGS_tmp9.v",
       "impl\/verilog\/Relax.v",
       "impl\/verilog\/start_for_dummy_pmb6.v",
       "impl\/verilog\/start_for_fft_conlbW.v",
@@ -176,13 +174,13 @@
       "impl\/misc\/cross_channel_deblur_ap_sitodp_4_no_dsp_32_ip.tcl",
       "impl\/misc\/fft_config1_s_core_ip.tcl"
     ],
-    "DesignXml": "C:\/Users\/leo870823\/Desktop\/MSOC\/Final_project\/ISPfinal\/solution1\/.autopilot\/db\/cross_channel_deblur.design.xml",
-    "DebugDir": "C:\/Users\/leo870823\/Desktop\/MSOC\/Final_project\/ISPfinal\/solution1\/.debug",
+    "DesignXml": "C:\/Users\/leo870823\/Desktop\/MSOC\/2020MSOC_Final\/ISPfinal\/solution1\/.autopilot\/db\/cross_channel_deblur.design.xml",
+    "DebugDir": "C:\/Users\/leo870823\/Desktop\/MSOC\/2020MSOC_Final\/ISPfinal\/solution1\/.debug",
     "ProtoInst": [
-      "C:\/Users\/leo870823\/Desktop\/MSOC\/Final_project\/ISPfinal\/solution1\/.debug\/array_initialize.protoinst",
-      "C:\/Users\/leo870823\/Desktop\/MSOC\/Final_project\/ISPfinal\/solution1\/.debug\/cross_channel_deblur.protoinst",
-      "C:\/Users\/leo870823\/Desktop\/MSOC\/Final_project\/ISPfinal\/solution1\/.debug\/fft_top.protoinst",
-      "C:\/Users\/leo870823\/Desktop\/MSOC\/Final_project\/ISPfinal\/solution1\/.debug\/proximal_operator.protoinst"
+      "C:\/Users\/leo870823\/Desktop\/MSOC\/2020MSOC_Final\/ISPfinal\/solution1\/.debug\/array_initialize.protoinst",
+      "C:\/Users\/leo870823\/Desktop\/MSOC\/2020MSOC_Final\/ISPfinal\/solution1\/.debug\/cross_channel_deblur.protoinst",
+      "C:\/Users\/leo870823\/Desktop\/MSOC\/2020MSOC_Final\/ISPfinal\/solution1\/.debug\/fft_top.protoinst",
+      "C:\/Users\/leo870823\/Desktop\/MSOC\/2020MSOC_Final\/ISPfinal\/solution1\/.debug\/proximal_operator.protoinst"
     ]
   },
   "SubcoreInfo": {
@@ -507,7 +505,7 @@
           "InstanceName": "grp_ProxGS_fu_267",
           "Instances": [{
               "ModuleName": "fft_top",
-              "InstanceName": "grp_fft_top_fu_303",
+              "InstanceName": "grp_fft_top_fu_382",
               "Instances": [
                 {
                   "ModuleName": "dummy_proc_fe_1",
@@ -885,10 +883,10 @@
       },
       "ProxGS": {
         "Latency": {
-          "LatencyBest": "114720",
-          "LatencyAvg": "114720",
-          "LatencyWorst": "114720",
-          "PipelineII": "114720",
+          "LatencyBest": "114726",
+          "LatencyAvg": "114726",
+          "LatencyWorst": "114726",
+          "PipelineII": "114726",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -908,9 +906,9 @@
           {
             "Name": "for_y_for_x",
             "TripCount": "16384",
-            "Latency": "16405",
+            "Latency": "16411",
             "PipelineII": "1",
-            "PipelineDepth": "23"
+            "PipelineDepth": "29"
           },
           {
             "Name": "for_y_for_x",
@@ -923,8 +921,8 @@
         "Area": {
           "BRAM_18K": "163",
           "DSP48E": "12",
-          "FF": "12195",
-          "LUT": "11837",
+          "FF": "13517",
+          "LUT": "14878",
           "URAM": "0"
         }
       },
@@ -959,10 +957,10 @@
       },
       "cross_channel_deblur": {
         "Latency": {
-          "LatencyBest": "38596562",
-          "LatencyAvg": "38596562",
-          "LatencyWorst": "38596562",
-          "PipelineII": "38596563",
+          "LatencyBest": "38596862",
+          "LatencyAvg": "38596862",
+          "LatencyWorst": "38596862",
+          "PipelineII": "38596863",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -982,16 +980,16 @@
           {
             "Name": "for_iteration",
             "TripCount": "50",
-            "Latency": "38547400",
+            "Latency": "38547700",
             "PipelineII": "",
-            "PipelineDepth": "770948"
+            "PipelineDepth": "770954"
           }
         ],
         "Area": {
           "BRAM_18K": "427",
           "DSP48E": "72",
-          "FF": "23857",
-          "LUT": "34975",
+          "FF": "25179",
+          "LUT": "38016",
           "URAM": "0"
         }
       }
@@ -1007,7 +1005,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2021-01-08 20:55:14 +0800",
+    "Time": "2021-01-09 13:42:17 +0800",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.2"
   }

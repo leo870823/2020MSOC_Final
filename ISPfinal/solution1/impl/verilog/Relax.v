@@ -218,7 +218,7 @@ cross_channel_debibs #(
     .NUM_STAGE( 6 ),
     .din0_WIDTH( 32 ),
     .dout_WIDTH( 64 ))
-cross_channel_debibs_U71(
+cross_channel_debibs_U70(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_152_p0),

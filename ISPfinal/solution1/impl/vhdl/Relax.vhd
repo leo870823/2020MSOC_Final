@@ -225,7 +225,7 @@ architecture behav of Relax is
 
 
 begin
-    cross_channel_debibs_U71 : component cross_channel_debibs
+    cross_channel_debibs_U70 : component cross_channel_debibs
     generic map (
         ID => 1,
         NUM_STAGE => 6,

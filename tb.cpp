@@ -136,8 +136,8 @@ int main(){
 
 
 		 static cmpxDataIn xn_input[128][128];
-		 double REAL[128][128] ;
-		 double IMAG[128][128] ;
+		 data_in_t REAL[128][128] ;
+		 data_in_t IMAG[128][128] ;
 		 FILE *file_REAL = fopen("REAL.txt", "r");
 		 		if(!file_REAL) printf("ERROR: could not open %s for reading\n","REAL.txt");
 		 FILE *file_IMAG = fopen("IMAGINARY.txt", "r");
@@ -175,7 +175,7 @@ int main(){
 
 
 		// deblur ISP kernel
-		//DEBLUR(blurred_R,blurred_G,blurred_B,xn_input,denom);
+		DEBLUR(blurred_R,blurred_G,blurred_B,xn_input,denom);
 
 /*	eita_t out[128*128] ;
 

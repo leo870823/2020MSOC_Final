@@ -1236,7 +1236,7 @@ wire  signed [7:0] ret_V_3_fu_1078_p1;
 wire   [10:0] p_Result_s_fu_1112_p4;
 wire   [62:0] trunc_ln310_7_fu_1100_p1;
 wire   [11:0] exp_V_fu_1122_p1;
-wire   [10:0] p_Result_s_25_fu_1182_p4;
+wire   [10:0] p_Result_s_28_fu_1182_p4;
 wire   [62:0] trunc_ln310_8_fu_1170_p1;
 wire   [11:0] exp_V_8_fu_1192_p1;
 wire   [51:0] trunc_ln318_7_fu_1236_p1;
@@ -5887,7 +5887,7 @@ assign exp_V_6_fu_2483_p1 = p_Result_6_fu_2473_p4;
 
 assign exp_V_7_fu_2553_p1 = p_Result_9_fu_2543_p4;
 
-assign exp_V_8_fu_1192_p1 = p_Result_s_25_fu_1182_p4;
+assign exp_V_8_fu_1192_p1 = p_Result_s_28_fu_1182_p4;
 
 assign exp_V_9_fu_4368_p1 = p_Result_7_fu_4358_p4;
 
@@ -5993,7 +5993,7 @@ assign icmp_ln330_1_fu_1768_p2 = ((p_Result_4_fu_1738_p4 == 11'd1075) ? 1'b1 : 1
 
 assign icmp_ln330_2_fu_3735_p2 = ((p_Result_8_fu_3705_p4 == 11'd1075) ? 1'b1 : 1'b0);
 
-assign icmp_ln330_3_fu_1212_p2 = ((p_Result_s_25_fu_1182_p4 == 11'd1075) ? 1'b1 : 1'b0);
+assign icmp_ln330_3_fu_1212_p2 = ((p_Result_s_28_fu_1182_p4 == 11'd1075) ? 1'b1 : 1'b0);
 
 assign icmp_ln330_4_fu_4388_p2 = ((p_Result_7_fu_4358_p4 == 11'd1075) ? 1'b1 : 1'b0);
 
@@ -6205,7 +6205,7 @@ assign p_Result_8_fu_3705_p4 = {{reg_V_16_fu_3689_p1[62:52]}};
 
 assign p_Result_9_fu_2543_p4 = {{reg_V_15_fu_2527_p1[62:52]}};
 
-assign p_Result_s_25_fu_1182_p4 = {{reg_V_8_fu_1166_p1[62:52]}};
+assign p_Result_s_28_fu_1182_p4 = {{reg_V_8_fu_1166_p1[62:52]}};
 
 assign p_Result_s_fu_1112_p4 = {{reg_V_fu_1096_p1[62:52]}};
 

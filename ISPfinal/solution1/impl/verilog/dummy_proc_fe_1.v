@@ -79,14 +79,14 @@ reg    config_data_V_i_blk_n;
 reg    config_data_V_o_blk_n;
 reg    out_r_blk_n;
 wire    ap_CS_fsm_state3;
-wire   [14:0] i_fu_150_p2;
-reg   [14:0] i_reg_164;
+wire   [14:0] i_fu_148_p2;
+reg   [14:0] i_reg_162;
 wire    ap_CS_fsm_state2;
-wire   [0:0] icmp_ln149_fu_144_p2;
-reg   [14:0] i_0_reg_112;
+wire   [0:0] icmp_ln149_fu_142_p2;
+reg   [14:0] i_0_reg_110;
 reg    ap_block_state1;
-wire   [63:0] zext_ln150_fu_156_p1;
-wire   [10:0] tmp_fu_123_p3;
+wire   [63:0] zext_ln150_fu_154_p1;
+wire   [10:0] tmp_fu_121_p3;
 reg   [2:0] ap_NS_fsm;
 
 // power-on initialization
@@ -110,7 +110,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((icmp_ln149_fu_144_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+        end else if (((icmp_ln149_fu_142_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
             ap_done_reg <= 1'b1;
         end
     end
@@ -130,20 +130,20 @@ end
 
 always @ (posedge ap_clk) begin
     if (((out_r_full_n == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        i_0_reg_112 <= i_reg_164;
+        i_0_reg_110 <= i_reg_162;
     end else if ((~((real_start == 1'b0) | (config_data_V_full_n == 1'b0) | (config_data_V_empty_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
-        i_0_reg_112 <= 15'd0;
+        i_0_reg_110 <= 15'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        i_reg_164 <= i_fu_150_p2;
+        i_reg_162 <= i_fu_148_p2;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln149_fu_144_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if (((icmp_ln149_fu_142_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = ap_done_reg;
@@ -199,7 +199,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln149_fu_144_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if (((icmp_ln149_fu_142_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         internal_ap_ready = 1'b1;
     end else begin
         internal_ap_ready = 1'b0;
@@ -248,7 +248,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((icmp_ln149_fu_144_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+            if (((icmp_ln149_fu_142_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -279,20 +279,20 @@ end
 
 assign ap_ready = internal_ap_ready;
 
-assign config_data_V_din = {{config_data_V_dout[15:11]}, {tmp_fu_123_p3}};
+assign config_data_V_din = {{config_data_V_dout[15:11]}, {tmp_fu_121_p3}};
 
-assign i_fu_150_p2 = (i_0_reg_112 + 15'd1);
+assign i_fu_148_p2 = (i_0_reg_110 + 15'd1);
 
-assign icmp_ln149_fu_144_p2 = ((i_0_reg_112 == 15'd16384) ? 1'b1 : 1'b0);
+assign icmp_ln149_fu_142_p2 = ((i_0_reg_110 == 15'd16384) ? 1'b1 : 1'b0);
 
-assign in_r_address0 = zext_ln150_fu_156_p1;
+assign in_r_address0 = zext_ln150_fu_154_p1;
 
 assign out_r_din = in_r_q0;
 
 assign start_out = real_start;
 
-assign tmp_fu_123_p3 = {{10'd683}, {direction}};
+assign tmp_fu_121_p3 = {{10'd683}, {direction}};
 
-assign zext_ln150_fu_156_p1 = i_0_reg_112;
+assign zext_ln150_fu_154_p1 = i_0_reg_110;
 
 endmodule //dummy_proc_fe_1

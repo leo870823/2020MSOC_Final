@@ -1204,7 +1204,7 @@ architecture behav of my_filter_v1 is
     signal p_Result_s_fu_1112_p4 : STD_LOGIC_VECTOR (10 downto 0);
     signal trunc_ln310_7_fu_1100_p1 : STD_LOGIC_VECTOR (62 downto 0);
     signal exp_V_fu_1122_p1 : STD_LOGIC_VECTOR (11 downto 0);
-    signal p_Result_s_25_fu_1182_p4 : STD_LOGIC_VECTOR (10 downto 0);
+    signal p_Result_s_28_fu_1182_p4 : STD_LOGIC_VECTOR (10 downto 0);
     signal trunc_ln310_8_fu_1170_p1 : STD_LOGIC_VECTOR (62 downto 0);
     signal exp_V_8_fu_1192_p1 : STD_LOGIC_VECTOR (11 downto 0);
     signal trunc_ln318_7_fu_1236_p1 : STD_LOGIC_VECTOR (51 downto 0);
@@ -4880,7 +4880,7 @@ begin
     exp_V_5_fu_2413_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_5_fu_2403_p4),12));
     exp_V_6_fu_2483_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_6_fu_2473_p4),12));
     exp_V_7_fu_2553_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_9_fu_2543_p4),12));
-    exp_V_8_fu_1192_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_s_25_fu_1182_p4),12));
+    exp_V_8_fu_1192_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_s_28_fu_1182_p4),12));
     exp_V_9_fu_4368_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_7_fu_4358_p4),12));
     exp_V_fu_1122_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_Result_s_fu_1112_p4),12));
 
@@ -6407,7 +6407,7 @@ begin
     icmp_ln330_11_fu_2573_p2 <= "1" when (p_Result_9_fu_2543_p4 = ap_const_lv11_433) else "0";
     icmp_ln330_1_fu_1768_p2 <= "1" when (p_Result_4_fu_1738_p4 = ap_const_lv11_433) else "0";
     icmp_ln330_2_fu_3735_p2 <= "1" when (p_Result_8_fu_3705_p4 = ap_const_lv11_433) else "0";
-    icmp_ln330_3_fu_1212_p2 <= "1" when (p_Result_s_25_fu_1182_p4 = ap_const_lv11_433) else "0";
+    icmp_ln330_3_fu_1212_p2 <= "1" when (p_Result_s_28_fu_1182_p4 = ap_const_lv11_433) else "0";
     icmp_ln330_4_fu_4388_p2 <= "1" when (p_Result_7_fu_4358_p4 = ap_const_lv11_433) else "0";
     icmp_ln330_5_fu_1838_p2 <= "1" when (p_Result_3_fu_1808_p4 = ap_const_lv11_433) else "0";
     icmp_ln330_6_fu_3805_p2 <= "1" when (p_Result_10_fu_3775_p4 = ap_const_lv11_433) else "0";
@@ -6516,7 +6516,7 @@ begin
     p_Result_7_fu_4358_p4 <= reg_V_18_fu_4342_p1(62 downto 52);
     p_Result_8_fu_3705_p4 <= reg_V_16_fu_3689_p1(62 downto 52);
     p_Result_9_fu_2543_p4 <= reg_V_15_fu_2527_p1(62 downto 52);
-    p_Result_s_25_fu_1182_p4 <= reg_V_8_fu_1166_p1(62 downto 52);
+    p_Result_s_28_fu_1182_p4 <= reg_V_8_fu_1166_p1(62 downto 52);
     p_Result_s_fu_1112_p4 <= reg_V_fu_1096_p1(62 downto 52);
     reg_V_10_fu_1792_p1 <= reg_990;
     reg_V_11_fu_1862_p1 <= reg_994;

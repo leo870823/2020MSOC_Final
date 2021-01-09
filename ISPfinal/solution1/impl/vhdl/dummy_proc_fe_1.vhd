@@ -68,15 +68,15 @@ architecture behav of dummy_proc_fe_1 is
     signal out_r_blk_n : STD_LOGIC;
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal i_fu_150_p2 : STD_LOGIC_VECTOR (14 downto 0);
-    signal i_reg_164 : STD_LOGIC_VECTOR (14 downto 0);
+    signal i_fu_148_p2 : STD_LOGIC_VECTOR (14 downto 0);
+    signal i_reg_162 : STD_LOGIC_VECTOR (14 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal icmp_ln149_fu_144_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal i_0_reg_112 : STD_LOGIC_VECTOR (14 downto 0);
+    signal icmp_ln149_fu_142_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal i_0_reg_110 : STD_LOGIC_VECTOR (14 downto 0);
     signal ap_block_state1 : BOOLEAN;
-    signal zext_ln150_fu_156_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_fu_123_p3 : STD_LOGIC_VECTOR (10 downto 0);
+    signal zext_ln150_fu_154_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal tmp_fu_121_p3 : STD_LOGIC_VECTOR (10 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (2 downto 0);
 
 
@@ -105,7 +105,7 @@ begin
             else
                 if ((ap_continue = ap_const_logic_1)) then 
                     ap_done_reg <= ap_const_logic_0;
-                elsif (((icmp_ln149_fu_144_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+                elsif (((icmp_ln149_fu_142_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
                     ap_done_reg <= ap_const_logic_1;
                 end if; 
             end if;
@@ -129,13 +129,13 @@ begin
     end process;
 
 
-    i_0_reg_112_assign_proc : process (ap_clk)
+    i_0_reg_110_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((out_r_full_n = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
-                i_0_reg_112 <= i_reg_164;
+                i_0_reg_110 <= i_reg_162;
             elsif ((not(((real_start = ap_const_logic_0) or (config_data_V_full_n = ap_const_logic_0) or (config_data_V_empty_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                i_0_reg_112 <= ap_const_lv15_0;
+                i_0_reg_110 <= ap_const_lv15_0;
             end if; 
         end if;
     end process;
@@ -143,12 +143,12 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                i_reg_164 <= i_fu_150_p2;
+                i_reg_162 <= i_fu_148_p2;
             end if;
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (real_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, config_data_V_empty_n, config_data_V_full_n, out_r_full_n, ap_CS_fsm_state3, ap_CS_fsm_state2, icmp_ln149_fu_144_p2)
+    ap_NS_fsm_assign_proc : process (real_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, config_data_V_empty_n, config_data_V_full_n, out_r_full_n, ap_CS_fsm_state3, ap_CS_fsm_state2, icmp_ln149_fu_142_p2)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -158,7 +158,7 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                if (((icmp_ln149_fu_144_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
+                if (((icmp_ln149_fu_142_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state3;
@@ -183,9 +183,9 @@ begin
     end process;
 
 
-    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state2, icmp_ln149_fu_144_p2)
+    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state2, icmp_ln149_fu_142_p2)
     begin
-        if (((icmp_ln149_fu_144_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+        if (((icmp_ln149_fu_142_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_done_reg;
@@ -203,7 +203,7 @@ begin
     end process;
 
     ap_ready <= internal_ap_ready;
-    config_data_V_din <= (config_data_V_dout(15 downto 11) & tmp_fu_123_p3);
+    config_data_V_din <= (config_data_V_dout(15 downto 11) & tmp_fu_121_p3);
 
     config_data_V_i_blk_n_assign_proc : process(real_start, ap_done_reg, ap_CS_fsm_state1, config_data_V_empty_n)
     begin
@@ -244,9 +244,9 @@ begin
         end if; 
     end process;
 
-    i_fu_150_p2 <= std_logic_vector(unsigned(i_0_reg_112) + unsigned(ap_const_lv15_1));
-    icmp_ln149_fu_144_p2 <= "1" when (i_0_reg_112 = ap_const_lv15_4000) else "0";
-    in_r_address0 <= zext_ln150_fu_156_p1(14 - 1 downto 0);
+    i_fu_148_p2 <= std_logic_vector(unsigned(i_0_reg_110) + unsigned(ap_const_lv15_1));
+    icmp_ln149_fu_142_p2 <= "1" when (i_0_reg_110 = ap_const_lv15_4000) else "0";
+    in_r_address0 <= zext_ln150_fu_154_p1(14 - 1 downto 0);
 
     in_r_ce0_assign_proc : process(ap_CS_fsm_state2)
     begin
@@ -258,9 +258,9 @@ begin
     end process;
 
 
-    internal_ap_ready_assign_proc : process(ap_CS_fsm_state2, icmp_ln149_fu_144_p2)
+    internal_ap_ready_assign_proc : process(ap_CS_fsm_state2, icmp_ln149_fu_142_p2)
     begin
-        if (((icmp_ln149_fu_144_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+        if (((icmp_ln149_fu_142_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             internal_ap_ready <= ap_const_logic_1;
         else 
             internal_ap_ready <= ap_const_logic_0;
@@ -309,6 +309,6 @@ begin
         end if; 
     end process;
 
-    tmp_fu_123_p3 <= (ap_const_lv10_2AB & direction);
-    zext_ln150_fu_156_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(i_0_reg_112),64));
+    tmp_fu_121_p3 <= (ap_const_lv10_2AB & direction);
+    zext_ln150_fu_154_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(i_0_reg_110),64));
 end behav;

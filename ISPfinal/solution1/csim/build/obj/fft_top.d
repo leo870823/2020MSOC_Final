@@ -1,4 +1,4 @@
-obj/fft_top.o: ../../../../fft_top.cpp \
+obj/fft_top.o: ../../../../fft_top.cpp ../../../../fft_top.h \
  C:/Xilinx/Vivado/2019.2/include/ap_fixed.h \
  C:/Xilinx/Vivado/2019.2/include/ap_common.h \
  C:/Xilinx/Vivado/2019.2/include/ap_decl.h \
