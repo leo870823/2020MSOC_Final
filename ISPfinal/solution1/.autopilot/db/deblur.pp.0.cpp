@@ -1,5 +1,5 @@
-# 1 "proximal.cpp"
-# 1 "proximal.cpp" 1
+# 1 "deblur.cpp"
+# 1 "deblur.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -150,7 +150,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "proximal.cpp" 2
+# 1 "deblur.cpp" 2
+# 1 "./deblur.h" 1
 # 1 "./proximal.h" 1
 # 1 "./fft_top.h" 1
 # 93 "./fft_top.h"
@@ -28771,13 +28772,13 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
  fft_core<
       CONFIG_T,
@@ -28806,17 +28807,17 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
 
-#pragma HLS array_reshape dim=1 variable=&xn
-#pragma HLS array_reshape dim=1 variable=&xk
+#pragma HLS array_reshape dim=1 variable=xn
+#pragma HLS array_reshape dim=1 variable=xk
 
 
  fft_core<
@@ -28844,13 +28845,13 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
-#pragma HLS data_pack variable=&config_ch
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
+#pragma HLS data_pack variable=config_ch
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
  fft_core<
       CONFIG_T,
@@ -28879,13 +28880,13 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
  fft_core<
       CONFIG_T,
@@ -28914,17 +28915,17 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
 
-#pragma HLS array_reshape dim=1 variable=&xn
-#pragma HLS array_reshape dim=1 variable=&xk
+#pragma HLS array_reshape dim=1 variable=xn
+#pragma HLS array_reshape dim=1 variable=xk
 
 
  fft_core<
@@ -28952,13 +28953,13 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
-#pragma HLS data_pack variable=&config_ch
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
+#pragma HLS data_pack variable=config_ch
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
  fft_core<
       CONFIG_T,
@@ -29029,73 +29030,107 @@ typedef ap_int<16> fft_t;
 void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]);
 void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]);
 void ProxGS(eita_t x_io[128][128],cmpxDataIn coe_a[128][128],eita_t coe_b[128][128]);
-# 2 "proximal.cpp" 2
+# 2 "./deblur.h" 2
+# 1 "./divergent.h" 1
+# 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_int.h" 1
+# 2 "./divergent.h" 2
 
+typedef ap_int<8> eita_t;
+# 13 "./divergent.h"
+void my_filter_v1( eita_t f[128][128],eita_t adjChImg[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128]);
+void Relax(eita_t x[128][128],eita_t x_old[128][128],eita_t x_bar[128][128]);
+# 3 "./deblur.h" 2
+void array_initialize(eita_t y_1[128][128],
+                      eita_t y_2[128][128],
+                      eita_t y_3[128][128],
+                      eita_t y_4[128][128],
+                      eita_t y_5[128][128],
+                      eita_t y_6[128][128],
+                      eita_t y_7[128][128]);
+void cross_channel_deblur(eita_t Img[128][128],
+                eita_t adjChImg[128][128],
+                          cmpxDataIn coe_a[128][128],
+                          eita_t coe_b[128][128]);
+void array_copy(eita_t data_in[128][128],eita_t data_out[128][128]);
+void DEBLUR(eita_t refImg_R[128][128],eita_t adjChImg_G[128][128],eita_t adjChImg_B[128][128],cmpxDataIn coe_a[128][128],eita_t coe_b[128][128]);
+# 2 "deblur.cpp" 2
 
-void ProxGS(
-    eita_t x_io[128][128],
-    cmpxDataIn coe_a[128][128],
-    eita_t coe_b[128][128]
-    )
-{_ssdm_SpecArrayDimSize(x_io, 128);_ssdm_SpecArrayDimSize(coe_a, 128);_ssdm_SpecArrayDimSize(coe_b, 128);
-
- bool fft_ovflo,ifft_ovflo;
-    cmpxDataIn tmp[1<<14],fft_result[1<<14],MAD[1<<14];
-    double input_data_re, input_data_im;
-
-
-
-
-
-    P2S(x_io,tmp);
-
-
-    fft_top(1,tmp,fft_result,&fft_ovflo);
-
-    for_y : for (int y = 0; y < 128; y++)
+void array_copy(eita_t data_in[128][128],
+      eita_t data_out[128][128])
+{
+for_y : for (int y = 0; y < 128; y++)
+  {
+    for_x : for (int x = 0; x < 128; x++)
     {
-        for_x : for (int x = 0; x < 128; x++)
-        {
-
-            int tmp = x+y*128;
-            input_data_re=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
-            input_data_im=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
 #pragma HLS PIPELINE
- MAD[tmp]=cmpxDataIn(input_data_re, input_data_im);
-
-
-        }
+ data_out[y][x] = data_in[y][x] ;
     }
-
-    fft_top(0,MAD,fft_result,&ifft_ovflo);
-
-    S2P(fft_result,x_io);
+  }
 }
 
-void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]){_ssdm_SpecArrayDimSize(data_in, 128);_ssdm_SpecArrayDimSize(data_out, 16384);
+void array_initialize(eita_t y_1[128][128],
+                      eita_t y_2[128][128],
+                      eita_t y_3[128][128],
+                      eita_t y_4[128][128],
+                      eita_t y_5[128][128],
+                      eita_t y_6[128][128],
+                      eita_t y_7[128][128])
+{
     for_y : for (int y = 0; y < 128; y++)
-    {
-        for_x : for (int x = 0; x < 128; x++)
         {
-            int tmp = x+y*128;
+            for_x : for (int x = 0; x < 128; x++)
+            {
 #pragma HLS PIPELINE
- data_out[tmp]=cmpxDataIn(data_in[y][x],0);
-
+ y_1[y][x] = 0 ;
+#pragma HLS PIPELINE
+ y_2[y][x] = 0 ;
+#pragma HLS PIPELINE
+ y_3[y][x] = 0 ;
+#pragma HLS PIPELINE
+ y_4[y][x] = 0 ;
+#pragma HLS PIPELINE
+ y_5[y][x] = 0 ;
+#pragma HLS PIPELINE
+ y_6[y][x] = 0 ;
+#pragma HLS PIPELINE
+ y_7[y][x] = 0 ;
+            }
         }
-    }
 }
 
 
 
-void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]){_ssdm_SpecArrayDimSize(data_in, 16384);_ssdm_SpecArrayDimSize(data_out, 128);
-    for_y : for (int y = 0; y < 128; y++)
-    {
-        for_x : for (int x = 0; x < 128; x++)
-        {
 
-            int tmp = x+y*128;
-#pragma HLS PIPELINE
- data_out[y][x]=data_in[tmp].real();
-        }
+void cross_channel_deblur(eita_t Img[128][128],
+                eita_t adjChImg[128][128],
+                          cmpxDataIn coe_a[128][128],
+                          eita_t coe_b[128][128])
+{ printf("[DEBUG] cross channel prior\n");
+    eita_t tmp[128][128],x_bar[128][128],x_old[128][128],x[128][128];
+    eita_t y_1[128][128],y_2[128][128],y_3[128][128],y_4[128][128],y_5[128][128],y_6[128][128],y_7[128][128];
+
+    array_copy(Img,x_bar);
+    array_copy(Img,x);
+    array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7);
+
+    for_iteration: for(int k=0;k<50;k++) {
+     printf("[DEBUG] array copy\n");
+        array_copy(x,x_old);
+        printf("[DEBUG] my_filter_v1\n");
+        my_filter_v1(x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7);
+        printf("[DEBUG] ProxGS\n");
+        ProxGS(x_bar,coe_a,coe_b);
+        printf("[DEBUG] Relax\n");
+        Relax(x,x_old,x_bar);
     }
+}
+
+void DEBLUR(eita_t refImg_R[128][128],
+      eita_t adjChImg_G[128][128],
+            eita_t adjChImg_B[128][128],
+            cmpxDataIn coe_a[128][128],
+            eita_t coe_b[128][128])
+{ cross_channel_deblur( refImg_R,refImg_R,coe_a,coe_b);
+    cross_channel_deblur(adjChImg_G,refImg_R,coe_a,coe_b);
+    cross_channel_deblur(adjChImg_B,refImg_R,coe_a,coe_b);
 }

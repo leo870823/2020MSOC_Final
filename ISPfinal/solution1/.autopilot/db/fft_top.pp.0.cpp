@@ -1,5 +1,5 @@
-# 1 "proximal.cpp"
-# 1 "proximal.cpp" 1
+# 1 "fft_top.cpp"
+# 1 "fft_top.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -150,10 +150,8 @@ extern "C" {
 }
 # 9 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "proximal.cpp" 2
-# 1 "./proximal.h" 1
-# 1 "./fft_top.h" 1
-# 93 "./fft_top.h"
+# 1 "fft_top.cpp" 2
+# 94 "fft_top.cpp"
 # 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_fixed.h" 1
 # 54 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_fixed.h"
 # 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_common.h" 1
@@ -6352,7 +6350,7 @@ inline bool operator!=(
 
 }
 # 399 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_fixed.h" 2
-# 94 "./fft_top.h" 2
+# 95 "fft_top.cpp" 2
 # 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\hls_fft.h" 1
 # 66 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\hls_fft.h"
 # 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_int.h" 1
@@ -28974,7 +28972,7 @@ namespace hls {
 
 }
 # 913 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\hls_fft.h" 2
-# 95 "./fft_top.h" 2
+# 96 "fft_top.cpp" 2
 
 
 const char FFT_INPUT_WIDTH = 16;
@@ -29000,6 +28998,7 @@ typedef ap_fixed<FFT_OUTPUT_WIDTH,FFT_OUTPUT_WIDTH-FFT_INPUT_WIDTH+1> data_out_t
 typedef std::complex<data_in_t> cmpxDataIn;
 typedef std::complex<data_out_t> cmpxDataOut;
 
+
 void dummy_proc_fe(
     bool direction,
     config_t* config,
@@ -29017,85 +29016,52 @@ void fft_top(
     cmpxDataIn in[FFT_LENGTH],
     cmpxDataOut out[FFT_LENGTH],
     bool* ovflo);
-# 2 "./proximal.h" 2
-# 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_int.h" 1
-# 3 "./proximal.h" 2
 
-typedef ap_int<8> eita_t;
-typedef ap_int<16> fft_t;
-
-
-
-void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]);
-void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]);
-void ProxGS(eita_t x_io[128][128],cmpxDataIn coe_a[128][128],eita_t coe_b[128][128]);
-# 2 "proximal.cpp" 2
-
-
-void ProxGS(
-    eita_t x_io[128][128],
-    cmpxDataIn coe_a[128][128],
-    eita_t coe_b[128][128]
-    )
-{_ssdm_SpecArrayDimSize(x_io, 128);_ssdm_SpecArrayDimSize(coe_a, 128);_ssdm_SpecArrayDimSize(coe_b, 128);
-
- bool fft_ovflo,ifft_ovflo;
-    cmpxDataIn tmp[1<<14],fft_result[1<<14],MAD[1<<14];
-    double input_data_re, input_data_im;
-
-
-
-
-
-    P2S(x_io,tmp);
-
-
-    fft_top(1,tmp,fft_result,&fft_ovflo);
-
-    for_y : for (int y = 0; y < 128; y++)
-    {
-        for_x : for (int x = 0; x < 128; x++)
-        {
-
-            int tmp = x+y*128;
-            input_data_re=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
-            input_data_im=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
-#pragma HLS PIPELINE
- MAD[tmp]=cmpxDataIn(input_data_re, input_data_im);
-
-
-        }
-    }
-
-    fft_top(0,MAD,fft_result,&ifft_ovflo);
-
-    S2P(fft_result,x_io);
+void dummy_proc_fe(
+    bool direction,
+    config_t* config,
+    cmpxDataIn in[FFT_LENGTH],
+    cmpxDataIn out[FFT_LENGTH])
+{_ssdm_SpecArrayDimSize(in, 16384);_ssdm_SpecArrayDimSize(out, 16384);
+    int i;
+    config->setDir(direction);
+    config->setSch(0x2AB);
+    for (i=0; i< FFT_LENGTH; i++)
+        out[i] = in[i];
 }
 
-void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]){_ssdm_SpecArrayDimSize(data_in, 128);_ssdm_SpecArrayDimSize(data_out, 16384);
-    for_y : for (int y = 0; y < 128; y++)
-    {
-        for_x : for (int x = 0; x < 128; x++)
-        {
-            int tmp = x+y*128;
-#pragma HLS PIPELINE
- data_out[tmp]=cmpxDataIn(data_in[y][x],0);
-
-        }
-    }
+void dummy_proc_be(
+    status_t* status_in,
+    bool* ovflo,
+    cmpxDataOut in[FFT_LENGTH],
+    cmpxDataOut out[FFT_LENGTH])
+{_ssdm_SpecArrayDimSize(in, 16384);_ssdm_SpecArrayDimSize(out, 16384);
+    int i;
+    for (i=0; i< FFT_LENGTH; i++)
+        out[i] = in[i];
+    *ovflo = status_in->getOvflo() & 0x1;
 }
 
 
+void fft_top(
+    bool direction,
+    complex<data_in_t> in[FFT_LENGTH],
+    complex<data_out_t> out[FFT_LENGTH],
+    bool* ovflo)
+{_ssdm_SpecArrayDimSize(in, 16384);_ssdm_SpecArrayDimSize(out, 16384);
+#pragma HLS interface ap_hs port=&direction
 
-void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]){_ssdm_SpecArrayDimSize(data_in, 16384);_ssdm_SpecArrayDimSize(data_out, 128);
-    for_y : for (int y = 0; y < 128; y++)
-    {
-        for_x : for (int x = 0; x < 128; x++)
-        {
 
-            int tmp = x+y*128;
-#pragma HLS PIPELINE
- data_out[y][x]=data_in[tmp].real();
-        }
-    }
+#pragma HLS data_pack variable=&in
+#pragma HLS data_pack variable=&out
+#pragma HLS dataflow
+ complex<data_in_t> xn[FFT_LENGTH];
+    complex<data_out_t> xk[FFT_LENGTH];
+    config_t fft_config;
+    status_t fft_status;
+
+    dummy_proc_fe(direction, &fft_config, in, xn);
+
+    hls::fft<config1>(xn, xk, &fft_status, &fft_config);
+    dummy_proc_be(&fft_status, ovflo, xk, out);
 }

@@ -3228,7 +3228,7 @@ struct ap_range_ref {
     unsigned high = reverse ? l_index : h_index;
     for (unsigned i = low; i != high; ++i) {
 
-#pragma HLS unroll
+_ssdm_Unroll(0,0,0, "");
 
  ret &= ({ typeof(d_bv.V) __Val2__ = d_bv.V; bool __Result__ = __builtin_bit_select((void*)(&__Val2__), i); __Result__; });
     }
@@ -3242,7 +3242,7 @@ struct ap_range_ref {
     unsigned high = reverse ? l_index : h_index;
     for (unsigned i = low; i != high; ++i) {
 
-#pragma HLS unroll
+_ssdm_Unroll(0,0,0, "");
 
  ret |= ({ typeof(d_bv.V) __Val2__ = d_bv.V; bool __Result__ = __builtin_bit_select((void*)(&__Val2__), i); __Result__; });
     }
@@ -3256,7 +3256,7 @@ struct ap_range_ref {
     unsigned high = reverse ? l_index : h_index;
     for (unsigned i = low; i != high; ++i) {
 
-#pragma HLS unroll
+_ssdm_Unroll(0,0,0, "");
 
  ret ^= ({ typeof(d_bv.V) __Val2__ = d_bv.V; bool __Result__ = __builtin_bit_select((void*)(&__Val2__), i); __Result__; });
     }
@@ -24980,7 +24980,7 @@ namespace hls {
 
 
 
-#pragma HLS inline
+_ssdm_InlineSelf(0, "");
 
  _ssdm_op_SpecKeepValue(
 
@@ -25019,7 +25019,7 @@ namespace hls {
         {
    for (int c = 0; c < FFT_CHANNELS; ++c)
             {
-#pragma HLS unroll complete
+_ssdm_Unroll(0,0,0, "");
  xk[c][i] = xn[c][i];
             }
         }
@@ -25046,7 +25046,7 @@ namespace hls {
          ip_fft::config_t<CONFIG_T>* config_ch)
   {
 
-#pragma HLS inline
+_ssdm_InlineSelf(0, "");
 
  _ssdm_op_SpecKeepValue(
 
@@ -28648,7 +28648,7 @@ namespace hls {
 
 
 
-#pragma HLS inline
+_ssdm_InlineSelf(0, "");
 
  _ssdm_op_SpecKeepValue(
 
@@ -28687,7 +28687,7 @@ namespace hls {
         {
    for (int c = 0; c < FFT_CHANNELS; ++c)
             {
-#pragma HLS unroll complete
+_ssdm_Unroll(0,0,0, "");
  xk[c][i] = xn[c][i];
             }
         }
@@ -28714,7 +28714,7 @@ namespace hls {
          ip_fft::config_t<CONFIG_T>* config_ch)
   {
 
-#pragma HLS inline
+_ssdm_InlineSelf(0, "");
 
  _ssdm_op_SpecKeepValue(
 
@@ -28768,16 +28768,16 @@ namespace hls {
     ip_fft::status_t<CONFIG_T>* status,
     ip_fft::config_t<CONFIG_T>* config_ch)
   {
-#pragma HLS inline off
-#pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
+_ssdm_InlineSelf(2, "");
+_ssdm_op_SpecResource(0, "", "Vivado_FFT", "", -1, "", "", "", "", "parameterizable");
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+_ssdm_op_SpecInterface(&config_ch, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&status, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xn, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xk, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+_ssdm_DataPack( &xn, 0, 0, "", "", "");
+_ssdm_DataPack( &xk, 0, 0, "", "", "");
 
  fft_core<
       CONFIG_T,
@@ -28803,20 +28803,20 @@ namespace hls {
     ip_fft::status_t<CONFIG_T>* status,
     ip_fft::config_t<CONFIG_T>* config_ch)
   {
-#pragma HLS inline off
-#pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
+_ssdm_InlineSelf(2, "");
+_ssdm_op_SpecResource(0, "", "Vivado_FFT", "", -1, "", "", "", "", "parameterizable");
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+_ssdm_op_SpecInterface(&config_ch, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&status, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xn, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xk, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+_ssdm_DataPack( &xn, 0, 0, "", "", "");
+_ssdm_DataPack( &xk, 0, 0, "", "", "");
 
 
-#pragma HLS array_reshape dim=1 variable=&xn
-#pragma HLS array_reshape dim=1 variable=&xk
+_ssdm_SpecArrayReshape( &xn, 1,  "complete",  0, "");
+_ssdm_SpecArrayReshape( &xk, 1,  "complete",  0, "");
 
 
  fft_core<
@@ -28841,16 +28841,16 @@ namespace hls {
     ip_fft::status_t<CONFIG_T>* status,
     ip_fft::config_t<CONFIG_T>* config_ch)
   {
-#pragma HLS inline off
-#pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
+_ssdm_InlineSelf(2, "");
+_ssdm_op_SpecResource(0, "", "Vivado_FFT", "", -1, "", "", "", "", "parameterizable");
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
-#pragma HLS data_pack variable=&config_ch
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+_ssdm_op_SpecInterface(&config_ch, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&status, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xn, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xk, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_DataPack( &config_ch, 0, 0, "", "", "");
+_ssdm_DataPack( &xn, 0, 0, "", "", "");
+_ssdm_DataPack( &xk, 0, 0, "", "", "");
 
  fft_core<
       CONFIG_T,
@@ -28876,16 +28876,16 @@ namespace hls {
     ip_fft::status_t<CONFIG_T>* status,
     ip_fft::config_t<CONFIG_T>* config_ch)
   {
-#pragma HLS inline off
-#pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
+_ssdm_InlineSelf(2, "");
+_ssdm_op_SpecResource(0, "", "Vivado_FFT", "", -1, "", "", "", "", "parameterizable");
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+_ssdm_op_SpecInterface(&config_ch, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&status, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xn, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xk, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+_ssdm_DataPack( &xn, 0, 0, "", "", "");
+_ssdm_DataPack( &xk, 0, 0, "", "", "");
 
  fft_core<
       CONFIG_T,
@@ -28911,20 +28911,20 @@ namespace hls {
     ip_fft::status_t<CONFIG_T>* status,
     ip_fft::config_t<CONFIG_T>* config_ch)
   {
-#pragma HLS inline off
-#pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
+_ssdm_InlineSelf(2, "");
+_ssdm_op_SpecResource(0, "", "Vivado_FFT", "", -1, "", "", "", "", "parameterizable");
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+_ssdm_op_SpecInterface(&config_ch, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&status, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xn, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xk, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+_ssdm_DataPack( &xn, 0, 0, "", "", "");
+_ssdm_DataPack( &xk, 0, 0, "", "", "");
 
 
-#pragma HLS array_reshape dim=1 variable=&xn
-#pragma HLS array_reshape dim=1 variable=&xk
+_ssdm_SpecArrayReshape( &xn, 1,  "complete",  0, "");
+_ssdm_SpecArrayReshape( &xk, 1,  "complete",  0, "");
 
 
  fft_core<
@@ -28949,16 +28949,16 @@ namespace hls {
     ip_fft::status_t<CONFIG_T>* status,
     ip_fft::config_t<CONFIG_T>* config_ch)
   {
-#pragma HLS inline off
-#pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
+_ssdm_InlineSelf(2, "");
+_ssdm_op_SpecResource(0, "", "Vivado_FFT", "", -1, "", "", "", "", "parameterizable");
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
-#pragma HLS data_pack variable=&config_ch
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+_ssdm_op_SpecInterface(&config_ch, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&status, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xn, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&xk, "ap_fifo", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_DataPack( &config_ch, 0, 0, "", "", "");
+_ssdm_DataPack( &xn, 0, 0, "", "", "");
+_ssdm_DataPack( &xk, 0, 0, "", "", "");
 
  fft_core<
       CONFIG_T,
@@ -29060,7 +29060,7 @@ void ProxGS(
             int tmp = x+y*128;
             input_data_re=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
             input_data_im=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
-#pragma HLS PIPELINE
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  MAD[tmp]=cmpxDataIn(input_data_re, input_data_im);
 
 
@@ -29078,7 +29078,7 @@ void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]){_ssdm_SpecArrayDim
         for_x : for (int x = 0; x < 128; x++)
         {
             int tmp = x+y*128;
-#pragma HLS PIPELINE
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  data_out[tmp]=cmpxDataIn(data_in[y][x],0);
 
         }
@@ -29094,7 +29094,7 @@ void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]){_ssdm_SpecArrayDim
         {
 
             int tmp = x+y*128;
-#pragma HLS PIPELINE
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  data_out[y][x]=data_in[tmp].real();
         }
     }

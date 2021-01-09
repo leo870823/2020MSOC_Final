@@ -11,4 +11,69 @@ C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warnin
 #pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
         ^
 1 warning generated."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from proximal.cpp:1:
+In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
+        ^
+1 warning generated."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;fft_top.cpp&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from fft_top.cpp:95:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
+        ^
+1 warning generated."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from fft_top.cpp:1:
+In file included from fft_top.cpp:95:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
+        ^
+1 warning generated."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;divergent.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;deblur.cpp&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from deblur.cpp:1:
+In file included from ./deblur.h:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
+        ^
+1 warning generated."/>
+	<Message severity="ERROR" prefix="[HLS 200-70]" key="HLS_70_1454" tag="" content="Compilation errors found: In file included from deblur.cpp:1:
+In file included from deblur.cpp:1:
+In file included from ./deblur.h:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
+        ^
+In file included from deblur.cpp:1:
+deblur.cpp:53:3: error: use of undeclared identifier &apos;printf&apos;
+{ printf(&quot;[DEBUG] cross channel prior\n&quot;);
+  ^
+deblur.cpp:62:6: error: use of undeclared identifier &apos;printf&apos;
+     printf(&quot;[DEBUG] array copy\n&quot;);
+     ^
+deblur.cpp:64:9: error: use of undeclared identifier &apos;printf&apos;
+        printf(&quot;[DEBUG] my_filter_v1\n&quot;);
+        ^
+deblur.cpp:66:9: error: use of undeclared identifier &apos;printf&apos;
+        printf(&quot;[DEBUG] ProxGS\n&quot;);
+        ^
+deblur.cpp:68:9: error: use of undeclared identifier &apos;printf&apos;
+        printf(&quot;[DEBUG] Relax\n&quot;);
+        ^
+1 warning and 5 errors generated."/>
 </Messages>
