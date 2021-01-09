@@ -10,7 +10,7 @@ void ProxGS(
 	//====== Data member ======
 	bool  fft_ovflo,ifft_ovflo;
     cmpxDataIn tmp[SIZE],fft_result[SIZE],MAD[SIZE];//,ifft_result[SIZE];
-
+    double input_data_re, input_data_im;
     //====== Interface ======
 	//#pragma HLS interface ap_fifo  port=fft_ovflo,ifft_ovflo
     //#pragma HLS interface ap_fifo  port=tmp,fft_result,ifft_result,MAD
@@ -27,10 +27,12 @@ void ProxGS(
         {
             //
             int tmp = x+y*HEIGHT;
+            input_data_re=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
+            input_data_im=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
             #pragma HLS PIPELINE
-                MAD[tmp].real()=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
-            #pragma HLS PIPELINE
-                MAD[tmp].imag()=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
+                MAD[tmp]=cmpxDataIn(input_data_re, input_data_im);
+                //MAD[tmp].real()=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
+                //MAD[tmp].imag()=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
         }
     }
     // inverse FFT
@@ -46,7 +48,8 @@ void P2S(eita_t data_in[HEIGHT][WIDTH],cmpxDataIn data_out[SIZE]){
         {
             int tmp = x+y*HEIGHT;
             #pragma HLS PIPELINE
-        	data_out[tmp].real()=data_in[y][x];
+        	    data_out[tmp]=cmpxDataIn(data_in[y][x],0); //input image type casting to FFT domain 
+            //data_out[tmp].real()=data_in[y][x];
         }
     }
 }

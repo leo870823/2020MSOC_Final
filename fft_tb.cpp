@@ -191,7 +191,7 @@ int main()
                     //xn_input[line_no-5].im = input_data_im;
                     //xn_im_hw[line_no-5] = dummy_im;
 
-                    xn_input[line_no-5] = cmpxDataIn(input_data_re, input_data_im);
+                    xn_input[line_no-5] = cmpxDataIn(input_data_re, input_data_im); //constructor assignment
 
                 }
                 line_no++;

@@ -28771,13 +28771,13 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
  fft_core<
       CONFIG_T,
@@ -28806,17 +28806,17 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
 
-#pragma HLS array_reshape dim=1 variable=&xn
-#pragma HLS array_reshape dim=1 variable=&xk
+#pragma HLS array_reshape dim=1 variable=xn
+#pragma HLS array_reshape dim=1 variable=xk
 
 
  fft_core<
@@ -28844,13 +28844,13 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
-#pragma HLS data_pack variable=&config_ch
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
+#pragma HLS data_pack variable=config_ch
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
  fft_core<
       CONFIG_T,
@@ -28879,13 +28879,13 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
  fft_core<
       CONFIG_T,
@@ -28914,17 +28914,17 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
 
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
 
-#pragma HLS array_reshape dim=1 variable=&xn
-#pragma HLS array_reshape dim=1 variable=&xk
+#pragma HLS array_reshape dim=1 variable=xn
+#pragma HLS array_reshape dim=1 variable=xk
 
 
  fft_core<
@@ -28952,13 +28952,13 @@ namespace hls {
 #pragma HLS inline off
 #pragma HLS resource core="Vivado_FFT" variable=return metadata="parameterizable"
 
-#pragma HLS interface ap_fifo port=&config_ch
-#pragma HLS interface ap_fifo port=&status
-#pragma HLS interface ap_fifo port=&xn
-#pragma HLS interface ap_fifo port=&xk
-#pragma HLS data_pack variable=&config_ch
-#pragma HLS data_pack variable=&xn
-#pragma HLS data_pack variable=&xk
+#pragma HLS interface ap_fifo port=config_ch
+#pragma HLS interface ap_fifo port=status
+#pragma HLS interface ap_fifo port=xn
+#pragma HLS interface ap_fifo port=xk
+#pragma HLS data_pack variable=config_ch
+#pragma HLS data_pack variable=xn
+#pragma HLS data_pack variable=xk
 
  fft_core<
       CONFIG_T,
@@ -29037,7 +29037,7 @@ void ProxGS(
     cmpxDataIn coe_a[128][128],
     eita_t coe_b[128][128]
     )
-{_ssdm_SpecArrayDimSize(x_io, 128);_ssdm_SpecArrayDimSize(coe_a, 128);_ssdm_SpecArrayDimSize(coe_b, 128);
+{
 
  bool fft_ovflo,ifft_ovflo;
     cmpxDataIn tmp[1<<14],fft_result[1<<14],MAD[1<<14];
@@ -29070,7 +29070,7 @@ void ProxGS(
     S2P(fft_result,x_io);
 }
 
-void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]){_ssdm_SpecArrayDimSize(data_in, 128);_ssdm_SpecArrayDimSize(data_out, 16384);
+void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]){
     for_y : for (int y = 0; y < 128; y++)
     {
         for_x : for (int x = 0; x < 128; x++)
@@ -29084,7 +29084,7 @@ void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]){_ssdm_SpecArrayDim
 
 
 
-void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]){_ssdm_SpecArrayDimSize(data_in, 16384);_ssdm_SpecArrayDimSize(data_out, 128);
+void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]){
     for_y : for (int y = 0; y < 128; y++)
     {
         for_x : for (int x = 0; x < 128; x++)

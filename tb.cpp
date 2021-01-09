@@ -7,7 +7,19 @@
 
 #include "ap_int.h"
 #include "ap_fixed.h"
-typedef  ap_int<8>  eita_t;
+//typedef  ap_int<8>  eita_t;
+//typedef std::complex<eita_t> cmpxDataIn;
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+#include <sstream>
+#include <stdio.h>
+#include "hls_fft.h"
+#include "deblur.h"
+
+#include <fstream>
+#include <string>
+#include <sstream>
 
 #define MAX_WIDTH 128
 #define H 128
@@ -122,8 +134,47 @@ int main(){
 		fclose(file_noise_B);
 
 
+		 static cmpxDataIn xn_input[128][128];
+		 double REAL[128][128] ;
+		 double IMAG[128][128] ;
+		 FILE *file_REAL = fopen("REAL.txt", "r");
+		 		if(!file_REAL) printf("ERROR: could not open %s for reading\n","REAL.txt");
+		 FILE *file_IMAG = fopen("IMAGINARY.txt", "r");
+		 		if(!file_REAL) printf("ERROR: could not open %s for reading\n","IMAGINARY.txt");
+
+		 for (y = 0; y < H; y++)
+		 {
+		 	for (x = 0; x < W; x++)
+		 		{
+		 			fscanf(file_REAL, "%f ", &value);
+		 			REAL[y][x] = value;
+		 			fscanf(file_IMAG, "%f ", &value);
+		 			IMAG[y][x] = value ;
+		 			xn_input[y][x] = cmpxDataIn( REAL[y][x],IMAG[y][x]); //Nominator
+		 		}
+		 }
+		 fclose(file_REAL);
+		 fclose(file_IMAG);
 
 
+		 FILE *file_DENOM = fopen("DENOM.txt", "r");
+		 		if(!file_DENOM) printf("ERROR: could not open %s for reading\n","DENOM.txt");
+
+		 		eita_t denom[128][128];
+
+		 		for (y = 0; y < H; y++)
+		 		{
+		 			for (x = 0; x < W; x++)
+		 			{
+		 				fscanf(file_DENOM, "%f ", &value);
+		 				denom[y][x] = value;
+		 			}
+		 		}
+		 		fclose(file_DENOM);
+
+
+		// deblur ISP kernel
+		DEBLUR(blurred_R,blurred_G,blurred_B,xn_input,denom);
 
 /*	eita_t out[128*128] ;
 

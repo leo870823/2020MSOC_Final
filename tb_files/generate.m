@@ -38,3 +38,28 @@ img1D = B(:);
 fid = fopen('I_blurred_B.txt', 'wt');
 fprintf(fid, '%d\n', img1D);
 fclose(fid);
+
+K_blur = imread('.\DeconvolutionColorPrior\kernels\fading.png');
+K  = double(rgb2gray(K_blur)) ;
+K  = K ./ sum(K(:));
+otfk  = psf2otf(K, [128 128]); 
+Nomin1 = conj(otfk).*fft2(I_sharp(:,:,2));
+Denom1 = abs(otfk).^2; 
+
+RE = real(Nomin1) ;
+img1D = RE(:);
+fid = fopen('REAL.txt', 'wt');
+fprintf(fid, '%f\n', img1D);
+fclose(fid);
+    
+IMAG = imag(Nomin1) ;
+img1D = IMAG(:);
+fid = fopen('IMAGINARY.txt', 'wt');
+fprintf(fid, '%f\n', img1D);
+fclose(fid);
+    
+img1D = Denom1(:);
+fid = fopen('DENOM.txt', 'wt');
+fprintf(fid, '%f\n', img1D);
+fclose(fid);
+

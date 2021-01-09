@@ -1,5 +1,4 @@
-#include "proximal.h"
-#include "divergent.h"
+#include "deblur.h"
 
 void array_copy(eita_t data_in[HEIGHT][WIDTH],
 		 	 	eita_t data_out[HEIGHT][WIDTH]) 
