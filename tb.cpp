@@ -48,7 +48,7 @@ int main(){
 	
 	FILE *file_truth_G = fopen("ground_truth_G.txt", "r");
 		if(!file_truth_G) printf("ERROR: could not open %s for reading\n","ground_truth_G.txt");
-
+		else printf("Open success file_truth_G\n");
 
 		eita_t data_G[128][128] ;
 
@@ -65,7 +65,7 @@ int main(){
 
 	FILE *file_truth_B = fopen("ground_truth_B.txt", "r");
 		if(!file_truth_B) printf("ERROR: could not open %s for reading\n","ground_truth_B.txt");
-
+		else printf("Open success file_truth_B\n");
 
 		eita_t data_B[128][128] ;
 
@@ -86,7 +86,8 @@ int main(){
 
 	FILE *file_noise_R = fopen("I_blurred_R.txt", "r");
 	if(!file_noise_R) printf("ERROR: could not open %s for reading\n","noise_R.txt");
-  
+	else printf("Open success file_truth_R\n");
+
 	eita_t blurred_R[128][128] ;
 
 	for (y = 0; y < H; y++)
@@ -174,7 +175,7 @@ int main(){
 
 
 		// deblur ISP kernel
-		DEBLUR(blurred_R,blurred_G,blurred_B,xn_input,denom);
+		//DEBLUR(blurred_R,blurred_G,blurred_B,xn_input,denom);
 
 /*	eita_t out[128*128] ;
 

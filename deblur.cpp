@@ -50,7 +50,7 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
 		 	 	          eita_t adjChImg[HEIGHT][WIDTH],
                           cmpxDataIn coe_a[HEIGHT][WIDTH], //For ProxGS(FFT result)
                           eita_t coe_b[HEIGHT][WIDTH]) //For ProxGS(FFT result)
-{   
+{   printf("[DEBUG] cross channel prior\n");
     eita_t tmp[HEIGHT][WIDTH],x_bar[HEIGHT][WIDTH],x_old[HEIGHT][WIDTH],x[HEIGHT][WIDTH];
     eita_t y_1[HEIGHT][WIDTH],y_2[HEIGHT][WIDTH],y_3[HEIGHT][WIDTH],y_4[HEIGHT][WIDTH],y_5[HEIGHT][WIDTH],y_6[HEIGHT][WIDTH],y_7[HEIGHT][WIDTH];
     
@@ -59,9 +59,13 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
     array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7);//  y_0   =Kx(ProxFs),initialize y_0(set flag=1 )
 
     for_iteration: for(int k=0;k<ITERATION;k++) {
+    	printf("[DEBUG] array copy\n");
         array_copy(x,x_old);
+        printf("[DEBUG] my_filter_v1\n");
         my_filter_v1(x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7); // ProxFS &&   
+        printf("[DEBUG] ProxGS\n");
         ProxGS(x_bar,coe_a,coe_b);
+        printf("[DEBUG] Relax\n");
         Relax(x,x_old,x_bar);
     }
 }

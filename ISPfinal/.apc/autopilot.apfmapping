@@ -17,5 +17,8 @@
     <originFiles name="I_blurred_R.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\I_blurred_R.txt"/>
     <originFiles name="DENOM.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\DeconvolutionColorPrior\DENOM.txt"/>
     <originFiles name="REAL.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\DeconvolutionColorPrior\REAL.txt"/>
+    <originFiles name="ground_truth_B.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\ground_truth_B.txt"/>
+    <originFiles name="ground_truth_G.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\ground_truth_G.txt"/>
+    <originFiles name="ground_truth_R.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\ground_truth_R.txt"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

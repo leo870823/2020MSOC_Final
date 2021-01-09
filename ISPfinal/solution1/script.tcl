@@ -18,6 +18,9 @@ add_files -tb tb_files/I_blurred_B.txt
 add_files -tb tb_files/I_blurred_G.txt
 add_files -tb tb_files/I_blurred_R.txt
 add_files -tb tb_files/DeconvolutionColorPrior/REAL.txt
+add_files -tb tb_files/ground_truth_B.txt
+add_files -tb tb_files/ground_truth_G.txt
+add_files -tb tb_files/ground_truth_R.txt
 add_files -tb tb.cpp
 open_solution "solution1"
 set_part {xc7z020-clg400-1}

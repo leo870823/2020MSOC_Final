@@ -107,6 +107,21 @@
 			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt</location>
 		</link>
 		<link>
+			<name>testbench/ground_truth_B.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt</location>
+		</link>
+		<link>
+			<name>testbench/ground_truth_G.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt</location>
+		</link>
+		<link>
+			<name>testbench/ground_truth_R.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt</location>
+		</link>
+		<link>
 			<name>testbench/tb.cpp</name>
 			<type>1</type>
 			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp</location>

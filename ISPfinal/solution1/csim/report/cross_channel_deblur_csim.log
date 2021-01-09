@@ -1,3 +1,9 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-make: 'csim.exe' is up to date.
+   Compiling ../../../../tb.cpp in debug mode
+   Generating csim.exe
+Open success file_truth_G
+Open success file_truth_B
+Open success file_truth_R
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
