@@ -10,7 +10,7 @@ void ProxGS(
 	//====== Data member ======
 	bool  fft_ovflo,ifft_ovflo;
     cmpxDataIn tmp[SIZE],fft_result[SIZE],MAD[SIZE];//,ifft_result[SIZE];
-    double input_data_re, input_data_im;
+    data_in_t input_data_re, input_data_im;
     //====== Interface ======
 	//#pragma HLS interface ap_fifo  port=fft_ovflo,ifft_ovflo
     //#pragma HLS interface ap_fifo  port=tmp,fft_result,ifft_result,MAD
