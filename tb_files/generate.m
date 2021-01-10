@@ -1,5 +1,5 @@
-clear all;
-I_sharp = imresize(imread('.\DeconvolutionColorPrior\I_sharp.png'),[128 128]);
+
+I_sharp = imresize(imread('./DeconvolutionColorPrior/I_sharp.png'),[128 128]);
 R = I_sharp(:,:,1) ;
 G = I_sharp(:,:,2) ;
 B = I_sharp(:,:,3) ;
@@ -21,7 +21,7 @@ fprintf(fid, '%d\n', img1D);
 fclose(fid);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-I_blurred = imresize(imread('.\DeconvolutionColorPrior\I_blurred.png'),[128 128]);
+I_blurred = imresize(imread('./DeconvolutionColorPrior/I_blurred.png'),[128 128]);
 R = I_blurred(:,:,1) ;
 G = I_blurred(:,:,2) ;
 B = I_blurred(:,:,3) ;
@@ -41,7 +41,7 @@ fid = fopen('I_blurred_B.txt', 'wt');
 fprintf(fid, '%d\n', img1D);
 fclose(fid);
 
-K_blur = imread('.\DeconvolutionColorPrior\kernels\fading.png');
+K_blur = imread('./DeconvolutionColorPrior/kernels/fading.png');
 K  = double(rgb2gray(K_blur)) ;
 K  = K ./ sum(K(:));
 otfk  = psf2otf(K, [128 128]); 
