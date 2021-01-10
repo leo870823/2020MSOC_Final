@@ -1,4 +1,3 @@
-
 I_sharp = imresize(imread('./DeconvolutionColorPrior/I_sharp.png'),[128 128]);
 R = I_sharp(:,:,1) ;
 G = I_sharp(:,:,2) ;
