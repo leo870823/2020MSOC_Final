@@ -28,19 +28,21 @@ int main(){
 	unsigned short int y,x;
 	eita_t value;
 // Read ground truth image
-
+	value=128;
+	printf("%d\n",value);
 	FILE *file_truth_R = fopen("ground_truth_R.txt", "r");
 	if(!file_truth_R) printf("ERROR: could not open %s for reading\n","ground_truth_R.txt");
-  
+	else printf("Open success file_truth_R\n");
 
 	eita_t data_R[128][128] ;
 
 	for (y = 0; y < H; y++)
 	{
 		for (x = 0; x < W; x++)
-		{
-			fscanf(file_truth_R, "%d ", &value);
+		{   //printf("(x,y)=(%d,%d)\n",x,y);
+			fscanf(file_truth_R, "%d\n", &value);
 			data_R[y][x] = value;
+			//printf("%d\n",int(value));
 		}
 
 	}
@@ -86,7 +88,7 @@ int main(){
 
 	FILE *file_noise_R = fopen("I_blurred_R.txt", "r");
 	if(!file_noise_R) printf("ERROR: could not open %s for reading\n","noise_R.txt");
-	else printf("Open success file_truth_R\n");
+	else printf("Open success I_blurred_R.txt\n");
 
 	eita_t blurred_R[128][128] ;
 
@@ -95,7 +97,10 @@ int main(){
 		for (x = 0; x < W; x++)
 		{
 			fscanf(file_noise_R, "%d ", &value);
+			//printf("%d\n",&value);
+
 			blurred_R[y][x] = value;
+			//printf("%d\n",blurred_R[y][x]);
 		}
 	}
 	fclose(file_noise_R);
@@ -103,7 +108,7 @@ int main(){
 
 	FILE *file_noise_G = fopen("I_blurred_G.txt", "r");
 	if(!file_noise_G) printf("ERROR: could not open %s for reading\n","noise_G.txt");
-
+	else printf("Open success I_blurred_G.txt\n");
 	eita_t blurred_G[128][128] ;
 
 	for (y = 0; y < H; y++)
@@ -121,7 +126,7 @@ int main(){
 
 	FILE *file_noise_B = fopen("I_blurred_B.txt", "r");
 		if(!file_noise_B) printf("ERROR: could not open %s for reading\n","noise_B.txt");
-
+		else printf("Open success I_blurred_B.txt\n");
 		eita_t blurred_B[128][128];
 
 		for (y = 0; y < H; y++)

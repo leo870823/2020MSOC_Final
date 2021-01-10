@@ -55,7 +55,7 @@ IFLAG += -D__SIM_FIR__
 IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E1__
-IFLAG += -g
+AP_ENABLE_OPTIMIZED := 1
 IFLAG += -DNT
 LFLAG += -Wl,--enable-auto-import 
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
@@ -72,30 +72,30 @@ all: $(TARGET)
 
 $(ObjDir)/tb.o: ../../../../tb.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../tb.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
 
 -include $(ObjDir)/tb.d
 
 $(ObjDir)/deblur.o: ../../../../deblur.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../deblur.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
 
 -include $(ObjDir)/deblur.d
 
 $(ObjDir)/divergent.o: ../../../../divergent.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../divergent.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
 
 -include $(ObjDir)/divergent.d
 
 $(ObjDir)/fft_top.o: ../../../../fft_top.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../fft_top.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
 
 -include $(ObjDir)/fft_top.d
 
 $(ObjDir)/proximal.o: ../../../../proximal.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../proximal.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
 
 -include $(ObjDir)/proximal.d

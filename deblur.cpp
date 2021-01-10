@@ -1,5 +1,20 @@
 #include "deblur.h"
 
+void array_display(int k,eita_t data_out[HEIGHT][WIDTH])
+{   //data_in copy to data_out
+for_y : for (int y = 0; y < HEIGHT; y++)
+  {
+    for_x : for (int x = 0; x < WIDTH; x++)
+    {
+    printf("(x,y)=(%d,%d)\n",x,y);
+    printf("%d th array_dispaly %d \n",k,int(data_out[y][x]));
+    }
+  }
+}
+
+
+
+
 void array_copy(eita_t data_in[HEIGHT][WIDTH],
 		 	 	eita_t data_out[HEIGHT][WIDTH]) 
 {   //data_in copy to data_out
@@ -9,7 +24,8 @@ for_y : for (int y = 0; y < HEIGHT; y++)
     {
     #pragma HLS PIPELINE 
     data_out[y][x] =  data_in[y][x] ;
-    printf("array_copy %b for reading\n",data_out[y][x]);
+    //printf("(x,y)=(%d,%d)\n",x,y);
+    //printf("array_copy %d for reading\n",int(data_out[y][x]));
     }
   }
 }
@@ -61,12 +77,14 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
     array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7);//  y_0   =Kx(ProxFs),initialize y_0(set flag=1 )
 
     for_iteration: for(int k=0;k<ITERATION;k++) {
+        /*
     	printf("[DEBUG] array copy\n");
         array_copy(x,x_old);
         printf("[DEBUG] my_filter_v1\n");
         my_filter_v1(x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7); // ProxFS &&
-        //printf("[DEBUG] ProxGS\n");
-        //ProxGS(x_bar,coe_a,coe_b);
+        printf("[DEBUG] ProxGS\n");
+        */
+        ProxGS(x_bar,coe_a,coe_b);
         //printf("[DEBUG] Relax\n");
         //Relax(x,x_old,x_bar);
     }

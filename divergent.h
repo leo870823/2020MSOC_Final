@@ -8,7 +8,7 @@ typedef  ap_int<8>  eita_t;
 #define theta 1.0
 #define HEIGHT 128
 #define WIDTH 128
-#define ITERATION 50
+#define ITERATION 1
 
 void my_filter_v1( eita_t f[HEIGHT][WIDTH],eita_t adjChImg[HEIGHT][WIDTH],eita_t g1 [HEIGHT][WIDTH],eita_t g2 [HEIGHT][WIDTH],eita_t g3 [HEIGHT][WIDTH],eita_t g4 [HEIGHT][WIDTH],eita_t g5 [HEIGHT][WIDTH],eita_t g6 [HEIGHT][WIDTH],eita_t g7 [HEIGHT][WIDTH]);
 void Relax(eita_t x[HEIGHT][WIDTH],eita_t x_old[HEIGHT][WIDTH],eita_t x_bar[HEIGHT][WIDTH]);

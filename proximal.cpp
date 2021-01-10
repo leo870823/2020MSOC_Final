@@ -17,9 +17,10 @@ void ProxGS(
     //=======================
     //  eita_t to cmpxDataIn
     P2S(x_io,tmp);
-
+    printf("[DEBUG] End of P2S \n");
     // FFT
     fft_top(1,tmp,fft_result,&fft_ovflo);
+    printf("[DEBUG] End of FFT \n");
     //adder & divider
     for_y : for (int y = 0; y < HEIGHT; y++)
     {

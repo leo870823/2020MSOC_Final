@@ -84,7 +84,12 @@
 		<link>
 			<name>testbench/DENOM.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DENOM.txt</location>
+		</link>
+		<link>
+			<name>testbench/IMAGINARY.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/IMAGINARY.txt</location>
 		</link>
 		<link>
 			<name>testbench/I_blurred_B.txt</name>
@@ -104,7 +109,7 @@
 		<link>
 			<name>testbench/REAL.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/REAL.txt</location>
 		</link>
 		<link>
 			<name>testbench/ground_truth_B.txt</name>

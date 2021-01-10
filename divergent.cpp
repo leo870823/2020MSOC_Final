@@ -114,8 +114,10 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 	    	{
 	    		Sxf[y][x] = (lambda_cross * cr_w) * ( adjChImg[y][x] * fx[y][x] - adj_fx[y][x] * f[y][x] );
 	    		Syf[y][x] = (lambda_cross * cr_w) * ( adjChImg[y][x] * fy[y][x] - adj_fy[y][x] * f[y][x] );
+	    		
 	    	}
 	}
+	printf("[DEBUG] End of Loop_y_0 \n");
 
 
 
@@ -126,13 +128,13 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 		Loop_x_1 : for (int x = 0; x < WIDTH; x++)
     	{
 			#pragma HLS PIPELINE
-	  		g1[y][x] = g1[y][x] + sigma * fx[y][x] ; 
-			g2[y][x] = g2[y][x] + sigma * fy[y][x] ;
-			g3[y][x] = g3[y][x] + sigma * fxx[y][x] ;
-			g4[y][x] = g4[y][x] + sigma * fyy[y][x] ;
-			g5[y][x] = g5[y][x] + sigma * fxy[y][x] ;
-			g6[y][x] = g6[y][x] + sigma * Sxf[y][x] ; // Q
-			g7[y][x] = g7[y][x] + sigma * Syf[y][x] ;
+	  		g1[y][x] = g1[y][x] + eita_t(sigma) * fx[y][x] ;
+			g2[y][x] = g2[y][x] + eita_t(sigma) * fy[y][x] ;
+			g3[y][x] = g3[y][x] + eita_t(sigma) * fxx[y][x] ;
+			g4[y][x] = g4[y][x] + eita_t(sigma) * fyy[y][x] ;
+			g5[y][x] = g5[y][x] + eita_t(sigma) * fxy[y][x] ;
+			g6[y][x] = g6[y][x] + eita_t(sigma) * Sxf[y][x] ; // Q
+			g7[y][x] = g7[y][x] + eita_t(sigma) * Syf[y][x] ;
 			if(g1[y][x]>1)
 				g1[y][x] = 1 ;
 			if(g2[y][x]>1)
@@ -149,6 +151,7 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 				g7[y][x] = 1 ;
         }
     }
+	printf("[DEBUG] End of Loop_y_1 \n");
 	//Proximal G
 		my_filter_fx ( gx, g1);
 		my_filter_fy ( gy, g2);
@@ -173,6 +176,8 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 					    			temp_cross7[y][x] = adjChImg[y][x] * g7[y][x] ;
 					    	}
 					}
+
+		printf("[DEBUG] End of Loop_y_2 \n");
 		my_filter_fx ( cross_X, temp_cross6 );
 		my_filter_fy ( cross_Y, temp_cross7 );
 
@@ -181,20 +186,21 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 			{
 			Loop_x_3  : for (int x = 0; x < WIDTH; x++)
 			    	{
-			    		Sxtf[y][x] = (lambda_cross * cr_w) * ( cross_X[y][x] - adj_fx[y][x] * g6[y][x] );
-			    		Sytf[y][x] = (lambda_cross * cr_w) * ( cross_Y[y][x] - adj_fy[y][x] * g7[y][x] );
+			    		Sxtf[y][x] = eita_t(lambda_cross * cr_w) * ( cross_X[y][x] - adj_fx[y][x] * g6[y][x] );
+			    		Sytf[y][x] = eita_t(lambda_cross * cr_w) * ( cross_Y[y][x] - adj_fy[y][x] * g7[y][x] );
 			    	}
 			}
-        
+		printf("[DEBUG] End of Loop_y_3 \n");
 	Loop_y_4: for (int y = 0; y < HEIGHT; y++)
   	{
 		Loop_x_4 : for (int x = 0; x < WIDTH; x++)
     	{
 			#pragma HLS PIPELINE
-	  		f[y][x] = f[y][x] - tau * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
+	  		f[y][x] = f[y][x] - eita_t(tau) * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
 			
         }
     }
+	printf("[DEBUG] End of my filter \n");
 
 
 }
@@ -209,7 +215,7 @@ void Relax(eita_t x[HEIGHT][WIDTH],
             for_x : for (int i = 0; i < WIDTH; i++)
             {
                 #pragma HLS PIPELINE
-            	x_bar[j][i] =  theta*(x[j][i]-x_old[j][i]);
+            	x_bar[j][i] =  eita_t(theta)*(x[j][i]-x_old[j][i]);
             }
         }
 }

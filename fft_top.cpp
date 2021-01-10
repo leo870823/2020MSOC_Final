@@ -181,7 +181,10 @@ void fft_top(
     status_t fft_status;
    
     dummy_proc_fe(direction, &fft_config, in, xn);
+    printf("[DEBUG] End of dummy_proc_fe \n");
     // FFT IP
     hls::fft<config1>(xn, xk, &fft_status, &fft_config);
+    printf("[DEBUG] End of fft \n");
     dummy_proc_be(&fft_status, ovflo, xk, out);
+    printf("[DEBUG] End of dummy_proc_be \n");
 }

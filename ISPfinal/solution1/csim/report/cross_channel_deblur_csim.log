@@ -1,4 +1,19 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../deblur.cpp in debug mode
+   Compiling ../../../../tb.cpp in release mode
+   Compiling ../../../../deblur.cpp in release mode
+   Compiling ../../../../divergent.cpp in release mode
+   Compiling ../../../../fft_top.cpp in release mode
+   Compiling ../../../../proximal.cpp in release mode
    Generating csim.exe
+7142750
+Open success file_truth_R
+Open success file_truth_G
+Open success file_truth_B
+Open success I_blurred_R.txt
+Open success I_blurred_G.txt
+Open success I_blurred_B.txt
+[DEBUG] End of P2S 
+[DEBUG] End of dummy_proc_fe 
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 3] *************** CSIM finish ***************

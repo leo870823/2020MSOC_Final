@@ -13,11 +13,12 @@ add_files fft_top.cpp
 add_files fft_top.h
 add_files proximal.cpp
 add_files proximal.h
-add_files -tb tb_files/DeconvolutionColorPrior/DENOM.txt
+add_files -tb tb_files/DENOM.txt
+add_files -tb tb_files/IMAGINARY.txt
 add_files -tb tb_files/I_blurred_B.txt
 add_files -tb tb_files/I_blurred_G.txt
 add_files -tb tb_files/I_blurred_R.txt
-add_files -tb tb_files/DeconvolutionColorPrior/REAL.txt
+add_files -tb tb_files/REAL.txt
 add_files -tb tb_files/ground_truth_B.txt
 add_files -tb tb_files/ground_truth_G.txt
 add_files -tb tb_files/ground_truth_R.txt
@@ -26,7 +27,7 @@ open_solution "solution1"
 set_part {xc7z020-clg400-1}
 create_clock -period 10 -name default
 #source "./ISPfinal/solution1/directives.tcl"
-csim_design
+csim_design -clean -O
 csynth_design
 cosim_design
 export_design -format ip_catalog
