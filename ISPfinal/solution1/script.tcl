@@ -27,7 +27,7 @@ open_solution "solution1"
 set_part {xc7z020-clg400-1}
 create_clock -period 10 -name default
 #source "./ISPfinal/solution1/directives.tcl"
-csim_design -clean -O
+csim_design
 csynth_design
 cosim_design
 export_design -format ip_catalog

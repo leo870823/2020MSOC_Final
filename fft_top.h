@@ -99,8 +99,8 @@ const char FFT_INPUT_FRAC                      =  1;
 const char FFT_OUTPUT_WIDTH                    = 24;
 const char FFT_OUTPUT_FRAC                     =  1;
 const char FFT_CONFIG_WIDTH                    = 16;
-const char FFT_NFFT_MAX                        = 14;
-const int  FFT_LENGTH                          = 1 << FFT_NFFT_MAX; 
+const char FFT_NFFT_MAX                        = 7;
+const int  FFT_LENGTH                          = 1 << FFT_NFFT_MAX;
 
 
 #include <complex>
@@ -111,7 +111,7 @@ struct config1 : hls::ip_fft::params_t {
     static const unsigned config_width = FFT_CONFIG_WIDTH;
     static const unsigned input_width  = FFT_INPUT_WIDTH ;
     static const unsigned output_width = FFT_OUTPUT_WIDTH;
-    
+    static const unsigned max_nfft =FFT_NFFT_MAX+1;
 };
 
 typedef hls::ip_fft::config_t<config1> config_t;
@@ -139,4 +139,12 @@ void fft_top(
     cmpxDataIn in[FFT_LENGTH],
     cmpxDataOut out[FFT_LENGTH],
     bool* ovflo);
+
+void fft_top_2D(
+    bool direction,
+    cmpxDataIn in[FFT_LENGTH][FFT_LENGTH],
+    cmpxDataOut out[FFT_LENGTH][FFT_LENGTH],
+    bool* ovflo);
+
+
 

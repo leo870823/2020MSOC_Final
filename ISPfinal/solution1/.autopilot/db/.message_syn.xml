@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;proximal.cpp&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
+        ^
+1 warning generated."/>
+	<Message severity="ERROR" prefix="[HLS 200-70]" key="HLS_70_1454" tag="" content="Compilation errors found: In file included from proximal.cpp:1:
+In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
+        ^
+In file included from proximal.cpp:1:
+proximal.cpp:71:13: error: use of undeclared identifier &apos;printf&apos;
+            printf(&quot;FFT out %d \n&quot;,int(data_in[tmp].real().range()));
+            ^
+In file included from proximal.cpp:1:
+In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:93:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\ap_fixed.h:55:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot\ap_fixed_base.h:838:13: warning: shift count is negative [-Wshift-count-negative]
+      ret.V &lt;&lt;= (_AP_I - _AP_W);
+            ^   ~~~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot\ap_int_base.h:359:18: note: in instantiation of member function &apos;ap_fixed_base&lt;24, 1, true, 5, 3, 0&gt;::to_ap_int_base&apos; requested here
+    Base::V = op.to_ap_int_base().V;
+                 ^
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot\ap_int.h:249:9: note: in instantiation of function template specialization &apos;ap_int_base&lt;8, false&gt;::ap_int_base&lt;24, 1, true, 5, 3, 0&gt;&apos; requested here
+      : Base((ap_fixed_base&lt;_AP_W2, _AP_I2, true, _AP_Q2, _AP_O2, _AP_N2&gt;)op) {}
+        ^
+proximal.cpp:73:17: note: in instantiation of function template specialization &apos;ap_uint&lt;8&gt;::ap_uint&lt;24, 1, 5, 3, 0&gt;&apos; requested here
+ data_out[y][x]=eita_t(data_in[tmp].real());
+                ^
+2 warnings and 1 error generated."/>
+</Messages>

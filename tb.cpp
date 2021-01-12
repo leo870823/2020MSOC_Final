@@ -139,7 +139,7 @@ int main(){
 		}
 		fclose(file_noise_B);
 
-
+		 data_in_t value_for_weight;
 		 static cmpxDataIn xn_input[128][128];
 		 data_in_t REAL[128][128] ;
 		 data_in_t IMAG[128][128] ;
@@ -152,10 +152,10 @@ int main(){
 		 {
 		 	for (x = 0; x < W; x++)
 		 		{
-		 			fscanf(file_REAL, "%f ", &value);
-		 			REAL[y][x] = value;
-		 			fscanf(file_IMAG, "%f ", &value);
-		 			IMAG[y][x] = value ;
+		 			fscanf(file_REAL, "%f ", &value_for_weight);
+		 			REAL[y][x] = value_for_weight;
+		 			fscanf(file_IMAG, "%f ", &value_for_weight);
+		 			IMAG[y][x] = value_for_weight ;
 		 			xn_input[y][x] = cmpxDataIn( REAL[y][x],IMAG[y][x]); //Nominator
 		 		}
 		 }
@@ -166,14 +166,15 @@ int main(){
 		 FILE *file_DENOM = fopen("DENOM.txt", "r");
 		 		if(!file_DENOM) printf("ERROR: could not open %s for reading\n","DENOM.txt");
 
-		 		eita_t denom[128][128];
+		 		data_in_t denom[128][128];
 
 		 		for (y = 0; y < H; y++)
 		 		{
 		 			for (x = 0; x < W; x++)
 		 			{
-		 				fscanf(file_DENOM, "%f ", &value);
-		 				denom[y][x] = value;
+		 				fscanf(file_DENOM, "%f ", &value_for_weight);
+		 				denom[y][x] = value_for_weight;
+		 				cout<<value_for_weight.to_float()<<endl;
 		 			}
 		 		}
 		 		fclose(file_DENOM);
@@ -188,8 +189,8 @@ int main(){
 	for (y = 0; y < H; y++)
 	{
 		for (x = 0; x < W; x++)
-		{	printf("(x,y)=(%d,%d)\n",x,y);
-			printf("Pixel value %d for reading\n",int(blurred_R[y][x]));
+		{	//printf("(x,y)=(%d,%d)\n",x,y);
+			//printf("Pixel value %d for reading\n",int(blurred_R[y][x]));
 			MSE_R = MSE_R + (blurred_R[y][x]- data_R[y][x]) * (blurred_R[y][x]- data_R[y][x]);
 			MSE_B = MSE_B + (blurred_B[y][x]- data_B[y][x]) * (blurred_B[y][x]- data_B[y][x]);
 			MSE_G = MSE_G + (blurred_G[y][x]- data_G[y][x]) * (blurred_G[y][x]- data_G[y][x]);

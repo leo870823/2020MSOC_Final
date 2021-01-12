@@ -21,8 +21,8 @@
     </files>
     <includePaths/>
     <libraryPaths/>
-    <Simulation>
-        <SimFlow name="csim" optimizeCompile="true" clean="true" csimMode="0" lastCsimMode="0"/>
+    <Simulation argv="">
+        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
     </Simulation>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>

@@ -181,10 +181,50 @@ void fft_top(
     status_t fft_status;
    
     dummy_proc_fe(direction, &fft_config, in, xn);
-    printf("[DEBUG] End of dummy_proc_fe \n");
+    //printf("[DEBUG] End of dummy_proc_fe \n");
     // FFT IP
     hls::fft<config1>(xn, xk, &fft_status, &fft_config);
-    printf("[DEBUG] End of fft \n");
+    //printf("[DEBUG] End of fft \n");
     dummy_proc_be(&fft_status, ovflo, xk, out);
-    printf("[DEBUG] End of dummy_proc_be \n");
+    //printf("[DEBUG] End of dummy_proc_be \n");
 }
+
+
+void fft_top_2D(
+    bool direction,
+    cmpxDataIn in[FFT_LENGTH][FFT_LENGTH],
+    cmpxDataOut out[FFT_LENGTH][FFT_LENGTH],
+    bool* fft_ovflo_all)
+{
+	complex<data_in_t> buffer_in[FFT_LENGTH],buffer_out[FFT_LENGTH];
+	bool  fft_ovflo = false;
+	// fft for row by row
+	for_row : for(int i=0;i<FFT_LENGTH;i++){
+		for_column_in : for(int j=0;j<FFT_LENGTH;j++){
+			buffer_in[j]=in[i][j];
+		}
+		fft_top(direction,buffer_in,buffer_out,&fft_ovflo);
+
+		*fft_ovflo_all |= fft_ovflo;
+		for_column_out : for(int k=0;k<FFT_LENGTH;k++){
+			out[i][k]=buffer_out[k];
+		}
+
+	}
+
+	// fft for col by col
+	for_column : for(int j=0;j<FFT_LENGTH;j++){
+		for_row_in : for(int i=0;i<FFT_LENGTH;i++){
+			buffer_in[i]=in[i][j];
+		}
+		fft_top(direction,buffer_in,buffer_out,&fft_ovflo);
+		*fft_ovflo_all |= fft_ovflo;
+		for_row_out : for(int i=0;i<FFT_LENGTH;i++){
+			out[i][j]=buffer_out[i];
+		}
+	}
+}
+
+
+
+
