@@ -1,6 +1,6 @@
 #include "ap_int.h"
 #include "ap_fixed.h"
-typedef  ap_int<8>  eita_t;
+typedef  ap_uint<8>  eita_t;
 #define sigma 0.4
 #define tau   0.02
 #define lambda_cross 1.0

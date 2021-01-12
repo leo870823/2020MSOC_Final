@@ -1,8 +1,7 @@
 #include "fft_top.h"
 #include "ap_int.h"
 #include "ap_fixed.h"
-typedef  ap_int<8>  eita_t;
-typedef  ap_int<16>  fft_t;
+typedef  ap_uint<8>  eita_t;
 #define SIZE 1<<14
 #define HEIGHT 128
 #define WIDTH 128

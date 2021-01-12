@@ -3,6 +3,7 @@
   <errorLogs>
     <logs>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-12T11:55:02.823+0800"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-11T22:04:31.162+0800"/>
         <logs message="ERROR: could not open -54 for reading&#xD;&#xA;" projectName="ISPfinal" solutionName="solution1" date="2021-01-11T21:44:04.500+0800"/>
         <logs message="ERROR: could not open -51 for reading" projectName="ISPfinal" solutionName="solution1" date="2021-01-11T21:44:04.497+0800"/>
