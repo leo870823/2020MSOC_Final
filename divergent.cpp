@@ -117,7 +117,7 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 	    		
 	    	}
 	}
-	printf("[DEBUG] End of Loop_y_0 \n");
+	//printf("[DEBUG] End of Loop_y_0 \n");
 
 
 
@@ -151,7 +151,7 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 				g7[y][x] = 1 ;
         }
     }
-	printf("[DEBUG] End of Loop_y_1 \n");
+	//printf("[DEBUG] End of Loop_y_1 \n");
 	//Proximal G
 		my_filter_fx ( gx, g1);
 		my_filter_fy ( gy, g2);
@@ -177,7 +177,7 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 					    	}
 					}
 
-		printf("[DEBUG] End of Loop_y_2 \n");
+		//printf("[DEBUG] End of Loop_y_2 \n");
 		my_filter_fx ( cross_X, temp_cross6 );
 		my_filter_fy ( cross_Y, temp_cross7 );
 
@@ -190,7 +190,7 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 			    		Sytf[y][x] = eita_t(lambda_cross * cr_w) * ( cross_Y[y][x] - adj_fy[y][x] * g7[y][x] );
 			    	}
 			}
-		printf("[DEBUG] End of Loop_y_3 \n");
+		//printf("[DEBUG] End of Loop_y_3 \n");
 	Loop_y_4: for (int y = 0; y < HEIGHT; y++)
   	{
 		Loop_x_4 : for (int x = 0; x < WIDTH; x++)
@@ -200,7 +200,7 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 			
         }
     }
-	printf("[DEBUG] End of my filter \n");
+	//printf("[DEBUG] End of my filter \n");
 
 
 }

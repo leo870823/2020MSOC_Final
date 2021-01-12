@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="proximal.h" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\proximal.h"/>
-    <originFiles name="proximal.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\proximal.cpp"/>
-    <originFiles name="fft_top.h" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\fft_top.h"/>
-    <originFiles name="fft_top.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\fft_top.cpp"/>
-    <originFiles name="divergent.h" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\divergent.h"/>
-    <originFiles name="divergent.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\divergent.cpp"/>
     <originFiles name="deblur.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\deblur.cpp"/>
     <originFiles name="deblur.h" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\deblur.h"/>
+    <originFiles name="divergent.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\divergent.cpp"/>
+    <originFiles name="divergent.h" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\divergent.h"/>
+    <originFiles name="fft_top.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\fft_top.cpp"/>
+    <originFiles name="fft_top.h" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\fft_top.h"/>
+    <originFiles name="proximal.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\proximal.cpp"/>
+    <originFiles name="proximal.h" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\proximal.h"/>
   </source>
   <testbench>
-    <originFiles name="DENOM.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\DENOM.txt"/>
     <originFiles name="ground_truth_B.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\ground_truth_B.txt"/>
     <originFiles name="ground_truth_G.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\ground_truth_G.txt"/>
     <originFiles name="ground_truth_R.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\ground_truth_R.txt"/>
@@ -21,5 +20,6 @@
     <originFiles name="IMAGINARY.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\IMAGINARY.txt"/>
     <originFiles name="REAL.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\REAL.txt"/>
     <originFiles name="tb.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb.cpp"/>
+    <originFiles name="DENOM.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\DENOM.txt"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

@@ -17,19 +17,23 @@ void ProxGS(
     //=======================
     //  eita_t to cmpxDataIn
     P2S(x_io,tmp);
-    printf("[DEBUG] End of P2S \n");
+    //printf("[DEBUG] End of P2S \n");
     // FFT
     fft_top(1,tmp,fft_result,&fft_ovflo);
-    printf("[DEBUG] End of FFT \n");
+    //printf("[DEBUG] End of FFT \n");
     //adder & divider
     for_y : for (int y = 0; y < HEIGHT; y++)
     {
         for_x : for (int x = 0; x < WIDTH; x++)
         {
-            //
             int tmp = x+y*HEIGHT;
-            input_data_re=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
-            input_data_im=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
+            if(coe_b[y][x]!=0) {
+            	input_data_re=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
+            	input_data_im=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
+            }else {
+            	input_data_re=0;
+            	input_data_im=0;
+            }
             #pragma HLS PIPELINE
                 MAD[tmp]=cmpxDataIn(input_data_re, input_data_im);
                 //MAD[tmp].real()=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
@@ -65,7 +69,7 @@ void S2P(cmpxDataIn data_in[SIZE],eita_t data_out[HEIGHT][WIDTH]){
             
             int tmp = x+y*HEIGHT;
             #pragma HLS PIPELINE
-        	data_out[y][x]=data_in[tmp].real();
+        	data_out[y][x]=eita_t(data_in[tmp].real());
         }
     }
 }

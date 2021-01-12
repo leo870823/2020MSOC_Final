@@ -98,7 +98,7 @@ const char FFT_INPUT_WIDTH                     = 24; //16 bit int,8 bit fraction
 const char FFT_INPUT_FRAC                      =  1;
 const char FFT_OUTPUT_WIDTH                    = 24;
 const char FFT_OUTPUT_FRAC                     =  1;
-const char FFT_CONFIG_WIDTH                    = 24;
+const char FFT_CONFIG_WIDTH                    = 16;
 const char FFT_NFFT_MAX                        = 14;
 const int  FFT_LENGTH                          = 1 << FFT_NFFT_MAX; 
 

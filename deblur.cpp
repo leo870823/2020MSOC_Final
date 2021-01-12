@@ -6,8 +6,8 @@ for_y : for (int y = 0; y < HEIGHT; y++)
   {
     for_x : for (int x = 0; x < WIDTH; x++)
     {
-    printf("(x,y)=(%d,%d)\n",x,y);
-    printf("%d th array_dispaly %d \n",k,int(data_out[y][x]));
+    //printf("(x,y)=(%d,%d)\n",x,y);
+    //printf("%d th array_dispaly %d \n",k,int(data_out[y][x]));
     }
   }
 }
@@ -72,21 +72,19 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
     eita_t y_1[HEIGHT][WIDTH],y_2[HEIGHT][WIDTH],y_3[HEIGHT][WIDTH],y_4[HEIGHT][WIDTH],y_5[HEIGHT][WIDTH],y_6[HEIGHT][WIDTH],y_7[HEIGHT][WIDTH];
     
     array_copy(Img,x_bar);//  x_bar = img 
-
     array_copy(Img,x);    //  x     = img 
     array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7);//  y_0   =Kx(ProxFs),initialize y_0(set flag=1 )
 
     for_iteration: for(int k=0;k<ITERATION;k++) {
-        /*
-    	printf("[DEBUG] array copy\n");
+
+    	  //printf("[DEBUG] array copy\n");
         array_copy(x,x_old);
-        printf("[DEBUG] my_filter_v1\n");
+        //printf("[DEBUG] my_filter_v1\n");
         my_filter_v1(x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7); // ProxFS &&
-        printf("[DEBUG] ProxGS\n");
-        */
+        //printf("[DEBUG] ProxGS\n");
         ProxGS(x_bar,coe_a,coe_b);
         //printf("[DEBUG] Relax\n");
-        //Relax(x,x_old,x_bar);
+        Relax(x,x_old,x_bar);
     }
 
 }
