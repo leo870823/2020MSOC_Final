@@ -65,8 +65,8 @@ void array_initialize(eita_t y_1[HEIGHT][WIDTH],
 
 void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
 		 	 	          eita_t adjChImg[HEIGHT][WIDTH],
-                          cmpxDataIn coe_a[HEIGHT][WIDTH], //For ProxGS(FFT result)
-						  data_in_t coe_b[HEIGHT][WIDTH]) //For ProxGS(FFT result)
+						  proxGSDataIn coe_a[HEIGHT][WIDTH], //For ProxGS(FFT result)
+						  fft_operation coe_b[HEIGHT][WIDTH]) //For ProxGS(FFT result)
 {   //printf("[DEBUG] cross channel prior\n");
     eita_t tmp[HEIGHT][WIDTH],x_bar[HEIGHT][WIDTH],x_old[HEIGHT][WIDTH],x[HEIGHT][WIDTH];
     eita_t y_1[HEIGHT][WIDTH],y_2[HEIGHT][WIDTH],y_3[HEIGHT][WIDTH],y_4[HEIGHT][WIDTH],y_5[HEIGHT][WIDTH],y_6[HEIGHT][WIDTH],y_7[HEIGHT][WIDTH];
@@ -92,8 +92,8 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
 void DEBLUR(eita_t refImg_R[HEIGHT][WIDTH],
 		    eita_t adjChImg_G[HEIGHT][WIDTH],
             eita_t adjChImg_B[HEIGHT][WIDTH],
-            cmpxDataIn coe_a[HEIGHT][WIDTH], //For ProxGS(FFT result)
-			data_in_t coe_b[HEIGHT][WIDTH]) //For ProxGS(FFT result)
+			proxGSDataIn coe_a[HEIGHT][WIDTH], //For ProxGS(FFT result)
+			fft_operation coe_b[HEIGHT][WIDTH]) //For ProxGS(FFT result)
 {   cross_channel_deblur(  refImg_R,refImg_R,coe_a,coe_b);
     cross_channel_deblur(adjChImg_G,refImg_R,coe_a,coe_b);
     cross_channel_deblur(adjChImg_B,refImg_R,coe_a,coe_b);

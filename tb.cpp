@@ -140,9 +140,9 @@ int main(){
 		fclose(file_noise_B);
 
 		 float value_for_weight;
-		 static cmpxDataIn xn_input[128][128];
-		 data_in_t REAL[128][128] ;
-		 data_in_t IMAG[128][128] ;
+		 static proxGSDataIn xn_input[128][128];
+		 fft_operation REAL[128][128] ;
+		 fft_operation IMAG[128][128] ;
 		 FILE *file_REAL = fopen("REAL.txt", "r");
 		 		if(!file_REAL) printf("ERROR: could not open %s for reading\n","REAL.txt");
 		 FILE *file_IMAG = fopen("IMAGINARY.txt", "r");
@@ -153,10 +153,10 @@ int main(){
 		 	for (x = 0; x < W; x++)
 		 		{
 		 			fscanf(file_REAL, "%f ", &value_for_weight);
-		 			REAL[y][x] = data_in_t(value_for_weight);
+		 			REAL[y][x] = fft_operation(value_for_weight);
 		 			fscanf(file_IMAG, "%f ", &value_for_weight);
-		 			IMAG[y][x] = data_in_t(value_for_weight);
-		 			xn_input[y][x] = cmpxDataIn( REAL[y][x],IMAG[y][x]); //Nominator
+		 			IMAG[y][x] = fft_operation(value_for_weight);
+		 			xn_input[y][x] = proxGSDataIn( REAL[y][x],IMAG[y][x]); //Nominator
 		 		}
 		 }
 		 fclose(file_REAL);
@@ -166,14 +166,14 @@ int main(){
 		 FILE *file_DENOM = fopen("DENOM.txt", "r");
 		 		if(!file_DENOM) printf("ERROR: could not open %s for reading\n","DENOM.txt");
 
-		 		data_in_t denom[128][128];
+		 		fft_operation denom[128][128];
 
 		 		for (y = 0; y < H; y++)
 		 		{
 		 			for (x = 0; x < W; x++)
 		 			{
 		 				fscanf(file_DENOM, "%f ", &value_for_weight);
-		 				denom[y][x] = data_in_t(value_for_weight);
+		 				denom[y][x] = fft_operation(value_for_weight);
 		 				//cout<<value_for_weight<<endl;
 		 			}
 		 		}

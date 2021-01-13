@@ -3,15 +3,16 @@
 
 void ProxGS(
     eita_t      x_io[HEIGHT][WIDTH], //input or output port
-    cmpxDataIn coe_a[HEIGHT][WIDTH],
-	data_in_t coe_b[HEIGHT][WIDTH]
+	proxGSDataIn coe_a[HEIGHT][WIDTH],
+	fft_operation coe_b[HEIGHT][WIDTH]
     )
 {
 	//====== Data member ======
 	bool  fft_ovflo,ifft_ovflo;
-    cmpxDataIn tmp[HEIGHT][WIDTH],fft_result[HEIGHT][WIDTH],MAD[HEIGHT][WIDTH];//,ifft_result[SIZE];
-    data_in_t input_data_re, input_data_im,scale_const;
-    scale_const=data_in_t(255);
+    cmpxDataIn tmp[HEIGHT][WIDTH],fft_result[HEIGHT][WIDTH];
+    cmpxDataIn MAD[HEIGHT][WIDTH];//,ifft_result[SIZE];
+    fft_operation input_data_re, input_data_im,scale_const;
+    scale_const=fft_operation(255);
     //====== Interface ======
 	//#pragma HLS interface ap_fifo  port=fft_ovflo,ifft_ovflo
     //#pragma HLS interface ap_fifo  port=tmp,fft_result,ifft_result,MAD
@@ -24,17 +25,20 @@ void ProxGS(
     for_y : for (int y = 0; y < HEIGHT; y++)
     {
         for_x : for (int x = 0; x < WIDTH; x++)
-        {	printf("FFT result %f \n",float(fft_result[y][x].real()));
-        	printf("FFT result %f \n",float(fft_result[y][x].real()));
+        {
             if(coe_b[y][x]!=0) {
-            	input_data_re=(scale_const*fft_result[y][x].real()+coe_a[y][x].real())/coe_b[y][x];
-            	input_data_im=(scale_const*fft_result[y][x].imag()+coe_a[y][x].imag())/coe_b[y][x];
+            	input_data_re=(scale_const*fft_operation(fft_result[y][x].real())+coe_a[y][x].real())/coe_b[y][x];
+            	input_data_im=(scale_const*fft_operation(fft_result[y][x].imag())+coe_a[y][x].imag())/coe_b[y][x];
             }else {
             	input_data_re=0;
             	input_data_im=0;
             }
             #pragma HLS PIPELINE
-                MAD[y][x]=cmpxDataIn(input_data_re, input_data_im);
+                MAD[y][x]= cmpxDataIn(data_in_t(input_data_re.range()),data_in_t(input_data_im.range()));
+            printf("FFT result <24,16>%f \n",float(input_data_re));
+            //printf("FFT result <24,16>%f \n",float(input_data_im));
+            printf("FFT result <24, 1>%f \n",float(MAD[y][x].real()));
+            //printf("FFT result <24, 1>%f \n",float(MAD[y][x].imag()));
         }
     }
     // inverse FFT
@@ -54,6 +58,18 @@ void P2S(eita_t data_in[HEIGHT][WIDTH],cmpxDataIn data_out[HEIGHT][WIDTH]){
         }
     }
 }
+
+
+void S2P_FFT(proxGSDataIn data_in[HEIGHT][WIDTH],eita_t data_out[HEIGHT][WIDTH]){
+    for_y : for (int y = 0; y < HEIGHT; y++)
+    {
+        for_x : for (int x = 0; x < WIDTH; x++)
+        {
+
+        }
+    }
+}
+
 
 
 
