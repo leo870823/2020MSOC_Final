@@ -28982,7 +28982,7 @@ const char FFT_INPUT_FRAC = 1;
 const char FFT_OUTPUT_WIDTH = 24;
 const char FFT_OUTPUT_FRAC = 1;
 const char FFT_CONFIG_WIDTH = 16;
-const char FFT_NFFT_MAX = 14;
+const char FFT_NFFT_MAX = 7;
 const int FFT_LENGTH = 1 << FFT_NFFT_MAX;
 
 
@@ -28994,7 +28994,7 @@ struct config1 : hls::ip_fft::params_t {
     static const unsigned config_width = FFT_CONFIG_WIDTH;
     static const unsigned input_width = FFT_INPUT_WIDTH ;
     static const unsigned output_width = FFT_OUTPUT_WIDTH;
-
+    static const unsigned max_nfft =FFT_NFFT_MAX+1;
 };
 
 typedef hls::ip_fft::config_t<config1> config_t;
@@ -29022,6 +29022,12 @@ void fft_top(
     cmpxDataIn in[FFT_LENGTH],
     cmpxDataOut out[FFT_LENGTH],
     bool* ovflo);
+
+void fft_top_2D(
+    bool direction,
+    cmpxDataIn in[FFT_LENGTH][FFT_LENGTH],
+    cmpxDataOut out[FFT_LENGTH][FFT_LENGTH],
+    bool* ovflo);
 # 2 "./proximal.h" 2
 # 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_int.h" 1
 # 3 "./proximal.h" 2
@@ -29030,22 +29036,23 @@ typedef ap_uint<8> eita_t;
 
 
 
-void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]);
-void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]);
-void ProxGS(eita_t x_io[128][128],cmpxDataIn coe_a[128][128],eita_t coe_b[128][128]);
+void P2S(eita_t data_in[128][128],cmpxDataIn data_out[128][128]);
+void S2P(cmpxDataIn data_in[128][128],eita_t data_out[128][128]);
+void ProxGS(eita_t x_io[128][128],cmpxDataIn coe_a[128][128],data_in_t coe_b[128][128]);
 # 2 "proximal.cpp" 2
 
 
 void ProxGS(
     eita_t x_io[128][128],
     cmpxDataIn coe_a[128][128],
-    eita_t coe_b[128][128]
+ data_in_t coe_b[128][128]
     )
 {
 
  bool fft_ovflo,ifft_ovflo;
-    cmpxDataIn tmp[1<<14],fft_result[1<<14],MAD[1<<14];
-    data_in_t input_data_re, input_data_im;
+    cmpxDataIn tmp[128][128],fft_result[128][128],MAD[128][128];
+    data_in_t input_data_re, input_data_im,scale_const;
+    scale_const=data_in_t(255);
 
 
 
@@ -29053,42 +29060,39 @@ void ProxGS(
 
     P2S(x_io,tmp);
 
-
-    fft_top(1,tmp,fft_result,&fft_ovflo);
-
+    fft_top_2D(1,tmp,fft_result,&fft_ovflo);
 
     for_y : for (int y = 0; y < 128; y++)
     {
         for_x : for (int x = 0; x < 128; x++)
         {
-            int tmp = x+y*128;
             if(coe_b[y][x]!=0) {
-             input_data_re=(fft_result[tmp].real()+coe_a[y][x].real())/coe_b[y][x];
-             input_data_im=(fft_result[tmp].imag()+coe_a[y][x].imag())/coe_b[y][x];
+             input_data_re=(scale_const*fft_result[y][x].real()+coe_a[y][x].real())/coe_b[y][x];
+             input_data_im=(scale_const*fft_result[y][x].imag()+coe_a[y][x].imag())/coe_b[y][x];
             }else {
              input_data_re=0;
              input_data_im=0;
             }
 #pragma HLS PIPELINE
- MAD[tmp]=cmpxDataIn(input_data_re, input_data_im);
-
-
+ MAD[y][x]=cmpxDataIn(input_data_re, input_data_im);
         }
     }
 
-    fft_top(0,MAD,fft_result,&ifft_ovflo);
+    fft_top_2D(0,MAD,fft_result,&ifft_ovflo);
 
     S2P(fft_result,x_io);
 }
 
-void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]){
-    for_y : for (int y = 0; y < 128; y++)
+void P2S(eita_t data_in[128][128],cmpxDataIn data_out[128][128]){
+    float tmp=0;
+ for_y : for (int y = 0; y < 128; y++)
     {
         for_x : for (int x = 0; x < 128; x++)
-        {
-            int tmp = x+y*128;
+        { printf("FFT in %d \n",int(data_in[y][x]));
+         tmp = data_in[y][x].V/255;
+         cout<<tmp<<endl;
 #pragma HLS PIPELINE
- data_out[tmp]=cmpxDataIn(data_in[y][x],0);
+ data_out[y][x]=cmpxDataIn( data_in_t(tmp),0);
 
         }
     }
@@ -29096,16 +29100,15 @@ void P2S(eita_t data_in[128][128],cmpxDataIn data_out[1<<14]){
 
 
 
-void S2P(cmpxDataIn data_in[1<<14],eita_t data_out[128][128]){
+void S2P(cmpxDataIn data_in[128][128],eita_t data_out[128][128]){
     for_y : for (int y = 0; y < 128; y++)
     {
         for_x : for (int x = 0; x < 128; x++)
         {
 
-            int tmp = x+y*128;
-            printf("FFT out %d \n",int(data_in[tmp].real().range()));
+
 #pragma HLS PIPELINE
- data_out[y][x]=eita_t(data_in[tmp].real());
+ data_out[y][x]=eita_t(255*data_in[y][x].real());
 
 
 

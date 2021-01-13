@@ -78,13 +78,13 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
     for_iteration: for(int k=0;k<ITERATION;k++) {
 
     	  //printf("[DEBUG] array copy\n");
-        array_copy(x,x_old);
+        //array_copy(x,x_old);
         //printf("[DEBUG] my_filter_v1\n");
-        my_filter_v1(x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7); // ProxFS &&
+        //my_filter_v1(x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7); // ProxFS &&
         //printf("[DEBUG] ProxGS\n");
         ProxGS(x_bar,coe_a,coe_b);
         //printf("[DEBUG] Relax\n");
-        Relax(x,x_old,x_bar);
+        //Relax(x,x_old,x_bar);
     }
 
 }

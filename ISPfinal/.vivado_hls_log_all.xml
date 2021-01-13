@@ -2,19 +2,24 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
-      <csimLog>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-12T18:34:08.934+0800"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-12T18:25:09.719+0800"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-12T18:23:10.804+0800"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-12T17:58:16.050+0800"/>
-      </csimLog>
+      <synLog>
+        <logs message="ERROR: [HLS 200-70] Compilation errors found: In file included from proximal.cpp:1:&#xD;&#xA;In file included from proximal.cpp:1:&#xD;&#xA;In file included from ./proximal.h:1:&#xD;&#xA;In file included from ./fft_top.h:94:&#xD;&#xA;In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:&#xD;&#xA;In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:&#xD;&#xA;C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]&#xD;&#xA;#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)&#xD;&#xA;        ^&#xD;&#xA;In file included from proximal.cpp:1:&#xD;&#xA;proximal.cpp:50:11: error: use of undeclared identifier 'printf'&#xD;&#xA;        { printf(&quot;FFT in %d \n&quot;,int(data_in[y][x]));&#xD;&#xA;          ^&#xD;&#xA;proximal.cpp:52:10: error: use of undeclared identifier 'cout'&#xD;&#xA;         cout&lt;&lt;tmp&lt;&lt;endl;&#xD;&#xA;         ^&#xD;&#xA;In file included from proximal.cpp:1:&#xD;&#xA;In file included from proximal.cpp:1:&#xD;&#xA;In file included from ./proximal.h:1:&#xD;&#xA;In file included from ./fft_top.h:93:&#xD;&#xA;In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\ap_fixed.h:55:&#xD;&#xA;C:/Xilinx/Vivado/2019.2/common/technology/autopilot\ap_fixed_base.h:838:13: warning: shift count is negative [-Wshift-count-negative]&#xD;&#xA;      ret.V &lt;&lt;= (_AP_I - _AP_W);&#xD;&#xA;            ^   ~~~~~~~~~~~~~~~&#xD;&#xA;C:/Xilinx/Vivado/2019.2/common/technology/autopilot\ap_int_base.h:359:18: note: in instantiation of member function 'ap_fixed_base&lt;56, 33, true, 5, 3, 0>::to_ap_int_base' requested here&#xD;&#xA;    Base::V = op.to_ap_int_base().V;&#xD;&#xA;                 ^&#xD;&#xA;C:/Xilinx/Vivado/2019.2/common/technology/autopilot\ap_int.h:249:9: note: in instantiation of function template specialization 'ap_int_base&lt;8, false>::ap_int_base&lt;56, 33, true, 5, 3, 0>' requested here&#xD;&#xA;      : Base((ap_fixed_base&lt;_AP_W2, _AP_I2, true, _AP_Q2, _AP_O2, _AP_N2>)op) {}&#xD;&#xA;        ^&#xD;&#xA;proximal.cpp:70:17: note: in instantiation of function template specialization 'ap_uint&lt;8>::ap_uint&lt;56, 33, 5, 3, 0>' requested here&#xD;&#xA; data_out[y][x]=eita_t(255*data_in[y][x].real());&#xD;&#xA;                ^&#xD;&#xA;2 warnings and 2 errors generated.&#xD;&#xA;Failed during preprocessing.&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1/csynth.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1/csynth.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="ISPfinal" solutionName="solution1" date="2021-01-13T16:21:22.502+0800"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <csimLog>
-        <logs message="WARNING: assign NaN to ap integer value" projectName="ISPfinal" solutionName="solution1" date="2021-01-12T17:41:23.414+0800" type="Warning"/>
-      </csimLog>
+      <synLog>
+        <logs message="WARNING: [HLS 200-40] In file included from proximal.cpp:1:&#xD;&#xA;In file included from ./proximal.h:1:&#xD;&#xA;In file included from ./fft_top.h:94:&#xD;&#xA;In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:&#xD;&#xA;In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:&#xD;&#xA;C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]&#xD;&#xA;#pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)&#xD;&#xA;        ^&#xD;&#xA;1 warning generated." projectName="ISPfinal" solutionName="solution1" date="2021-01-13T16:21:22.414+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

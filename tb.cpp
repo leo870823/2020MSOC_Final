@@ -26,7 +26,7 @@
 #define W 128
 int main(){
 	unsigned short int y,x;
-	eita_t value;
+	int value;
 // Read ground truth image
 	value=128;
 	printf("%d\n",value);
@@ -41,7 +41,7 @@ int main(){
 		for (x = 0; x < W; x++)
 		{   //printf("(x,y)=(%d,%d)\n",x,y);
 			fscanf(file_truth_R, "%d\n", &value);
-			data_R[y][x] = value;
+			data_R[y][x] = eita_t(value);
 			//printf("%d\n",int(value));
 		}
 
@@ -59,7 +59,7 @@ int main(){
 			for (x = 0; x < W; x++)
 			{
 				fscanf(file_truth_G, "%d ", &value);
-				data_G[y][x] = value;
+				data_G[y][x] = eita_t(value);
 			}
 
 		}
@@ -76,7 +76,7 @@ int main(){
 			for (x = 0; x < W; x++)
 			{
 				fscanf(file_truth_B, "%d ", &value);
-				data_B[y][x] = value;
+				data_B[y][x] = eita_t(value);
 			}
 
 		}
@@ -99,7 +99,7 @@ int main(){
 			fscanf(file_noise_R, "%d ", &value);
 			//printf("%d\n",&value);
 
-			blurred_R[y][x] = value;
+			blurred_R[y][x] = eita_t(value);
 			//printf("%d\n",blurred_R[y][x]);
 		}
 	}
@@ -116,7 +116,7 @@ int main(){
 		for (x = 0; x < W; x++)
 		{
 			fscanf(file_noise_G, "%d ", &value);
-			blurred_G[y][x] = value;
+			blurred_G[y][x] = eita_t(value);
 		}
 	}
 	fclose(file_noise_G);
@@ -134,12 +134,12 @@ int main(){
 			for (x = 0; x < W; x++)
 			{
 				fscanf(file_noise_B, "%d ", &value);
-				blurred_B[y][x] = value;
+				blurred_B[y][x] = eita_t(value);
 			}
 		}
 		fclose(file_noise_B);
 
-		 data_in_t value_for_weight;
+		 float value_for_weight;
 		 static cmpxDataIn xn_input[128][128];
 		 data_in_t REAL[128][128] ;
 		 data_in_t IMAG[128][128] ;
@@ -153,9 +153,9 @@ int main(){
 		 	for (x = 0; x < W; x++)
 		 		{
 		 			fscanf(file_REAL, "%f ", &value_for_weight);
-		 			REAL[y][x] = value_for_weight;
+		 			REAL[y][x] = data_in_t(value_for_weight);
 		 			fscanf(file_IMAG, "%f ", &value_for_weight);
-		 			IMAG[y][x] = value_for_weight ;
+		 			IMAG[y][x] = data_in_t(value_for_weight);
 		 			xn_input[y][x] = cmpxDataIn( REAL[y][x],IMAG[y][x]); //Nominator
 		 		}
 		 }
@@ -173,8 +173,8 @@ int main(){
 		 			for (x = 0; x < W; x++)
 		 			{
 		 				fscanf(file_DENOM, "%f ", &value_for_weight);
-		 				denom[y][x] = value_for_weight;
-		 				cout<<value_for_weight.to_float()<<endl;
+		 				denom[y][x] = data_in_t(value_for_weight);
+		 				//cout<<value_for_weight<<endl;
 		 			}
 		 		}
 		 		fclose(file_DENOM);
