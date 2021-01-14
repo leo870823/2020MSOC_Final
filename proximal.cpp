@@ -11,7 +11,7 @@ void ProxGS(
 	//====== Data member ======
 	bool  fft_ovflo,ifft_ovflo;
     cmpxDataIn tmp[HEIGHT][WIDTH],fft_result[HEIGHT][WIDTH];
-    cmpxDataIn MAD[HEIGHT][WIDTH];
+    //cmpxDataIn MAD[HEIGHT][WIDTH];
     fft_operation input_data_re, input_data_im,scale_const;
 
     //====== Interface ======
@@ -37,16 +37,17 @@ void ProxGS(
             	input_data_im=0;
             }
             #pragma HLS PIPELINE
-                MAD[y][x]= cmpxDataIn(data_in_t(input_data_re/FFT_SCALE),data_in_t(input_data_im/FFT_SCALE));
+                //MAD[y][x]= cmpxDataIn(data_in_t(input_data_re/FFT_SCALE),data_in_t(input_data_im/FFT_SCALE));
+            	fft_result[y][x]= cmpxDataIn(data_in_t(input_data_re/FFT_SCALE),data_in_t(input_data_im/FFT_SCALE));
 
             //printf("FFT result <24, 1>%f \n",float(MAD[y][x].real()));
             //printf("FFT result <24, 1>%f \n",float(MAD[y][x].imag()));
         }
     }
     // inverse FFT
-    fft_top_2D(0,MAD,fft_result,&ifft_ovflo);
+    fft_top_2D(0,fft_result,tmp,&ifft_ovflo);
     // cmpxDataIn to eita_t
-    S2P(fft_result,x_io);
+    S2P(tmp,x_io);
 }
 
 void P2S(eita_t data_in[HEIGHT][WIDTH],cmpxDataIn data_out[HEIGHT][WIDTH]){ //0~1

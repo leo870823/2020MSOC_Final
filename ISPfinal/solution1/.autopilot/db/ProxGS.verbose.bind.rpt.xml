@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'ProxGS'" level="0">
-<item name = "Date">Wed Jan 13 22:02:44 2021
+<item name = "Date">Thu Jan 14 15:49:08 2021
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">ISPfinal</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">611297, 611297, 6.113 ms, 6.113 ms, 611297, 611297, none</column>
+<column name="">594785, 594785, 5.948 ms, 5.948 ms, 594785, 594785, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_fft_top_2D_fu_507">fft_top_2D, 256258, 256258, 2.563 ms, 2.563 ms, 256258, 256258, none</column>
+<column name="grp_fft_top_2D_fu_452">fft_top_2D, 256258, 256258, 2.563 ms, 2.563 ms, 256258, 256258, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -40,8 +40,6 @@
 <column name=" + Loop 1.1">127, 127, 1, -, -, 128, no</column>
 <column name="- Loop 2">16511, 16511, 129, -, -, 128, no</column>
 <column name=" + Loop 2.1">127, 127, 1, -, -, 128, no</column>
-<column name="- Loop 3">16511, 16511, 129, -, -, 128, no</column>
-<column name=" + Loop 3.1">127, 127, 1, -, -, 128, no</column>
 <column name="- for_y_for_x">16407, 16407, 25, 1, 1, 16384, yes</column>
 <column name="- for_y_for_x">16436, 16436, 54, 1, 1, 16384, yes</column>
 <column name="- for_y_for_x">16394, 16394, 12, 1, 1, 16384, yes</column>

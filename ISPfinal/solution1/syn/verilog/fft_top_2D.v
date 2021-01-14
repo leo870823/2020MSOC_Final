@@ -196,7 +196,7 @@ wire   [31:0] bitcast_ln210_fu_475_p1;
 wire   [31:0] bitcast_ln223_fu_601_p1;
 wire   [31:0] bitcast_ln210_1_fu_480_p1;
 wire   [31:0] bitcast_ln223_1_fu_606_p1;
-wire   [14:0] tmp_3_fu_379_p3;
+wire   [14:0] tmp_1_fu_379_p3;
 wire   [15:0] zext_ln204_1_fu_403_p1;
 wire   [15:0] add_ln204_fu_407_p2;
 wire   [31:0] bitcast_ln204_1_fu_427_p1;
@@ -204,12 +204,12 @@ wire   [31:0] bitcast_ln204_fu_423_p1;
 wire   [15:0] zext_ln210_1_fu_457_p1;
 wire   [31:0] trunc_ln210_fu_471_p1;
 wire   [31:0] grp_fu_318_p4;
-wire   [14:0] tmp_4_fu_513_p3;
+wire   [14:0] tmp_2_fu_513_p3;
 wire   [15:0] zext_ln218_1_fu_521_p1;
 wire   [15:0] add_ln218_fu_525_p2;
 wire   [31:0] bitcast_ln218_1_fu_545_p1;
 wire   [31:0] bitcast_ln218_fu_541_p1;
-wire   [14:0] tmp_5_fu_575_p3;
+wire   [14:0] tmp_4_fu_575_p3;
 wire   [15:0] zext_ln223_1_fu_583_p1;
 wire   [31:0] trunc_ln223_fu_597_p1;
 reg   [14:0] ap_NS_fsm;
@@ -222,7 +222,7 @@ initial begin
 #0 ap_sync_reg_grp_fft_top_fu_310_ap_done = 1'b0;
 end
 
-fft_top_2D_bufferhbi #(
+fft_top_2D_bufferdEe #(
     .DataWidth( 64 ),
     .AddressRange( 128 ),
     .AddressWidth( 7 ))
@@ -236,7 +236,7 @@ buffer_out_U(
     .q0(buffer_out_q0)
 );
 
-fft_top_2D_bufferhbi #(
+fft_top_2D_bufferdEe #(
     .DataWidth( 64 ),
     .AddressRange( 128 ),
     .AddressWidth( 7 ))
@@ -884,11 +884,11 @@ assign j_fu_397_p2 = (j_0_reg_253 + 8'd1);
 
 assign k_fu_446_p2 = (k_0_reg_265 + 8'd1);
 
-assign tmp_3_fu_379_p3 = {{i_0_reg_242}, {7'd0}};
+assign tmp_1_fu_379_p3 = {{i_0_reg_242}, {7'd0}};
 
-assign tmp_4_fu_513_p3 = {{i3_0_reg_287}, {7'd0}};
+assign tmp_2_fu_513_p3 = {{i3_0_reg_287}, {7'd0}};
 
-assign tmp_5_fu_575_p3 = {{i4_0_reg_299}, {7'd0}};
+assign tmp_4_fu_575_p3 = {{i4_0_reg_299}, {7'd0}};
 
 assign trunc_ln210_fu_471_p1 = buffer_out_q0[31:0];
 
@@ -898,7 +898,7 @@ assign zext_ln199_1_fu_351_p1 = phi_ln199_1_reg_231;
 
 assign zext_ln199_fu_334_p1 = phi_ln199_reg_220;
 
-assign zext_ln203_fu_387_p1 = tmp_3_fu_379_p3;
+assign zext_ln203_fu_387_p1 = tmp_1_fu_379_p3;
 
 assign zext_ln204_1_fu_403_p1 = j_0_reg_253;
 
@@ -914,13 +914,13 @@ assign zext_ln210_fu_452_p1 = k_0_reg_265;
 
 assign zext_ln217_fu_497_p1 = j2_0_reg_276;
 
-assign zext_ln218_1_fu_521_p1 = tmp_4_fu_513_p3;
+assign zext_ln218_1_fu_521_p1 = tmp_2_fu_513_p3;
 
 assign zext_ln218_2_fu_530_p1 = add_ln218_fu_525_p2;
 
 assign zext_ln218_fu_536_p1 = i3_0_reg_287;
 
-assign zext_ln223_1_fu_583_p1 = tmp_5_fu_575_p3;
+assign zext_ln223_1_fu_583_p1 = tmp_4_fu_575_p3;
 
 assign zext_ln223_2_fu_592_p1 = add_ln223_reg_728;
 

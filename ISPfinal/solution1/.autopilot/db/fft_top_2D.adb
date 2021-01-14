@@ -1394,7 +1394,7 @@
             <Obj>
               <type>0</type>
               <id>43</id>
-              <name>tmp_3</name>
+              <name>tmp_1</name>
               <fileName>fft_top.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>204</lineNumber>
@@ -1418,7 +1418,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_3_fu_379_p3</rtlName>
+              <rtlName>tmp_1_fu_379_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>15</bitwidth>
@@ -4035,7 +4035,7 @@
             <Obj>
               <type>0</type>
               <id>119</id>
-              <name>tmp_4</name>
+              <name>tmp_2</name>
               <fileName>fft_top.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>218</lineNumber>
@@ -4059,7 +4059,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_4_fu_513_p3</rtlName>
+              <rtlName>tmp_2_fu_513_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>15</bitwidth>
@@ -5053,7 +5053,7 @@
             <Obj>
               <type>0</type>
               <id>145</id>
-              <name>tmp_5</name>
+              <name>tmp_4</name>
               <fileName>fft_top.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>223</lineNumber>
@@ -5077,7 +5077,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_5_fu_575_p3</rtlName>
+              <rtlName>tmp_4_fu_575_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>15</bitwidth>
@@ -14305,7 +14305,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_3_fu_379</first>
+        <first>tmp_1_fu_379</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -14313,7 +14313,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_4_fu_513</first>
+        <first>tmp_2_fu_513</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -14321,7 +14321,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_5_fu_575</first>
+        <first>tmp_4_fu_575</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

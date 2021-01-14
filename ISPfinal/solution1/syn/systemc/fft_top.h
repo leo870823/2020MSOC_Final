@@ -17,8 +17,8 @@
 #include "fifo_w16_d2_A.h"
 #include "fifo_w64_d128_A.h"
 #include "fifo_w8_d2_A.h"
-#include "start_for_fft_confYi.h"
-#include "start_for_dummy_pg8j.h"
+#include "start_for_fft_conbkb.h"
+#include "start_for_dummy_pcud.h"
 
 namespace ap_rtl {
 
@@ -75,8 +75,8 @@ struct fft_top : public sc_module {
     fifo_w64_d128_A* xn_channel_U;
     fifo_w64_d128_A* xk_channel_U;
     fifo_w8_d2_A* fft_status_data_V_U;
-    start_for_fft_confYi* start_for_fft_confYi_U;
-    start_for_dummy_pg8j* start_for_dummy_pg8j_U;
+    start_for_fft_conbkb* start_for_fft_conbkb_U;
+    start_for_dummy_pcud* start_for_dummy_pcud_U;
     sc_signal< sc_logic > dummy_proc_fe_1_U0_ap_start;
     sc_signal< sc_logic > dummy_proc_fe_1_U0_start_full_n;
     sc_signal< sc_logic > dummy_proc_fe_1_U0_ap_done;

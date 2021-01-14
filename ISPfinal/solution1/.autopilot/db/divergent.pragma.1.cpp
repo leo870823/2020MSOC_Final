@@ -6363,7 +6363,7 @@ inline bool operator!=(
 
 typedef ap_uint<8> eita_t;
 # 13 "./divergent.h"
-void my_filter_v1( eita_t f[128][128],eita_t adjChImg[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128]);
+void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128]);
 void Relax(eita_t x[128][128],eita_t x_old[128][128],eita_t x_bar[128][128]);
 # 2 "divergent.cpp" 2
 void my_filter_fx( eita_t data_out[128][128],
@@ -6416,7 +6416,8 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
   }
 }
 
-void my_filter_v1( eita_t f[128][128],
+void my_filter_v1( eita_t f_n[128][128],
+       eita_t f[128][128],
        eita_t adjChImg[128][128],
        eita_t g1 [128][128],
        eita_t g2 [128][128],
@@ -6427,7 +6428,7 @@ void my_filter_v1( eita_t f[128][128],
        eita_t g7 [128][128]
          )
 
-{_ssdm_SpecArrayDimSize(f, 128);_ssdm_SpecArrayDimSize(adjChImg, 128);_ssdm_SpecArrayDimSize(g1, 128);_ssdm_SpecArrayDimSize(g2, 128);_ssdm_SpecArrayDimSize(g3, 128);_ssdm_SpecArrayDimSize(g4, 128);_ssdm_SpecArrayDimSize(g5, 128);_ssdm_SpecArrayDimSize(g6, 128);_ssdm_SpecArrayDimSize(g7, 128);
+{_ssdm_SpecArrayDimSize(f_n, 128);_ssdm_SpecArrayDimSize(f, 128);_ssdm_SpecArrayDimSize(adjChImg, 128);_ssdm_SpecArrayDimSize(g1, 128);_ssdm_SpecArrayDimSize(g2, 128);_ssdm_SpecArrayDimSize(g3, 128);_ssdm_SpecArrayDimSize(g4, 128);_ssdm_SpecArrayDimSize(g5, 128);_ssdm_SpecArrayDimSize(g6, 128);_ssdm_SpecArrayDimSize(g7, 128);
 
   eita_t fx [128][128];
   eita_t fy [128][128];
@@ -6441,7 +6442,7 @@ void my_filter_v1( eita_t f[128][128],
 
   eita_t Sxf [128][128];
   eita_t Syf [128][128];
-# 86 "divergent.cpp"
+# 87 "divergent.cpp"
   eita_t gx [128][128];
   eita_t gy [128][128];
   eita_t g3x [128][128];
@@ -6487,13 +6488,13 @@ void my_filter_v1( eita_t f[128][128],
   Loop_x_1 : for (int x = 0; x < 128; x++)
      {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- g1[y][x] = g1[y][x] + eita_t(0.4) * fx[y][x] ;
-   g2[y][x] = g2[y][x] + eita_t(0.4) * fy[y][x] ;
-   g3[y][x] = g3[y][x] + eita_t(0.4) * fxx[y][x] ;
-   g4[y][x] = g4[y][x] + eita_t(0.4) * fyy[y][x] ;
-   g5[y][x] = g5[y][x] + eita_t(0.4) * fxy[y][x] ;
-   g6[y][x] = g6[y][x] + eita_t(0.4) * Sxf[y][x] ;
-   g7[y][x] = g7[y][x] + eita_t(0.4) * Syf[y][x] ;
+ g1[y][x] = g1[y][x] + eita_t(1.0) * fx[y][x] ;
+   g2[y][x] = g2[y][x] + eita_t(1.0) * fy[y][x] ;
+   g3[y][x] = g3[y][x] + eita_t(1.0) * fxx[y][x] ;
+   g4[y][x] = g4[y][x] + eita_t(1.0) * fyy[y][x] ;
+   g5[y][x] = g5[y][x] + eita_t(1.0) * fxy[y][x] ;
+   g6[y][x] = g6[y][x] + eita_t(1.0) * Sxf[y][x] ;
+   g7[y][x] = g7[y][x] + eita_t(1.0) * Syf[y][x] ;
    if(g1[y][x]>1)
     g1[y][x] = 1 ;
    if(g2[y][x]>1)
@@ -6555,7 +6556,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
   Loop_x_4 : for (int x = 0; x < 128; x++)
      {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- f[y][x] = f[y][x] - eita_t(0.02) * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
+ f_n[y][x] = f_n[y][x] - eita_t(0.02) * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
 
         }
     }

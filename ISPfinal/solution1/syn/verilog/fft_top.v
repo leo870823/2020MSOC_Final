@@ -270,7 +270,7 @@ fifo_w8_d2_A fft_status_data_V_U(
     .if_read(dummy_proc_be_1_U0_status_in_data_V_read)
 );
 
-start_for_fft_confYi start_for_fft_confYi_U(
+start_for_fft_conbkb start_for_fft_conbkb_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
@@ -283,7 +283,7 @@ start_for_fft_confYi start_for_fft_confYi_U(
     .if_read(fft_config1_U0_ap_ready)
 );
 
-start_for_dummy_pg8j start_for_dummy_pg8j_U(
+start_for_dummy_pcud start_for_dummy_pcud_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),

@@ -8,7 +8,7 @@
 <unit>ns</unit>
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
-<TopModelName>cross_channel_deblur</TopModelName>
+<TopModelName>ProxGS</TopModelName>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
 </UserAssignments>
@@ -21,37 +21,63 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>857364</Best-caseLatency>
-<Average-caseLatency>857364</Average-caseLatency>
-<Worst-caseLatency>857364</Worst-caseLatency>
-<Best-caseRealTimeLatency>8.574 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>8.574 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>8.574 ms</Worst-caseRealTimeLatency>
-<Interval-min>857365</Interval-min>
-<Interval-max>857365</Interval-max>
+<Best-caseLatency>594785</Best-caseLatency>
+<Average-caseLatency>594785</Average-caseLatency>
+<Worst-caseLatency>594785</Worst-caseLatency>
+<Best-caseRealTimeLatency>5.948 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>5.948 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>5.948 ms</Worst-caseRealTimeLatency>
+<Interval-min>594786</Interval-min>
+<Interval-max>594786</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
+<Loop1>
+<TripCount>128</TripCount>
+<Latency>16511</Latency>
+<IterationLatency>129</IterationLatency>
+<Loop1.1>
+<TripCount>128</TripCount>
+<Latency>127</Latency>
+<IterationLatency>1</IterationLatency>
+</Loop1.1>
+</Loop1>
+<Loop2>
+<TripCount>128</TripCount>
+<Latency>16511</Latency>
+<IterationLatency>129</IterationLatency>
+<Loop2.1>
+<TripCount>128</TripCount>
+<Latency>127</Latency>
+<IterationLatency>1</IterationLatency>
+</Loop2.1>
+</Loop2>
 <for_y_for_x>
 <TripCount>16384</TripCount>
-<Latency>16384</Latency>
+<Latency>16407</Latency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>1</PipelineDepth>
+<PipelineDepth>25</PipelineDepth>
 </for_y_for_x>
 <for_y_for_x>
 <TripCount>16384</TripCount>
-<Latency>16384</Latency>
+<Latency>16436</Latency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>2</PipelineDepth>
+<PipelineDepth>54</PipelineDepth>
+</for_y_for_x>
+<for_y_for_x>
+<TripCount>16384</TripCount>
+<Latency>16394</Latency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>12</PipelineDepth>
 </for_y_for_x>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>428</BRAM_18K>
-<DSP48E>58</DSP48E>
-<FF>27404</FF>
-<LUT>30054</LUT>
+<BRAM_18K>146</BRAM_18K>
+<DSP48E>64</DSP48E>
+<FF>27003</FF>
+<LUT>26575</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -66,7 +92,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>cross_channel_deblur</Object>
+<Object>ProxGS</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -77,7 +103,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>cross_channel_deblur</Object>
+<Object>ProxGS</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -88,7 +114,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>cross_channel_deblur</Object>
+<Object>ProxGS</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -99,7 +125,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>cross_channel_deblur</Object>
+<Object>ProxGS</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -110,7 +136,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>cross_channel_deblur</Object>
+<Object>ProxGS</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -121,7 +147,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>cross_channel_deblur</Object>
+<Object>ProxGS</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -131,8 +157,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>Img_V_address0</name>
-<Object>Img_V</Object>
+<name>x_io_V_address0</name>
+<Object>x_io_V</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -143,8 +169,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>Img_V_ce0</name>
-<Object>Img_V</Object>
+<name>x_io_V_ce0</name>
+<Object>x_io_V</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -155,8 +181,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>Img_V_we0</name>
-<Object>Img_V</Object>
+<name>x_io_V_we0</name>
+<Object>x_io_V</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -167,8 +193,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>Img_V_d0</name>
-<Object>Img_V</Object>
+<name>x_io_V_d0</name>
+<Object>x_io_V</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -179,80 +205,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>Img_V_q0</name>
-<Object>Img_V</Object>
-<Type>array</Type>
-<Scope></Scope>
-<IOProtocol>ap_memory</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>8</Bits>
-<Attribute>data</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>adjChImg_V_address0</name>
-<Object>adjChImg_V</Object>
-<Type>array</Type>
-<Scope></Scope>
-<IOProtocol>ap_memory</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>14</Bits>
-<Attribute>address</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>adjChImg_V_ce0</name>
-<Object>adjChImg_V</Object>
-<Type>array</Type>
-<Scope></Scope>
-<IOProtocol>ap_memory</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>adjChImg_V_q0</name>
-<Object>adjChImg_V</Object>
-<Type>array</Type>
-<Scope></Scope>
-<IOProtocol>ap_memory</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>8</Bits>
-<Attribute>data</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>adjChImg_V_address1</name>
-<Object>adjChImg_V</Object>
-<Type>array</Type>
-<Scope></Scope>
-<IOProtocol>ap_memory</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>14</Bits>
-<Attribute>address</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>adjChImg_V_ce1</name>
-<Object>adjChImg_V</Object>
-<Type>array</Type>
-<Scope></Scope>
-<IOProtocol>ap_memory</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-<CType>int</CType>
-</RtlPorts>
-<RtlPorts>
-<name>adjChImg_V_q1</name>
-<Object>adjChImg_V</Object>
+<name>x_io_V_q0</name>
+<Object>x_io_V</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>

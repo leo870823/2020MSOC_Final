@@ -247,7 +247,7 @@ architecture behav of fft_top is
     end component;
 
 
-    component start_for_fft_confYi IS
+    component start_for_fft_conbkb IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
@@ -262,7 +262,7 @@ architecture behav of fft_top is
     end component;
 
 
-    component start_for_dummy_pg8j IS
+    component start_for_dummy_pcud IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
@@ -402,7 +402,7 @@ begin
         if_empty_n => fft_status_data_V_empty_n,
         if_read => dummy_proc_be_1_U0_status_in_data_V_read);
 
-    start_for_fft_confYi_U : component start_for_fft_confYi
+    start_for_fft_conbkb_U : component start_for_fft_conbkb
     port map (
         clk => ap_clk,
         reset => ap_rst,
@@ -415,7 +415,7 @@ begin
         if_empty_n => start_for_fft_config1_U0_empty_n,
         if_read => fft_config1_U0_ap_ready);
 
-    start_for_dummy_pg8j_U : component start_for_dummy_pg8j
+    start_for_dummy_pcud_U : component start_for_dummy_pcud
     port map (
         clk => ap_clk,
         reset => ap_rst,

@@ -29048,7 +29048,16 @@ void P2S(eita_t data_in[128][128],cmpxDataIn data_out[128][128]);
 void S2P(cmpxDataIn data_in[128][128],eita_t data_out[128][128]);
 void ProxGS(eita_t x_io[128][128],proxGSDataIn coe_a[128][128],fft_operation coe_b[128][128]);
 # 2 "proximal.cpp" 2
-const int FFT_SCALE =1<<20 ;
+# 1 "./divergent.h" 1
+# 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_int.h" 1
+# 2 "./divergent.h" 2
+
+typedef ap_uint<8> eita_t;
+# 13 "./divergent.h"
+void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128]);
+void Relax(eita_t x[128][128],eita_t x_old[128][128],eita_t x_bar[128][128]);
+# 3 "proximal.cpp" 2
+const int FFT_SCALE =1<<17 ;
 
 void ProxGS(
     eita_t x_io[128][128],
@@ -29059,7 +29068,7 @@ void ProxGS(
 
  bool fft_ovflo,ifft_ovflo;
     cmpxDataIn tmp[128][128],fft_result[128][128];
-    cmpxDataIn MAD[128][128];
+
     fft_operation input_data_re, input_data_im,scale_const;
 
 
@@ -29078,23 +29087,24 @@ void ProxGS(
 
 
             if(coe_b[y][x]!=0) {
-             input_data_re=(255.0*(fft_result[y][x].real())+coe_a[y][x].real())/coe_b[y][x];
-             input_data_im=(255.0*(fft_result[y][x].imag())+coe_a[y][x].imag())/coe_b[y][x];
+             input_data_re=(255.0*(fft_result[y][x].real())+2*float(0.02)*coe_a[y][x].real())/coe_b[y][x];
+             input_data_im=(255.0*(fft_result[y][x].imag())+2*float(0.02)*coe_a[y][x].imag())/coe_b[y][x];
             }else {
              input_data_re=0;
              input_data_im=0;
             }
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- MAD[y][x]= cmpxDataIn(data_in_t(input_data_re/FFT_SCALE),data_in_t(input_data_im/FFT_SCALE));
+
+ fft_result[y][x]= cmpxDataIn(data_in_t(input_data_re/FFT_SCALE),data_in_t(input_data_im/FFT_SCALE));
 
 
 
         }
     }
 
-    fft_top_2D(0,MAD,fft_result,&ifft_ovflo);
+    fft_top_2D(0,fft_result,tmp,&ifft_ovflo);
 
-    S2P(fft_result,x_io);
+    S2P(tmp,x_io);
 }
 
 void P2S(eita_t data_in[128][128],cmpxDataIn data_out[128][128]){_ssdm_SpecArrayDimSize(data_in, 128);_ssdm_SpecArrayDimSize(data_out, 128);

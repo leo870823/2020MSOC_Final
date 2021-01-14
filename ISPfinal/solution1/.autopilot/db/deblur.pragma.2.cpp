@@ -29055,7 +29055,7 @@ void ProxGS(eita_t x_io[128][128],proxGSDataIn coe_a[128][128],fft_operation coe
 
 typedef ap_uint<8> eita_t;
 # 13 "./divergent.h"
-void my_filter_v1( eita_t f[128][128],eita_t adjChImg[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128]);
+void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128]);
 void Relax(eita_t x[128][128],eita_t x_old[128][128],eita_t x_bar[128][128]);
 # 3 "./deblur.h" 2
 void array_initialize(eita_t y_1[128][128],
@@ -29070,7 +29070,15 @@ void cross_channel_deblur(eita_t Img[128][128],
                           cmpxDataIn coe_a[128][128],
                           eita_t coe_b[128][128]);
 void array_copy(eita_t data_in[128][128],eita_t data_out[128][128]);
-void DEBLUR(eita_t refImg_R[128][128],eita_t adjChImg_G[128][128],eita_t adjChImg_B[128][128],proxGSDataIn coe_a[128][128],fft_operation coe_b[128][128]);
+void DEBLUR(eita_t refImg_R[128][128],
+      eita_t adjChImg_G[128][128],
+            eita_t adjChImg_B[128][128],
+   proxGSDataIn nominator_R[128][128],
+   fft_operation denominator_R[128][128],
+   proxGSDataIn nominator_G[128][128],
+   fft_operation denominator_G[128][128],
+   proxGSDataIn nominator_B[128][128],
+   fft_operation denominator_B[128][128]);
 # 2 "deblur.cpp" 2
 
 void array_display(int k,eita_t data_out[128][128])
@@ -29148,14 +29156,14 @@ void cross_channel_deblur(eita_t Img[128][128],
     array_copy(Img,x);
     array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7);
 
-    for_iteration: for(int k=0;k<1;k++) {
+    for_iteration: for(int k=0;k<3;k++) {
 
 
         array_copy(x,x_old);
 
-        my_filter_v1(x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7);
+        my_filter_v1(x,x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7);
 
-        ProxGS(x_bar,coe_a,coe_b);
+        ProxGS(x,coe_a,coe_b);
 
         Relax(x,x_old,x_bar);
     }
@@ -29166,9 +29174,13 @@ void cross_channel_deblur(eita_t Img[128][128],
 void DEBLUR(eita_t refImg_R[128][128],
       eita_t adjChImg_G[128][128],
             eita_t adjChImg_B[128][128],
-   proxGSDataIn coe_a[128][128],
-   fft_operation coe_b[128][128])
-{_ssdm_SpecArrayDimSize(refImg_R, 128);_ssdm_SpecArrayDimSize(adjChImg_G, 128);_ssdm_SpecArrayDimSize(adjChImg_B, 128);_ssdm_SpecArrayDimSize(coe_a, 128);_ssdm_SpecArrayDimSize(coe_b, 128); cross_channel_deblur( refImg_R,refImg_R,coe_a,coe_b);
-    cross_channel_deblur(adjChImg_G,refImg_R,coe_a,coe_b);
-    cross_channel_deblur(adjChImg_B,refImg_R,coe_a,coe_b);
+   proxGSDataIn nominator_R[128][128],
+   fft_operation denominator_R[128][128],
+   proxGSDataIn nominator_G[128][128],
+   fft_operation denominator_G[128][128],
+   proxGSDataIn nominator_B[128][128],
+   fft_operation denominator_B[128][128])
+{_ssdm_SpecArrayDimSize(refImg_R, 128);_ssdm_SpecArrayDimSize(adjChImg_G, 128);_ssdm_SpecArrayDimSize(adjChImg_B, 128);_ssdm_SpecArrayDimSize(nominator_R, 128);_ssdm_SpecArrayDimSize(denominator_R, 128);_ssdm_SpecArrayDimSize(nominator_G, 128);_ssdm_SpecArrayDimSize(denominator_G, 128);_ssdm_SpecArrayDimSize(nominator_B, 128);_ssdm_SpecArrayDimSize(denominator_B, 128);
+    cross_channel_deblur(adjChImg_G,refImg_R,nominator_G,denominator_G);
+    cross_channel_deblur(adjChImg_B,refImg_R,nominator_B,denominator_B);
 }

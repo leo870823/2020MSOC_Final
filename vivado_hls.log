@@ -1,58 +1,295 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'leo870823' on host 'desktop-t3r8mjh' (Windows NT_amd64 version 6.2) on Thu Jan 14 15:07:14 +0800 2021
+INFO: [HLS 200-10] For user 'leo870823' on host 'desktop-t3r8mjh' (Windows NT_amd64 version 6.2) on Thu Jan 14 15:48:22 +0800 2021
 INFO: [HLS 200-10] In directory 'C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final'
-Sourcing Tcl script 'C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1/csim.tcl'
+Sourcing Tcl script 'C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1/csynth.tcl'
 INFO: [HLS 200-10] Opening project 'C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal'.
+INFO: [HLS 200-10] Adding design file 'deblur.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'deblur.h' to the project
+INFO: [HLS 200-10] Adding design file 'divergent.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'divergent.h' to the project
+INFO: [HLS 200-10] Adding design file 'fft_top.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'fft_top.h' to the project
+INFO: [HLS 200-10] Adding design file 'proximal.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'proximal.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/DENOM.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/DENOM2.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/DENOM3.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/IMAGINARY.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/IMAGINARY2.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/IMAGINARY3.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/I_blurred_B.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/I_blurred_G.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/I_blurred_R.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/REAL.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/REAL2.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/DeconvolutionColorPrior/REAL3.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/ground_truth_B.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/ground_truth_G.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb_files/ground_truth_R.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'tb.cpp' to the project
 INFO: [HLS 200-10] Opening solution 'C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../tb.cpp in debug mode
-   Generating csim.exe
-In file included from C:/Xilinx/Vivado/2019.2/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
-                 from C:/Xilinx/Vivado/2019.2/include/hls_fpo.h:186,
-                 from C:/Xilinx/Vivado/2019.2/include/hls_half.h:44,
-                 from C:/Xilinx/Vivado/2019.2/include/etc/ap_private.h:90,
-                 from C:/Xilinx/Vivado/2019.2/include/ap_common.h:641,
-                 from C:/Xilinx/Vivado/2019.2/include/ap_int.h:54,
-                 from C:/Xilinx/Vivado/2019.2/include/ap_axi_sdata.h:86,
-                 from C:/Xilinx/Vivado/2019.2/include/hls/hls_axi_io.h:39,
-                 from C:/Xilinx/Vivado/2019.2/include/hls_video.h:48,
-                 from ../../../../tb.cpp:7:
-C:/Xilinx/Vivado/2019.2/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from C:/Xilinx/Vivado/2019.2/include/hls_fpo.h:186:0,
-                 from C:/Xilinx/Vivado/2019.2/include/hls_half.h:44,
-                 from C:/Xilinx/Vivado/2019.2/include/etc/ap_private.h:90,
-                 from C:/Xilinx/Vivado/2019.2/include/ap_common.h:641,
-                 from C:/Xilinx/Vivado/2019.2/include/ap_int.h:54,
-                 from C:/Xilinx/Vivado/2019.2/include/ap_axi_sdata.h:86,
-                 from C:/Xilinx/Vivado/2019.2/include/hls/hls_axi_io.h:39,
-                 from C:/Xilinx/Vivado/2019.2/include/hls_video.h:48,
-                 from ../../../../tb.cpp:7:
-C:/Xilinx/Vivado/2019.2/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from C:/Xilinx/Vivado/2019.2/include/hls_fft_x_complex.h:68:0,
-                 from C:/Xilinx/Vivado/2019.2/include/hls_fft.h:912,
-                 from ../../../../fft_top.h:94,
-                 from ../../../../proximal.h:1,
-                 from ../../../../deblur.h:1,
-                 from ../../../../tb.cpp:18:
-C:/Xilinx/Vivado/2019.2/include/hls_x_complex.h:43:185: note: #pragma message: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.
- #pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
-                                                                                                                                                                                         ^
-128
-Open success file_truth_R
-Open success file_truth_G
-Open success file_truth_B
-Open success I_blurred_R.txt
-Open success I_blurred_G.txt
-Open success I_blurred_B.txt
-output file C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_R.bmp :
-output file C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_G.bmp :
-output file C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_B.bmp :
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'proximal.cpp' ... 
+WARNING: [HLS 200-40] In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from proximal.cpp:1:
+In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'fft_top.cpp' ... 
+WARNING: [HLS 200-40] In file included from fft_top.cpp:93:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from fft_top.cpp:1:
+In file included from fft_top.cpp:93:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'divergent.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'deblur.cpp' ... 
+WARNING: [HLS 200-40] In file included from deblur.cpp:1:
+In file included from ./deblur.h:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from deblur.cpp:1:
+In file included from deblur.cpp:1:
+In file included from ./deblur.h:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 211.047 ; gain = 118.582
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 211.047 ; gain = 118.582
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:42 . Memory (MB): peak = 250.371 ; gain = 157.906
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'S2P' (proximal.cpp:75) automatically.
+INFO: [XFORM 203-602] Inlining function 'P2S' into 'ProxGS' (proximal.cpp:22) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:42 . Memory (MB): peak = 310.855 ; gain = 218.391
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'fft_config.data.V' (fft_top.cpp:180).
+INFO: [XFORM 203-1101] Packing variable 'buffer_in' (fft_top.cpp:199) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'buffer_out' (fft_top.cpp:199) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'S2P' (proximal.cpp:75) automatically.
+INFO: [XFORM 203-602] Inlining function 'P2S' into 'ProxGS' (proximal.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'S2P' into 'ProxGS' (proximal.cpp:50) automatically.
+INFO: [XFORM 203-712] Applying dataflow to function 'fft_top', detected/extracted 3 process function(s): 
+	 'dummy_proc_fe.1'
+	 'hls::fft<config1>'
+	 'dummy_proc_be.1'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:43 . Memory (MB): peak = 397.406 ; gain = 304.941
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:55:6) in function 'ProxGS'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:27:6) in function 'ProxGS'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:69:6) in function 'ProxGS'.
+WARNING: [XFORM 203-631] Renaming function 'hls::fft<config1>' to 'fft<config1>' (C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:630)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:199:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:204:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out._M_real' (fft_top.cpp:210:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:218:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out._M_real' (fft_top.cpp:223:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out' (fft_top.cpp:161:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_real' (proximal.cpp:13:50)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_imag' (proximal.cpp:13:50)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_real' (proximal.cpp:59:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'fft_result._M_real' (proximal.cpp:41:2)
+WARNING: [HLS 200-657] Generating channel fft_config_data_V that flows backwards in the dataflow region.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:44 . Memory (MB): peak = 467.098 ; gain = 374.633
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'ProxGS' ...
+WARNING: [SYN 201-103] Legalizing function name 'dummy_proc_fe.1' to 'dummy_proc_fe_1'.
+WARNING: [SYN 201-103] Legalizing function name 'fft<config1>' to 'fft_config1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'dummy_proc_be.1' to 'dummy_proc_be_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dummy_proc_fe_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 44.417 seconds; current allocated memory: 397.206 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.085 seconds; current allocated memory: 397.316 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Skip scheduling the IP block.
+INFO: [HLS 200-111]  Elapsed time: 0.082 seconds; current allocated memory: 397.366 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.072 seconds; current allocated memory: 397.384 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dummy_proc_be_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.098 seconds; current allocated memory: 397.425 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 397.514 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.083 seconds; current allocated memory: 397.576 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.198 seconds; current allocated memory: 398.013 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_top_2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.319 seconds; current allocated memory: 398.359 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.186 seconds; current allocated memory: 398.738 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProxGS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 25.
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 54.
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.485 seconds; current allocated memory: 399.560 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.466 seconds; current allocated memory: 400.750 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dummy_proc_fe_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dummy_proc_fe_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.545 seconds; current allocated memory: 401.101 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_config1_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.136 seconds; current allocated memory: 401.221 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dummy_proc_be_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dummy_proc_be_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.401 seconds; current allocated memory: 401.403 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'start_for_fft_config1_U0' to 'start_for_fft_conbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_dummy_proc_be_1_U0' to 'start_for_dummy_pcud' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_top'.
+INFO: [HLS 200-111]  Elapsed time: 0.125 seconds; current allocated memory: 401.804 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_top_2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'fft_top_2D_buffer_out' to 'fft_top_2D_bufferdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'fft_top_2D_buffer_in' to 'fft_top_2D_buffereOg' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_top_2D'.
+INFO: [HLS 200-111]  Elapsed time: 0.422 seconds; current allocated memory: 402.546 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ProxGS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'ProxGS/x_io_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ProxGS/coe_a_M_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ProxGS/coe_a_M_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ProxGS/coe_b' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'ProxGS' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'ProxGS_fft_result_M_real' to 'ProxGS_fft_resultfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_fft_result_M_imag' to 'ProxGS_fft_resultg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_fmul_32ns_32ns_32_4_max_dsp_1' to 'ProxGS_fmul_32ns_hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_fdiv_32ns_32ns_32_16_1' to 'ProxGS_fdiv_32ns_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_sitofp_32ns_32_6_1' to 'ProxGS_sitofp_32njbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_fptrunc_64ns_32_2_1' to 'ProxGS_fptrunc_64kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_fpext_32ns_64_2_1' to 'ProxGS_fpext_32nslbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_fcmp_32ns_32ns_1_2_1' to 'ProxGS_fcmp_32ns_mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_dadd_64ns_64ns_64_5_full_dsp_1' to 'ProxGS_dadd_64ns_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_dmul_64ns_64ns_64_6_max_dsp_1' to 'ProxGS_dmul_64ns_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS_ddiv_64ns_64ns_64_31_1' to 'ProxGS_ddiv_64ns_pcA' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_dadd_64ns_ncg': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_ddiv_64ns_pcA': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_dmul_64ns_ocq': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_fcmp_32ns_mb6': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_fdiv_32ns_ibs': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_fmul_32ns_hbi': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_fpext_32nslbW': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_fptrunc_64kbM': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ProxGS_sitofp_32njbC': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ProxGS'.
+INFO: [HLS 200-111]  Elapsed time: 0.68 seconds; current allocated memory: 405.516 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.29 MHz
+INFO: [RTMG 210-285] Implementing FIFO 'fft_config_data_V_U(fifo_w16_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'xn_channel_U(fifo_w64_d128_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'xk_channel_U(fifo_w64_d128_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_status_data_V_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_fft_conbkb_U(start_for_fft_conbkb)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_dummy_pcud_U(start_for_dummy_pcud)' using Shift Registers.
+INFO: [RTMG 210-278] Implementing memory 'fft_top_2D_bufferdEe_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ProxGS_tmp_M_real_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ProxGS_fft_resultfYi_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:13 ; elapsed = 00:00:52 . Memory (MB): peak = 491.281 ; gain = 398.816
+INFO: [VHDL 208-304] Generating VHDL RTL for ProxGS.
+INFO: [VLOG 209-307] Generating Verilog RTL for ProxGS.
+INFO: [HLS 200-112] Total elapsed time: 52.39 seconds; peak allocated memory: 405.516 MB.

@@ -1,16 +1,6 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>Img_V</name>
-<CType>
-<TypeName>ap_uint 8</TypeName>
-<TypeWidth>8</TypeWidth>
-<PhysicalWidth>8</PhysicalWidth>
-</CType>
-<CFractionWidth>0</CFractionWidth>
-<InvalidType>0</InvalidType>
-</RtlPorts>
-<RtlPorts>
-<name>adjChImg_V</name>
+<name>x_io_V</name>
 <CType>
 <TypeName>ap_uint 8</TypeName>
 <TypeWidth>8</TypeWidth>

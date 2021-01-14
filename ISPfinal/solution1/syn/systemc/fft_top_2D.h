@@ -12,7 +12,7 @@
 #include "AESL_pkg.h"
 
 #include "fft_top.h"
-#include "fft_top_2D_bufferhbi.h"
+#include "fft_top_2D_bufferdEe.h"
 
 namespace ap_rtl {
 
@@ -51,8 +51,8 @@ struct fft_top_2D : public sc_module {
 
     sc_trace_file* mVcdFile;
 
-    fft_top_2D_bufferhbi* buffer_out_U;
-    fft_top_2D_bufferhbi* buffer_in_U;
+    fft_top_2D_bufferdEe* buffer_out_U;
+    fft_top_2D_bufferdEe* buffer_in_U;
     fft_top* grp_fft_top_fu_310;
     sc_signal< sc_lv<15> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
@@ -165,7 +165,7 @@ struct fft_top_2D : public sc_module {
     sc_signal< sc_lv<32> > bitcast_ln223_fu_601_p1;
     sc_signal< sc_lv<32> > bitcast_ln210_1_fu_480_p1;
     sc_signal< sc_lv<32> > bitcast_ln223_1_fu_606_p1;
-    sc_signal< sc_lv<15> > tmp_3_fu_379_p3;
+    sc_signal< sc_lv<15> > tmp_1_fu_379_p3;
     sc_signal< sc_lv<16> > zext_ln204_1_fu_403_p1;
     sc_signal< sc_lv<16> > add_ln204_fu_407_p2;
     sc_signal< sc_lv<32> > bitcast_ln204_1_fu_427_p1;
@@ -173,12 +173,12 @@ struct fft_top_2D : public sc_module {
     sc_signal< sc_lv<16> > zext_ln210_1_fu_457_p1;
     sc_signal< sc_lv<32> > trunc_ln210_fu_471_p1;
     sc_signal< sc_lv<32> > grp_fu_318_p4;
-    sc_signal< sc_lv<15> > tmp_4_fu_513_p3;
+    sc_signal< sc_lv<15> > tmp_2_fu_513_p3;
     sc_signal< sc_lv<16> > zext_ln218_1_fu_521_p1;
     sc_signal< sc_lv<16> > add_ln218_fu_525_p2;
     sc_signal< sc_lv<32> > bitcast_ln218_1_fu_545_p1;
     sc_signal< sc_lv<32> > bitcast_ln218_fu_541_p1;
-    sc_signal< sc_lv<15> > tmp_5_fu_575_p3;
+    sc_signal< sc_lv<15> > tmp_4_fu_575_p3;
     sc_signal< sc_lv<16> > zext_ln223_1_fu_583_p1;
     sc_signal< sc_lv<32> > trunc_ln223_fu_597_p1;
     sc_signal< sc_lv<15> > ap_NS_fsm;
@@ -306,9 +306,9 @@ struct fft_top_2D : public sc_module {
     void thread_out_M_real_ce0();
     void thread_out_M_real_d0();
     void thread_out_M_real_we0();
-    void thread_tmp_3_fu_379_p3();
-    void thread_tmp_4_fu_513_p3();
-    void thread_tmp_5_fu_575_p3();
+    void thread_tmp_1_fu_379_p3();
+    void thread_tmp_2_fu_513_p3();
+    void thread_tmp_4_fu_575_p3();
     void thread_trunc_ln210_fu_471_p1();
     void thread_trunc_ln223_fu_597_p1();
     void thread_zext_ln199_1_fu_351_p1();

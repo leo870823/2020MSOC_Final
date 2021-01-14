@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 43
-set name cross_channel_deblbW
+set id 26
+set name ProxGS_fmul_32ns_hbi
 set corename simcore_fmul
 set op fmul
 set stage_num 4
@@ -91,8 +91,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 45
-set name cross_channel_debmb6
+set id 30
+set name ProxGS_fdiv_32ns_ibs
 set corename simcore_fdiv
 set op fdiv
 set stage_num 16
@@ -179,8 +179,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 46
-set name cross_channel_debncg
+set id 31
+set name ProxGS_sitofp_32njbC
 set corename simcore_sitofp
 set op sitofp
 set stage_num 6
@@ -261,8 +261,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 47
-set name cross_channel_debocq
+set id 32
+set name ProxGS_fptrunc_64kbM
 set corename simcore_fptrunc
 set op fptrunc
 set stage_num 2
@@ -343,8 +343,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 49
-set name cross_channel_debpcA
+set id 34
+set name ProxGS_fpext_32nslbW
 set corename simcore_fpext
 set op fpext
 set stage_num 2
@@ -425,8 +425,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 54
-set name cross_channel_debqcK
+set id 39
+set name ProxGS_fcmp_32ns_mb6
 set corename simcore_fcmp
 set op fcmp
 set stage_num 2
@@ -519,8 +519,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 55
-set name cross_channel_debrcU
+set id 40
+set name ProxGS_dadd_64ns_ncg
 set corename simcore_dadd
 set op dadd
 set stage_num 5
@@ -610,8 +610,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 57
-set name cross_channel_debsc4
+set id 42
+set name ProxGS_dmul_64ns_ocq
 set corename simcore_dmul
 set op dmul
 set stage_num 6
@@ -701,8 +701,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 59
-set name cross_channel_debtde
+set id 44
+set name ProxGS_ddiv_64ns_pcA
 set corename simcore_ddiv
 set op ddiv
 set stage_num 31
@@ -790,11 +790,96 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 
 
 # Memory (RAM/ROM)  definition:
-set ID 70
+set ID 55
 set hasByteEnable 0
 set MemName ProxGS_tmp_M_real
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
+set DataWd 32
+set AddrRange 16384
+set AddrWd 14
+set impl_style block
+set TrueReset 0
+set HasInitializer 0
+set IsROM 0
+set ROMData {}
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 3.254
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName RAM
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 56
+set hasByteEnable 0
+set MemName ProxGS_fft_resultfYi
+set CoreName ap_simcore_mem
+set PortList { 2 0 }
 set DataWd 32
 set AddrRange 16384
 set AddrWd 14
@@ -881,11 +966,12 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
+set axilite_register_dict [dict create]
 # XIL_BRAM:
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 71 \
+    id 57 \
     name x_io_V \
     reset_level 1 \
     sync_rst true \
@@ -904,7 +990,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 72 \
+    id 58 \
     name coe_a_M_real \
     reset_level 1 \
     sync_rst true \
@@ -923,7 +1009,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 73 \
+    id 59 \
     name coe_a_M_imag \
     reset_level 1 \
     sync_rst true \
@@ -942,7 +1028,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 74 \
+    id 60 \
     name coe_b \
     reset_level 1 \
     sync_rst true \

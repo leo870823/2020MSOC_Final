@@ -33,6 +33,8 @@
 
 void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]);
 void read_coe(fft_operation denom[128][128],proxGSDataIn xn_input[128][128],const char* file_name_real,const char* file_name_imag,const char* file_name_denominator);
+void COMPUTE_PSNR(eita_t blurred_R[HEIGHT][WIDTH],eita_t blurred_G[HEIGHT][WIDTH],eita_t blurred_B[HEIGHT][WIDTH],eita_t data_R[HEIGHT][WIDTH],eita_t data_G[HEIGHT][WIDTH],eita_t data_B[HEIGHT][WIDTH]);
+
 int main(){
 	unsigned short int y,x;
 	int value;
@@ -152,49 +154,26 @@ int main(){
 
 
 
-//====== deblur ISP kernel ======
-		// read coefficient
-			fft_operation denom_R[128][128],denom_G[128][128],denom_B[128][128];
-			proxGSDataIn nominator_R[128][128],nominator_G[128][128],nominator_B[128][128];
-			read_coe(denom_R,nominator_R,"REAL.txt","IMAGINARY.txt","DENOM.txt");
-			read_coe(denom_G,nominator_G,"REAL2.txt","IMAGINARY2.txt","DENOM2.txt");
-			read_coe(denom_B,nominator_B,"REAL3.txt","IMAGINARY3.txt","DENOM3.txt");
+//====== Deblur ISP kernel ======
+	// read coefficient(Real,Imaginary,Denominator)
+	fft_operation denom_R[128][128],denom_G[128][128],denom_B[128][128];
+	proxGSDataIn nominator_R[128][128],nominator_G[128][128],nominator_B[128][128];
+	read_coe(denom_R,nominator_R,"REAL.txt","IMAGINARY.txt","DENOM.txt");
+	read_coe(denom_G,nominator_G,"REAL2.txt","IMAGINARY2.txt","DENOM2.txt");
+	read_coe(denom_B,nominator_B,"REAL3.txt","IMAGINARY3.txt","DENOM3.txt");
 
 
 //====== Deblur kernel ======
+	printf("==== Before deblurring ====\n");
+	COMPUTE_PSNR(blurred_R,blurred_G,blurred_B,data_R,data_G,data_B);	
+	printf("====  After deblurring ====\n");
 	DEBLUR(blurred_R,blurred_G,blurred_B,nominator_R,denom_R,nominator_G,denom_G,nominator_B,denom_B);
+	COMPUTE_PSNR(blurred_R,blurred_G,blurred_B,data_R,data_G,data_B);
 	// output image
 	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_R.bmp",blurred_R);
 	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_G.bmp",blurred_G);
 	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_B.bmp",blurred_B);
-	eita_t out[128*128] ;
-/*
-	MSE_R=0,MSE_G=0,MSE_B=0,PSNR_R=0,PSNR_G=0,PSNR_B=0 ;
-	for (y = 0; y < H; y++)
-	{
-		for (x = 0; x < W; x++)
-		{	//printf("(x,y)=(%d,%d)\n",x,y);
-			//printf("Pixel value %d for reading\n",int(blurred_R[y][x]));
-			MSE_R = MSE_R + (blurred_R[y][x]- data_R[y][x]) * (blurred_R[y][x]- data_R[y][x]);
-			MSE_B = MSE_B + (blurred_B[y][x]- data_B[y][x]) * (blurred_B[y][x]- data_B[y][x]);
-			MSE_G = MSE_G + (blurred_G[y][x]- data_G[y][x]) * (blurred_G[y][x]- data_G[y][x]);
-		}	
-	}
-	
-	MSE_R = MSE_R/H/W ;
-	MSE_B = MSE_B/H/W ;
-	MSE_G = MSE_G/H/W ;
-	if(MSE_R!=0){PSNR_R = 10 * log10(255*255/MSE_R);}
-	if(MSE_B!=0){PSNR_B = 10 * log10(255*255/MSE_B);}
-	if(MSE_G!=0){PSNR_G = 10 * log10(255*255/MSE_G);}
 
-
-	printf( "R channel PSNR=%f \n", PSNR_R);
-	printf( "B channel PSNR=%f \n", PSNR_B);
-	printf( "G channel PSNR=%f \n", PSNR_G);
-	
-
-*/
 
 }
 
@@ -271,16 +250,20 @@ void read_coe(fft_operation denom[128][128],proxGSDataIn xn_input[128][128],cons
 	 		fclose(file_DENOM);
 }
 
-/*
-void COMPUTE_PSNR(
 
-
+void COMPUTE_PSNR(	
+	eita_t blurred_R[HEIGHT][WIDTH],
+	eita_t blurred_G[HEIGHT][WIDTH],
+	eita_t blurred_B[HEIGHT][WIDTH],
+	eita_t data_R[HEIGHT][WIDTH],
+	eita_t data_G[HEIGHT][WIDTH],
+	eita_t data_B[HEIGHT][WIDTH]
 ){
 	double MSE_R,MSE_G,MSE_B,PSNR_R,PSNR_G,PSNR_B;
 	MSE_R=0,MSE_G=0,MSE_B=0,PSNR_R=0,PSNR_G=0,PSNR_B=0 ;
-	for (y = 0; y < H; y++)
+	for (int y = 0; y < H; y++)
 	{
-		 for (x = 0; x < W; x++)
+		 for (int x = 0; x < W; x++)
 		 {
 		 	MSE_R = MSE_R + (blurred_R[y][x]- data_R[y][x]) * (blurred_R[y][x]- data_R[y][x]);
 		 	MSE_B = MSE_B + (blurred_B[y][x]- data_B[y][x]) * (blurred_B[y][x]- data_B[y][x]);
@@ -297,7 +280,5 @@ void COMPUTE_PSNR(
 	printf( "R channel PSNR=%f \n", PSNR_R);
 	printf( "B channel PSNR=%f \n", PSNR_B);
 	printf( "G channel PSNR=%f \n", PSNR_G);
-
-
 }
-*/
+

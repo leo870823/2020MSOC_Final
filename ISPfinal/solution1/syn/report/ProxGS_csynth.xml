@@ -21,14 +21,14 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>611297</Best-caseLatency>
-<Average-caseLatency>611297</Average-caseLatency>
-<Worst-caseLatency>611297</Worst-caseLatency>
-<Best-caseRealTimeLatency>6.113 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>6.113 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>6.113 ms</Worst-caseRealTimeLatency>
-<Interval-min>611297</Interval-min>
-<Interval-max>611297</Interval-max>
+<Best-caseLatency>594785</Best-caseLatency>
+<Average-caseLatency>594785</Average-caseLatency>
+<Worst-caseLatency>594785</Worst-caseLatency>
+<Best-caseRealTimeLatency>5.948 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>5.948 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>5.948 ms</Worst-caseRealTimeLatency>
+<Interval-min>594786</Interval-min>
+<Interval-max>594786</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Loop1>
@@ -51,16 +51,6 @@
 <IterationLatency>1</IterationLatency>
 </Loop2.1>
 </Loop2>
-<Loop3>
-<TripCount>128</TripCount>
-<Latency>16511</Latency>
-<IterationLatency>129</IterationLatency>
-<Loop3.1>
-<TripCount>128</TripCount>
-<Latency>127</Latency>
-<IterationLatency>1</IterationLatency>
-</Loop3.1>
-</Loop3>
 <for_y_for_x>
 <TripCount>16384</TripCount>
 <Latency>16407</Latency>
@@ -84,10 +74,10 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>210</BRAM_18K>
-<DSP48E>58</DSP48E>
-<FF>26708</FF>
-<LUT>26012</LUT>
+<BRAM_18K>146</BRAM_18K>
+<DSP48E>64</DSP48E>
+<FF>27003</FF>
+<LUT>26575</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -176,6 +166,7 @@
 <Dir>out</Dir>
 <Bits>14</Bits>
 <Attribute>address</Attribute>
+<CType>int</CType>
 </RtlPorts>
 <RtlPorts>
 <name>x_io_V_ce0</name>
@@ -187,6 +178,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
+<CType>int</CType>
 </RtlPorts>
 <RtlPorts>
 <name>x_io_V_we0</name>
@@ -198,6 +190,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
+<CType>int</CType>
 </RtlPorts>
 <RtlPorts>
 <name>x_io_V_d0</name>
@@ -209,6 +202,7 @@
 <Dir>out</Dir>
 <Bits>8</Bits>
 <Attribute>data</Attribute>
+<CType>int</CType>
 </RtlPorts>
 <RtlPorts>
 <name>x_io_V_q0</name>
@@ -220,6 +214,7 @@
 <Dir>in</Dir>
 <Bits>8</Bits>
 <Attribute>data</Attribute>
+<CType>int</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_a_M_real_address0</name>
@@ -231,6 +226,7 @@
 <Dir>out</Dir>
 <Bits>14</Bits>
 <Attribute>address</Attribute>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_a_M_real_ce0</name>
@@ -242,6 +238,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_a_M_real_q0</name>
@@ -253,6 +250,7 @@
 <Dir>in</Dir>
 <Bits>32</Bits>
 <Attribute>data</Attribute>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_a_M_imag_address0</name>
@@ -264,6 +262,7 @@
 <Dir>out</Dir>
 <Bits>14</Bits>
 <Attribute>address</Attribute>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_a_M_imag_ce0</name>
@@ -275,6 +274,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_a_M_imag_q0</name>
@@ -286,6 +286,7 @@
 <Dir>in</Dir>
 <Bits>32</Bits>
 <Attribute>data</Attribute>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_b_address0</name>
@@ -297,6 +298,7 @@
 <Dir>out</Dir>
 <Bits>14</Bits>
 <Attribute>address</Attribute>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_b_ce0</name>
@@ -308,6 +310,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>coe_b_q0</name>
@@ -319,6 +322,7 @@
 <Dir>in</Dir>
 <Bits>32</Bits>
 <Attribute>data</Attribute>
+<CType>float</CType>
 </RtlPorts>
 </InterfaceSummary>
 
