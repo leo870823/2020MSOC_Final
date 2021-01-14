@@ -129,13 +129,13 @@ void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
 		Loop_x_1 : for (int x = 0; x < WIDTH; x++)
     	{
 			#pragma HLS PIPELINE
-	  		g1[y][x] = g1[y][x] + eita_t(sigma) * fx[y][x] ;
-			g2[y][x] = g2[y][x] + eita_t(sigma) * fy[y][x] ;
-			g3[y][x] = g3[y][x] + eita_t(sigma) * fxx[y][x] ;
-			g4[y][x] = g4[y][x] + eita_t(sigma) * fyy[y][x] ;
-			g5[y][x] = g5[y][x] + eita_t(sigma) * fxy[y][x] ;
-			g6[y][x] = g6[y][x] + eita_t(sigma) * Sxf[y][x] ; // Q
-			g7[y][x] = g7[y][x] + eita_t(sigma) * Syf[y][x] ;
+	  		g1[y][x] = g1[y][x] + eita_t(SIGMA) * fx[y][x] ;
+			g2[y][x] = g2[y][x] + eita_t(SIGMA) * fy[y][x] ;
+			g3[y][x] = g3[y][x] + eita_t(SIGMA) * fxx[y][x] ;
+			g4[y][x] = g4[y][x] + eita_t(SIGMA) * fyy[y][x] ;
+			g5[y][x] = g5[y][x] + eita_t(SIGMA) * fxy[y][x] ;
+			g6[y][x] = g6[y][x] + eita_t(SIGMA) * Sxf[y][x] ; // Q
+			g7[y][x] = g7[y][x] + eita_t(SIGMA) * Syf[y][x] ;
 			if(g1[y][x]>1)
 				g1[y][x] = 1 ;
 			if(g2[y][x]>1)
@@ -197,7 +197,7 @@ void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
 		Loop_x_4 : for (int x = 0; x < WIDTH; x++)
     	{
 			#pragma HLS PIPELINE
-	  		f_n[y][x] = f_n[y][x] - eita_t(tau) * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
+	  		f_n[y][x] = f_n[y][x] - eita_t(TAU) * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
 			
         }
     }
@@ -216,7 +216,7 @@ void Relax(eita_t x[HEIGHT][WIDTH],
             for_x : for (int i = 0; i < WIDTH; i++)
             {
                 #pragma HLS PIPELINE
-            	x_bar[j][i] =  eita_t(theta)*(x[j][i]-x_old[j][i]);
+            	x_bar[j][i] =  eita_t(THETA)*(x[j][i]-x_old[j][i]);
             }
         }
 }

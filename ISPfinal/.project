@@ -84,12 +84,32 @@
 		<link>
 			<name>testbench/DENOM.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DENOM.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt</location>
+		</link>
+		<link>
+			<name>testbench/DENOM2.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM2.txt</location>
+		</link>
+		<link>
+			<name>testbench/DENOM3.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM3.txt</location>
 		</link>
 		<link>
 			<name>testbench/IMAGINARY.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/IMAGINARY.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt</location>
+		</link>
+		<link>
+			<name>testbench/IMAGINARY2.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY2.txt</location>
+		</link>
+		<link>
+			<name>testbench/IMAGINARY3.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY3.txt</location>
 		</link>
 		<link>
 			<name>testbench/I_blurred_B.txt</name>
@@ -109,7 +129,17 @@
 		<link>
 			<name>testbench/REAL.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/REAL.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt</location>
+		</link>
+		<link>
+			<name>testbench/REAL2.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL2.txt</location>
+		</link>
+		<link>
+			<name>testbench/REAL3.txt</name>
+			<type>1</type>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL3.txt</location>
 		</link>
 		<link>
 			<name>testbench/ground_truth_B.txt</name>

@@ -93,9 +93,13 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
 void DEBLUR(eita_t refImg_R[HEIGHT][WIDTH],
 		    eita_t adjChImg_G[HEIGHT][WIDTH],
             eita_t adjChImg_B[HEIGHT][WIDTH],
-			proxGSDataIn coe_a[HEIGHT][WIDTH], //For ProxGS(FFT result)
-			fft_operation coe_b[HEIGHT][WIDTH]) //For ProxGS(FFT result)
-{   cross_channel_deblur(  refImg_R,refImg_R,coe_a,coe_b);
-    cross_channel_deblur(adjChImg_G,refImg_R,coe_a,coe_b);
-    cross_channel_deblur(adjChImg_B,refImg_R,coe_a,coe_b);
+			proxGSDataIn nominator_R[HEIGHT][WIDTH], //For ProxGS(FFT result)
+			fft_operation denominator_R[HEIGHT][WIDTH], //For ProxGS(FFT result)
+			proxGSDataIn nominator_G[HEIGHT][WIDTH], //For ProxGS(FFT result)
+			fft_operation denominator_G[HEIGHT][WIDTH], //For ProxGS(FFT result)
+			proxGSDataIn nominator_B[HEIGHT][WIDTH], //For ProxGS(FFT result)
+			fft_operation denominator_B[HEIGHT][WIDTH]) //For ProxGS(FFT result)
+{   //cross_channel_deblur(  refImg_R,refImg_R,nominator_R,denominator_R);
+    cross_channel_deblur(adjChImg_G,refImg_R,nominator_G,denominator_G);
+    cross_channel_deblur(adjChImg_B,refImg_R,nominator_B,denominator_B);
 }

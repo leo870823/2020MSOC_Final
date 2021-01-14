@@ -11,7 +11,7 @@ void ProxGS(
 	//====== Data member ======
 	bool  fft_ovflo,ifft_ovflo;
     cmpxDataIn tmp[HEIGHT][WIDTH],fft_result[HEIGHT][WIDTH];
-    cmpxDataIn MAD[HEIGHT][WIDTH];//,ifft_result[SIZE];
+    cmpxDataIn MAD[HEIGHT][WIDTH];
     fft_operation input_data_re, input_data_im,scale_const;
 
     //====== Interface ======
@@ -30,8 +30,8 @@ void ProxGS(
             //printf("FFT imag %f \n",float(255.0*fft_result[y][x].imag()));
             //printf("Coe_a %f \n",float(coe_a[y][x].real()));
             if(coe_b[y][x]!=0) {
-            	input_data_re=(255.0*(fft_result[y][x].real())+2*float(tau)*coe_a[y][x].real())/coe_b[y][x];
-            	input_data_im=(255.0*(fft_result[y][x].imag())+2*float(tau)*coe_a[y][x].imag())/coe_b[y][x];
+            	input_data_re=(255.0*(fft_result[y][x].real())+2*float(TAU)*coe_a[y][x].real())/coe_b[y][x];
+            	input_data_im=(255.0*(fft_result[y][x].imag())+2*float(TAU)*coe_a[y][x].imag())/coe_b[y][x];
             }else {
             	input_data_re=0;
             	input_data_im=0;
@@ -68,8 +68,8 @@ void S2P(cmpxDataIn data_in[HEIGHT][WIDTH],eita_t data_out[HEIGHT][WIDTH]){
     {
         for_x : for (int x = 0; x < WIDTH; x++)
         {
-            printf("IFFT out real %f \n",float(FFT_SCALE*data_in[y][x].real())/FFT_LENGTH);
-            printf("IFFT out imag %f \n",float(FFT_SCALE*data_in[y][x].imag())/FFT_LENGTH);
+            //printf("IFFT out real %f \n",float(FFT_SCALE*data_in[y][x].real()/FFT_LENGTH));
+            //printf("IFFT out imag %f \n",float(FFT_SCALE*data_in[y][x].imag()/FFT_LENGTH));
             #pragma HLS PIPELINE
         	data_out[y][x]=eita_t(int(FFT_SCALE*data_in[y][x].real()/FFT_LENGTH)); //float(data_in[y][x].real())*255.0
         	//printf("after FFT out %d \n",int(data_out[y][x]));
