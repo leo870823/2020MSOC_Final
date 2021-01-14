@@ -181,11 +181,31 @@ int main(){
 
 
 		// deblur ISP kernel
-		DEBLUR(blurred_R,blurred_G,blurred_B,xn_input,denom);
+	double MSE_R=0,MSE_G=0,MSE_B=0,PSNR_R=0,PSNR_G=0,PSNR_B=0 ;
+	for (y = 0; y < H; y++)
+	{
+		 for (x = 0; x < W; x++)
+		 {
+		 	MSE_R = MSE_R + (blurred_R[y][x]- data_R[y][x]) * (blurred_R[y][x]- data_R[y][x]);
+		 	MSE_B = MSE_B + (blurred_B[y][x]- data_B[y][x]) * (blurred_B[y][x]- data_B[y][x]);
+		 	MSE_G = MSE_G + (blurred_G[y][x]- data_G[y][x]) * (blurred_G[y][x]- data_G[y][x]);
+		 }
+	}
+	MSE_R = MSE_R/H/W ;
+	MSE_B = MSE_B/H/W ;
+	MSE_G = MSE_G/H/W ;
+	if(MSE_R!=0){PSNR_R = 10 * log10(255*255/MSE_R);}
+	if(MSE_B!=0){PSNR_B = 10 * log10(255*255/MSE_B);}
+	if(MSE_G!=0){PSNR_G = 10 * log10(255*255/MSE_G);}
+
+	printf( "R channel PSNR=%f \n", PSNR_R);
+	printf( "B channel PSNR=%f \n", PSNR_B);
+	printf( "G channel PSNR=%f \n", PSNR_G);
+	DEBLUR(blurred_R,blurred_G,blurred_B,xn_input,denom);
 
 	eita_t out[128*128] ;
 
-	double MSE_R=0,MSE_G=0,MSE_B=0,PSNR_R=0,PSNR_G=0,PSNR_B=0 ;
+	MSE_R=0,MSE_G=0,MSE_B=0,PSNR_R=0,PSNR_G=0,PSNR_B=0 ;
 	for (y = 0; y < H; y++)
 	{
 		for (x = 0; x < W; x++)

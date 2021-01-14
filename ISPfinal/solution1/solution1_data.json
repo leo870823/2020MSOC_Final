@@ -20,7 +20,7 @@
       "index": "0",
       "type": {
         "kinds": ["array"],
-        "dataType": "ap_int",
+        "dataType": "ap_uint",
         "dataWidth": "8",
         "arraySizes": [
           "128",
@@ -28,6 +28,7 @@
         ],
         "multiInterfaceRef": [
           "Img_V_address0",
+          "Img_V_d0",
           "Img_V_q0"
         ]
       }
@@ -36,7 +37,7 @@
       "index": "1",
       "type": {
         "kinds": ["array"],
-        "dataType": "ap_int",
+        "dataType": "ap_uint",
         "dataWidth": "8",
         "arraySizes": [
           "128",
@@ -65,15 +66,15 @@
       "index": "3",
       "type": {
         "kinds": ["array"],
-        "dataType": "ap_int",
-        "dataWidth": "8",
+        "dataType": "float",
+        "dataWidth": "32",
         "arraySizes": [
           "128",
           "128"
         ],
         "multiInterfaceRef": [
-          "coe_b_V_address0",
-          "coe_b_V_q0"
+          "coe_b_address0",
+          "coe_b_q0"
         ]
       }
     }
@@ -86,7 +87,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "38596862",
+    "Latency": "857364",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -110,68 +111,85 @@
     ],
     "Vhdl": [
       "impl\/vhdl\/array_copy.vhd",
-      "impl\/vhdl\/cross_channel_debfYi.vhd",
-      "impl\/vhdl\/cross_channel_debg8j.vhd",
-      "impl\/vhdl\/cross_channel_debhbi.vhd",
-      "impl\/vhdl\/cross_channel_debibs.vhd",
-      "impl\/vhdl\/cross_channel_debjbC.vhd",
-      "impl\/vhdl\/cross_channel_debkbM.vhd",
+      "impl\/vhdl\/cross_channel_debCeG.vhd",
+      "impl\/vhdl\/cross_channel_deblbW.vhd",
+      "impl\/vhdl\/cross_channel_debmb6.vhd",
       "impl\/vhdl\/cross_channel_debncg.vhd",
       "impl\/vhdl\/cross_channel_debocq.vhd",
+      "impl\/vhdl\/cross_channel_debpcA.vhd",
+      "impl\/vhdl\/cross_channel_debqcK.vhd",
+      "impl\/vhdl\/cross_channel_debrcU.vhd",
+      "impl\/vhdl\/cross_channel_debsc4.vhd",
+      "impl\/vhdl\/cross_channel_debtde.vhd",
+      "impl\/vhdl\/cross_channel_debudo.vhd",
+      "impl\/vhdl\/cross_channel_debvdy.vhd",
+      "impl\/vhdl\/cross_channel_debxdS.vhd",
       "impl\/vhdl\/dummy_proc_be_1.vhd",
       "impl\/vhdl\/dummy_proc_fe_1.vhd",
       "impl\/vhdl\/fft_config1_s.vhd",
       "impl\/vhdl\/fft_top.vhd",
+      "impl\/vhdl\/fft_top_2D.vhd",
+      "impl\/vhdl\/fft_top_2D_bufferhbi.vhd",
       "impl\/vhdl\/fifo_w8_d2_A.vhd",
       "impl\/vhdl\/fifo_w16_d2_A.vhd",
-      "impl\/vhdl\/fifo_w32_d16384_A.vhd",
+      "impl\/vhdl\/fifo_w64_d128_A.vhd",
       "impl\/vhdl\/my_filter_fx6.vhd",
       "impl\/vhdl\/my_filter_fy5.vhd",
       "impl\/vhdl\/my_filter_v1.vhd",
       "impl\/vhdl\/my_filter_v1_fx_V.vhd",
       "impl\/vhdl\/my_filter_v1_fxx.vhd",
       "impl\/vhdl\/ProxGS.vhd",
-      "impl\/vhdl\/ProxGS_MAD.vhd",
-      "impl\/vhdl\/Relax.vhd",
-      "impl\/vhdl\/start_for_dummy_pmb6.vhd",
-      "impl\/vhdl\/start_for_fft_conlbW.vhd",
+      "impl\/vhdl\/ProxGS_tmp_M_real.vhd",
+      "impl\/vhdl\/start_for_dummy_pg8j.vhd",
+      "impl\/vhdl\/start_for_fft_confYi.vhd",
       "impl\/vhdl\/cross_channel_deblur.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/array_copy.v",
-      "impl\/verilog\/cross_channel_debfYi.v",
-      "impl\/verilog\/cross_channel_debg8j.v",
-      "impl\/verilog\/cross_channel_debhbi.v",
-      "impl\/verilog\/cross_channel_debibs.v",
-      "impl\/verilog\/cross_channel_debjbC.v",
-      "impl\/verilog\/cross_channel_debkbM.v",
+      "impl\/verilog\/cross_channel_debCeG.v",
+      "impl\/verilog\/cross_channel_deblbW.v",
+      "impl\/verilog\/cross_channel_debmb6.v",
       "impl\/verilog\/cross_channel_debncg.v",
       "impl\/verilog\/cross_channel_debocq.v",
+      "impl\/verilog\/cross_channel_debpcA.v",
+      "impl\/verilog\/cross_channel_debqcK.v",
+      "impl\/verilog\/cross_channel_debrcU.v",
+      "impl\/verilog\/cross_channel_debsc4.v",
+      "impl\/verilog\/cross_channel_debtde.v",
+      "impl\/verilog\/cross_channel_debudo.v",
+      "impl\/verilog\/cross_channel_debvdy.v",
+      "impl\/verilog\/cross_channel_debxdS.v",
       "impl\/verilog\/dummy_proc_be_1.v",
       "impl\/verilog\/dummy_proc_fe_1.v",
       "impl\/verilog\/fft_config1_s.v",
       "impl\/verilog\/fft_top.v",
+      "impl\/verilog\/fft_top_2D.v",
+      "impl\/verilog\/fft_top_2D_bufferhbi.v",
       "impl\/verilog\/fifo_w8_d2_A.v",
       "impl\/verilog\/fifo_w16_d2_A.v",
-      "impl\/verilog\/fifo_w32_d16384_A.v",
+      "impl\/verilog\/fifo_w64_d128_A.v",
       "impl\/verilog\/my_filter_fx6.v",
       "impl\/verilog\/my_filter_fy5.v",
       "impl\/verilog\/my_filter_v1.v",
       "impl\/verilog\/my_filter_v1_fx_V.v",
       "impl\/verilog\/my_filter_v1_fxx.v",
       "impl\/verilog\/ProxGS.v",
-      "impl\/verilog\/ProxGS_MAD.v",
-      "impl\/verilog\/Relax.v",
-      "impl\/verilog\/start_for_dummy_pmb6.v",
-      "impl\/verilog\/start_for_fft_conlbW.v",
+      "impl\/verilog\/ProxGS_tmp_M_real.v",
+      "impl\/verilog\/start_for_dummy_pg8j.v",
+      "impl\/verilog\/start_for_fft_confYi.v",
       "impl\/verilog\/cross_channel_deblur.v"
     ],
     "Misc": ["impl\/misc\/logo.png"],
     "Subcore": [
       "impl\/misc\/cross_channel_deblur_ap_dadd_3_full_dsp_64_ip.tcl",
-      "impl\/misc\/cross_channel_deblur_ap_dadddsub_3_full_dsp_64_ip.tcl",
+      "impl\/misc\/cross_channel_deblur_ap_ddiv_29_no_dsp_64_ip.tcl",
       "impl\/misc\/cross_channel_deblur_ap_dmul_4_max_dsp_64_ip.tcl",
-      "impl\/misc\/cross_channel_deblur_ap_sitodp_4_no_dsp_32_ip.tcl",
+      "impl\/misc\/cross_channel_deblur_ap_fcmp_0_no_dsp_32_ip.tcl",
+      "impl\/misc\/cross_channel_deblur_ap_fdiv_14_no_dsp_32_ip.tcl",
+      "impl\/misc\/cross_channel_deblur_ap_fmul_2_max_dsp_32_ip.tcl",
+      "impl\/misc\/cross_channel_deblur_ap_fpext_0_no_dsp_32_ip.tcl",
+      "impl\/misc\/cross_channel_deblur_ap_fptrunc_0_no_dsp_64_ip.tcl",
+      "impl\/misc\/cross_channel_deblur_ap_sitofp_4_no_dsp_32_ip.tcl",
       "impl\/misc\/fft_config1_s_core_ip.tcl"
     ],
     "DesignXml": "C:\/Users\/leo870823\/Desktop\/MSOC\/2020MSOC_Final\/ISPfinal\/solution1\/.autopilot\/db\/cross_channel_deblur.design.xml",
@@ -193,9 +211,9 @@
         "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name cross_channel_deblur_ap_dadd_3_full_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
       },
       {
-        "name": "cross_channel_deblur_ap_dadddsub_3_full_dsp_64",
+        "name": "cross_channel_deblur_ap_ddiv_29_no_dsp_64",
         "vlnv": "xilinx.com:ip:floating_point:7.1",
-        "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name cross_channel_deblur_ap_dadddsub_3_full_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+        "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 29 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name cross_channel_deblur_ap_ddiv_29_no_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Divide CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
       },
       {
         "name": "cross_channel_deblur_ap_dmul_4_max_dsp_64",
@@ -203,14 +221,39 @@
         "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 4 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name cross_channel_deblur_ap_dmul_4_max_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
       },
       {
-        "name": "cross_channel_deblur_ap_sitodp_4_no_dsp_32",
+        "name": "cross_channel_deblur_ap_fcmp_0_no_dsp_32",
         "vlnv": "xilinx.com:ip:floating_point:7.1",
-        "params": "CONFIG.a_precision_type Custom CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 32 CONFIG.c_a_fraction_width 0 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 4 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name cross_channel_deblur_ap_sitodp_4_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Fixed_to_Float CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 1 CONFIG.c_result_fraction_width 0 CONFIG.component_name cross_channel_deblur_ap_fcmp_0_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Compare CONFIG.result_precision_type Custom CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "cross_channel_deblur_ap_fdiv_14_no_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 14 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cross_channel_deblur_ap_fdiv_14_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Divide CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "cross_channel_deblur_ap_fmul_2_max_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cross_channel_deblur_ap_fmul_2_max_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "cross_channel_deblur_ap_fpext_0_no_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name cross_channel_deblur_ap_fpext_0_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Float_to_Float CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "cross_channel_deblur_ap_fptrunc_0_no_dsp_64",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cross_channel_deblur_ap_fptrunc_0_no_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Float_to_Float CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "cross_channel_deblur_ap_sitofp_4_no_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Custom CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 32 CONFIG.c_a_fraction_width 0 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 4 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cross_channel_deblur_ap_sitofp_4_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Fixed_to_Float CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
       },
       {
         "name": "fft_config1_s_core",
         "vlnv": "xilinx.com:ip:xfft",
-        "params": "CONFIG.aclken true CONFIG.aresetn true CONFIG.butterfly_type use_luts CONFIG.channels 1 CONFIG.complex_mult_type use_mults_resources CONFIG.cyclic_prefix_insertion 0 CONFIG.data_format fixed_point CONFIG.implementation_options pipelined_streaming_io CONFIG.input_width 16 CONFIG.memory_options_data block_ram CONFIG.memory_options_hybrid 0 CONFIG.memory_options_phase_factors block_ram CONFIG.memory_options_reorder block_ram CONFIG.number_of_stages_using_block_ram_for_data_and_phase_factors 1 CONFIG.output_ordering natural_order CONFIG.ovflo 1 CONFIG.phase_factor_width 16 CONFIG.rounding_modes truncation CONFIG.run_time_configurable_transform_length 0 CONFIG.scaling_options scaled CONFIG.target_clock_frequency 100 CONFIG.throttle_scheme nonrealtime CONFIG.transform_length 1024 CONFIG.xk_index 0"
+        "params": "CONFIG.aclken true CONFIG.aresetn true CONFIG.butterfly_type use_luts CONFIG.channels 1 CONFIG.complex_mult_type use_mults_resources CONFIG.cyclic_prefix_insertion 0 CONFIG.data_format floating_point CONFIG.implementation_options pipelined_streaming_io CONFIG.input_width 32 CONFIG.memory_options_data block_ram CONFIG.memory_options_hybrid 0 CONFIG.memory_options_phase_factors block_ram CONFIG.memory_options_reorder block_ram CONFIG.number_of_stages_using_block_ram_for_data_and_phase_factors 1 CONFIG.output_ordering natural_order CONFIG.ovflo 1 CONFIG.phase_factor_width 24 CONFIG.rounding_modes truncation CONFIG.run_time_configurable_transform_length 0 CONFIG.scaling_options scaled CONFIG.target_clock_frequency 100 CONFIG.throttle_scheme nonrealtime CONFIG.transform_length 128 CONFIG.xk_index 0"
       }
     ]
   },
@@ -242,7 +285,7 @@
       "dir": "in",
       "width": "8",
       "ctype": {"DATA": {
-          "Type": "integer signed",
+          "Type": "integer unsigned",
           "Width": "8"
         }},
       "bundle_name": "adjChImg_V",
@@ -253,7 +296,7 @@
       "dir": "in",
       "width": "8",
       "ctype": {"DATA": {
-          "Type": "integer signed",
+          "Type": "integer unsigned",
           "Width": "8"
         }},
       "bundle_name": "adjChImg_V",
@@ -283,7 +326,7 @@
       "bundle_name": "ap_rst",
       "bundle_role": "default"
     },
-    "coe_a_M_imag_V_address0": {
+    "coe_a_M_imag_address0": {
       "type": "data",
       "dir": "out",
       "width": "14",
@@ -291,21 +334,21 @@
           "Type": "null",
           "Width": "14"
         }},
-      "bundle_name": "coe_a_M_imag_V",
+      "bundle_name": "coe_a_M_imag",
       "bundle_role": "address0"
     },
-    "coe_a_M_imag_V_q0": {
+    "coe_a_M_imag_q0": {
       "type": "data",
       "dir": "in",
-      "width": "16",
+      "width": "32",
       "ctype": {"DATA": {
-          "Type": "real fixed signed 15",
-          "Width": "16"
+          "Type": "real float",
+          "Width": "32"
         }},
-      "bundle_name": "coe_a_M_imag_V",
+      "bundle_name": "coe_a_M_imag",
       "bundle_role": "q0"
     },
-    "coe_a_M_real_V_address0": {
+    "coe_a_M_real_address0": {
       "type": "data",
       "dir": "out",
       "width": "14",
@@ -313,21 +356,21 @@
           "Type": "null",
           "Width": "14"
         }},
-      "bundle_name": "coe_a_M_real_V",
+      "bundle_name": "coe_a_M_real",
       "bundle_role": "address0"
     },
-    "coe_a_M_real_V_q0": {
+    "coe_a_M_real_q0": {
       "type": "data",
       "dir": "in",
-      "width": "16",
+      "width": "32",
       "ctype": {"DATA": {
-          "Type": "real fixed signed 15",
-          "Width": "16"
+          "Type": "real float",
+          "Width": "32"
         }},
-      "bundle_name": "coe_a_M_real_V",
+      "bundle_name": "coe_a_M_real",
       "bundle_role": "q0"
     },
-    "coe_b_V_address0": {
+    "coe_b_address0": {
       "type": "data",
       "dir": "out",
       "width": "14",
@@ -335,18 +378,18 @@
           "Type": "null",
           "Width": "14"
         }},
-      "bundle_name": "coe_b_V",
+      "bundle_name": "coe_b",
       "bundle_role": "address0"
     },
-    "coe_b_V_q0": {
+    "coe_b_q0": {
       "type": "data",
       "dir": "in",
-      "width": "8",
+      "width": "32",
       "ctype": {"DATA": {
-          "Type": "integer signed",
-          "Width": "8"
+          "Type": "real float",
+          "Width": "32"
         }},
-      "bundle_name": "coe_b_V",
+      "bundle_name": "coe_b",
       "bundle_role": "q0"
     },
     "Img_V_address0": {
@@ -360,12 +403,23 @@
       "bundle_name": "Img_V",
       "bundle_role": "address0"
     },
+    "Img_V_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "8",
+      "ctype": {"DATA": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        }},
+      "bundle_name": "Img_V",
+      "bundle_role": "d0"
+    },
     "Img_V_q0": {
       "type": "data",
       "dir": "in",
       "width": "8",
       "ctype": {"DATA": {
-          "Type": "integer signed",
+          "Type": "integer unsigned",
           "Width": "8"
         }},
       "bundle_name": "Img_V",
@@ -405,6 +459,14 @@
       "dir": "out",
       "width": "1"
     },
+    "Img_V_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "Img_V_d0": {
+      "dir": "out",
+      "width": "8"
+    },
     "Img_V_q0": {
       "dir": "in",
       "width": "8"
@@ -433,41 +495,41 @@
       "dir": "in",
       "width": "8"
     },
-    "coe_a_M_real_V_address0": {
+    "coe_a_M_real_address0": {
       "dir": "out",
       "width": "14"
     },
-    "coe_a_M_real_V_ce0": {
+    "coe_a_M_real_ce0": {
       "dir": "out",
       "width": "1"
     },
-    "coe_a_M_real_V_q0": {
+    "coe_a_M_real_q0": {
       "dir": "in",
-      "width": "16"
+      "width": "32"
     },
-    "coe_a_M_imag_V_address0": {
+    "coe_a_M_imag_address0": {
       "dir": "out",
       "width": "14"
     },
-    "coe_a_M_imag_V_ce0": {
+    "coe_a_M_imag_ce0": {
       "dir": "out",
       "width": "1"
     },
-    "coe_a_M_imag_V_q0": {
+    "coe_a_M_imag_q0": {
       "dir": "in",
-      "width": "16"
+      "width": "32"
     },
-    "coe_b_V_address0": {
+    "coe_b_address0": {
       "dir": "out",
       "width": "14"
     },
-    "coe_b_V_ce0": {
+    "coe_b_ce0": {
       "dir": "out",
       "width": "1"
     },
-    "coe_b_V_q0": {
+    "coe_b_q0": {
       "dir": "in",
-      "width": "8"
+      "width": "32"
     }
   },
   "ModuleInfo": {
@@ -475,60 +537,60 @@
       "ModuleName": "cross_channel_deblur",
       "Instances": [
         {
+          "ModuleName": "ProxGS",
+          "InstanceName": "grp_ProxGS_fu_305",
+          "Instances": [{
+              "ModuleName": "fft_top_2D",
+              "InstanceName": "grp_fft_top_2D_fu_507",
+              "Instances": [{
+                  "ModuleName": "fft_top",
+                  "InstanceName": "grp_fft_top_fu_310",
+                  "Instances": [
+                    {
+                      "ModuleName": "dummy_proc_fe_1",
+                      "InstanceName": "dummy_proc_fe_1_U0"
+                    },
+                    {
+                      "ModuleName": "dummy_proc_be_1",
+                      "InstanceName": "dummy_proc_be_1_U0"
+                    },
+                    {
+                      "ModuleName": "fft_config1_s",
+                      "InstanceName": "fft_config1_U0"
+                    }
+                  ]
+                }]
+            }]
+        },
+        {
           "ModuleName": "my_filter_v1",
-          "InstanceName": "grp_my_filter_v1_fu_253",
+          "InstanceName": "grp_my_filter_v1_fu_316",
           "Instances": [
             {
               "ModuleName": "my_filter_fy5",
-              "InstanceName": "grp_my_filter_fy5_fu_844"
+              "InstanceName": "grp_my_filter_fy5_fu_362"
             },
             {
               "ModuleName": "my_filter_fy5",
-              "InstanceName": "grp_my_filter_fy5_fu_851"
+              "InstanceName": "grp_my_filter_fy5_fu_369"
             },
             {
               "ModuleName": "my_filter_fy5",
-              "InstanceName": "grp_my_filter_fy5_fu_857"
+              "InstanceName": "grp_my_filter_fy5_fu_375"
             },
             {
               "ModuleName": "my_filter_fx6",
-              "InstanceName": "grp_my_filter_fx6_fu_866"
+              "InstanceName": "grp_my_filter_fx6_fu_384"
             },
             {
               "ModuleName": "my_filter_fx6",
-              "InstanceName": "grp_my_filter_fx6_fu_874"
+              "InstanceName": "grp_my_filter_fx6_fu_392"
             }
           ]
         },
         {
-          "ModuleName": "ProxGS",
-          "InstanceName": "grp_ProxGS_fu_267",
-          "Instances": [{
-              "ModuleName": "fft_top",
-              "InstanceName": "grp_fft_top_fu_382",
-              "Instances": [
-                {
-                  "ModuleName": "dummy_proc_fe_1",
-                  "InstanceName": "dummy_proc_fe_1_U0"
-                },
-                {
-                  "ModuleName": "dummy_proc_be_1",
-                  "InstanceName": "dummy_proc_be_1_U0"
-                },
-                {
-                  "ModuleName": "fft_config1_s",
-                  "InstanceName": "fft_config1_U0"
-                }
-              ]
-            }]
-        },
-        {
-          "ModuleName": "Relax",
-          "InstanceName": "grp_Relax_fu_278"
-        },
-        {
           "ModuleName": "array_copy",
-          "InstanceName": "grp_array_copy_fu_285"
+          "InstanceName": "grp_array_copy_fu_330"
         }
       ]
     },
@@ -589,14 +651,14 @@
         "isCombinational": "0",
         "isOneStateSeq": "0"
       },
-      "ProxGS": {
+      "fft_top_2D": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "1",
         "isPipelined": "0",
         "isCombinational": "0",
         "isOneStateSeq": "0"
       },
-      "Relax": {
+      "ProxGS": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "1",
         "isPipelined": "0",
@@ -701,90 +763,55 @@
       },
       "my_filter_v1": {
         "Latency": {
-          "LatencyBest": "639826",
-          "LatencyAvg": "639826",
-          "LatencyWorst": "639826",
-          "PipelineII": "639826",
+          "LatencyBest": "164130",
+          "LatencyAvg": "164130",
+          "LatencyWorst": "164130",
+          "PipelineII": "164130",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.741"
+          "Estimate": "8.423"
         },
         "Loops": [
           {
-            "Name": "Loop_y_0",
-            "TripCount": "128",
-            "Latency": "213248",
-            "PipelineII": "",
-            "PipelineDepth": "1666",
-            "Loops": [{
-                "Name": "Loop_x_0",
-                "TripCount": "128",
-                "Latency": "1664",
-                "PipelineII": "",
-                "PipelineDepth": "13"
-              }]
-          },
-          {
             "Name": "Loop_y_1_Loop_x_1",
             "TripCount": "16384",
-            "Latency": "32790",
-            "PipelineII": "2",
-            "PipelineDepth": "25"
+            "Latency": "16384",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
           },
           {
             "Name": "Loop_y_2",
             "TripCount": "128",
-            "Latency": "49408",
+            "Latency": "33024",
             "PipelineII": "",
-            "PipelineDepth": "386",
+            "PipelineDepth": "258",
             "Loops": [{
                 "Name": "Loop_x_2",
                 "TripCount": "128",
-                "Latency": "384",
+                "Latency": "256",
                 "PipelineII": "",
-                "PipelineDepth": "3"
+                "PipelineDepth": "2"
               }]
-          },
-          {
-            "Name": "Loop_y_3",
-            "TripCount": "128",
-            "Latency": "213248",
-            "PipelineII": "",
-            "PipelineDepth": "1666",
-            "Loops": [{
-                "Name": "Loop_x_3",
-                "TripCount": "128",
-                "Latency": "1664",
-                "PipelineII": "",
-                "PipelineDepth": "13"
-              }]
-          },
-          {
-            "Name": "Loop_y_4_Loop_x_4",
-            "TripCount": "16384",
-            "Latency": "16406",
-            "PipelineII": "1",
-            "PipelineDepth": "24"
           }
         ],
         "Area": {
-          "BRAM_18K": "184",
-          "DSP48E": "60",
-          "FF": "10675",
-          "LUT": "20648",
-          "URAM": "0"
+          "BRAM_18K": "152",
+          "FF": "531",
+          "LUT": "2914",
+          "URAM": "0",
+          "DSP48E": "0"
         }
       },
       "dummy_proc_fe_1": {
         "Latency": {
-          "LatencyBest": "32769",
-          "LatencyAvg": "32769",
-          "LatencyWorst": "32769",
-          "PipelineII": "32769",
+          "LatencyBest": "257",
+          "LatencyAvg": "257",
+          "LatencyWorst": "257",
+          "PipelineII": "257",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -795,14 +822,14 @@
         },
         "Loops": [{
             "Name": "Loop 1",
-            "TripCount": "16384",
-            "Latency": "32768",
+            "TripCount": "128",
+            "Latency": "256",
             "PipelineII": "",
             "PipelineDepth": "2"
           }],
         "Area": {
-          "FF": "35",
-          "LUT": "111",
+          "FF": "21",
+          "LUT": "105",
           "BRAM_18K": "0",
           "DSP48E": "0",
           "URAM": "0"
@@ -810,10 +837,10 @@
       },
       "fft_config1_s": {
         "Latency": {
-          "LatencyBest": "3195",
-          "LatencyAvg": "3195",
-          "LatencyWorst": "3195",
-          "PipelineII": "3195",
+          "LatencyBest": "484",
+          "LatencyAvg": "484",
+          "LatencyWorst": "484",
+          "PipelineII": "484",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -823,19 +850,19 @@
           "Estimate": "2.000"
         },
         "Area": {
-          "BRAM_18K": "3",
-          "DSP48E": "12",
-          "FF": "9883",
-          "LUT": "7835",
+          "BRAM_18K": "6",
+          "DSP48E": "24",
+          "FF": "10674",
+          "LUT": "8301",
           "URAM": "0"
         }
       },
       "dummy_proc_be_1": {
         "Latency": {
-          "LatencyBest": "16385",
-          "LatencyAvg": "16385",
-          "LatencyWorst": "16385",
-          "PipelineII": "16385",
+          "LatencyBest": "129",
+          "LatencyAvg": "129",
+          "LatencyWorst": "129",
+          "PipelineII": "129",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -846,14 +873,14 @@
         },
         "Loops": [{
             "Name": "Loop 1",
-            "TripCount": "16384",
-            "Latency": "16384",
+            "TripCount": "128",
+            "Latency": "128",
             "PipelineII": "",
             "PipelineDepth": "1"
           }],
         "Area": {
-          "FF": "19",
-          "LUT": "98",
+          "FF": "12",
+          "LUT": "92",
           "BRAM_18K": "0",
           "DSP48E": "0",
           "URAM": "0"
@@ -861,10 +888,10 @@
       },
       "fft_top": {
         "Latency": {
-          "LatencyBest": "32769",
-          "LatencyAvg": "32769",
-          "LatencyWorst": "32769",
-          "PipelineII": "32770",
+          "LatencyBest": "484",
+          "LatencyAvg": "484",
+          "LatencyWorst": "484",
+          "PipelineII": "485",
           "PipelineDepth": "",
           "PipelineType": "dataflow"
         },
@@ -874,19 +901,19 @@
           "Estimate": "8.750"
         },
         "Area": {
-          "BRAM_18K": "67",
-          "DSP48E": "12",
-          "FF": "10319",
-          "LUT": "9784",
+          "BRAM_18K": "14",
+          "DSP48E": "24",
+          "FF": "10893",
+          "LUT": "8712",
           "URAM": "0"
         }
       },
-      "ProxGS": {
+      "fft_top_2D": {
         "Latency": {
-          "LatencyBest": "114726",
-          "LatencyAvg": "114726",
-          "LatencyWorst": "114726",
-          "PipelineII": "114726",
+          "LatencyBest": "256258",
+          "LatencyAvg": "256258",
+          "LatencyWorst": "256258",
+          "PipelineII": "256258",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -897,70 +924,167 @@
         },
         "Loops": [
           {
-            "Name": "for_y_for_x",
-            "TripCount": "16384",
-            "Latency": "16384",
-            "PipelineII": "1",
-            "PipelineDepth": "2"
+            "Name": "Loop 1",
+            "TripCount": "128",
+            "Latency": "127",
+            "PipelineII": "",
+            "PipelineDepth": "1"
           },
           {
-            "Name": "for_y_for_x",
-            "TripCount": "16384",
-            "Latency": "16411",
-            "PipelineII": "1",
-            "PipelineDepth": "29"
+            "Name": "Loop 2",
+            "TripCount": "128",
+            "Latency": "127",
+            "PipelineII": "",
+            "PipelineDepth": "1"
           },
           {
-            "Name": "for_y_for_x",
-            "TripCount": "16384",
-            "Latency": "16385",
-            "PipelineII": "1",
-            "PipelineDepth": "3"
+            "Name": "for_row",
+            "TripCount": "128",
+            "Latency": "128000",
+            "PipelineII": "",
+            "PipelineDepth": "1000",
+            "Loops": [
+              {
+                "Name": "for_column_in",
+                "TripCount": "128",
+                "Latency": "256",
+                "PipelineII": "",
+                "PipelineDepth": "2"
+              },
+              {
+                "Name": "for_column_out",
+                "TripCount": "128",
+                "Latency": "256",
+                "PipelineII": "",
+                "PipelineDepth": "2"
+              }
+            ]
+          },
+          {
+            "Name": "for_column",
+            "TripCount": "128",
+            "Latency": "128000",
+            "PipelineII": "",
+            "PipelineDepth": "1000",
+            "Loops": [
+              {
+                "Name": "for_row_in",
+                "TripCount": "128",
+                "Latency": "256",
+                "PipelineII": "",
+                "PipelineDepth": "2"
+              },
+              {
+                "Name": "for_row_out",
+                "TripCount": "128",
+                "Latency": "256",
+                "PipelineII": "",
+                "PipelineDepth": "2"
+              }
+            ]
           }
         ],
         "Area": {
-          "BRAM_18K": "163",
-          "DSP48E": "12",
-          "FF": "13517",
-          "LUT": "14878",
+          "BRAM_18K": "18",
+          "DSP48E": "24",
+          "FF": "11069",
+          "LUT": "9390",
           "URAM": "0"
         }
       },
-      "Relax": {
+      "ProxGS": {
         "Latency": {
-          "LatencyBest": "16396",
-          "LatencyAvg": "16396",
-          "LatencyWorst": "16396",
-          "PipelineII": "16396",
+          "LatencyBest": "611297",
+          "LatencyAvg": "611297",
+          "LatencyWorst": "611297",
+          "PipelineII": "611297",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.741"
+          "Estimate": "8.750"
         },
-        "Loops": [{
+        "Loops": [
+          {
+            "Name": "Loop 1",
+            "TripCount": "128",
+            "Latency": "16511",
+            "PipelineII": "",
+            "PipelineDepth": "129",
+            "Loops": [{
+                "Name": "Loop 1.1",
+                "TripCount": "128",
+                "Latency": "127",
+                "PipelineII": "",
+                "PipelineDepth": "1"
+              }]
+          },
+          {
+            "Name": "Loop 2",
+            "TripCount": "128",
+            "Latency": "16511",
+            "PipelineII": "",
+            "PipelineDepth": "129",
+            "Loops": [{
+                "Name": "Loop 2.1",
+                "TripCount": "128",
+                "Latency": "127",
+                "PipelineII": "",
+                "PipelineDepth": "1"
+              }]
+          },
+          {
+            "Name": "Loop 3",
+            "TripCount": "128",
+            "Latency": "16511",
+            "PipelineII": "",
+            "PipelineDepth": "129",
+            "Loops": [{
+                "Name": "Loop 3.1",
+                "TripCount": "128",
+                "Latency": "127",
+                "PipelineII": "",
+                "PipelineDepth": "1"
+              }]
+          },
+          {
+            "Name": "for_y_for_x",
+            "TripCount": "16384",
+            "Latency": "16407",
+            "PipelineII": "1",
+            "PipelineDepth": "25"
+          },
+          {
+            "Name": "for_y_for_x",
+            "TripCount": "16384",
+            "Latency": "16436",
+            "PipelineII": "1",
+            "PipelineDepth": "54"
+          },
+          {
             "Name": "for_y_for_x",
             "TripCount": "16384",
             "Latency": "16394",
             "PipelineII": "1",
             "PipelineDepth": "12"
-          }],
+          }
+        ],
         "Area": {
-          "BRAM_18K": "0",
-          "DSP48E": "0",
-          "FF": "867",
-          "LUT": "1288",
+          "BRAM_18K": "210",
+          "DSP48E": "58",
+          "FF": "26708",
+          "LUT": "26012",
           "URAM": "0"
         }
       },
       "cross_channel_deblur": {
         "Latency": {
-          "LatencyBest": "38596862",
-          "LatencyAvg": "38596862",
-          "LatencyWorst": "38596862",
-          "PipelineII": "38596863",
+          "LatencyBest": "857364",
+          "LatencyAvg": "857364",
+          "LatencyWorst": "857364",
+          "PipelineII": "857365",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -978,18 +1102,18 @@
             "PipelineDepth": "1"
           },
           {
-            "Name": "for_iteration",
-            "TripCount": "50",
-            "Latency": "38547700",
-            "PipelineII": "",
-            "PipelineDepth": "770954"
+            "Name": "for_y_for_x",
+            "TripCount": "16384",
+            "Latency": "16384",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
           }
         ],
         "Area": {
-          "BRAM_18K": "427",
-          "DSP48E": "72",
-          "FF": "25179",
-          "LUT": "38016",
+          "BRAM_18K": "428",
+          "DSP48E": "58",
+          "FF": "27404",
+          "LUT": "30054",
           "URAM": "0"
         }
       }
@@ -1005,7 +1129,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2021-01-09 13:42:17 +0800",
+    "Time": "2021-01-13 22:02:53 +0800",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.2"
   }

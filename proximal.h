@@ -2,7 +2,8 @@
 #include "ap_int.h"
 #include "ap_fixed.h"
 typedef  ap_uint<8>  eita_t;
-typedef  ap_fixed<24,16> fft_operation;
+
+typedef  float fft_operation; //ap_fixed<24,16>
 typedef std::complex<fft_operation> proxGSDataIn;
 //#define SIZE 1<<14
 #define HEIGHT 128

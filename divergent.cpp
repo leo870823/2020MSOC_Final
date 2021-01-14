@@ -49,7 +49,8 @@ void ProxFS (eita_t data_out[HEIGHT][WIDTH],
   }
 }
 
-void my_filter_v1( eita_t f[HEIGHT][WIDTH],
+void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
+				   eita_t f[HEIGHT][WIDTH],// x_bar
 				   eita_t adjChImg[HEIGHT][WIDTH],
 				   eita_t g1 [HEIGHT][WIDTH],
 				   eita_t g2 [HEIGHT][WIDTH],
@@ -196,11 +197,11 @@ void my_filter_v1( eita_t f[HEIGHT][WIDTH],
 		Loop_x_4 : for (int x = 0; x < WIDTH; x++)
     	{
 			#pragma HLS PIPELINE
-	  		f[y][x] = f[y][x] - eita_t(tau) * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
+	  		f_n[y][x] = f_n[y][x] - eita_t(tau) * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
 			
         }
     }
-	//printf("[DEBUG] End of my filter \n");
+
 
 
 }

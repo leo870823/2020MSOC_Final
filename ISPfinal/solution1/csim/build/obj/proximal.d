@@ -31,4 +31,5 @@ obj/proximal.o: ../../../../proximal.cpp ../../../../proximal.h \
  C:/Xilinx/Vivado/2019.2/include/utils/x_hls_traits.h \
  C:/Xilinx/Vivado/2019.2/include/utils/x_hls_utils.h \
  C:/Xilinx/Vivado/2019.2/include/utils/x_hls_defines.h \
- C:/Xilinx/Vivado/2019.2/include/utils/x_hls_traits.h
+ C:/Xilinx/Vivado/2019.2/include/utils/x_hls_traits.h \
+ ../../../../divergent.h
