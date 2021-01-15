@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'fft_top_2D'" level="0">
-<item name = "Date">Thu Jan 14 15:49:10 2021
+<item name = "Date">Fri Jan 15 10:17:10 2021
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">ISPfinal</item>
@@ -79,8 +79,8 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="buffer_out_U">fft_top_2D_bufferdEe, 2, 0, 0, 0, 128, 64, 1, 8192</column>
-<column name="buffer_in_U">fft_top_2D_bufferdEe, 2, 0, 0, 0, 128, 64, 1, 8192</column>
+<column name="buffer_out_U">fft_top_2D_bufferhbi, 2, 0, 0, 0, 128, 64, 1, 8192</column>
+<column name="buffer_in_U">fft_top_2D_bufferhbi, 2, 0, 0, 0, 128, 64, 1, 8192</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">

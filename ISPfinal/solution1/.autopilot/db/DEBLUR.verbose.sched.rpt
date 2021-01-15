@@ -1,0 +1,144 @@
+
+
+================================================================
+== Vivado HLS Report for 'DEBLUR'
+================================================================
+* Date:           Fri Jan 15 10:17:07 2021
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        ISPfinal
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.750 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
+    |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  4191469|  4191469| 41.915 ms | 41.915 ms |  4191469|  4191469|   none  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 5 [2/2] (1.76ns)   --->   "call fastcc void @cross_channel_deblur([16384 x i8]* %adjChImg_G_V, [16384 x i8]* %refImg_R_V, [16384 x float]* %nominator_G_M_real, [16384 x float]* %nominator_G_M_imag, [16384 x float]* %denominator_G)" [deblur.cpp:103]   --->   Operation 5 'call' <Predicate = true> <Delay = 1.76> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 6 [1/2] (0.00ns)   --->   "call fastcc void @cross_channel_deblur([16384 x i8]* %adjChImg_G_V, [16384 x i8]* %refImg_R_V, [16384 x float]* %nominator_G_M_real, [16384 x float]* %nominator_G_M_imag, [16384 x float]* %denominator_G)" [deblur.cpp:103]   --->   Operation 6 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.76>
+ST_3 : Operation 7 [2/2] (1.76ns)   --->   "call fastcc void @cross_channel_deblur([16384 x i8]* %adjChImg_B_V, [16384 x i8]* %refImg_R_V, [16384 x float]* %nominator_B_M_real, [16384 x float]* %nominator_B_M_imag, [16384 x float]* %denominator_B)" [deblur.cpp:104]   --->   Operation 7 'call' <Predicate = true> <Delay = 1.76> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x i8]* %refImg_R_V), !map !250"   --->   Operation 8 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x i8]* %adjChImg_G_V), !map !256"   --->   Operation 9 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x i8]* %adjChImg_B_V), !map !260"   --->   Operation 10 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %nominator_R_M_real), !map !264"   --->   Operation 11 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %nominator_R_M_imag), !map !268"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %denominator_R), !map !272"   --->   Operation 13 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %nominator_G_M_real), !map !276"   --->   Operation 14 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %nominator_G_M_imag), !map !280"   --->   Operation 15 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %denominator_G), !map !284"   --->   Operation 16 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %nominator_B_M_real), !map !288"   --->   Operation 17 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %nominator_B_M_imag), !map !292"   --->   Operation 18 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([16384 x float]* %denominator_B), !map !296"   --->   Operation 19 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @DEBLUR_str) nounwind"   --->   Operation 20 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 21 [1/2] (0.00ns)   --->   "call fastcc void @cross_channel_deblur([16384 x i8]* %adjChImg_B_V, [16384 x i8]* %refImg_R_V, [16384 x float]* %nominator_B_M_real, [16384 x float]* %nominator_B_M_imag, [16384 x float]* %denominator_B)" [deblur.cpp:104]   --->   Operation 21 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "ret void" [deblur.cpp:105]   --->   Operation 22 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ln103', deblur.cpp:103) to 'cross_channel_deblur' [26]  (1.77 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ln104', deblur.cpp:104) to 'cross_channel_deblur' [27]  (1.77 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

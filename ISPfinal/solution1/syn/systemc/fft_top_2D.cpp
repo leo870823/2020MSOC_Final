@@ -59,7 +59,7 @@ const sc_lv<8> fft_top_2D::ap_const_lv8_1 = "1";
 const bool fft_top_2D::ap_const_boolean_1 = true;
 
 fft_top_2D::fft_top_2D(sc_module_name name) : sc_module(name), mVcdFile(0) {
-    buffer_out_U = new fft_top_2D_bufferdEe("buffer_out_U");
+    buffer_out_U = new fft_top_2D_bufferhbi("buffer_out_U");
     buffer_out_U->clk(ap_clk);
     buffer_out_U->reset(ap_rst);
     buffer_out_U->address0(buffer_out_address0);
@@ -67,7 +67,7 @@ fft_top_2D::fft_top_2D(sc_module_name name) : sc_module(name), mVcdFile(0) {
     buffer_out_U->we0(buffer_out_we0);
     buffer_out_U->d0(buffer_out_d0);
     buffer_out_U->q0(buffer_out_q0);
-    buffer_in_U = new fft_top_2D_bufferdEe("buffer_in_U");
+    buffer_in_U = new fft_top_2D_bufferhbi("buffer_in_U");
     buffer_in_U->clk(ap_clk);
     buffer_in_U->reset(ap_rst);
     buffer_in_U->address0(buffer_in_address0);
@@ -432,7 +432,7 @@ fft_top_2D::fft_top_2D(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_tmp_2_fu_513_p3);
     sensitive << ( i3_0_reg_287 );
 
-    SC_METHOD(thread_tmp_4_fu_575_p3);
+    SC_METHOD(thread_tmp_3_fu_575_p3);
     sensitive << ( i4_0_reg_299 );
 
     SC_METHOD(thread_trunc_ln210_fu_471_p1);
@@ -481,7 +481,7 @@ fft_top_2D::fft_top_2D(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( i3_0_reg_287 );
 
     SC_METHOD(thread_zext_ln223_1_fu_583_p1);
-    sensitive << ( tmp_4_fu_575_p3 );
+    sensitive << ( tmp_3_fu_575_p3 );
 
     SC_METHOD(thread_zext_ln223_2_fu_592_p1);
     sensitive << ( add_ln223_reg_728 );
@@ -677,7 +677,7 @@ fft_top_2D::fft_top_2D(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, add_ln218_fu_525_p2, "add_ln218_fu_525_p2");
     sc_trace(mVcdFile, bitcast_ln218_1_fu_545_p1, "bitcast_ln218_1_fu_545_p1");
     sc_trace(mVcdFile, bitcast_ln218_fu_541_p1, "bitcast_ln218_fu_541_p1");
-    sc_trace(mVcdFile, tmp_4_fu_575_p3, "tmp_4_fu_575_p3");
+    sc_trace(mVcdFile, tmp_3_fu_575_p3, "tmp_3_fu_575_p3");
     sc_trace(mVcdFile, zext_ln223_1_fu_583_p1, "zext_ln223_1_fu_583_p1");
     sc_trace(mVcdFile, trunc_ln223_fu_597_p1, "trunc_ln223_fu_597_p1");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
@@ -1299,8 +1299,8 @@ void fft_top_2D::thread_tmp_2_fu_513_p3() {
     tmp_2_fu_513_p3 = esl_concat<8,7>(i3_0_reg_287.read(), ap_const_lv7_0);
 }
 
-void fft_top_2D::thread_tmp_4_fu_575_p3() {
-    tmp_4_fu_575_p3 = esl_concat<8,7>(i4_0_reg_299.read(), ap_const_lv7_0);
+void fft_top_2D::thread_tmp_3_fu_575_p3() {
+    tmp_3_fu_575_p3 = esl_concat<8,7>(i4_0_reg_299.read(), ap_const_lv7_0);
 }
 
 void fft_top_2D::thread_trunc_ln210_fu_471_p1() {
@@ -1364,7 +1364,7 @@ void fft_top_2D::thread_zext_ln218_fu_536_p1() {
 }
 
 void fft_top_2D::thread_zext_ln223_1_fu_583_p1() {
-    zext_ln223_1_fu_583_p1 = esl_zext<16,15>(tmp_4_fu_575_p3.read());
+    zext_ln223_1_fu_583_p1 = esl_zext<16,15>(tmp_3_fu_575_p3.read());
 }
 
 void fft_top_2D::thread_zext_ln223_2_fu_592_p1() {

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dummy_proc_fe_1'
 ================================================================
-* Date:           Thu Jan 14 15:49:06 2021
+* Date:           Fri Jan 15 10:17:03 2021
 
 * Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
 * Project:        ISPfinal
@@ -82,8 +82,8 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 7.26>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %config_data_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str107, i32 0, i32 0, [1 x i8]* @p_str108, [1 x i8]* @p_str109, [1 x i8]* @p_str110, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str111, [1 x i8]* @p_str112)"   --->   Operation 4 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %out_r, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str74, i32 0, i32 0, [1 x i8]* @p_str75, [1 x i8]* @p_str76, [1 x i8]* @p_str77, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str78, [1 x i8]* @p_str79)"   --->   Operation 5 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %config_data_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str131, i32 0, i32 0, [1 x i8]* @p_str132, [1 x i8]* @p_str133, [1 x i8]* @p_str134, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str135, [1 x i8]* @p_str136)"   --->   Operation 4 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %out_r, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str98, i32 0, i32 0, [1 x i8]* @p_str99, [1 x i8]* @p_str100, [1 x i8]* @p_str101, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str102, [1 x i8]* @p_str103)"   --->   Operation 5 'specinterface' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%direction_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %direction)" [fft_top.cpp:141]   --->   Operation 6 'read' 'direction_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (3.63ns)   --->   "%p_Val2_s = call i16 @_ssdm_op_Read.ap_fifo.i16P(i16* %config_data_V)" [C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:267->fft_top.cpp:147]   --->   Operation 7 'read' 'p_Val2_s' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 0> <FIFO>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 -85, i1 %direction_read)" [C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:301->fft_top.cpp:148]   --->   Operation 8 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>

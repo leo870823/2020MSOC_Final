@@ -1,0 +1,327 @@
+
+
+================================================================
+== Vivado HLS Report for 'cross_channel_deblur'
+================================================================
+* Date:           Fri Jan 15 10:17:06 2021
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        ISPfinal
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.750 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
+    |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  2095733|  2095733| 20.957 ms | 20.957 ms |  2095733|  2095733|   none  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                 |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |    Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +-----------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- for_y_for_x    |    16384|    16384|         1|          1|          1|  16384|    yes   |
+        |- for_iteration  |  2030184|  2030184|    676728|          -|          -|      3|    no    |
+        | + for_y_for_x   |    32768|    32768|         2|          -|          -|  16384|    no    |
+        +-----------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 13
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 5 
+6 --> 7 
+7 --> 8 13 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 7 
+12 --> 11 
+13 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.86>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%x_bar_V = alloca [16384 x i8], align 1" [deblur.cpp:71]   --->   Operation 14 'alloca' 'x_bar_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%x_old_V = alloca [16384 x i8], align 1"   --->   Operation 15 'alloca' 'x_old_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%x_V = alloca [16384 x i8], align 1" [deblur.cpp:71]   --->   Operation 16 'alloca' 'x_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%y_1_V = alloca [16384 x i8], align 1" [deblur.cpp:72]   --->   Operation 17 'alloca' 'y_1_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%y_2_V = alloca [16384 x i8], align 1" [deblur.cpp:72]   --->   Operation 18 'alloca' 'y_2_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%y_3_V = alloca [16384 x i8], align 1" [deblur.cpp:72]   --->   Operation 19 'alloca' 'y_3_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%y_4_V = alloca [16384 x i8], align 1" [deblur.cpp:72]   --->   Operation 20 'alloca' 'y_4_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%y_5_V = alloca [16384 x i8], align 1" [deblur.cpp:72]   --->   Operation 21 'alloca' 'y_5_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%y_6_V = alloca [16384 x i8], align 1" [deblur.cpp:72]   --->   Operation 22 'alloca' 'y_6_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%y_7_V = alloca [16384 x i8], align 1" [deblur.cpp:72]   --->   Operation 23 'alloca' 'y_7_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_1 : Operation 24 [2/2] (1.86ns)   --->   "call fastcc void @array_copy3([16384 x i8]* %Img_V, [16384 x i8]* %x_bar_V)" [deblur.cpp:74]   --->   Operation 24 'call' <Predicate = true> <Delay = 1.86> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 25 [1/2] (0.00ns)   --->   "call fastcc void @array_copy3([16384 x i8]* %Img_V, [16384 x i8]* %x_bar_V)" [deblur.cpp:74]   --->   Operation 25 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.86>
+ST_3 : Operation 26 [2/2] (1.86ns)   --->   "call fastcc void @array_copy3([16384 x i8]* %Img_V, [16384 x i8]* %x_V)" [deblur.cpp:75]   --->   Operation 26 'call' <Predicate = true> <Delay = 1.86> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 1.76>
+ST_4 : Operation 27 [1/2] (0.00ns)   --->   "call fastcc void @array_copy3([16384 x i8]* %Img_V, [16384 x i8]* %x_V)" [deblur.cpp:75]   --->   Operation 27 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 28 [1/1] (1.76ns)   --->   "br label %0" [deblur.cpp:41->deblur.cpp:76]   --->   Operation 28 'br' <Predicate = true> <Delay = 1.76>
+
+State 5 <SV = 4> <Delay = 8.36>
+ST_5 : Operation 29 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i15 [ 0, %arrayctor.loop4.preheader ], [ %add_ln41, %for_x ]" [deblur.cpp:41->deblur.cpp:76]   --->   Operation 29 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 30 [1/1] (0.00ns)   --->   "%y_0_i = phi i8 [ 0, %arrayctor.loop4.preheader ], [ %select_ln46_1, %for_x ]" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 30 'phi' 'y_0_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 31 [1/1] (0.00ns)   --->   "%x_0_i = phi i8 [ 0, %arrayctor.loop4.preheader ], [ %x, %for_x ]"   --->   Operation 31 'phi' 'x_0_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 32 [1/1] (2.31ns)   --->   "%icmp_ln41 = icmp eq i15 %indvar_flatten, -16384" [deblur.cpp:41->deblur.cpp:76]   --->   Operation 32 'icmp' 'icmp_ln41' <Predicate = true> <Delay = 2.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 33 [1/1] (1.94ns)   --->   "%add_ln41 = add i15 %indvar_flatten, 1" [deblur.cpp:41->deblur.cpp:76]   --->   Operation 33 'add' 'add_ln41' <Predicate = true> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 34 [1/1] (0.00ns)   --->   "br i1 %icmp_ln41, label %array_initialize.exit.preheader, label %for_x" [deblur.cpp:41->deblur.cpp:76]   --->   Operation 34 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 35 [1/1] (1.91ns)   --->   "%y = add i8 %y_0_i, 1" [deblur.cpp:41->deblur.cpp:76]   --->   Operation 35 'add' 'y' <Predicate = (!icmp_ln41)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @for_y_for_x_str)"   --->   Operation 36 'specloopname' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 37 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16384, i64 16384, i64 16384)"   --->   Operation 37 'speclooptripcount' 'empty' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 38 [1/1] (1.55ns)   --->   "%icmp_ln43 = icmp eq i8 %x_0_i, -128" [deblur.cpp:43->deblur.cpp:76]   --->   Operation 38 'icmp' 'icmp_ln43' <Predicate = (!icmp_ln41)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 39 [1/1] (1.24ns)   --->   "%select_ln46 = select i1 %icmp_ln43, i8 0, i8 %x_0_i" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 39 'select' 'select_ln46' <Predicate = (!icmp_ln41)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 40 [1/1] (1.24ns)   --->   "%select_ln46_1 = select i1 %icmp_ln43, i8 %y, i8 %y_0_i" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 40 'select' 'select_ln46_1' <Predicate = (!icmp_ln41)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 41 [1/1] (0.00ns)   --->   "%tmp = call i15 @_ssdm_op_BitConcatenate.i15.i8.i7(i8 %select_ln46_1, i7 0)" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 41 'bitconcatenate' 'tmp' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 42 [1/1] (0.00ns)   --->   "%zext_ln44 = zext i15 %tmp to i16" [deblur.cpp:44->deblur.cpp:76]   --->   Operation 42 'zext' 'zext_ln44' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str148) nounwind" [deblur.cpp:44->deblur.cpp:76]   --->   Operation 43 'specloopname' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_12_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([6 x i8]* @p_str148)" [deblur.cpp:44->deblur.cpp:76]   --->   Operation 44 'specregionbegin' 'tmp_12_i' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str249) nounwind" [deblur.cpp:45->deblur.cpp:76]   --->   Operation 45 'specpipeline' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln321 = zext i8 %select_ln46 to i16" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 46 'zext' 'zext_ln321' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (1.94ns)   --->   "%add_ln321 = add i16 %zext_ln321, %zext_ln44" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 47 'add' 'add_ln321' <Predicate = (!icmp_ln41)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%zext_ln321_1 = zext i16 %add_ln321 to i64" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 48 'zext' 'zext_ln321_1' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%y_1_V_addr = getelementptr [16384 x i8]* %y_1_V, i64 0, i64 %zext_ln321_1" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 49 'getelementptr' 'y_1_V_addr' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "%y_2_V_addr = getelementptr [16384 x i8]* %y_2_V, i64 0, i64 %zext_ln321_1" [deblur.cpp:48->deblur.cpp:76]   --->   Operation 50 'getelementptr' 'y_2_V_addr' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%y_3_V_addr = getelementptr [16384 x i8]* %y_3_V, i64 0, i64 %zext_ln321_1" [deblur.cpp:50->deblur.cpp:76]   --->   Operation 51 'getelementptr' 'y_3_V_addr' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%y_4_V_addr = getelementptr [16384 x i8]* %y_4_V, i64 0, i64 %zext_ln321_1" [deblur.cpp:52->deblur.cpp:76]   --->   Operation 52 'getelementptr' 'y_4_V_addr' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%y_5_V_addr = getelementptr [16384 x i8]* %y_5_V, i64 0, i64 %zext_ln321_1" [deblur.cpp:54->deblur.cpp:76]   --->   Operation 53 'getelementptr' 'y_5_V_addr' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%y_6_V_addr = getelementptr [16384 x i8]* %y_6_V, i64 0, i64 %zext_ln321_1" [deblur.cpp:56->deblur.cpp:76]   --->   Operation 54 'getelementptr' 'y_6_V_addr' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%y_7_V_addr = getelementptr [16384 x i8]* %y_7_V, i64 0, i64 %zext_ln321_1" [deblur.cpp:58->deblur.cpp:76]   --->   Operation 55 'getelementptr' 'y_7_V_addr' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (3.25ns)   --->   "store i8 0, i8* %y_1_V_addr, align 1" [deblur.cpp:46->deblur.cpp:76]   --->   Operation 56 'store' <Predicate = (!icmp_ln41)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str249) nounwind" [deblur.cpp:47->deblur.cpp:76]   --->   Operation 57 'specpipeline' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (3.25ns)   --->   "store i8 0, i8* %y_2_V_addr, align 1" [deblur.cpp:48->deblur.cpp:76]   --->   Operation 58 'store' <Predicate = (!icmp_ln41)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str249) nounwind" [deblur.cpp:49->deblur.cpp:76]   --->   Operation 59 'specpipeline' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 60 [1/1] (3.25ns)   --->   "store i8 0, i8* %y_3_V_addr, align 1" [deblur.cpp:50->deblur.cpp:76]   --->   Operation 60 'store' <Predicate = (!icmp_ln41)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str249) nounwind" [deblur.cpp:51->deblur.cpp:76]   --->   Operation 61 'specpipeline' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (3.25ns)   --->   "store i8 0, i8* %y_4_V_addr, align 1" [deblur.cpp:52->deblur.cpp:76]   --->   Operation 62 'store' <Predicate = (!icmp_ln41)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str249) nounwind" [deblur.cpp:53->deblur.cpp:76]   --->   Operation 63 'specpipeline' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (3.25ns)   --->   "store i8 0, i8* %y_5_V_addr, align 1" [deblur.cpp:54->deblur.cpp:76]   --->   Operation 64 'store' <Predicate = (!icmp_ln41)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str249) nounwind" [deblur.cpp:55->deblur.cpp:76]   --->   Operation 65 'specpipeline' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 66 [1/1] (3.25ns)   --->   "store i8 0, i8* %y_6_V_addr, align 1" [deblur.cpp:56->deblur.cpp:76]   --->   Operation 66 'store' <Predicate = (!icmp_ln41)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str249) nounwind" [deblur.cpp:57->deblur.cpp:76]   --->   Operation 67 'specpipeline' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (3.25ns)   --->   "store i8 0, i8* %y_7_V_addr, align 1" [deblur.cpp:58->deblur.cpp:76]   --->   Operation 68 'store' <Predicate = (!icmp_ln41)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%empty_38 = call i32 (...)* @_ssdm_op_SpecRegionEnd([6 x i8]* @p_str148, i32 %tmp_12_i)" [deblur.cpp:59->deblur.cpp:76]   --->   Operation 69 'specregionend' 'empty_38' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (1.91ns)   --->   "%x = add i8 %select_ln46, 1" [deblur.cpp:43->deblur.cpp:76]   --->   Operation 70 'add' 'x' <Predicate = (!icmp_ln41)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "br label %0"   --->   Operation 71 'br' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 1.76>
+ST_6 : Operation 72 [1/1] (1.76ns)   --->   "br label %array_initialize.exit" [deblur.cpp:78]   --->   Operation 72 'br' <Predicate = true> <Delay = 1.76>
+
+State 7 <SV = 6> <Delay = 1.86>
+ST_7 : Operation 73 [1/1] (0.00ns)   --->   "%k_0 = phi i2 [ %k, %array_initialize.exit.loopexit ], [ 0, %array_initialize.exit.preheader ]"   --->   Operation 73 'phi' 'k_0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 74 [1/1] (0.95ns)   --->   "%icmp_ln78 = icmp eq i2 %k_0, -1" [deblur.cpp:78]   --->   Operation 74 'icmp' 'icmp_ln78' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 75 [1/1] (0.00ns)   --->   "%empty_39 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3)"   --->   Operation 75 'speclooptripcount' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 76 [1/1] (1.56ns)   --->   "%k = add i2 %k_0, 1" [deblur.cpp:78]   --->   Operation 76 'add' 'k' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 77 [1/1] (0.00ns)   --->   "br i1 %icmp_ln78, label %3, label %1" [deblur.cpp:78]   --->   Operation 77 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 78 [2/2] (1.86ns)   --->   "call fastcc void @array_copy3([16384 x i8]* %x_V, [16384 x i8]* %x_old_V)" [deblur.cpp:81]   --->   Operation 78 'call' <Predicate = (!icmp_ln78)> <Delay = 1.86> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 79 [2/2] (0.00ns)   --->   "call fastcc void @my_filter_v12([16384 x i8]* %x_bar_V, [16384 x i8]* %adjChImg_V, [16384 x i8]* %y_1_V, [16384 x i8]* %y_2_V, [16384 x i8]* %y_3_V, [16384 x i8]* %y_4_V, [16384 x i8]* %y_5_V, [16384 x i8]* %y_6_V, [16384 x i8]* %y_7_V)" [deblur.cpp:83]   --->   Operation 79 'call' <Predicate = (!icmp_ln78)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 80 [2/2] (1.86ns)   --->   "call fastcc void @array_copy3([16384 x i8]* %x_V, [16384 x i8]* %Img_V)" [deblur.cpp:89]   --->   Operation 80 'call' <Predicate = (icmp_ln78)> <Delay = 1.86> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 81 [1/2] (0.00ns)   --->   "call fastcc void @array_copy3([16384 x i8]* %x_V, [16384 x i8]* %x_old_V)" [deblur.cpp:81]   --->   Operation 81 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 82 [1/2] (0.00ns)   --->   "call fastcc void @my_filter_v12([16384 x i8]* %x_bar_V, [16384 x i8]* %adjChImg_V, [16384 x i8]* %y_1_V, [16384 x i8]* %y_2_V, [16384 x i8]* %y_3_V, [16384 x i8]* %y_4_V, [16384 x i8]* %y_5_V, [16384 x i8]* %y_6_V, [16384 x i8]* %y_7_V)" [deblur.cpp:83]   --->   Operation 82 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 83 [2/2] (0.00ns)   --->   "call fastcc void @ProxGS4([16384 x i8]* %x_V, [16384 x float]* %coe_a_M_real, [16384 x float]* %coe_a_M_imag, [16384 x float]* %coe_b)" [deblur.cpp:85]   --->   Operation 83 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 1.76>
+ST_10 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str350) nounwind" [deblur.cpp:78]   --->   Operation 84 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 85 [1/2] (0.00ns)   --->   "call fastcc void @ProxGS4([16384 x i8]* %x_V, [16384 x float]* %coe_a_M_real, [16384 x float]* %coe_a_M_imag, [16384 x float]* %coe_b)" [deblur.cpp:85]   --->   Operation 85 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 86 [1/1] (1.76ns)   --->   "br label %2" [divergent.cpp:121->deblur.cpp:87]   --->   Operation 86 'br' <Predicate = true> <Delay = 1.76>
+
+State 11 <SV = 10> <Delay = 8.36>
+ST_11 : Operation 87 [1/1] (0.00ns)   --->   "%indvar_flatten11 = phi i15 [ 0, %1 ], [ %add_ln121, %for_x1 ]" [divergent.cpp:121->deblur.cpp:87]   --->   Operation 87 'phi' 'indvar_flatten11' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 88 [1/1] (0.00ns)   --->   "%j_0_i = phi i8 [ 0, %1 ], [ %select_ln126_1, %for_x1 ]" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 88 'phi' 'j_0_i' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 89 [1/1] (0.00ns)   --->   "%i_0_i = phi i8 [ 0, %1 ], [ %i, %for_x1 ]"   --->   Operation 89 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 90 [1/1] (2.31ns)   --->   "%icmp_ln121 = icmp eq i15 %indvar_flatten11, -16384" [divergent.cpp:121->deblur.cpp:87]   --->   Operation 90 'icmp' 'icmp_ln121' <Predicate = true> <Delay = 2.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 91 [1/1] (1.94ns)   --->   "%add_ln121 = add i15 %indvar_flatten11, 1" [divergent.cpp:121->deblur.cpp:87]   --->   Operation 91 'add' 'add_ln121' <Predicate = true> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 92 [1/1] (0.00ns)   --->   "br i1 %icmp_ln121, label %array_initialize.exit.loopexit, label %for_x1" [divergent.cpp:121->deblur.cpp:87]   --->   Operation 92 'br' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 93 [1/1] (1.91ns)   --->   "%j = add i8 %j_0_i, 1" [divergent.cpp:121->deblur.cpp:87]   --->   Operation 93 'add' 'j' <Predicate = (!icmp_ln121)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 94 [1/1] (1.55ns)   --->   "%icmp_ln123 = icmp eq i8 %i_0_i, -128" [divergent.cpp:123->deblur.cpp:87]   --->   Operation 94 'icmp' 'icmp_ln123' <Predicate = (!icmp_ln121)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 95 [1/1] (1.24ns)   --->   "%select_ln126 = select i1 %icmp_ln123, i8 0, i8 %i_0_i" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 95 'select' 'select_ln126' <Predicate = (!icmp_ln121)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 96 [1/1] (1.24ns)   --->   "%select_ln126_1 = select i1 %icmp_ln123, i8 %j, i8 %j_0_i" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 96 'select' 'select_ln126_1' <Predicate = (!icmp_ln121)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_s = call i15 @_ssdm_op_BitConcatenate.i15.i8.i7(i8 %select_ln126_1, i7 0)" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 97 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_11 : Operation 98 [1/1] (0.00ns)   --->   "%zext_ln124 = zext i15 %tmp_s to i16" [divergent.cpp:124->deblur.cpp:87]   --->   Operation 98 'zext' 'zext_ln124' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_11 : Operation 99 [1/1] (0.00ns)   --->   "%zext_ln321_2 = zext i8 %select_ln126 to i16" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 99 'zext' 'zext_ln321_2' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_11 : Operation 100 [1/1] (1.94ns)   --->   "%add_ln321_1 = add i16 %zext_ln321_2, %zext_ln124" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 100 'add' 'add_ln321_1' <Predicate = (!icmp_ln121)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 101 [1/1] (0.00ns)   --->   "%zext_ln321_3 = zext i16 %add_ln321_1 to i64" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 101 'zext' 'zext_ln321_3' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_11 : Operation 102 [1/1] (0.00ns)   --->   "%x_old_V_addr = getelementptr [16384 x i8]* %x_old_V, i64 0, i64 %zext_ln321_3" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 102 'getelementptr' 'x_old_V_addr' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_11 : Operation 103 [1/1] (0.00ns)   --->   "%x_V_addr = getelementptr [16384 x i8]* %x_V, i64 0, i64 %zext_ln321_3" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 103 'getelementptr' 'x_V_addr' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_11 : Operation 104 [2/2] (3.25ns)   --->   "%x_V_load = load i8* %x_V_addr, align 1" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 104 'load' 'x_V_load' <Predicate = (!icmp_ln121)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_11 : Operation 105 [2/2] (3.25ns)   --->   "%x_old_V_load = load i8* %x_old_V_addr, align 1" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 105 'load' 'x_old_V_load' <Predicate = (!icmp_ln121)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_11 : Operation 106 [1/1] (1.91ns)   --->   "%i = add i8 %select_ln126, 1" [divergent.cpp:123->deblur.cpp:87]   --->   Operation 106 'add' 'i' <Predicate = (!icmp_ln121)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 107 [1/1] (0.00ns)   --->   "br label %array_initialize.exit"   --->   Operation 107 'br' <Predicate = (icmp_ln121)> <Delay = 0.00>
+
+State 12 <SV = 11> <Delay = 8.42>
+ST_12 : Operation 108 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @for_y_for_x_str)"   --->   Operation 108 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 109 [1/1] (0.00ns)   --->   "%empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16384, i64 16384, i64 16384)"   --->   Operation 109 'speclooptripcount' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 110 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str140) nounwind" [divergent.cpp:124->deblur.cpp:87]   --->   Operation 110 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 111 [1/1] (0.00ns)   --->   "%tmp_16_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([6 x i8]* @p_str140)" [divergent.cpp:124->deblur.cpp:87]   --->   Operation 111 'specregionbegin' 'tmp_16_i' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 112 [1/1] (0.00ns)   --->   "%x_bar_V_addr = getelementptr [16384 x i8]* %x_bar_V, i64 0, i64 %zext_ln321_3" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 112 'getelementptr' 'x_bar_V_addr' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 113 [1/2] (3.25ns)   --->   "%x_V_load = load i8* %x_V_addr, align 1" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 113 'load' 'x_V_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_12 : Operation 114 [1/2] (3.25ns)   --->   "%x_old_V_load = load i8* %x_old_V_addr, align 1" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 114 'load' 'x_old_V_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_12 : Operation 115 [1/1] (1.91ns)   --->   "%sub_ln214 = sub i8 %x_V_load, %x_old_V_load" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 115 'sub' 'sub_ln214' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 116 [1/1] (3.25ns)   --->   "store i8 %sub_ln214, i8* %x_bar_V_addr, align 1" [divergent.cpp:126->deblur.cpp:87]   --->   Operation 116 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_12 : Operation 117 [1/1] (0.00ns)   --->   "%empty_41 = call i32 (...)* @_ssdm_op_SpecRegionEnd([6 x i8]* @p_str140, i32 %tmp_16_i)" [divergent.cpp:127->deblur.cpp:87]   --->   Operation 117 'specregionend' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 118 [1/1] (0.00ns)   --->   "br label %2"   --->   Operation 118 'br' <Predicate = true> <Delay = 0.00>
+
+State 13 <SV = 7> <Delay = 0.00>
+ST_13 : Operation 119 [1/2] (0.00ns)   --->   "call fastcc void @array_copy3([16384 x i8]* %x_V, [16384 x i8]* %Img_V)" [deblur.cpp:89]   --->   Operation 119 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 120 [1/1] (0.00ns)   --->   "ret void" [deblur.cpp:91]   --->   Operation 120 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.86ns
+The critical path consists of the following:
+	'alloca' operation ('x_bar.V', deblur.cpp:71) [6]  (0 ns)
+	'call' operation ('call_ln74', deblur.cpp:74) to 'array_copy3' [16]  (1.86 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 1.86ns
+The critical path consists of the following:
+	'call' operation ('call_ln75', deblur.cpp:75) to 'array_copy3' [17]  (1.86 ns)
+
+ <State 4>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten', deblur.cpp:41->deblur.cpp:76) with incoming values : ('add_ln41', deblur.cpp:41->deblur.cpp:76) [20]  (1.77 ns)
+
+ <State 5>: 8.36ns
+The critical path consists of the following:
+	'phi' operation ('y_0_i', deblur.cpp:46->deblur.cpp:76) with incoming values : ('select_ln46_1', deblur.cpp:46->deblur.cpp:76) [21]  (0 ns)
+	'add' operation ('y', deblur.cpp:41->deblur.cpp:76) [27]  (1.92 ns)
+	'select' operation ('select_ln46_1', deblur.cpp:46->deblur.cpp:76) [32]  (1.25 ns)
+	'add' operation ('add_ln321', deblur.cpp:46->deblur.cpp:76) [39]  (1.94 ns)
+	'getelementptr' operation ('y_1_V_addr', deblur.cpp:46->deblur.cpp:76) [41]  (0 ns)
+	'store' operation ('store_ln46', deblur.cpp:46->deblur.cpp:76) of constant 0 on array 'y_1.V', deblur.cpp:72 [48]  (3.25 ns)
+
+ <State 6>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('k') with incoming values : ('k', deblur.cpp:78) [67]  (1.77 ns)
+
+ <State 7>: 1.86ns
+The critical path consists of the following:
+	'call' operation ('call_ln81', deblur.cpp:81) to 'array_copy3' [74]  (1.86 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten11', divergent.cpp:121->deblur.cpp:87) with incoming values : ('add_ln121', divergent.cpp:121->deblur.cpp:87) [79]  (1.77 ns)
+
+ <State 11>: 8.36ns
+The critical path consists of the following:
+	'phi' operation ('j_0_i', divergent.cpp:126->deblur.cpp:87) with incoming values : ('select_ln126_1', divergent.cpp:126->deblur.cpp:87) [80]  (0 ns)
+	'add' operation ('j', divergent.cpp:121->deblur.cpp:87) [86]  (1.92 ns)
+	'select' operation ('select_ln126_1', divergent.cpp:126->deblur.cpp:87) [91]  (1.25 ns)
+	'add' operation ('add_ln321_1', divergent.cpp:126->deblur.cpp:87) [97]  (1.94 ns)
+	'getelementptr' operation ('x_V_addr', divergent.cpp:126->deblur.cpp:87) [101]  (0 ns)
+	'load' operation ('x_V_load', divergent.cpp:126->deblur.cpp:87) on array 'x.V', deblur.cpp:71 [102]  (3.25 ns)
+
+ <State 12>: 8.42ns
+The critical path consists of the following:
+	'load' operation ('x_V_load', divergent.cpp:126->deblur.cpp:87) on array 'x.V', deblur.cpp:71 [102]  (3.25 ns)
+	'sub' operation ('sub_ln214', divergent.cpp:126->deblur.cpp:87) [104]  (1.92 ns)
+	'store' operation ('store_ln126', divergent.cpp:126->deblur.cpp:87) of variable 'sub_ln214', divergent.cpp:126->deblur.cpp:87 on array 'x_bar.V', deblur.cpp:71 [105]  (3.25 ns)
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -6430,57 +6430,6 @@ void my_filter_v1( eita_t f_n[128][128],
 
 {_ssdm_SpecArrayDimSize(f_n, 128);_ssdm_SpecArrayDimSize(f, 128);_ssdm_SpecArrayDimSize(adjChImg, 128);_ssdm_SpecArrayDimSize(g1, 128);_ssdm_SpecArrayDimSize(g2, 128);_ssdm_SpecArrayDimSize(g3, 128);_ssdm_SpecArrayDimSize(g4, 128);_ssdm_SpecArrayDimSize(g5, 128);_ssdm_SpecArrayDimSize(g6, 128);_ssdm_SpecArrayDimSize(g7, 128);
 
-  eita_t fx [128][128];
-  eita_t fy [128][128];
-  eita_t fxx[128][128];
-  eita_t fyy[128][128];
-  eita_t fxy[128][128];
-
-  eita_t adj_fx [128][128];
-  eita_t adj_fy [128][128];
-
-
-  eita_t Sxf [128][128];
-  eita_t Syf [128][128];
-# 87 "divergent.cpp"
-  eita_t gx [128][128];
-  eita_t gy [128][128];
-  eita_t g3x [128][128];
-  eita_t gxx [128][128];
-  eita_t g4y [128][128];
-  eita_t gyy [128][128];
-  eita_t g5x [128][128];
-
-  eita_t gxy [128][128];
-
-  eita_t Sxtf [128][128];
-  eita_t Sytf [128][128];
-
-
- my_filter_fx ( fx, f);
- my_filter_fy ( fy, f);
- my_filter_fx ( fxx, fx );
- my_filter_fy ( fyy, fy );
- my_filter_fy ( fxy, fx );
-
- my_filter_fx ( adj_fx , adjChImg);
- my_filter_fy ( adj_fy , adjChImg);
-
-
-
- Loop_y_0 : for (int y = 0; y < 128; y++)
- {
-  Loop_x_0 : for (int x = 0; x < 128; x++)
-      {
-       Sxf[y][x] = (1.0 * 1.0) * ( adjChImg[y][x] * fx[y][x] - adj_fx[y][x] * f[y][x] );
-       Syf[y][x] = (1.0 * 1.0) * ( adjChImg[y][x] * fy[y][x] - adj_fy[y][x] * f[y][x] );
-
-      }
- }
-
-
-
-
 
 
  Loop_y_1 : for (int y = 0; y < 128; y++)
@@ -6488,13 +6437,13 @@ void my_filter_v1( eita_t f_n[128][128],
   Loop_x_1 : for (int x = 0; x < 128; x++)
      {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- g1[y][x] = g1[y][x] + eita_t(1.0) * fx[y][x] ;
-   g2[y][x] = g2[y][x] + eita_t(1.0) * fy[y][x] ;
-   g3[y][x] = g3[y][x] + eita_t(1.0) * fxx[y][x] ;
-   g4[y][x] = g4[y][x] + eita_t(1.0) * fyy[y][x] ;
-   g5[y][x] = g5[y][x] + eita_t(1.0) * fxy[y][x] ;
-   g6[y][x] = g6[y][x] + eita_t(1.0) * Sxf[y][x] ;
-   g7[y][x] = g7[y][x] + eita_t(1.0) * Syf[y][x] ;
+ g1[y][x] = g1[y][x] + eita_t(1.0) * (f[y][x+1]- f[y][x]) ;
+   g2[y][x] = g2[y][x] + eita_t(1.0) * (f[y+1][x]- f[y][x]) ;
+   g3[y][x] = g3[y][x] + eita_t(1.0) * (f[y][x+2]- 2*f[y][x+1] + f[y][x]) ;
+   g4[y][x] = g4[y][x] + eita_t(1.0) * (f[y+2][x]- 2*f[y+1][x] + f[y][x]) ;
+   g5[y][x] = g5[y][x] + eita_t(1.0) * (f[y+1][x+1]- f[y+1][x] - f[y][x+1] + f[y][x] ) ;
+   g6[y][x] = g6[y][x] + eita_t(1.0) * (1.0 * 1.0) * ( adjChImg[y][x] * (f[y][x+1]- f[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * f[y][x] );
+   g7[y][x] = g7[y][x] + eita_t(1.0) * (1.0 * 1.0) * ( adjChImg[y][x] * (f[y+1][x]- f[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * f[y][x] );
    if(g1[y][x]>1)
     g1[y][x] = 1 ;
    if(g2[y][x]>1)
@@ -6512,55 +6461,21 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
         }
     }
 
-
-  my_filter_fx ( gx, g1);
-  my_filter_fy ( gy, g2);
-  my_filter_fx ( g3x, g3 );
-  my_filter_fx ( gxx, g3x );
-  my_filter_fy ( g4y, g4 );
-  my_filter_fy ( gyy, g4y );
-  my_filter_fx ( g5x, g5 );
-  my_filter_fy ( gxy, g5x );
-
-
-  eita_t temp_cross6 [128][128];
-  eita_t temp_cross7 [128][128];
-  eita_t cross_X [128][128];
-  eita_t cross_Y [128][128];
-  Loop_y_2 : for (int y = 0; y < 128; y++)
-     {
-   Loop_x_2 : for (int x = 0; x < 128; x++)
-          {
-
-            temp_cross6[y][x] = adjChImg[y][x] * g6[y][x] ;
-            temp_cross7[y][x] = adjChImg[y][x] * g7[y][x] ;
-          }
-     }
-
-
-  my_filter_fx ( cross_X, temp_cross6 );
-  my_filter_fy ( cross_Y, temp_cross7 );
-
-
-  Loop_y_3 : for (int y = 0; y < 128; y++)
-   {
-   Loop_x_3 : for (int x = 0; x < 128; x++)
-        {
-         Sxtf[y][x] = eita_t(1.0 * 1.0) * ( cross_X[y][x] - adj_fx[y][x] * g6[y][x] );
-         Sytf[y][x] = eita_t(1.0 * 1.0) * ( cross_Y[y][x] - adj_fy[y][x] * g7[y][x] );
-        }
-   }
-
  Loop_y_4: for (int y = 0; y < 128; y++)
    {
   Loop_x_4 : for (int x = 0; x < 128; x++)
      {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- f_n[y][x] = f_n[y][x] - eita_t(0.02) * (gx[y][x] + gy[y][x] + gxx[y][x] + gyy[y][x] + gxy[y][x]+Sxtf[y][x]+Sytf[y][x]) ;
+ f_n[y][x] = f_n[y][x] - eita_t(0.02) *
+   ((g1[y][x+1]- g1[y][x]) + (g2[y+1][x]- g2[y][x])
+   + (g3[y][x+2]- 2*g3[y][x+1] + g3[y][x])
+   + (g4[y+2][x]- 2*g4[y+1][x] + g4[y][x])
+   + (g5[y+1][x+1]- g5[y+1][x] - g5[y][x+1] + g5[y][x] )
+   + eita_t(1.0 * 1.0) * ( (adjChImg[y][x+1] * g6[y][x+1] - adjChImg[y][x] * g6[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * g6[y][x] )
+   + eita_t(1.0 * 1.0) * ( (adjChImg[y+1][x] * g7[y+1][x] - adjChImg[y][x] * g7[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * g7[y][x] )) ;
 
         }
     }
-
 
 
 }

@@ -160,7 +160,7 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "1",
 		"HasNonBlockingOperation" : "0",
 		"StartSource" : "1",
-		"StartFifo" : "start_for_fft_conbkb_U",
+		"StartFifo" : "start_for_fft_confYi_U",
 		"Port" : [
 			{"Name" : "xn", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "5"},
 			{"Name" : "xk", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "3", "DependentChan" : "6"},
@@ -180,7 +180,7 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "1",
 		"HasNonBlockingOperation" : "0",
 		"StartSource" : "1",
-		"StartFifo" : "start_for_dummy_pcud_U",
+		"StartFifo" : "start_for_dummy_pg8j_U",
 		"Port" : [
 			{"Name" : "status_in_data_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "2", "DependentChan" : "7",
 				"BlockSignal" : [
@@ -194,8 +194,8 @@ set RtlHierarchyInfo {[
 	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.xn_channel_U", "Parent" : "0"},
 	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.xk_channel_U", "Parent" : "0"},
 	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fft_status_data_V_U", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_fft_conbkb_U", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_dummy_pcud_U", "Parent" : "0"}]}
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_fft_confYi_U", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_dummy_pg8j_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {

@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # === IP Block fft<config1> ===
-set id 5
+set id 26
 set name fft_config1_s
 set cppname "fft<config1>"
 set corename Vivado_FFT

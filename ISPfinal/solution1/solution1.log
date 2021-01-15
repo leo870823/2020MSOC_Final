@@ -10948,3 +10948,1618 @@ INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:13 
 INFO: [VHDL 208-304] Generating VHDL RTL for ProxGS.
 INFO: [VLOG 209-307] Generating Verilog RTL for ProxGS.
 INFO: [HLS 200-112] Total elapsed time: 52.39 seconds; peak allocated memory: 405.516 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'proximal.cpp' ... 
+WARNING: [HLS 200-40] In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from proximal.cpp:1:
+In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'fft_top.cpp' ... 
+WARNING: [HLS 200-40] In file included from fft_top.cpp:93:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from fft_top.cpp:1:
+In file included from fft_top.cpp:93:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'divergent.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'deblur.cpp' ... 
+WARNING: [HLS 200-40] In file included from deblur.cpp:1:
+In file included from ./deblur.h:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from deblur.cpp:1:
+In file included from deblur.cpp:1:
+In file included from ./deblur.h:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:40 . Memory (MB): peak = 210.945 ; gain = 118.484
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:40 . Memory (MB): peak = 210.945 ; gain = 118.484
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:51 ; elapsed = 00:01:30 . Memory (MB): peak = 665.102 ; gain = 572.641
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'S2P97' (proximal.cpp:75) automatically.
+INFO: [XFORM 203-602] Inlining function 'P2S98' into 'ProxGS95' (proximal.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'array_initialize' into 'cross_channel_deblur' (deblur.cpp:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'Relax' into 'cross_channel_deblur' (deblur.cpp:87) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:03:55 ; elapsed = 00:04:34 . Memory (MB): peak = 665.102 ; gain = 572.641
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'fft_config.data.V' (fft_top.cpp:180).
+INFO: [XFORM 203-1101] Packing variable 'buffer_in' (fft_top.cpp:199) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'buffer_out' (fft_top.cpp:199) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'S2P' (proximal.cpp:75) automatically.
+INFO: [XFORM 203-602] Inlining function 'P2S' into 'ProxGS' (proximal.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'S2P' into 'ProxGS' (proximal.cpp:50) automatically.
+INFO: [XFORM 203-602] Inlining function 'array_initialize' into 'cross_channel_deblur' (deblur.cpp:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'Relax' into 'cross_channel_deblur' (deblur.cpp:87) automatically.
+INFO: [XFORM 203-712] Applying dataflow to function 'fft_top', detected/extracted 3 process function(s): 
+	 'dummy_proc_fe.1'
+	 'hls::fft<config1>'
+	 'dummy_proc_be.1'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (divergent.cpp:115:8) to (divergent.cpp:114:39) in function 'my_filter_v1'... converting 17 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (divergent.cpp:182:3) to (divergent.cpp:207:1) in function 'my_filter_v1'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:07:02 ; elapsed = 00:07:40 . Memory (MB): peak = 669.344 ; gain = 576.883
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop_y_1' (divergent.cpp:128:5) in function 'my_filter_v1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (divergent.cpp:23:4) in function 'my_filter_fy'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (divergent.cpp:7:4) in function 'my_filter_fx'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (deblur.cpp:42:10) in function 'cross_channel_deblur'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (divergent.cpp:215:10) in function 'cross_channel_deblur'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'for_iteration' (deblur.cpp:78:42) in function 'cross_channel_deblur' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (deblur.cpp:22:4) in function 'array_copy'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:55:6) in function 'ProxGS'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:27:6) in function 'ProxGS'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:69:6) in function 'ProxGS'.
+WARNING: [XFORM 203-631] Renaming function 'hls::fft<config1>' to 'fft<config1>' (C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:630)
+INFO: [HLS 200-472] Inferring partial write operation for 'Sxf.V' (divergent.cpp:116:64)
+INFO: [HLS 200-472] Inferring partial write operation for 'Syf.V' (divergent.cpp:117:64)
+INFO: [HLS 200-472] Inferring partial write operation for 'g1.V' (divergent.cpp:140:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g2.V' (divergent.cpp:142:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g3.V' (divergent.cpp:144:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g4.V' (divergent.cpp:146:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g5.V' (divergent.cpp:148:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g6.V' (divergent.cpp:150:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g7.V' (divergent.cpp:152:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g1.V' (divergent.cpp:132:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'g2.V' (divergent.cpp:133:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g3.V' (divergent.cpp:134:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g4.V' (divergent.cpp:135:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g5.V' (divergent.cpp:136:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g6.V' (divergent.cpp:137:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'g7.V' (divergent.cpp:138:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'temp_cross6.V' (divergent.cpp:176:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'temp_cross7.V' (divergent.cpp:177:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_out.V' (divergent.cpp:28:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_out.V' (divergent.cpp:12:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:199:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:204:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out._M_real' (fft_top.cpp:210:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:218:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out._M_real' (fft_top.cpp:223:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out' (fft_top.cpp:161:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_1.V' (deblur.cpp:46:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_2.V' (deblur.cpp:48:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_3.V' (deblur.cpp:50:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_4.V' (deblur.cpp:52:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_5.V' (deblur.cpp:54:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_6.V' (deblur.cpp:56:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_7.V' (deblur.cpp:58:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'x_bar.V' (divergent.cpp:219:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_real' (proximal.cpp:13:50)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_imag' (proximal.cpp:13:50)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_real' (proximal.cpp:59:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'fft_result._M_real' (proximal.cpp:41:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'x_io.V' (proximal.cpp:75:38)
+WARNING: [XFORM 203-713] Function 'fft_top' failed dataflow checking:  A dataflow region cannot be instantiated from within a pipelined loop  (fft_top.cpp:177:1), pipe: (divergent.cpp:218:1). Ignoring pipeline directive to allow the dataflow directive to take precedence. 
+WARNING: [HLS 200-657] Generating channel fft_config_data_V that flows backwards in the dataflow region.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:07:13 ; elapsed = 00:07:52 . Memory (MB): peak = 669.344 ; gain = 576.883
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DEBLUR' ...
+WARNING: [SYN 201-103] Legalizing function name 'dummy_proc_fe.1' to 'dummy_proc_fe_1'.
+WARNING: [SYN 201-103] Legalizing function name 'fft<config1>' to 'fft_config1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'dummy_proc_be.1' to 'dummy_proc_be_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'array_copy3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 472.164 seconds; current allocated memory: 474.465 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.107 seconds; current allocated memory: 474.590 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'my_filter_fx7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.127 seconds; current allocated memory: 474.704 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.143 seconds; current allocated memory: 474.837 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'my_filter_fy6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.154 seconds; current allocated memory: 474.925 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.124 seconds; current allocated memory: 475.065 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'my_filter_v12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop_y_1_Loop_x_1'.
+WARNING: [SCHED 204-69] Unable to schedule 'store' operation ('g1_V_addr_write_ln140', divergent.cpp:140) of constant 1 on array 'g1_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'g1_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.266 seconds; current allocated memory: 476.021 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.333 seconds; current allocated memory: 477.107 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dummy_proc_fe_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.383 seconds; current allocated memory: 477.442 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.113 seconds; current allocated memory: 477.545 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Skip scheduling the IP block.
+INFO: [HLS 200-111]  Elapsed time: 0.138 seconds; current allocated memory: 477.595 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.109 seconds; current allocated memory: 477.614 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dummy_proc_be_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.127 seconds; current allocated memory: 477.654 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.103 seconds; current allocated memory: 477.743 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.109 seconds; current allocated memory: 477.789 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.178 seconds; current allocated memory: 478.258 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_top_2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.333 seconds; current allocated memory: 478.603 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.228 seconds; current allocated memory: 478.982 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProxGS4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 25.
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 54.
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.608 seconds; current allocated memory: 479.798 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.496 seconds; current allocated memory: 480.951 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cross_channel_deblur' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.652 seconds; current allocated memory: 481.327 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.493 seconds; current allocated memory: 481.856 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DEBLUR' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.6 seconds; current allocated memory: 482.213 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.261 seconds; current allocated memory: 482.342 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'array_copy3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'array_copy3'.
+INFO: [HLS 200-111]  Elapsed time: 0.571 seconds; current allocated memory: 482.870 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'my_filter_fx7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'my_filter_fx7'.
+INFO: [HLS 200-111]  Elapsed time: 0.181 seconds; current allocated memory: 483.237 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'my_filter_fy6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'my_filter_fy6'.
+INFO: [HLS 200-111]  Elapsed time: 0.191 seconds; current allocated memory: 483.551 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'my_filter_v12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'my_filter_v12_adj_fx' to 'my_filter_v12_adjbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'my_filter_v12_adj_fy' to 'my_filter_v12_adjcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'my_filter_v12_temp_cross6_V' to 'my_filter_v12_temdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'my_filter_v12_temp_cross7_V' to 'my_filter_v12_temeOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'my_filter_v12_cross_X' to 'my_filter_v12_crofYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'my_filter_v12_cross_Y' to 'my_filter_v12_crog8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_sitodp_32s_64_6_1' to 'DEBLUR_sitodp_32shbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_mac_mulsub_8ns_8ns_16ns_17_1_1' to 'DEBLUR_mac_mulsubibs' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_mac_mulsubibs': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_sitodp_32shbi': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'my_filter_v12'.
+INFO: [HLS 200-111]  Elapsed time: 0.325 seconds; current allocated memory: 485.998 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dummy_proc_fe_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dummy_proc_fe_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.958 seconds; current allocated memory: 486.915 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_config1_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.163 seconds; current allocated memory: 486.987 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dummy_proc_be_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dummy_proc_be_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.426 seconds; current allocated memory: 487.173 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'start_for_fft_config1_U0' to 'start_for_fft_conjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_dummy_proc_be_1_U0' to 'start_for_dummy_pkbM' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_top'.
+INFO: [HLS 200-111]  Elapsed time: 0.185 seconds; current allocated memory: 487.580 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_top_2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'fft_top_2D_buffer_out' to 'fft_top_2D_bufferlbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'fft_top_2D_buffer_in' to 'fft_top_2D_buffermb6' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_top_2D'.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 488.320 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ProxGS4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'ProxGS4_fft_result_M_real' to 'ProxGS4_fft_resulncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS4_fft_result_M_imag' to 'ProxGS4_fft_resulocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fmul_32ns_32ns_32_4_max_dsp_1' to 'DEBLUR_fmul_32ns_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fdiv_32ns_32ns_32_16_1' to 'DEBLUR_fdiv_32ns_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_sitofp_32ns_32_6_1' to 'DEBLUR_sitofp_32nrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fptrunc_64ns_32_2_1' to 'DEBLUR_fptrunc_64sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fpext_32ns_64_2_1' to 'DEBLUR_fpext_32nstde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fcmp_32ns_32ns_1_2_1' to 'DEBLUR_fcmp_32ns_udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_dadd_64ns_64ns_64_5_full_dsp_1' to 'DEBLUR_dadd_64ns_vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_dmul_64ns_64ns_64_6_max_dsp_1' to 'DEBLUR_dmul_64ns_wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_ddiv_64ns_64ns_64_31_1' to 'DEBLUR_ddiv_64ns_xdS' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_dadd_64ns_vdy': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_ddiv_64ns_xdS': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_dmul_64ns_wdI': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fcmp_32ns_udo': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fdiv_32ns_qcK': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fmul_32ns_pcA': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fpext_32nstde': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fptrunc_64sc4': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_sitofp_32nrcU': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ProxGS4'.
+INFO: [HLS 200-111]  Elapsed time: 0.767 seconds; current allocated memory: 491.253 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cross_channel_deblur' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_bar_V' to 'cross_channel_debyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_old_V' to 'cross_channel_debzec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_V' to 'cross_channel_debAem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_1_V' to 'cross_channel_debBew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_2_V' to 'cross_channel_debCeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_3_V' to 'cross_channel_debDeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_4_V' to 'cross_channel_debEe0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_5_V' to 'cross_channel_debFfa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_6_V' to 'cross_channel_debGfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_7_V' to 'cross_channel_debHfu' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cross_channel_deblur'.
+INFO: [HLS 200-111]  Elapsed time: 1.161 seconds; current allocated memory: 492.772 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DEBLUR' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/refImg_R_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/adjChImg_G_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/adjChImg_B_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_R_M_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_R_M_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/denominator_R' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_G_M_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_G_M_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/denominator_G' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_B_M_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_B_M_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/denominator_B' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'DEBLUR' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DEBLUR'.
+INFO: [HLS 200-111]  Elapsed time: 1.102 seconds; current allocated memory: 493.577 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.29 MHz
+INFO: [RTMG 210-278] Implementing memory 'my_filter_v12_fx_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'my_filter_v12_fxx_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'my_filter_v12_gx_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_config_data_V_U(fifo_w16_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'xn_channel_U(fifo_w64_d128_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'xk_channel_U(fifo_w64_d128_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_status_data_V_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_fft_conjbC_U(start_for_fft_conjbC)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_dummy_pkbM_U(start_for_dummy_pkbM)' using Shift Registers.
+INFO: [RTMG 210-278] Implementing memory 'fft_top_2D_bufferlbW_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ProxGS4_tmp_M_real_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ProxGS4_fft_resulncg_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cross_channel_debBew_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:07:27 ; elapsed = 00:08:09 . Memory (MB): peak = 675.957 ; gain = 583.496
+INFO: [VHDL 208-304] Generating VHDL RTL for DEBLUR.
+INFO: [VLOG 209-307] Generating Verilog RTL for DEBLUR.
+INFO: [HLS 200-112] Total elapsed time: 488.769 seconds; peak allocated memory: 493.577 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'proximal.cpp' ... 
+WARNING: [HLS 200-40] In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from proximal.cpp:1:
+In file included from proximal.cpp:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'fft_top.cpp' ... 
+WARNING: [HLS 200-40] In file included from fft_top.cpp:93:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from fft_top.cpp:1:
+In file included from fft_top.cpp:93:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'divergent.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'deblur.cpp' ... 
+WARNING: [HLS 200-40] In file included from deblur.cpp:1:
+In file included from ./deblur.h:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:912:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from deblur.cpp:1:
+In file included from deblur.cpp:1:
+In file included from ./deblur.h:1:
+In file included from ./proximal.h:1:
+In file included from ./fft_top.h:94:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot\hls_fft.h:913:
+In file included from C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:68:
+C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 210.379 ; gain = 117.926
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 210.379 ; gain = 117.926
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:43 ; elapsed = 00:01:21 . Memory (MB): peak = 666.023 ; gain = 573.570
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'S2P81' (proximal.cpp:75) automatically.
+INFO: [XFORM 203-602] Inlining function 'P2S82' into 'ProxGS79' (proximal.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'array_initialize' into 'cross_channel_deblur' (deblur.cpp:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'Relax' into 'cross_channel_deblur' (deblur.cpp:87) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:03:36 ; elapsed = 00:04:14 . Memory (MB): peak = 666.023 ; gain = 573.570
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'fft_config.data.V' (fft_top.cpp:180).
+INFO: [XFORM 203-1101] Packing variable 'buffer_in' (fft_top.cpp:199) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'buffer_out' (fft_top.cpp:199) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'S2P' (proximal.cpp:75) automatically.
+INFO: [XFORM 203-602] Inlining function 'P2S' into 'ProxGS' (proximal.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'S2P' into 'ProxGS' (proximal.cpp:50) automatically.
+INFO: [XFORM 203-602] Inlining function 'array_initialize' into 'cross_channel_deblur' (deblur.cpp:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'Relax' into 'cross_channel_deblur' (deblur.cpp:87) automatically.
+INFO: [XFORM 203-712] Applying dataflow to function 'fft_top', detected/extracted 3 process function(s): 
+	 'dummy_proc_fe.1'
+	 'hls::fft<config1>'
+	 'dummy_proc_be.1'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (divergent.cpp:71:7) to (divergent.cpp:80:7) in function 'my_filter_v1'... converting 17 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:06:34 ; elapsed = 00:07:12 . Memory (MB): peak = 674.801 ; gain = 582.348
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop_y_1' (divergent.cpp:69:5) in function 'my_filter_v1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (deblur.cpp:42:10) in function 'cross_channel_deblur'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (divergent.cpp:122:10) in function 'cross_channel_deblur'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'for_iteration' (deblur.cpp:78:42) in function 'cross_channel_deblur' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (deblur.cpp:22:4) in function 'array_copy'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:55:6) in function 'ProxGS'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:27:6) in function 'ProxGS'.
+INFO: [XFORM 203-541] Flattening a loop nest 'for_y' (proximal.cpp:69:6) in function 'ProxGS'.
+WARNING: [XFORM 203-631] Renaming function 'hls::fft<config1>' to 'fft<config1>' (C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:630)
+INFO: [HLS 200-472] Inferring partial write operation for 'g1.V' (divergent.cpp:81:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g2.V' (divergent.cpp:83:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g3.V' (divergent.cpp:85:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g4.V' (divergent.cpp:87:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g5.V' (divergent.cpp:89:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g6.V' (divergent.cpp:91:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g7.V' (divergent.cpp:93:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'g1.V' (divergent.cpp:73:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'g2.V' (divergent.cpp:74:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'g3.V' (divergent.cpp:75:52)
+INFO: [HLS 200-472] Inferring partial write operation for 'g4.V' (divergent.cpp:76:52)
+INFO: [HLS 200-472] Inferring partial write operation for 'g5.V' (divergent.cpp:77:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'g6.V' (divergent.cpp:78:97)
+INFO: [HLS 200-472] Inferring partial write operation for 'g7.V' (divergent.cpp:79:97)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:199:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:204:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out._M_real' (fft_top.cpp:210:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_in' (fft_top.cpp:218:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out._M_real' (fft_top.cpp:223:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'out' (fft_top.cpp:161:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_1.V' (deblur.cpp:46:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_2.V' (deblur.cpp:48:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_3.V' (deblur.cpp:50:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_4.V' (deblur.cpp:52:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_5.V' (deblur.cpp:54:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_6.V' (deblur.cpp:56:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'y_7.V' (deblur.cpp:58:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'x_bar.V' (divergent.cpp:126:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_real' (proximal.cpp:13:50)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_imag' (proximal.cpp:13:50)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp._M_real' (proximal.cpp:59:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'fft_result._M_real' (proximal.cpp:41:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'x_io.V' (proximal.cpp:75:38)
+WARNING: [XFORM 203-713] Function 'fft_top' failed dataflow checking:  A dataflow region cannot be instantiated from within a pipelined loop  (fft_top.cpp:177:1), pipe: (divergent.cpp:125:1). Ignoring pipeline directive to allow the dataflow directive to take precedence. 
+WARNING: [HLS 200-657] Generating channel fft_config_data_V that flows backwards in the dataflow region.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:06:39 ; elapsed = 00:07:17 . Memory (MB): peak = 674.801 ; gain = 582.348
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DEBLUR' ...
+WARNING: [SYN 201-103] Legalizing function name 'dummy_proc_fe.1' to 'dummy_proc_fe_1'.
+WARNING: [SYN 201-103] Legalizing function name 'fft<config1>' to 'fft_config1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'dummy_proc_be.1' to 'dummy_proc_be_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'array_copy3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 436.902 seconds; current allocated memory: 463.788 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.107 seconds; current allocated memory: 463.912 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'my_filter_v12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop_y_1_Loop_x_1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('f_V_load', divergent.cpp:73) on array 'f_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'f_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 3, Depth = 20.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.223 seconds; current allocated memory: 464.733 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.237 seconds; current allocated memory: 465.650 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dummy_proc_fe_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.328 seconds; current allocated memory: 465.980 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.114 seconds; current allocated memory: 466.083 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Skip scheduling the IP block.
+INFO: [HLS 200-111]  Elapsed time: 0.107 seconds; current allocated memory: 466.102 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.095 seconds; current allocated memory: 466.121 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dummy_proc_be_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.128 seconds; current allocated memory: 466.161 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.114 seconds; current allocated memory: 466.250 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.108 seconds; current allocated memory: 466.296 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.167 seconds; current allocated memory: 466.749 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_top_2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.305 seconds; current allocated memory: 467.110 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.209 seconds; current allocated memory: 467.489 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProxGS4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 25.
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 54.
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.5 seconds; current allocated memory: 468.290 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.486 seconds; current allocated memory: 469.458 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cross_channel_deblur' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'for_y_for_x'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.607 seconds; current allocated memory: 469.834 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.416 seconds; current allocated memory: 470.294 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DEBLUR' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.541 seconds; current allocated memory: 470.599 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.265 seconds; current allocated memory: 470.712 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'array_copy3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'array_copy3'.
+INFO: [HLS 200-111]  Elapsed time: 0.488 seconds; current allocated memory: 471.187 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'my_filter_v12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_dadd_64ns_64ns_64_5_full_dsp_1' to 'DEBLUR_dadd_64ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_uitodp_32ns_64_6_1' to 'DEBLUR_uitodp_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_sitodp_32s_64_6_1' to 'DEBLUR_sitodp_32sdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_mac_mulsub_9s_8ns_17s_18_1_1' to 'DEBLUR_mac_mulsubeOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_dadd_64ns_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_mac_mulsubeOg': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_sitodp_32sdEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_uitodp_32ncud': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'my_filter_v12'.
+INFO: [HLS 200-111]  Elapsed time: 0.232 seconds; current allocated memory: 472.968 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dummy_proc_fe_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dummy_proc_fe_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.771 seconds; current allocated memory: 473.702 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_config1_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.163 seconds; current allocated memory: 473.774 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dummy_proc_be_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dummy_proc_be_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.434 seconds; current allocated memory: 473.943 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'start_for_fft_config1_U0' to 'start_for_fft_confYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_dummy_proc_be_1_U0' to 'start_for_dummy_pg8j' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_top'.
+INFO: [HLS 200-111]  Elapsed time: 0.165 seconds; current allocated memory: 474.350 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_top_2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'fft_top_2D_buffer_out' to 'fft_top_2D_bufferhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'fft_top_2D_buffer_in' to 'fft_top_2D_bufferibs' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_top_2D'.
+INFO: [HLS 200-111]  Elapsed time: 0.384 seconds; current allocated memory: 475.089 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ProxGS4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'ProxGS4_fft_result_M_real' to 'ProxGS4_fft_resuljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'ProxGS4_fft_result_M_imag' to 'ProxGS4_fft_resulkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fmul_32ns_32ns_32_4_max_dsp_1' to 'DEBLUR_fmul_32ns_lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fdiv_32ns_32ns_32_16_1' to 'DEBLUR_fdiv_32ns_mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_sitofp_32ns_32_6_1' to 'DEBLUR_sitofp_32nncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fptrunc_64ns_32_2_1' to 'DEBLUR_fptrunc_64ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fpext_32ns_64_2_1' to 'DEBLUR_fpext_32nspcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_fcmp_32ns_32ns_1_2_1' to 'DEBLUR_fcmp_32ns_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_dmul_64ns_64ns_64_6_max_dsp_1' to 'DEBLUR_dmul_64ns_rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DEBLUR_ddiv_64ns_64ns_64_31_1' to 'DEBLUR_ddiv_64ns_sc4' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_dadd_64ns_bkb': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_ddiv_64ns_sc4': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_dmul_64ns_rcU': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fcmp_32ns_qcK': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fdiv_32ns_mb6': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fmul_32ns_lbW': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fpext_32nspcA': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_fptrunc_64ocq': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DEBLUR_sitofp_32nncg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ProxGS4'.
+INFO: [HLS 200-111]  Elapsed time: 0.72 seconds; current allocated memory: 478.027 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cross_channel_deblur' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_bar_V' to 'cross_channel_debtde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_old_V' to 'cross_channel_debudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_x_V' to 'cross_channel_debvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_1_V' to 'cross_channel_debwdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_2_V' to 'cross_channel_debxdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_3_V' to 'cross_channel_debyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_4_V' to 'cross_channel_debzec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_5_V' to 'cross_channel_debAem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_6_V' to 'cross_channel_debBew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cross_channel_deblur_y_7_V' to 'cross_channel_debCeG' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cross_channel_deblur'.
+INFO: [HLS 200-111]  Elapsed time: 1.088 seconds; current allocated memory: 479.521 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DEBLUR' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/refImg_R_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/adjChImg_G_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/adjChImg_B_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_R_M_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_R_M_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/denominator_R' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_G_M_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_G_M_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/denominator_G' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_B_M_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/nominator_B_M_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DEBLUR/denominator_B' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'DEBLUR' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_real_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_real_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/denominator_R_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'DEBLUR/denominator_R_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DEBLUR'.
+INFO: [HLS 200-111]  Elapsed time: 0.966 seconds; current allocated memory: 480.240 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.29 MHz
+INFO: [RTMG 210-285] Implementing FIFO 'fft_config_data_V_U(fifo_w16_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'xn_channel_U(fifo_w64_d128_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'xk_channel_U(fifo_w64_d128_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_status_data_V_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_fft_confYi_U(start_for_fft_confYi)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_dummy_pg8j_U(start_for_dummy_pg8j)' using Shift Registers.
+INFO: [RTMG 210-278] Implementing memory 'fft_top_2D_bufferhbi_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ProxGS4_tmp_M_real_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'ProxGS4_fft_resuljbC_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cross_channel_debtde_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cross_channel_debudo_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cross_channel_debwdI_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:06:50 ; elapsed = 00:07:31 . Memory (MB): peak = 674.801 ; gain = 582.348
+INFO: [VHDL 208-304] Generating VHDL RTL for DEBLUR.
+INFO: [VLOG 209-307] Generating Verilog RTL for DEBLUR.
+INFO: [HLS 200-112] Total elapsed time: 451.027 seconds; peak allocated memory: 480.240 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

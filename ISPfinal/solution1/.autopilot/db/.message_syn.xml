@@ -62,19 +62,21 @@ C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warnin
 #pragma message(&quot;hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.&quot;)
         ^
 1 warning generated."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 211.047 ; gain = 118.582"/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 211.047 ; gain = 118.582"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 210.379 ; gain = 117.926"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 210.379 ; gain = 117.926"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:42 . Memory (MB): peak = 250.371 ; gain = 157.906"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:43 ; elapsed = 00:01:21 . Memory (MB): peak = 666.023 ; gain = 573.570"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;fp_struct&lt;float&gt;::mantissa&apos; into &apos;generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;&apos; (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:15) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;fp_struct&lt;float&gt;::expv&apos; into &apos;generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;&apos; (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;fp_struct&lt;float&gt;::__signbit&apos; into &apos;generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;&apos; (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;&apos; into &apos;generic_cast_IEEE754&lt;int, float&gt;&apos; (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;generic_cast_IEEE754&lt;int, float&gt;&apos; into &apos;__hls_fptosi_float_i32&apos; (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;__hls_fptosi_float_i32&apos; into &apos;S2P&apos; (proximal.cpp:75) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;P2S&apos; into &apos;ProxGS&apos; (proximal.cpp:22) automatically."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:42 . Memory (MB): peak = 310.855 ; gain = 218.391"/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;__hls_fptosi_float_i32&apos; into &apos;S2P81&apos; (proximal.cpp:75) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;P2S82&apos; into &apos;ProxGS79&apos; (proximal.cpp:22) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;array_initialize&apos; into &apos;cross_channel_deblur&apos; (deblur.cpp:76) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Relax&apos; into &apos;cross_channel_deblur&apos; (deblur.cpp:87) automatically."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:03:36 ; elapsed = 00:04:14 . Memory (MB): peak = 666.023 ; gain = 573.570"/>
 	<Message severity="WARNING" prefix="[XFORM 203-1103]" key="XFORM_DATA_PACK_INVALID_346" tag="" content="Ignored data pack directive on non-struct variable &apos;fft_config.data.V&apos; (fft_top.cpp:180)."/>
 	<Message severity="INFO" prefix="[XFORM 203-1101]" key="XFORM_DATA_PACK_STATUS_345" tag="" content="Packing variable &apos;buffer_in&apos; (fft_top.cpp:199) into a 64-bit variable."/>
 	<Message severity="INFO" prefix="[XFORM 203-1101]" key="XFORM_DATA_PACK_STATUS_345" tag="" content="Packing variable &apos;buffer_out&apos; (fft_top.cpp:199) into a 64-bit variable."/>
@@ -86,93 +88,156 @@ C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warnin
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;__hls_fptosi_float_i32&apos; into &apos;S2P&apos; (proximal.cpp:75) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;P2S&apos; into &apos;ProxGS&apos; (proximal.cpp:22) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;S2P&apos; into &apos;ProxGS&apos; (proximal.cpp:50) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;array_initialize&apos; into &apos;cross_channel_deblur&apos; (deblur.cpp:76) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Relax&apos; into &apos;cross_channel_deblur&apos; (deblur.cpp:87) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-712]" key="XFORM_DATAFLOW_TRANSFORM_230" tag="DATAFLOW" content="Applying dataflow to function &apos;fft_top&apos;, detected/extracted 3 process function(s): 
 	 &apos;dummy_proc_fe.1&apos;
 	 &apos;hls::fft&lt;config1&gt;&apos;
 	 &apos;dummy_proc_be.1&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:43 . Memory (MB): peak = 397.406 ; gain = 304.941"/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (divergent.cpp:71:7) to (divergent.cpp:80:7) in function &apos;my_filter_v1&apos;... converting 17 basic blocks."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:06:34 ; elapsed = 00:07:12 . Memory (MB): peak = 674.801 ; gain = 582.348"/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;Loop_y_1&apos; (divergent.cpp:69:5) in function &apos;my_filter_v1&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;for_y&apos; (deblur.cpp:42:10) in function &apos;cross_channel_deblur&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;for_y&apos; (divergent.cpp:122:10) in function &apos;cross_channel_deblur&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;for_iteration&apos; (deblur.cpp:78:42) in function &apos;cross_channel_deblur&apos; : 
+
+the outer loop is not a perfect loop."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;for_y&apos; (deblur.cpp:22:4) in function &apos;array_copy&apos;."/>
 	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;for_y&apos; (proximal.cpp:55:6) in function &apos;ProxGS&apos;."/>
 	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;for_y&apos; (proximal.cpp:27:6) in function &apos;ProxGS&apos;."/>
 	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;for_y&apos; (proximal.cpp:69:6) in function &apos;ProxGS&apos;."/>
 	<Message severity="WARNING" prefix="[XFORM 203-631]" key="XFORM_FRN_STATUS_336" tag="" content="Renaming function &apos;hls::fft&lt;config1&gt;&apos; to &apos;fft&lt;config1&gt;&apos; (C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_fft_x_complex.h:630)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g1.V&apos; (divergent.cpp:81:5)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g2.V&apos; (divergent.cpp:83:5)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g3.V&apos; (divergent.cpp:85:5)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g4.V&apos; (divergent.cpp:87:5)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g5.V&apos; (divergent.cpp:89:5)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g6.V&apos; (divergent.cpp:91:5)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g7.V&apos; (divergent.cpp:93:5)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g1.V&apos; (divergent.cpp:73:39)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g2.V&apos; (divergent.cpp:74:41)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g3.V&apos; (divergent.cpp:75:52)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g4.V&apos; (divergent.cpp:76:52)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g5.V&apos; (divergent.cpp:77:41)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g6.V&apos; (divergent.cpp:78:97)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;g7.V&apos; (divergent.cpp:79:97)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;buffer_in&apos; (fft_top.cpp:199:65)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;buffer_in&apos; (fft_top.cpp:204:4)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;out._M_real&apos; (fft_top.cpp:210:4)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;buffer_in&apos; (fft_top.cpp:218:4)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;out._M_real&apos; (fft_top.cpp:223:4)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;out&apos; (fft_top.cpp:161:9)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;y_1.V&apos; (deblur.cpp:46:2)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;y_2.V&apos; (deblur.cpp:48:2)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;y_3.V&apos; (deblur.cpp:50:2)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;y_4.V&apos; (deblur.cpp:52:2)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;y_5.V&apos; (deblur.cpp:54:2)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;y_6.V&apos; (deblur.cpp:56:2)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;y_7.V&apos; (deblur.cpp:58:2)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;x_bar.V&apos; (divergent.cpp:126:29)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;tmp._M_real&apos; (proximal.cpp:13:50)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;tmp._M_imag&apos; (proximal.cpp:13:50)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;tmp._M_real&apos; (proximal.cpp:59:39)"/>
 	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;fft_result._M_real&apos; (proximal.cpp:41:2)"/>
+	<Message severity="INFO" prefix="[HLS 200-472]" key="HLS 200-472" tag="" content="Inferring partial write operation for &apos;x_io.V&apos; (proximal.cpp:75:38)"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_619" tag="SDX,DATAFLOW" content="Function &apos;fft_top&apos; failed dataflow checking:  A dataflow region cannot be instantiated from within a pipelined loop  (fft_top.cpp:177:1), pipe: (divergent.cpp:125:1). Ignoring pipeline directive to allow the dataflow directive to take precedence."/>
 	<Message severity="WARNING" prefix="[HLS 200-657]" key="HLS 200-657" tag="" content="Generating channel fft_config_data_V that flows backwards in the dataflow region."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:44 . Memory (MB): peak = 467.098 ; gain = 374.633"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:06:39 ; elapsed = 00:07:17 . Memory (MB): peak = 674.801 ; gain = 582.348"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;ProxGS&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;DEBLUR&apos; ..."/>
 	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;dummy_proc_fe.1&apos; to &apos;dummy_proc_fe_1&apos;."/>
 	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;fft&lt;config1&gt;&apos; to &apos;fft_config1_s&apos;."/>
 	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;dummy_proc_be.1&apos; to &apos;dummy_proc_be_1&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;array_copy3&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;for_y_for_x&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 436.902 seconds; current allocated memory: 463.788 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.107 seconds; current allocated memory: 463.912 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;my_filter_v12&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Loop_y_1_Loop_x_1&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_38" tag="SDX_KERNEL,SCHEDULE" content="Unable to schedule &apos;load&apos; operation (&apos;f_V_load&apos;, divergent.cpp:73) on array &apos;f_V&apos; due to limited memory ports. Please consider using a memory core with more ports or partitioning the array &apos;f_V&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 3, Depth = 20."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.223 seconds; current allocated memory: 464.733 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.237 seconds; current allocated memory: 465.650 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;dummy_proc_fe_1&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 44.417 seconds; current allocated memory: 397.206 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.328 seconds; current allocated memory: 465.980 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.085 seconds; current allocated memory: 397.316 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.114 seconds; current allocated memory: 466.083 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;fft_config1_s&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_599" tag="" content="Skip scheduling the IP block."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.082 seconds; current allocated memory: 397.366 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.107 seconds; current allocated memory: 466.102 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.072 seconds; current allocated memory: 397.384 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.095 seconds; current allocated memory: 466.121 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;dummy_proc_be_1&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.098 seconds; current allocated memory: 397.425 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.128 seconds; current allocated memory: 466.161 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.08 seconds; current allocated memory: 397.514 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.114 seconds; current allocated memory: 466.250 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;fft_top&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.083 seconds; current allocated memory: 397.576 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.108 seconds; current allocated memory: 466.296 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.198 seconds; current allocated memory: 398.013 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.167 seconds; current allocated memory: 466.749 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;fft_top_2D&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.319 seconds; current allocated memory: 398.359 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.305 seconds; current allocated memory: 467.110 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.186 seconds; current allocated memory: 398.738 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.209 seconds; current allocated memory: 467.489 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;ProxGS&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;ProxGS4&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;for_y_for_x&apos;."/>
@@ -182,84 +247,242 @@ C:/Xilinx/Vivado/2019.2/common/technology/autopilot/hls_x_complex.h:43:9: warnin
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;for_y_for_x&apos;."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 12."/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.485 seconds; current allocated memory: 399.560 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.5 seconds; current allocated memory: 468.290 MB."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.466 seconds; current allocated memory: 400.750 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.486 seconds; current allocated memory: 469.458 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;cross_channel_deblur&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;for_y_for_x&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 1."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.607 seconds; current allocated memory: 469.834 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.416 seconds; current allocated memory: 470.294 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;DEBLUR&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.541 seconds; current allocated memory: 470.599 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.265 seconds; current allocated memory: 470.712 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;array_copy3&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;array_copy3&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.488 seconds; current allocated memory: 471.187 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;my_filter_v12&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_dadd_64ns_64ns_64_5_full_dsp_1&apos; to &apos;DEBLUR_dadd_64ns_bkb&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_uitodp_32ns_64_6_1&apos; to &apos;DEBLUR_uitodp_32ncud&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_sitodp_32s_64_6_1&apos; to &apos;DEBLUR_sitodp_32sdEe&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_mac_mulsub_9s_8ns_17s_18_1_1&apos; to &apos;DEBLUR_mac_mulsubeOg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_dadd_64ns_bkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_mac_mulsubeOg&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_sitodp_32sdEe&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_uitodp_32ncud&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;my_filter_v12&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.232 seconds; current allocated memory: 472.968 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;dummy_proc_fe_1&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;dummy_proc_fe_1&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.545 seconds; current allocated memory: 401.101 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.771 seconds; current allocated memory: 473.702 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;fft_config1_s&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;fft_config1_s&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.136 seconds; current allocated memory: 401.221 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.163 seconds; current allocated memory: 473.774 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;dummy_proc_be_1&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;dummy_proc_be_1&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.401 seconds; current allocated memory: 401.403 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.434 seconds; current allocated memory: 473.943 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;fft_top&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_fft_config1_U0&apos; to &apos;start_for_fft_conbkb&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_dummy_proc_be_1_U0&apos; to &apos;start_for_dummy_pcud&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_fft_config1_U0&apos; to &apos;start_for_fft_confYi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_dummy_proc_be_1_U0&apos; to &apos;start_for_dummy_pg8j&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;fft_top&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.125 seconds; current allocated memory: 401.804 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.165 seconds; current allocated memory: 474.350 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;fft_top_2D&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;fft_top_2D_buffer_out&apos; to &apos;fft_top_2D_bufferdEe&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;fft_top_2D_buffer_in&apos; to &apos;fft_top_2D_buffereOg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;fft_top_2D_buffer_out&apos; to &apos;fft_top_2D_bufferhbi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;fft_top_2D_buffer_in&apos; to &apos;fft_top_2D_bufferibs&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;fft_top_2D&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.422 seconds; current allocated memory: 402.546 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.384 seconds; current allocated memory: 475.089 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;ProxGS&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;ProxGS4&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;ProxGS/x_io_V&apos; to &apos;ap_memory&apos;."/>
-	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;ProxGS/coe_a_M_real&apos; to &apos;ap_memory&apos;."/>
-	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;ProxGS/coe_a_M_imag&apos; to &apos;ap_memory&apos;."/>
-	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;ProxGS/coe_b&apos; to &apos;ap_memory&apos;."/>
-	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;ProxGS&apos; to &apos;ap_ctrl_hs&apos;."/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_fft_result_M_real&apos; to &apos;ProxGS_fft_resultfYi&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_fft_result_M_imag&apos; to &apos;ProxGS_fft_resultg8j&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_fmul_32ns_32ns_32_4_max_dsp_1&apos; to &apos;ProxGS_fmul_32ns_hbi&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_fdiv_32ns_32ns_32_16_1&apos; to &apos;ProxGS_fdiv_32ns_ibs&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_sitofp_32ns_32_6_1&apos; to &apos;ProxGS_sitofp_32njbC&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_fptrunc_64ns_32_2_1&apos; to &apos;ProxGS_fptrunc_64kbM&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_fpext_32ns_64_2_1&apos; to &apos;ProxGS_fpext_32nslbW&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_fcmp_32ns_32ns_1_2_1&apos; to &apos;ProxGS_fcmp_32ns_mb6&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_dadd_64ns_64ns_64_5_full_dsp_1&apos; to &apos;ProxGS_dadd_64ns_ncg&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_dmul_64ns_64ns_64_6_max_dsp_1&apos; to &apos;ProxGS_dmul_64ns_ocq&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS_ddiv_64ns_64ns_64_31_1&apos; to &apos;ProxGS_ddiv_64ns_pcA&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_dadd_64ns_ncg&apos;: 2 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_ddiv_64ns_pcA&apos;: 2 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_dmul_64ns_ocq&apos;: 2 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_fcmp_32ns_mb6&apos;: 1 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_fdiv_32ns_ibs&apos;: 1 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_fmul_32ns_hbi&apos;: 4 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_fpext_32nslbW&apos;: 5 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_fptrunc_64kbM&apos;: 2 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;ProxGS_sitofp_32njbC&apos;: 1 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;ProxGS&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.68 seconds; current allocated memory: 405.516 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-790]" key="HLS 200-790" tag="LOOP,SDX_LOOP" content="**** Loop Constraint Status: All loop constraints were satisfied."/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS4_fft_result_M_real&apos; to &apos;ProxGS4_fft_resuljbC&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;ProxGS4_fft_result_M_imag&apos; to &apos;ProxGS4_fft_resulkbM&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_fmul_32ns_32ns_32_4_max_dsp_1&apos; to &apos;DEBLUR_fmul_32ns_lbW&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_fdiv_32ns_32ns_32_16_1&apos; to &apos;DEBLUR_fdiv_32ns_mb6&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_sitofp_32ns_32_6_1&apos; to &apos;DEBLUR_sitofp_32nncg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_fptrunc_64ns_32_2_1&apos; to &apos;DEBLUR_fptrunc_64ocq&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_fpext_32ns_64_2_1&apos; to &apos;DEBLUR_fpext_32nspcA&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_fcmp_32ns_32ns_1_2_1&apos; to &apos;DEBLUR_fcmp_32ns_qcK&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_dmul_64ns_64ns_64_6_max_dsp_1&apos; to &apos;DEBLUR_dmul_64ns_rcU&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;DEBLUR_ddiv_64ns_64ns_64_31_1&apos; to &apos;DEBLUR_ddiv_64ns_sc4&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_dadd_64ns_bkb&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_ddiv_64ns_sc4&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_dmul_64ns_rcU&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_fcmp_32ns_qcK&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_fdiv_32ns_mb6&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_fmul_32ns_lbW&apos;: 4 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_fpext_32nspcA&apos;: 5 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_fptrunc_64ocq&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;DEBLUR_sitofp_32nncg&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;ProxGS4&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.72 seconds; current allocated memory: 478.027 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;cross_channel_deblur&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_x_bar_V&apos; to &apos;cross_channel_debtde&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_x_old_V&apos; to &apos;cross_channel_debudo&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_x_V&apos; to &apos;cross_channel_debvdy&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_y_1_V&apos; to &apos;cross_channel_debwdI&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_y_2_V&apos; to &apos;cross_channel_debxdS&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_y_3_V&apos; to &apos;cross_channel_debyd2&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_y_4_V&apos; to &apos;cross_channel_debzec&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_y_5_V&apos; to &apos;cross_channel_debAem&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_y_6_V&apos; to &apos;cross_channel_debBew&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;cross_channel_deblur_y_7_V&apos; to &apos;cross_channel_debCeG&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;cross_channel_deblur&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.088 seconds; current allocated memory: 479.521 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;DEBLUR&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/refImg_R_V&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/adjChImg_G_V&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/adjChImg_B_V&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/nominator_R_M_real&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/nominator_R_M_imag&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/denominator_R&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/nominator_G_M_real&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/nominator_G_M_imag&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/denominator_G&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/nominator_B_M_real&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/nominator_B_M_imag&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;DEBLUR/denominator_B&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;DEBLUR&apos; to &apos;ap_ctrl_hs&apos;."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_address0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_real_address0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_ce0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_real_ce0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_we0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_real_we0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_d0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_real_d0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_q0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_address1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_real_address1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_ce1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_real_ce1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_we1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_real_we1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_d1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_real_d1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_real_q1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_address0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_imag_address0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_ce0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_imag_ce0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_we0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_imag_we0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_d0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_imag_d0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_q0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_address1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_imag_address1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_ce1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_imag_ce1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_we1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_imag_we1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_d1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/nominator_R_M_imag_d1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/nominator_R_M_imag_q1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_address0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/denominator_R_address0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_ce0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/denominator_R_ce0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_we0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/denominator_R_we0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_d0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/denominator_R_d0&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_q0&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_address1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/denominator_R_address1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_ce1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/denominator_R_ce1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_we1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/denominator_R_we1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_d1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_739" tag="" content="Setting dangling out port &apos;DEBLUR/denominator_R_d1&apos; to 0."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_738" tag="" content="Port &apos;DEBLUR/denominator_R_q1&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;DEBLUR&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.966 seconds; current allocated memory: 480.240 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-790]" key="HLS 200-790" tag="LOOP,SDX_LOOP" content="**** Loop Constraint Status: All loop constraints were NOT satisfied."/>
 	<Message severity="INFO" prefix="[HLS 200-789]" key="HLS 200-789" tag="THROUGHPUT,SDX_KERNEL" content="**** Estimated Fmax: 114.29 MHz"/>
 	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;fft_config_data_V_U(fifo_w16_d2_A)&apos; using Shift Registers."/>
 	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;xn_channel_U(fifo_w64_d128_A)&apos; using Block RAMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;xk_channel_U(fifo_w64_d128_A)&apos; using Block RAMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;fft_status_data_V_U(fifo_w8_d2_A)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_fft_conbkb_U(start_for_fft_conbkb)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_dummy_pcud_U(start_for_dummy_pcud)&apos; using Shift Registers."/>
-	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;fft_top_2D_bufferdEe_ram (RAM)&apos; using block RAMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;ProxGS_tmp_M_real_ram (RAM)&apos; using block RAMs."/>
-	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;ProxGS_fft_resultfYi_ram (RAM)&apos; using block RAMs."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:13 ; elapsed = 00:00:52 . Memory (MB): peak = 491.281 ; gain = 398.816"/>
-	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for ProxGS."/>
-	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for ProxGS."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_fft_confYi_U(start_for_fft_confYi)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_dummy_pg8j_U(start_for_dummy_pg8j)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;fft_top_2D_bufferhbi_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;ProxGS4_tmp_M_real_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;ProxGS4_fft_resuljbC_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;cross_channel_debtde_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;cross_channel_debudo_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;cross_channel_debwdI_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:06:50 ; elapsed = 00:07:31 . Memory (MB): peak = 674.801 ; gain = 582.348"/>
+	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for DEBLUR."/>
+	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for DEBLUR."/>
 </Messages>

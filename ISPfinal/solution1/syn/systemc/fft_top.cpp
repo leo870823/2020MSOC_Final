@@ -129,28 +129,28 @@ fft_top::fft_top(sc_module_name name) : sc_module(name), mVcdFile(0) {
     fft_status_data_V_U->if_dout(fft_status_data_V_dout);
     fft_status_data_V_U->if_empty_n(fft_status_data_V_empty_n);
     fft_status_data_V_U->if_read(dummy_proc_be_1_U0_status_in_data_V_read);
-    start_for_fft_conbkb_U = new start_for_fft_conbkb("start_for_fft_conbkb_U");
-    start_for_fft_conbkb_U->clk(ap_clk);
-    start_for_fft_conbkb_U->reset(ap_rst);
-    start_for_fft_conbkb_U->if_read_ce(ap_var_for_const0);
-    start_for_fft_conbkb_U->if_write_ce(ap_var_for_const0);
-    start_for_fft_conbkb_U->if_din(start_for_fft_config1_U0_din);
-    start_for_fft_conbkb_U->if_full_n(start_for_fft_config1_U0_full_n);
-    start_for_fft_conbkb_U->if_write(dummy_proc_fe_1_U0_start_write);
-    start_for_fft_conbkb_U->if_dout(start_for_fft_config1_U0_dout);
-    start_for_fft_conbkb_U->if_empty_n(start_for_fft_config1_U0_empty_n);
-    start_for_fft_conbkb_U->if_read(fft_config1_U0_ap_ready);
-    start_for_dummy_pcud_U = new start_for_dummy_pcud("start_for_dummy_pcud_U");
-    start_for_dummy_pcud_U->clk(ap_clk);
-    start_for_dummy_pcud_U->reset(ap_rst);
-    start_for_dummy_pcud_U->if_read_ce(ap_var_for_const0);
-    start_for_dummy_pcud_U->if_write_ce(ap_var_for_const0);
-    start_for_dummy_pcud_U->if_din(start_for_dummy_proc_be_1_U0_din);
-    start_for_dummy_pcud_U->if_full_n(start_for_dummy_proc_be_1_U0_full_n);
-    start_for_dummy_pcud_U->if_write(dummy_proc_fe_1_U0_start_write);
-    start_for_dummy_pcud_U->if_dout(start_for_dummy_proc_be_1_U0_dout);
-    start_for_dummy_pcud_U->if_empty_n(start_for_dummy_proc_be_1_U0_empty_n);
-    start_for_dummy_pcud_U->if_read(dummy_proc_be_1_U0_ap_ready);
+    start_for_fft_confYi_U = new start_for_fft_confYi("start_for_fft_confYi_U");
+    start_for_fft_confYi_U->clk(ap_clk);
+    start_for_fft_confYi_U->reset(ap_rst);
+    start_for_fft_confYi_U->if_read_ce(ap_var_for_const0);
+    start_for_fft_confYi_U->if_write_ce(ap_var_for_const0);
+    start_for_fft_confYi_U->if_din(start_for_fft_config1_U0_din);
+    start_for_fft_confYi_U->if_full_n(start_for_fft_config1_U0_full_n);
+    start_for_fft_confYi_U->if_write(dummy_proc_fe_1_U0_start_write);
+    start_for_fft_confYi_U->if_dout(start_for_fft_config1_U0_dout);
+    start_for_fft_confYi_U->if_empty_n(start_for_fft_config1_U0_empty_n);
+    start_for_fft_confYi_U->if_read(fft_config1_U0_ap_ready);
+    start_for_dummy_pg8j_U = new start_for_dummy_pg8j("start_for_dummy_pg8j_U");
+    start_for_dummy_pg8j_U->clk(ap_clk);
+    start_for_dummy_pg8j_U->reset(ap_rst);
+    start_for_dummy_pg8j_U->if_read_ce(ap_var_for_const0);
+    start_for_dummy_pg8j_U->if_write_ce(ap_var_for_const0);
+    start_for_dummy_pg8j_U->if_din(start_for_dummy_proc_be_1_U0_din);
+    start_for_dummy_pg8j_U->if_full_n(start_for_dummy_proc_be_1_U0_full_n);
+    start_for_dummy_pg8j_U->if_write(dummy_proc_fe_1_U0_start_write);
+    start_for_dummy_pg8j_U->if_dout(start_for_dummy_proc_be_1_U0_dout);
+    start_for_dummy_pg8j_U->if_empty_n(start_for_dummy_proc_be_1_U0_empty_n);
+    start_for_dummy_pg8j_U->if_read(dummy_proc_be_1_U0_ap_ready);
 
     SC_METHOD(thread_ap_done);
     sensitive << ( dummy_proc_be_1_U0_ap_done );
@@ -392,8 +392,8 @@ fft_top::~fft_top() {
     delete xn_channel_U;
     delete xk_channel_U;
     delete fft_status_data_V_U;
-    delete start_for_fft_conbkb_U;
-    delete start_for_dummy_pcud_U;
+    delete start_for_fft_confYi_U;
+    delete start_for_dummy_pg8j_U;
 }
 
 void fft_top::thread_ap_var_for_const0() {

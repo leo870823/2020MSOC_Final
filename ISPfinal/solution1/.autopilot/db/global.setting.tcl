@@ -1,5 +1,5 @@
 
-set TopModule "ProxGS"
+set TopModule "DEBLUR"
 set ClockPeriod 10
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
@@ -13,7 +13,7 @@ set FftOrFirFlag 1
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 0
+set HasDSPModule 1
 set ResetLevelFlag 1
 set ResetStyle control
 set ResetSyncFlag 1

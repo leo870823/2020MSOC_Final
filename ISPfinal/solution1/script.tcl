@@ -4,7 +4,7 @@
 ## Copyright (C) 1986-2019 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project ISPfinal
-set_top ProxGS
+set_top DEBLUR
 add_files deblur.cpp
 add_files deblur.h
 add_files divergent.cpp

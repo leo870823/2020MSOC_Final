@@ -29,128 +29,35 @@
 #define H 128
 #define W 128
 
-
-
+// function declaration
+void readImage(const char* path, eita_t inArr[WIDTH][HEIGHT]);
 void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]);
 void read_coe(fft_operation denom[128][128],proxGSDataIn xn_input[128][128],const char* file_name_real,const char* file_name_imag,const char* file_name_denominator);
 void COMPUTE_PSNR(eita_t blurred_R[HEIGHT][WIDTH],eita_t blurred_G[HEIGHT][WIDTH],eita_t blurred_B[HEIGHT][WIDTH],eita_t data_R[HEIGHT][WIDTH],eita_t data_G[HEIGHT][WIDTH],eita_t data_B[HEIGHT][WIDTH]);
-
+void txt2bmp(const char* txt,const char* bmp);
+void init();
 int main(){
 	unsigned short int y,x;
 	int value;
 // Read ground truth image
 	value=128;
 	printf("%d\n",value);
-	FILE *file_truth_R = fopen("ground_truth_R.txt", "r");
-	if(!file_truth_R) printf("ERROR: could not open %s for reading\n","ground_truth_R.txt");
-	else printf("Open success file_truth_R\n");
 
+	eita_t data_G[128][128] ;
 	eita_t data_R[128][128] ;
+	eita_t data_B[128][128] ;
 
-	for (y = 0; y < H; y++)
-	{
-		for (x = 0; x < W; x++)
-		{   //printf("(x,y)=(%d,%d)\n",x,y);
-			fscanf(file_truth_R, "%d\n", &value);
-			data_R[y][x] = eita_t(value);
-			//printf("%d\n",int(value));
-		}
-
-	}
-	fclose(file_truth_R);
-	
-	FILE *file_truth_G = fopen("ground_truth_G.txt", "r");
-		if(!file_truth_G) printf("ERROR: could not open %s for reading\n","ground_truth_G.txt");
-		else printf("Open success file_truth_G\n");
-
-		eita_t data_G[128][128] ;
-
-		for (y = 0; y < H; y++)
-		{
-			for (x = 0; x < W; x++)
-			{
-				fscanf(file_truth_G, "%d ", &value);
-				data_G[y][x] = eita_t(value);
-			}
-
-		}
-		fclose(file_truth_G);
-
-	FILE *file_truth_B = fopen("ground_truth_B.txt", "r");
-		if(!file_truth_B) printf("ERROR: could not open %s for reading\n","ground_truth_B.txt");
-		else printf("Open success file_truth_B\n");
-
-		eita_t data_B[128][128] ;
-
-		for (y = 0; y < H; y++)
-		{
-			for (x = 0; x < W; x++)
-			{
-				fscanf(file_truth_B, "%d ", &value);
-				data_B[y][x] = eita_t(value);
-			}
-
-		}
-		fclose(file_truth_B);
-
-
-
-// Read blurred image
-
-	FILE *file_noise_R = fopen("I_blurred_R.txt", "r");
-	if(!file_noise_R) printf("ERROR: could not open %s for reading\n","noise_R.txt");
-	else printf("Open success I_blurred_R.txt\n");
-
-	eita_t blurred_R[128][128] ;
-
-	for (y = 0; y < H; y++)
-	{
-		for (x = 0; x < W; x++)
-		{
-			fscanf(file_noise_R, "%d ", &value);
-			//printf("%d\n",&value);
-
-			blurred_R[y][x] = eita_t(value);
-			//printf("%d\n",blurred_R[y][x]);
-		}
-	}
-	fclose(file_noise_R);
-	
-
-	FILE *file_noise_G = fopen("I_blurred_G.txt", "r");
-	if(!file_noise_G) printf("ERROR: could not open %s for reading\n","noise_G.txt");
-	else printf("Open success I_blurred_G.txt\n");
 	eita_t blurred_G[128][128] ;
+	eita_t blurred_R[128][128] ;
+	eita_t blurred_B[128][128] ;
+	//init();
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_R);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_ground.bmp",data_G);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_ground.bmp",data_B);
 
-	for (y = 0; y < H; y++)
-	{
-		for (x = 0; x < W; x++)
-		{
-			fscanf(file_noise_G, "%d ", &value);
-			blurred_G[y][x] = eita_t(value);
-		}
-	}
-	fclose(file_noise_G);
-
-
-
-
-	FILE *file_noise_B = fopen("I_blurred_B.txt", "r");
-		if(!file_noise_B) printf("ERROR: could not open %s for reading\n","noise_B.txt");
-		else printf("Open success I_blurred_B.txt\n");
-		eita_t blurred_B[128][128];
-
-		for (y = 0; y < H; y++)
-		{
-			for (x = 0; x < W; x++)
-			{
-				fscanf(file_noise_B, "%d ", &value);
-				blurred_B[y][x] = eita_t(value);
-			}
-		}
-		fclose(file_noise_B);
-
-
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_blurred.bmp",blurred_R);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_blurred.bmp",blurred_G);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_blurred.bmp",blurred_B);
 
 
 
@@ -176,9 +83,9 @@ int main(){
 
 
 }
-
+//===========================
 //===== utility function ====
-
+//===========================
 void saveImage(const std::string path, cv::InputArray inArr)
 {
 	double min;
@@ -188,7 +95,42 @@ void saveImage(const std::string path, cv::InputArray inArr)
 	cv::convertScaleAbs(inArr, adjMap, 255 / max);
 	cv::imwrite(path,adjMap);
 }
+void readImage(const char* path, eita_t img[WIDTH][HEIGHT]){
 
+	int inArr[WIDTH][HEIGHT];
+	// Read input image
+	printf("Load image %s \n",path);
+	cv::Mat imageSrc(cv::Size(WIDTH,HEIGHT), CV_8UC1, inArr, cv::Mat::AUTO_STEP);
+	imageSrc=cv::imread(path, CV_LOAD_IMAGE_GRAYSCALE);
+	// Convert to grayscale
+	printf("Image Rows:%d Cols:%d\n",imageSrc.rows, imageSrc.cols);
+
+
+	for (int x = 0; x < H; x++)
+	{
+		for (int y = 0; y < W; y++)
+		{
+			img[x][y]=eita_t(imageSrc.at<unsigned char>(y,x));
+			printf( "%d\n",int(imageSrc.at<unsigned char>(y,x)) );
+			//printf( "After  %d\n",int(img[x][y]) );
+		}
+
+	}
+	/*
+	printf("Load image %s \n",path);
+	IplImage* src = cvLoadImage(path);
+	cvShowImage("camera",src);
+	for (int y = 0; y < H; y++)
+	{
+		for (int x = 0; x < W; x++)
+		{
+			//img[x][y]=eita_t(inArr[y][x]);
+			//printf( "output file %lf :\n",cvGet2D(img,y,x).val[0] );
+		}
+
+	}
+	*/
+}
 void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 
 	int value;
@@ -199,6 +141,7 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 			for (int x = 0; x < W; x++)
 			{
 				outImage[x][y]=char(out_array[y][x]);
+				//printf( "output file %d :\n",int(outImage[x][y]) );
 			}
 
 		}
@@ -281,4 +224,163 @@ void COMPUTE_PSNR(
 	printf( "B channel PSNR=%f \n", PSNR_B);
 	printf( "G channel PSNR=%f \n", PSNR_G);
 }
+
+void txt2bmp(const char* txt,const char* bmp){
+	int value;
+	FILE *file_noise_B = fopen(txt, "r");
+		if(!file_noise_B) printf("ERROR: could not open %s for reading\n","noise_B.txt");
+		else printf("Open success %s \n",txt);
+		eita_t blurred_B[128][128];
+
+		for (int y = 0; y < H; y++)
+		{
+			for (int x = 0; x < W; x++)
+			{
+				fscanf(file_noise_B, "%d ", &value);
+				blurred_B[y][x] = eita_t(value);
+			}
+		}
+		fclose(file_noise_B);
+		write_file(bmp,blurred_B);
+}
+
+/*
+		eita_t data_G[128][128] ;
+		eita_t data_R[128][128] ;
+		eita_t data_B[128][128] ;
+
+		eita_t blurred_G[128][128] ;
+		eita_t blurred_R[128][128] ;
+		eita_t blurred_B[128][128] ;
+
+		readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_R);
+		readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_ground.bmp",data_G);
+		readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_ground.bmp",data_B);
+
+		readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_blurred.bmp",blurred_R);
+		readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_blurred.bmp",blurred_G);
+		readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_blurred.bmp",blurred_B);
+ * */
+
+
+void init(){
+	int x,y,value;
+	FILE *file_truth_R = fopen("ground_truth_R.txt", "r");
+	if(!file_truth_R) printf("ERROR: could not open %s for reading\n","ground_truth_R.txt");
+	else printf("Open success file_truth_R\n");
+
+	eita_t data_R[128][128] ;
+
+	for (y = 0; y < H; y++)
+	{
+		for (x = 0; x < W; x++)
+		{   //printf("(x,y)=(%d,%d)\n",x,y);
+			fscanf(file_truth_R, "%d\n", &value);
+			data_R[y][x] = eita_t(value);
+			//printf("%d\n",int(value));
+		}
+
+	}
+	fclose(file_truth_R);
+
+	FILE *file_truth_G = fopen("ground_truth_G.txt", "r");
+		if(!file_truth_G) printf("ERROR: could not open %s for reading\n","ground_truth_G.txt");
+		else printf("Open success file_truth_G\n");
+
+		eita_t data_G[128][128] ;
+
+		for (y = 0; y < H; y++)
+		{
+			for (x = 0; x < W; x++)
+			{
+				fscanf(file_truth_G, "%d ", &value);
+				data_G[y][x] = eita_t(value);
+			}
+
+		}
+		fclose(file_truth_G);
+
+	FILE *file_truth_B = fopen("ground_truth_B.txt", "r");
+		if(!file_truth_B) printf("ERROR: could not open %s for reading\n","ground_truth_B.txt");
+		else printf("Open success file_truth_B\n");
+
+		eita_t data_B[128][128] ;
+
+		for (y = 0; y < H; y++)
+		{
+			for (x = 0; x < W; x++)
+			{
+				fscanf(file_truth_B, "%d ", &value);
+				data_B[y][x] = eita_t(value);
+			}
+
+		}
+		fclose(file_truth_B);
+
+		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_R);
+		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_ground.bmp",data_G);
+		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_ground.bmp",data_B);
+
+
+// Read blurred image
+
+	FILE *file_noise_R = fopen("I_blurred_R.txt", "r");
+	if(!file_noise_R) printf("ERROR: could not open %s for reading\n","noise_R.txt");
+	else printf("Open success I_blurred_R.txt\n");
+
+	eita_t blurred_R[128][128] ;
+
+	for (y = 0; y < H; y++)
+	{
+		for (x = 0; x < W; x++)
+		{
+			fscanf(file_noise_R, "%d ", &value);
+			//printf("%d\n",&value);
+
+			blurred_R[y][x] = eita_t(value);
+			//printf("%d\n",blurred_R[y][x]);
+		}
+	}
+	fclose(file_noise_R);
+
+
+	FILE *file_noise_G = fopen("I_blurred_G.txt", "r");
+	if(!file_noise_G) printf("ERROR: could not open %s for reading\n","noise_G.txt");
+	else printf("Open success I_blurred_G.txt\n");
+	eita_t blurred_G[128][128] ;
+
+	for (y = 0; y < H; y++)
+	{
+		for (x = 0; x < W; x++)
+		{
+			fscanf(file_noise_G, "%d ", &value);
+			blurred_G[y][x] = eita_t(value);
+		}
+	}
+	fclose(file_noise_G);
+
+
+
+
+	FILE *file_noise_B = fopen("I_blurred_B.txt", "r");
+		if(!file_noise_B) printf("ERROR: could not open %s for reading\n","noise_B.txt");
+		else printf("Open success I_blurred_B.txt\n");
+		eita_t blurred_B[128][128];
+
+		for (y = 0; y < H; y++)
+		{
+			for (x = 0; x < W; x++)
+			{
+				fscanf(file_noise_B, "%d ", &value);
+				blurred_B[y][x] = eita_t(value);
+			}
+		}
+		fclose(file_noise_B);
+
+		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_blurred.bmp",blurred_R);
+		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_blurred.bmp",blurred_G);
+		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_blurred.bmp",blurred_B);
+}
+ //txt2bmp("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt","C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp");
+
 

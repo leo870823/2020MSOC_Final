@@ -1,9 +1,9 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 20
+set ID 41
 set hasByteEnable 0
-set MemName fft_top_2D_bufferdEe
+set MemName fft_top_2D_bufferhbi
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 64
@@ -96,7 +96,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 22 \
+    id 43 \
     name in_M_real \
     reset_level 1 \
     sync_rst true \
@@ -115,7 +115,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 23 \
+    id 44 \
     name in_M_imag \
     reset_level 1 \
     sync_rst true \
@@ -134,7 +134,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 24 \
+    id 45 \
     name out_M_real \
     reset_level 1 \
     sync_rst true \
@@ -153,7 +153,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 25 \
+    id 46 \
     name out_M_imag \
     reset_level 1 \
     sync_rst true \
@@ -171,7 +171,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 21 \
+    id 42 \
     name direction \
     type other \
     dir I \

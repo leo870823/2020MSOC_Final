@@ -38,7 +38,7 @@
 
 <Node id="5" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-_ZN3hls6ip_fft8config_tI7config1E6setSchEjj.exit:0  call void (...)* @_ssdm_op_SpecInterface(i16* %config_data_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str107, i32 0, i32 0, [1 x i8]* @p_str108, [1 x i8]* @p_str109, [1 x i8]* @p_str110, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str111, [1 x i8]* @p_str112)
+_ZN3hls6ip_fft8config_tI7config1E6setSchEjj.exit:0  call void (...)* @_ssdm_op_SpecInterface(i16* %config_data_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str131, i32 0, i32 0, [1 x i8]* @p_str132, [1 x i8]* @p_str133, [1 x i8]* @p_str134, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str135, [1 x i8]* @p_str136)
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -53,7 +53,7 @@ _ZN3hls6ip_fft8config_tI7config1E6setSchEjj.exit:0  call void (...)* @_ssdm_op_S
 
 <Node id="6" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-_ZN3hls6ip_fft8config_tI7config1E6setSchEjj.exit:1  call void (...)* @_ssdm_op_SpecInterface(i64* %out_r, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str74, i32 0, i32 0, [1 x i8]* @p_str75, [1 x i8]* @p_str76, [1 x i8]* @p_str77, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str78, [1 x i8]* @p_str79)
+_ZN3hls6ip_fft8config_tI7config1E6setSchEjj.exit:1  call void (...)* @_ssdm_op_SpecInterface(i64* %out_r, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str98, i32 0, i32 0, [1 x i8]* @p_str99, [1 x i8]* @p_str100, [1 x i8]* @p_str101, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str102, [1 x i8]* @p_str103)
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>

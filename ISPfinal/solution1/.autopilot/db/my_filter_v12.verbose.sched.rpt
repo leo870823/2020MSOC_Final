@@ -1,0 +1,608 @@
+
+
+================================================================
+== Vivado HLS Report for 'my_filter_v12'
+================================================================
+* Date:           Fri Jan 15 10:17:03 2021
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        ISPfinal
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.741 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    49170|    49170| 0.492 ms | 0.492 ms |  49170|  49170|   none  |
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- Loop_y_1_Loop_x_1  |    49168|    49168|        20|          3|          1|  16384|    yes   |
+        +---------------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 3, depth = 20
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 22
+* Pipeline : 1
+  Pipeline-0 : II = 3, D = 20, States = { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 22 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 2 
+22 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 23 [1/1] (1.76ns)   --->   "br label %1" [divergent.cpp:68]   --->   Operation 23 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 8.36>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i15 [ 0, %0 ], [ %add_ln68, %Loop_x_1_end ]" [divergent.cpp:68]   --->   Operation 24 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%y_0 = phi i8 [ 0, %0 ], [ %select_ln73_1, %Loop_x_1_end ]" [divergent.cpp:73]   --->   Operation 25 'phi' 'y_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%x_0 = phi i8 [ 0, %0 ], [ %x, %Loop_x_1_end ]"   --->   Operation 26 'phi' 'x_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (2.31ns)   --->   "%icmp_ln68 = icmp eq i15 %indvar_flatten, -16384" [divergent.cpp:68]   --->   Operation 27 'icmp' 'icmp_ln68' <Predicate = true> <Delay = 2.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (1.94ns)   --->   "%add_ln68 = add i15 %indvar_flatten, 1" [divergent.cpp:68]   --->   Operation 28 'add' 'add_ln68' <Predicate = true> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "br i1 %icmp_ln68, label %.preheader.preheader, label %Loop_x_1_begin" [divergent.cpp:68]   --->   Operation 29 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (1.55ns)   --->   "%icmp_ln70 = icmp eq i8 %x_0, -128" [divergent.cpp:70]   --->   Operation 30 'icmp' 'icmp_ln70' <Predicate = (!icmp_ln68)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (1.24ns)   --->   "%select_ln73 = select i1 %icmp_ln70, i8 0, i8 %x_0" [divergent.cpp:73]   --->   Operation 31 'select' 'select_ln73' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (1.91ns)   --->   "%add_ln74_1 = add i8 1, %y_0" [divergent.cpp:74]   --->   Operation 32 'add' 'add_ln74_1' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (1.24ns)   --->   "%select_ln73_1 = select i1 %icmp_ln70, i8 %add_ln74_1, i8 %y_0" [divergent.cpp:73]   --->   Operation 33 'select' 'select_ln73_1' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_2 = call i15 @_ssdm_op_BitConcatenate.i15.i8.i7(i8 %select_ln73_1, i7 0)" [divergent.cpp:74]   --->   Operation 34 'bitconcatenate' 'tmp_2' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln74 = zext i15 %tmp_2 to i16" [divergent.cpp:74]   --->   Operation 35 'zext' 'zext_ln74' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (1.91ns)   --->   "%add_ln74 = add i8 2, %y_0" [divergent.cpp:74]   --->   Operation 36 'add' 'add_ln74' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (1.24ns)   --->   "%select_ln73_2 = select i1 %icmp_ln70, i8 %add_ln74, i8 %add_ln74_1" [divergent.cpp:73]   --->   Operation 37 'select' 'select_ln73_2' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_3 = call i15 @_ssdm_op_BitConcatenate.i15.i8.i7(i8 %select_ln73_2, i7 0)" [divergent.cpp:73]   --->   Operation 38 'bitconcatenate' 'tmp_3' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln73 = zext i15 %tmp_3 to i16" [divergent.cpp:73]   --->   Operation 39 'zext' 'zext_ln73' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns) (grouped into LUT with out node add_ln73)   --->   "%select_ln73_3 = select i1 %icmp_ln70, i8 3, i8 2" [divergent.cpp:73]   --->   Operation 40 'select' 'select_ln73_3' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (1.91ns) (out node of the LUT)   --->   "%add_ln73 = add i8 %y_0, %select_ln73_3" [divergent.cpp:73]   --->   Operation 41 'add' 'add_ln73' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_4 = call i15 @_ssdm_op_BitConcatenate.i15.i8.i7(i8 %add_ln73, i7 0)" [divergent.cpp:76]   --->   Operation 42 'bitconcatenate' 'tmp_4' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%zext_ln71 = zext i15 %tmp_4 to i16" [divergent.cpp:71]   --->   Operation 43 'zext' 'zext_ln71' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str443)" [divergent.cpp:71]   --->   Operation 44 'specregionbegin' 'tmp_6' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%zext_ln215 = zext i8 %select_ln73 to i16" [divergent.cpp:73]   --->   Operation 45 'zext' 'zext_ln215' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (1.94ns)   --->   "%add_ln215 = add i16 %zext_ln74, %zext_ln215" [divergent.cpp:73]   --->   Operation 46 'add' 'add_ln215' <Predicate = (!icmp_ln68)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln215_1 = zext i16 %add_ln215 to i64" [divergent.cpp:73]   --->   Operation 47 'zext' 'zext_ln215_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%f_V_addr_1 = getelementptr [16384 x i8]* %f_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:73]   --->   Operation 48 'getelementptr' 'f_V_addr_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (1.94ns)   --->   "%add_ln215_1 = add i16 %zext_ln73, %zext_ln215" [divergent.cpp:74]   --->   Operation 49 'add' 'add_ln215_1' <Predicate = (!icmp_ln68)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%zext_ln215_2 = zext i16 %add_ln215_1 to i64" [divergent.cpp:74]   --->   Operation 50 'zext' 'zext_ln215_2' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%f_V_addr_2 = getelementptr [16384 x i8]* %f_V, i64 0, i64 %zext_ln215_2" [divergent.cpp:74]   --->   Operation 51 'getelementptr' 'f_V_addr_2' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 52 [1/1] (1.94ns)   --->   "%add_ln215_2 = add i16 %zext_ln71, %zext_ln215" [divergent.cpp:76]   --->   Operation 52 'add' 'add_ln215_2' <Predicate = (!icmp_ln68)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%adjChImg_V_addr = getelementptr [16384 x i8]* %adjChImg_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:78]   --->   Operation 53 'getelementptr' 'adjChImg_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%adjChImg_V_addr_2 = getelementptr [16384 x i8]* %adjChImg_V, i64 0, i64 %zext_ln215_2" [divergent.cpp:79]   --->   Operation 54 'getelementptr' 'adjChImg_V_addr_2' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%g1_V_addr = getelementptr [16384 x i8]* %g1_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:73]   --->   Operation 55 'getelementptr' 'g1_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%g2_V_addr = getelementptr [16384 x i8]* %g2_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:74]   --->   Operation 56 'getelementptr' 'g2_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%g3_V_addr = getelementptr [16384 x i8]* %g3_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:75]   --->   Operation 57 'getelementptr' 'g3_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%g4_V_addr = getelementptr [16384 x i8]* %g4_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:76]   --->   Operation 58 'getelementptr' 'g4_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%g5_V_addr = getelementptr [16384 x i8]* %g5_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:77]   --->   Operation 59 'getelementptr' 'g5_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%g6_V_addr = getelementptr [16384 x i8]* %g6_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:78]   --->   Operation 60 'getelementptr' 'g6_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%g7_V_addr = getelementptr [16384 x i8]* %g7_V, i64 0, i64 %zext_ln215_1" [divergent.cpp:79]   --->   Operation 61 'getelementptr' 'g7_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 62 [2/2] (3.25ns)   --->   "%f_V_load_1 = load i8* %f_V_addr_1, align 1" [divergent.cpp:73]   --->   Operation 62 'load' 'f_V_load_1' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 63 [2/2] (3.25ns)   --->   "%g1_V_load = load i8* %g1_V_addr, align 1" [divergent.cpp:73]   --->   Operation 63 'load' 'g1_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 64 [2/2] (3.25ns)   --->   "%f_V_load_2 = load i8* %f_V_addr_2, align 1" [divergent.cpp:74]   --->   Operation 64 'load' 'f_V_load_2' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 65 [2/2] (3.25ns)   --->   "%g2_V_load = load i8* %g2_V_addr, align 1" [divergent.cpp:74]   --->   Operation 65 'load' 'g2_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 66 [2/2] (3.25ns)   --->   "%g3_V_load = load i8* %g3_V_addr, align 1" [divergent.cpp:75]   --->   Operation 66 'load' 'g3_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 67 [2/2] (3.25ns)   --->   "%g4_V_load = load i8* %g4_V_addr, align 1" [divergent.cpp:76]   --->   Operation 67 'load' 'g4_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 68 [2/2] (3.25ns)   --->   "%g5_V_load = load i8* %g5_V_addr, align 1" [divergent.cpp:77]   --->   Operation 68 'load' 'g5_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 69 [2/2] (3.25ns)   --->   "%adjChImg_V_load = load i8* %adjChImg_V_addr, align 1" [divergent.cpp:78]   --->   Operation 69 'load' 'adjChImg_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 70 [2/2] (3.25ns)   --->   "%g6_V_load = load i8* %g6_V_addr, align 1" [divergent.cpp:78]   --->   Operation 70 'load' 'g6_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 71 [2/2] (3.25ns)   --->   "%adjChImg_V_load_2 = load i8* %adjChImg_V_addr_2, align 1" [divergent.cpp:79]   --->   Operation 71 'load' 'adjChImg_V_load_2' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 72 [2/2] (3.25ns)   --->   "%g7_V_load = load i8* %g7_V_addr, align 1" [divergent.cpp:79]   --->   Operation 72 'load' 'g7_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str443, i32 %tmp_6)" [divergent.cpp:94]   --->   Operation 73 'specregionend' 'empty' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "br label %1" [divergent.cpp:70]   --->   Operation 74 'br' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 7.11>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%zext_ln215_3 = zext i16 %add_ln215_2 to i64" [divergent.cpp:76]   --->   Operation 75 'zext' 'zext_ln215_3' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%f_V_addr_4 = getelementptr [16384 x i8]* %f_V, i64 0, i64 %zext_ln215_3" [divergent.cpp:76]   --->   Operation 76 'getelementptr' 'f_V_addr_4' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (1.91ns)   --->   "%x = add i8 1, %select_ln73" [divergent.cpp:73]   --->   Operation 77 'add' 'x' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%zext_ln215_4 = zext i8 %x to i16" [divergent.cpp:73]   --->   Operation 78 'zext' 'zext_ln215_4' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (1.94ns)   --->   "%add_ln215_3 = add i16 %zext_ln74, %zext_ln215_4" [divergent.cpp:73]   --->   Operation 79 'add' 'add_ln215_3' <Predicate = (!icmp_ln68)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%zext_ln215_5 = zext i16 %add_ln215_3 to i64" [divergent.cpp:73]   --->   Operation 80 'zext' 'zext_ln215_5' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%f_V_addr = getelementptr [16384 x i8]* %f_V, i64 0, i64 %zext_ln215_5" [divergent.cpp:73]   --->   Operation 81 'getelementptr' 'f_V_addr' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (1.94ns)   --->   "%add_ln215_4 = add i16 %zext_ln73, %zext_ln215_4" [divergent.cpp:77]   --->   Operation 82 'add' 'add_ln215_4' <Predicate = (!icmp_ln68)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%adjChImg_V_addr_1 = getelementptr [16384 x i8]* %adjChImg_V, i64 0, i64 %zext_ln215_5" [divergent.cpp:78]   --->   Operation 83 'getelementptr' 'adjChImg_V_addr_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_3 : Operation 84 [2/2] (3.25ns)   --->   "%f_V_load = load i8* %f_V_addr, align 1" [divergent.cpp:73]   --->   Operation 84 'load' 'f_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 85 [1/2] (3.25ns)   --->   "%f_V_load_1 = load i8* %f_V_addr_1, align 1" [divergent.cpp:73]   --->   Operation 85 'load' 'f_V_load_1' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 86 [1/2] (3.25ns)   --->   "%g1_V_load = load i8* %g1_V_addr, align 1" [divergent.cpp:73]   --->   Operation 86 'load' 'g1_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 87 [1/2] (3.25ns)   --->   "%f_V_load_2 = load i8* %f_V_addr_2, align 1" [divergent.cpp:74]   --->   Operation 87 'load' 'f_V_load_2' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 88 [1/2] (3.25ns)   --->   "%g2_V_load = load i8* %g2_V_addr, align 1" [divergent.cpp:74]   --->   Operation 88 'load' 'g2_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 89 [1/2] (3.25ns)   --->   "%g3_V_load = load i8* %g3_V_addr, align 1" [divergent.cpp:75]   --->   Operation 89 'load' 'g3_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 90 [2/2] (3.25ns)   --->   "%f_V_load_4 = load i8* %f_V_addr_4, align 1" [divergent.cpp:76]   --->   Operation 90 'load' 'f_V_load_4' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 91 [1/2] (3.25ns)   --->   "%g4_V_load = load i8* %g4_V_addr, align 1" [divergent.cpp:76]   --->   Operation 91 'load' 'g4_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 92 [1/2] (3.25ns)   --->   "%g5_V_load = load i8* %g5_V_addr, align 1" [divergent.cpp:77]   --->   Operation 92 'load' 'g5_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "%rhs_V = zext i8 %f_V_load_1 to i9" [divergent.cpp:78]   --->   Operation 93 'zext' 'rhs_V' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_3 : Operation 94 [1/2] (3.25ns)   --->   "%adjChImg_V_load = load i8* %adjChImg_V_addr, align 1" [divergent.cpp:78]   --->   Operation 94 'load' 'adjChImg_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 95 [2/2] (3.25ns)   --->   "%adjChImg_V_load_1 = load i8* %adjChImg_V_addr_1, align 1" [divergent.cpp:78]   --->   Operation 95 'load' 'adjChImg_V_load_1' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 96 [1/2] (3.25ns)   --->   "%g6_V_load = load i8* %g6_V_addr, align 1" [divergent.cpp:78]   --->   Operation 96 'load' 'g6_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%lhs_V_5 = zext i8 %f_V_load_2 to i9" [divergent.cpp:79]   --->   Operation 97 'zext' 'lhs_V_5' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (1.91ns)   --->   "%ret_V_5 = sub i9 %lhs_V_5, %rhs_V" [divergent.cpp:79]   --->   Operation 98 'sub' 'ret_V_5' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 99 [1/2] (3.25ns)   --->   "%adjChImg_V_load_2 = load i8* %adjChImg_V_addr_2, align 1" [divergent.cpp:79]   --->   Operation 99 'load' 'adjChImg_V_load_2' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_3 : Operation 100 [1/2] (3.25ns)   --->   "%g7_V_load = load i8* %g7_V_addr, align 1" [divergent.cpp:79]   --->   Operation 100 'load' 'g7_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+
+State 4 <SV = 3> <Delay = 8.29>
+ST_4 : Operation 101 [1/1] (0.00ns)   --->   "%zext_ln215_6 = zext i16 %add_ln215_4 to i64" [divergent.cpp:77]   --->   Operation 101 'zext' 'zext_ln215_6' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%f_V_addr_5 = getelementptr [16384 x i8]* %f_V, i64 0, i64 %zext_ln215_6" [divergent.cpp:77]   --->   Operation 102 'getelementptr' 'f_V_addr_5' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 103 [1/2] (3.25ns)   --->   "%f_V_load = load i8* %f_V_addr, align 1" [divergent.cpp:73]   --->   Operation 103 'load' 'f_V_load' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_4 : Operation 104 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln1353_1 = sub i8 %f_V_load_2, %f_V_load_1" [divergent.cpp:74]   --->   Operation 104 'sub' 'sub_ln1353_1' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 105 [1/1] (3.66ns) (root node of TernaryAdder)   --->   "%add_ln214_1 = add i8 %g2_V_load, %sub_ln1353_1" [divergent.cpp:74]   --->   Operation 105 'add' 'add_ln214_1' <Predicate = (!icmp_ln68)> <Delay = 3.66> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 106 [1/1] (3.25ns)   --->   "store i8 %add_ln214_1, i8* %g2_V_addr, align 1" [divergent.cpp:74]   --->   Operation 106 'store' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_4 : Operation 107 [1/1] (1.91ns)   --->   "%add_ln75 = add i8 2, %select_ln73" [divergent.cpp:75]   --->   Operation 107 'add' 'add_ln75' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 108 [1/1] (0.00ns)   --->   "%zext_ln215_7 = zext i8 %add_ln75 to i16" [divergent.cpp:75]   --->   Operation 108 'zext' 'zext_ln215_7' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 109 [1/1] (1.94ns)   --->   "%add_ln215_5 = add i16 %zext_ln74, %zext_ln215_7" [divergent.cpp:75]   --->   Operation 109 'add' 'add_ln215_5' <Predicate = (!icmp_ln68)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 110 [1/1] (0.00ns)   --->   "%zext_ln215_8 = zext i16 %add_ln215_5 to i64" [divergent.cpp:75]   --->   Operation 110 'zext' 'zext_ln215_8' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 111 [1/1] (0.00ns)   --->   "%f_V_addr_3 = getelementptr [16384 x i8]* %f_V, i64 0, i64 %zext_ln215_8" [divergent.cpp:75]   --->   Operation 111 'getelementptr' 'f_V_addr_3' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 112 [2/2] (3.25ns)   --->   "%f_V_load_3 = load i8* %f_V_addr_3, align 1" [divergent.cpp:75]   --->   Operation 112 'load' 'f_V_load_3' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_4 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node sub_ln214_1)   --->   "%shl_ln214_1 = shl i8 %f_V_load_2, 1" [divergent.cpp:76]   --->   Operation 113 'shl' 'shl_ln214_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 114 [1/2] (3.25ns)   --->   "%f_V_load_4 = load i8* %f_V_addr_4, align 1" [divergent.cpp:76]   --->   Operation 114 'load' 'f_V_load_4' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_4 : Operation 115 [1/1] (1.91ns) (out node of the LUT)   --->   "%sub_ln214_1 = sub i8 %f_V_load_4, %shl_ln214_1" [divergent.cpp:76]   --->   Operation 115 'sub' 'sub_ln214_1' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 116 [2/2] (3.25ns)   --->   "%f_V_load_5 = load i8* %f_V_addr_5, align 1" [divergent.cpp:77]   --->   Operation 116 'load' 'f_V_load_5' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_4 : Operation 117 [1/1] (0.00ns)   --->   "%lhs_V = zext i8 %f_V_load to i9" [divergent.cpp:78]   --->   Operation 117 'zext' 'lhs_V' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 118 [1/1] (1.91ns)   --->   "%ret_V = sub i9 %lhs_V, %rhs_V" [divergent.cpp:78]   --->   Operation 118 'sub' 'ret_V' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 119 [1/1] (0.00ns)   --->   "%lhs_V_1 = zext i8 %adjChImg_V_load to i17" [divergent.cpp:78]   --->   Operation 119 'zext' 'lhs_V_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 120 [1/2] (3.25ns)   --->   "%adjChImg_V_load_1 = load i8* %adjChImg_V_addr_1, align 1" [divergent.cpp:78]   --->   Operation 120 'load' 'adjChImg_V_load_1' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_4 : Operation 121 [1/1] (0.00ns)   --->   "%lhs_V_2 = zext i8 %adjChImg_V_load_1 to i9" [divergent.cpp:78]   --->   Operation 121 'zext' 'lhs_V_2' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 122 [1/1] (0.00ns)   --->   "%rhs_V_2 = zext i8 %adjChImg_V_load to i9" [divergent.cpp:78]   --->   Operation 122 'zext' 'rhs_V_2' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 123 [1/1] (1.91ns)   --->   "%ret_V_2 = sub i9 %lhs_V_2, %rhs_V_2" [divergent.cpp:78]   --->   Operation 123 'sub' 'ret_V_2' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 124 [1/1] (0.00ns)   --->   "%rhs_V_3 = zext i8 %f_V_load_1 to i17" [divergent.cpp:78]   --->   Operation 124 'zext' 'rhs_V_3' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 125 [1/1] (0.00ns)   --->   "%zext_ln1429 = zext i8 %g6_V_load to i32" [divergent.cpp:78]   --->   Operation 125 'zext' 'zext_ln1429' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 126 [6/6] (6.28ns)   --->   "%tmp_1 = uitofp i32 %zext_ln1429 to double" [divergent.cpp:78]   --->   Operation 126 'uitodp' 'tmp_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_4 : Operation 127 [1/1] (0.00ns)   --->   "%rhs_V_5 = sext i9 %ret_V_5 to i17" [divergent.cpp:79]   --->   Operation 127 'sext' 'rhs_V_5' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 128 [1/1] (4.35ns)   --->   "%ret_V_6 = mul i17 %rhs_V_5, %lhs_V_1" [divergent.cpp:79]   --->   Operation 128 'mul' 'ret_V_6' <Predicate = (!icmp_ln68)> <Delay = 4.35> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 129 [1/1] (0.00ns)   --->   "%lhs_V_6 = zext i8 %adjChImg_V_load_2 to i9" [divergent.cpp:79]   --->   Operation 129 'zext' 'lhs_V_6' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 130 [1/1] (1.91ns)   --->   "%ret_V_7 = sub i9 %lhs_V_6, %rhs_V_2" [divergent.cpp:79]   --->   Operation 130 'sub' 'ret_V_7' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 131 [1/1] (0.00ns)   --->   "%lhs_V_7 = sext i9 %ret_V_7 to i17" [divergent.cpp:79]   --->   Operation 131 'sext' 'lhs_V_7' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 132 [1/1] (3.36ns) (grouped into DSP with root node ret_V_9)   --->   "%ret_V_8 = mul i17 %lhs_V_7, %rhs_V_3" [divergent.cpp:79]   --->   Operation 132 'mul' 'ret_V_8' <Predicate = (!icmp_ln68)> <Delay = 3.36> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 133 [1/1] (0.00ns)   --->   "%lhs_V_8 = sext i17 %ret_V_6 to i18" [divergent.cpp:79]   --->   Operation 133 'sext' 'lhs_V_8' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 134 [1/1] (0.00ns) (grouped into DSP with root node ret_V_9)   --->   "%rhs_V_6 = sext i17 %ret_V_8 to i18" [divergent.cpp:79]   --->   Operation 134 'sext' 'rhs_V_6' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 135 [1/1] (3.02ns) (root node of the DSP)   --->   "%ret_V_9 = sub i18 %lhs_V_8, %rhs_V_6" [divergent.cpp:79]   --->   Operation 135 'sub' 'ret_V_9' <Predicate = (!icmp_ln68)> <Delay = 3.02> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 136 [1/1] (0.00ns)   --->   "%zext_ln1429_1 = zext i8 %g7_V_load to i32" [divergent.cpp:79]   --->   Operation 136 'zext' 'zext_ln1429_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 137 [6/6] (6.28ns)   --->   "%tmp_5 = uitofp i32 %zext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 137 'uitodp' 'tmp_5' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_4 : Operation 138 [1/1] (0.00ns)   --->   "%tmp_15 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %add_ln214_1, i32 1, i32 7)" [divergent.cpp:82]   --->   Operation 138 'partselect' 'tmp_15' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_4 : Operation 139 [1/1] (1.48ns)   --->   "%icmp_ln895_1 = icmp eq i7 %tmp_15, 0" [divergent.cpp:82]   --->   Operation 139 'icmp' 'icmp_ln895_1' <Predicate = (!icmp_ln68)> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 140 [1/1] (0.00ns)   --->   "br i1 %icmp_ln895_1, label %._crit_edge2351, label %3" [divergent.cpp:82]   --->   Operation 140 'br' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 7.37>
+ST_5 : Operation 141 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln1353 = sub i8 %f_V_load, %f_V_load_1" [divergent.cpp:73]   --->   Operation 141 'sub' 'sub_ln1353' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 142 [1/1] (3.66ns) (root node of TernaryAdder)   --->   "%add_ln214 = add i8 %g1_V_load, %sub_ln1353" [divergent.cpp:73]   --->   Operation 142 'add' 'add_ln214' <Predicate = (!icmp_ln68)> <Delay = 3.66> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 143 [1/1] (3.25ns)   --->   "store i8 %add_ln214, i8* %g1_V_addr, align 1" [divergent.cpp:73]   --->   Operation 143 'store' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 144 [1/1] (0.00ns) (grouped into LUT with out node sub_ln214)   --->   "%shl_ln214 = shl i8 %f_V_load, 1" [divergent.cpp:75]   --->   Operation 144 'shl' 'shl_ln214' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_5 : Operation 145 [1/2] (3.25ns)   --->   "%f_V_load_3 = load i8* %f_V_addr_3, align 1" [divergent.cpp:75]   --->   Operation 145 'load' 'f_V_load_3' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 146 [1/1] (1.91ns) (out node of the LUT)   --->   "%sub_ln214 = sub i8 %f_V_load_3, %shl_ln214" [divergent.cpp:75]   --->   Operation 146 'sub' 'sub_ln214' <Predicate = (!icmp_ln68)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 147 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln214_4 = add i8 %g4_V_load, %sub_ln214_1" [divergent.cpp:76]   --->   Operation 147 'add' 'add_ln214_4' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 148 [1/1] (3.66ns) (root node of TernaryAdder)   --->   "%add_ln214_5 = add i8 %add_ln214_4, %f_V_load_1" [divergent.cpp:76]   --->   Operation 148 'add' 'add_ln214_5' <Predicate = (!icmp_ln68)> <Delay = 3.66> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 149 [1/1] (3.25ns)   --->   "store i8 %add_ln214_5, i8* %g4_V_addr, align 1" [divergent.cpp:76]   --->   Operation 149 'store' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 150 [1/2] (3.25ns)   --->   "%f_V_load_5 = load i8* %f_V_addr_5, align 1" [divergent.cpp:77]   --->   Operation 150 'load' 'f_V_load_5' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 151 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln1353_2 = sub i8 %f_V_load_5, %f_V_load_2" [divergent.cpp:77]   --->   Operation 151 'sub' 'sub_ln1353_2' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 152 [1/1] (3.66ns) (root node of TernaryAdder)   --->   "%sub_ln1353_3 = sub i8 %sub_ln1353_2, %f_V_load" [divergent.cpp:77]   --->   Operation 152 'sub' 'sub_ln1353_3' <Predicate = (!icmp_ln68)> <Delay = 3.66> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 153 [1/1] (0.00ns)   --->   "%rhs_V_1 = sext i9 %ret_V to i17" [divergent.cpp:78]   --->   Operation 153 'sext' 'rhs_V_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_5 : Operation 154 [1/1] (4.35ns)   --->   "%ret_V_1 = mul i17 %rhs_V_1, %lhs_V_1" [divergent.cpp:78]   --->   Operation 154 'mul' 'ret_V_1' <Predicate = (!icmp_ln68)> <Delay = 4.35> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 155 [1/1] (0.00ns)   --->   "%lhs_V_3 = sext i9 %ret_V_2 to i17" [divergent.cpp:78]   --->   Operation 155 'sext' 'lhs_V_3' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_5 : Operation 156 [1/1] (3.36ns) (grouped into DSP with root node ret_V_4)   --->   "%ret_V_3 = mul i17 %lhs_V_3, %rhs_V_3" [divergent.cpp:78]   --->   Operation 156 'mul' 'ret_V_3' <Predicate = (!icmp_ln68)> <Delay = 3.36> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 157 [1/1] (0.00ns)   --->   "%lhs_V_4 = sext i17 %ret_V_1 to i18" [divergent.cpp:78]   --->   Operation 157 'sext' 'lhs_V_4' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_5 : Operation 158 [1/1] (0.00ns) (grouped into DSP with root node ret_V_4)   --->   "%rhs_V_4 = sext i17 %ret_V_3 to i18" [divergent.cpp:78]   --->   Operation 158 'sext' 'rhs_V_4' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_5 : Operation 159 [1/1] (3.02ns) (root node of the DSP)   --->   "%ret_V_4 = sub i18 %lhs_V_4, %rhs_V_4" [divergent.cpp:78]   --->   Operation 159 'sub' 'ret_V_4' <Predicate = (!icmp_ln68)> <Delay = 3.02> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 160 [5/6] (6.28ns)   --->   "%tmp_1 = uitofp i32 %zext_ln1429 to double" [divergent.cpp:78]   --->   Operation 160 'uitodp' 'tmp_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_5 : Operation 161 [1/1] (0.00ns)   --->   "%sext_ln1429_1 = sext i18 %ret_V_9 to i32" [divergent.cpp:79]   --->   Operation 161 'sext' 'sext_ln1429_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_5 : Operation 162 [6/6] (6.28ns)   --->   "%i_op_assign_1 = sitofp i32 %sext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 162 'sitodp' 'i_op_assign_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_5 : Operation 163 [5/6] (6.28ns)   --->   "%tmp_5 = uitofp i32 %zext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 163 'uitodp' 'tmp_5' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_5 : Operation 164 [1/1] (0.00ns)   --->   "%tmp_14 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %add_ln214, i32 1, i32 7)" [divergent.cpp:80]   --->   Operation 164 'partselect' 'tmp_14' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_5 : Operation 165 [1/1] (1.48ns)   --->   "%icmp_ln895 = icmp eq i7 %tmp_14, 0" [divergent.cpp:80]   --->   Operation 165 'icmp' 'icmp_ln895' <Predicate = (!icmp_ln68)> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 166 [1/1] (0.00ns)   --->   "br i1 %icmp_ln895, label %._crit_edge, label %2" [divergent.cpp:80]   --->   Operation 166 'br' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_5 : Operation 167 [1/1] (3.25ns)   --->   "store i8 1, i8* %g2_V_addr, align 1" [divergent.cpp:83]   --->   Operation 167 'store' <Predicate = (!icmp_ln895_1)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_5 : Operation 168 [1/1] (0.00ns)   --->   "br label %._crit_edge2351" [divergent.cpp:83]   --->   Operation 168 'br' <Predicate = (!icmp_ln895_1)> <Delay = 0.00>
+ST_5 : Operation 169 [1/1] (0.00ns)   --->   "%tmp_17 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %add_ln214_5, i32 1, i32 7)" [divergent.cpp:86]   --->   Operation 169 'partselect' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 170 [1/1] (1.48ns)   --->   "%icmp_ln895_3 = icmp eq i7 %tmp_17, 0" [divergent.cpp:86]   --->   Operation 170 'icmp' 'icmp_ln895_3' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 171 [1/1] (0.00ns)   --->   "br i1 %icmp_ln895_3, label %._crit_edge2353, label %5" [divergent.cpp:86]   --->   Operation 171 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 6.92>
+ST_6 : Operation 172 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln214_2 = add i8 %g3_V_load, %sub_ln214" [divergent.cpp:75]   --->   Operation 172 'add' 'add_ln214_2' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 173 [1/1] (3.66ns) (root node of TernaryAdder)   --->   "%add_ln214_3 = add i8 %add_ln214_2, %f_V_load_1" [divergent.cpp:75]   --->   Operation 173 'add' 'add_ln214_3' <Predicate = (!icmp_ln68)> <Delay = 3.66> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 174 [1/1] (3.25ns)   --->   "store i8 %add_ln214_3, i8* %g3_V_addr, align 1" [divergent.cpp:75]   --->   Operation 174 'store' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_6 : Operation 175 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln214_7 = add i8 %g5_V_load, %sub_ln1353_3" [divergent.cpp:77]   --->   Operation 175 'add' 'add_ln214_7' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 176 [1/1] (3.66ns) (root node of TernaryAdder)   --->   "%add_ln214_6 = add i8 %add_ln214_7, %f_V_load_1" [divergent.cpp:77]   --->   Operation 176 'add' 'add_ln214_6' <Predicate = (!icmp_ln68)> <Delay = 3.66> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 177 [1/1] (3.25ns)   --->   "store i8 %add_ln214_6, i8* %g5_V_addr, align 1" [divergent.cpp:77]   --->   Operation 177 'store' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_6 : Operation 178 [1/1] (0.00ns)   --->   "%sext_ln1429 = sext i18 %ret_V_4 to i32" [divergent.cpp:78]   --->   Operation 178 'sext' 'sext_ln1429' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_6 : Operation 179 [6/6] (6.28ns)   --->   "%i_op_assign = sitofp i32 %sext_ln1429 to double" [divergent.cpp:78]   --->   Operation 179 'sitodp' 'i_op_assign' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_6 : Operation 180 [4/6] (6.28ns)   --->   "%tmp_1 = uitofp i32 %zext_ln1429 to double" [divergent.cpp:78]   --->   Operation 180 'uitodp' 'tmp_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_6 : Operation 181 [5/6] (6.28ns)   --->   "%i_op_assign_1 = sitofp i32 %sext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 181 'sitodp' 'i_op_assign_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_6 : Operation 182 [4/6] (6.28ns)   --->   "%tmp_5 = uitofp i32 %zext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 182 'uitodp' 'tmp_5' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_6 : Operation 183 [1/1] (3.25ns)   --->   "store i8 1, i8* %g1_V_addr, align 1" [divergent.cpp:81]   --->   Operation 183 'store' <Predicate = (!icmp_ln895)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_6 : Operation 184 [1/1] (0.00ns)   --->   "br label %._crit_edge" [divergent.cpp:81]   --->   Operation 184 'br' <Predicate = (!icmp_ln895)> <Delay = 0.00>
+ST_6 : Operation 185 [1/1] (0.00ns)   --->   "%tmp_16 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %add_ln214_3, i32 1, i32 7)" [divergent.cpp:84]   --->   Operation 185 'partselect' 'tmp_16' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 186 [1/1] (1.48ns)   --->   "%icmp_ln895_2 = icmp eq i7 %tmp_16, 0" [divergent.cpp:84]   --->   Operation 186 'icmp' 'icmp_ln895_2' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 187 [1/1] (0.00ns)   --->   "br i1 %icmp_ln895_2, label %._crit_edge2352, label %4" [divergent.cpp:84]   --->   Operation 187 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 188 [1/1] (3.25ns)   --->   "store i8 1, i8* %g4_V_addr, align 1" [divergent.cpp:87]   --->   Operation 188 'store' <Predicate = (!icmp_ln895_3)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_6 : Operation 189 [1/1] (0.00ns)   --->   "br label %._crit_edge2353" [divergent.cpp:87]   --->   Operation 189 'br' <Predicate = (!icmp_ln895_3)> <Delay = 0.00>
+ST_6 : Operation 190 [1/1] (0.00ns)   --->   "%tmp_18 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %add_ln214_6, i32 1, i32 7)" [divergent.cpp:88]   --->   Operation 190 'partselect' 'tmp_18' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 191 [1/1] (1.48ns)   --->   "%icmp_ln895_4 = icmp eq i7 %tmp_18, 0" [divergent.cpp:88]   --->   Operation 191 'icmp' 'icmp_ln895_4' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 192 [1/1] (0.00ns)   --->   "br i1 %icmp_ln895_4, label %._crit_edge2354, label %6" [divergent.cpp:88]   --->   Operation 192 'br' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 6.28>
+ST_7 : Operation 193 [5/6] (6.28ns)   --->   "%i_op_assign = sitofp i32 %sext_ln1429 to double" [divergent.cpp:78]   --->   Operation 193 'sitodp' 'i_op_assign' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_7 : Operation 194 [3/6] (6.28ns)   --->   "%tmp_1 = uitofp i32 %zext_ln1429 to double" [divergent.cpp:78]   --->   Operation 194 'uitodp' 'tmp_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_7 : Operation 195 [4/6] (6.28ns)   --->   "%i_op_assign_1 = sitofp i32 %sext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 195 'sitodp' 'i_op_assign_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_7 : Operation 196 [3/6] (6.28ns)   --->   "%tmp_5 = uitofp i32 %zext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 196 'uitodp' 'tmp_5' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_7 : Operation 197 [1/1] (3.25ns)   --->   "store i8 1, i8* %g3_V_addr, align 1" [divergent.cpp:85]   --->   Operation 197 'store' <Predicate = (!icmp_ln895_2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_7 : Operation 198 [1/1] (0.00ns)   --->   "br label %._crit_edge2352" [divergent.cpp:85]   --->   Operation 198 'br' <Predicate = (!icmp_ln895_2)> <Delay = 0.00>
+ST_7 : Operation 199 [1/1] (3.25ns)   --->   "store i8 1, i8* %g5_V_addr, align 1" [divergent.cpp:89]   --->   Operation 199 'store' <Predicate = (!icmp_ln895_4)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_7 : Operation 200 [1/1] (0.00ns)   --->   "br label %._crit_edge2354" [divergent.cpp:89]   --->   Operation 200 'br' <Predicate = (!icmp_ln895_4)> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 6.28>
+ST_8 : Operation 201 [4/6] (6.28ns)   --->   "%i_op_assign = sitofp i32 %sext_ln1429 to double" [divergent.cpp:78]   --->   Operation 201 'sitodp' 'i_op_assign' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_8 : Operation 202 [2/6] (6.28ns)   --->   "%tmp_1 = uitofp i32 %zext_ln1429 to double" [divergent.cpp:78]   --->   Operation 202 'uitodp' 'tmp_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_8 : Operation 203 [3/6] (6.28ns)   --->   "%i_op_assign_1 = sitofp i32 %sext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 203 'sitodp' 'i_op_assign_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_8 : Operation 204 [2/6] (6.28ns)   --->   "%tmp_5 = uitofp i32 %zext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 204 'uitodp' 'tmp_5' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 6.28>
+ST_9 : Operation 205 [3/6] (6.28ns)   --->   "%i_op_assign = sitofp i32 %sext_ln1429 to double" [divergent.cpp:78]   --->   Operation 205 'sitodp' 'i_op_assign' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_9 : Operation 206 [1/6] (6.28ns)   --->   "%tmp_1 = uitofp i32 %zext_ln1429 to double" [divergent.cpp:78]   --->   Operation 206 'uitodp' 'tmp_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_9 : Operation 207 [2/6] (6.28ns)   --->   "%i_op_assign_1 = sitofp i32 %sext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 207 'sitodp' 'i_op_assign_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_9 : Operation 208 [1/6] (6.28ns)   --->   "%tmp_5 = uitofp i32 %zext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 208 'uitodp' 'tmp_5' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 6.28>
+ST_10 : Operation 209 [2/6] (6.28ns)   --->   "%i_op_assign = sitofp i32 %sext_ln1429 to double" [divergent.cpp:78]   --->   Operation 209 'sitodp' 'i_op_assign' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_10 : Operation 210 [1/6] (6.28ns)   --->   "%i_op_assign_1 = sitofp i32 %sext_ln1429_1 to double" [divergent.cpp:79]   --->   Operation 210 'sitodp' 'i_op_assign_1' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 8.23>
+ST_11 : Operation 211 [1/6] (6.28ns)   --->   "%i_op_assign = sitofp i32 %sext_ln1429 to double" [divergent.cpp:78]   --->   Operation 211 'sitodp' 'i_op_assign' <Predicate = (!icmp_ln68)> <Delay = 6.28> <Core = "Int2Double">   --->   Core 122 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_11 : Operation 212 [5/5] (8.23ns)   --->   "%val_assign_1 = fadd double %tmp_5, %i_op_assign_1" [divergent.cpp:79]   --->   Operation 212 'dadd' 'val_assign_1' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 8.23>
+ST_12 : Operation 213 [5/5] (8.23ns)   --->   "%val_assign = fadd double %tmp_1, %i_op_assign" [divergent.cpp:78]   --->   Operation 213 'dadd' 'val_assign' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 214 [4/5] (8.23ns)   --->   "%val_assign_1 = fadd double %tmp_5, %i_op_assign_1" [divergent.cpp:79]   --->   Operation 214 'dadd' 'val_assign_1' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 8.23>
+ST_13 : Operation 215 [4/5] (8.23ns)   --->   "%val_assign = fadd double %tmp_1, %i_op_assign" [divergent.cpp:78]   --->   Operation 215 'dadd' 'val_assign' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 216 [3/5] (8.23ns)   --->   "%val_assign_1 = fadd double %tmp_5, %i_op_assign_1" [divergent.cpp:79]   --->   Operation 216 'dadd' 'val_assign_1' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 8.23>
+ST_14 : Operation 217 [3/5] (8.23ns)   --->   "%val_assign = fadd double %tmp_1, %i_op_assign" [divergent.cpp:78]   --->   Operation 217 'dadd' 'val_assign' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 218 [2/5] (8.23ns)   --->   "%val_assign_1 = fadd double %tmp_5, %i_op_assign_1" [divergent.cpp:79]   --->   Operation 218 'dadd' 'val_assign_1' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 8.23>
+ST_15 : Operation 219 [2/5] (8.23ns)   --->   "%val_assign = fadd double %tmp_1, %i_op_assign" [divergent.cpp:78]   --->   Operation 219 'dadd' 'val_assign' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 220 [1/5] (8.23ns)   --->   "%val_assign_1 = fadd double %tmp_5, %i_op_assign_1" [divergent.cpp:79]   --->   Operation 220 'dadd' 'val_assign_1' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 8.23>
+ST_16 : Operation 221 [1/5] (8.23ns)   --->   "%val_assign = fadd double %tmp_1, %i_op_assign" [divergent.cpp:78]   --->   Operation 221 'dadd' 'val_assign' <Predicate = (!icmp_ln68)> <Delay = 8.23> <Core = "DAddSub">   --->   Core 115 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 222 [1/1] (0.00ns)   --->   "%reg_V_1 = bitcast double %val_assign_1 to i64" [divergent.cpp:79]   --->   Operation 222 'bitcast' 'reg_V_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_16 : Operation 223 [1/1] (0.00ns)   --->   "%trunc_ln310_1 = trunc i64 %reg_V_1 to i63" [divergent.cpp:79]   --->   Operation 223 'trunc' 'trunc_ln310_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_16 : Operation 224 [1/1] (0.00ns)   --->   "%p_Result_5 = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %reg_V_1, i32 63)" [divergent.cpp:79]   --->   Operation 224 'bitselect' 'p_Result_5' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_16 : Operation 225 [1/1] (0.00ns)   --->   "%p_Result_4 = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %reg_V_1, i32 52, i32 62)" [divergent.cpp:79]   --->   Operation 225 'partselect' 'p_Result_4' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_16 : Operation 226 [1/1] (0.00ns)   --->   "%exp_V_1 = zext i11 %p_Result_4 to i12" [divergent.cpp:79]   --->   Operation 226 'zext' 'exp_V_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_16 : Operation 227 [1/1] (0.00ns)   --->   "%trunc_ln331_1 = trunc i64 %reg_V_1 to i8" [divergent.cpp:79]   --->   Operation 227 'trunc' 'trunc_ln331_1' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_16 : Operation 228 [1/1] (2.78ns)   --->   "%icmp_ln326_1 = icmp eq i63 %trunc_ln310_1, 0" [divergent.cpp:79]   --->   Operation 228 'icmp' 'icmp_ln326_1' <Predicate = (!icmp_ln68)> <Delay = 2.78> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 229 [1/1] (1.54ns)   --->   "%sh_amt_2 = sub i12 1075, %exp_V_1" [divergent.cpp:79]   --->   Operation 229 'sub' 'sh_amt_2' <Predicate = (!icmp_ln68)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 230 [1/1] (1.88ns)   --->   "%icmp_ln330_1 = icmp eq i11 %p_Result_4, -973" [divergent.cpp:79]   --->   Operation 230 'icmp' 'icmp_ln330_1' <Predicate = (!icmp_ln68)> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 231 [1/1] (1.99ns)   --->   "%icmp_ln332_1 = icmp sgt i12 %sh_amt_2, 0" [divergent.cpp:79]   --->   Operation 231 'icmp' 'icmp_ln332_1' <Predicate = (!icmp_ln68)> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 232 [1/1] (1.99ns)   --->   "%icmp_ln333_1 = icmp slt i12 %sh_amt_2, 54" [divergent.cpp:79]   --->   Operation 232 'icmp' 'icmp_ln333_1' <Predicate = (!icmp_ln68)> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 233 [1/1] (0.97ns)   --->   "%or_ln330_1 = or i1 %icmp_ln326_1, %icmp_ln330_1" [divergent.cpp:79]   --->   Operation 233 'or' 'or_ln330_1' <Predicate = (!icmp_ln68)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 8.74>
+ST_17 : Operation 234 [1/1] (0.00ns)   --->   "%reg_V = bitcast double %val_assign to i64" [divergent.cpp:78]   --->   Operation 234 'bitcast' 'reg_V' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_17 : Operation 235 [1/1] (0.00ns)   --->   "%trunc_ln310 = trunc i64 %reg_V to i63" [divergent.cpp:78]   --->   Operation 235 'trunc' 'trunc_ln310' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_17 : Operation 236 [1/1] (0.00ns)   --->   "%p_Result_3 = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %reg_V, i32 63)" [divergent.cpp:78]   --->   Operation 236 'bitselect' 'p_Result_3' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_17 : Operation 237 [1/1] (0.00ns)   --->   "%p_Result_s = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %reg_V, i32 52, i32 62)" [divergent.cpp:78]   --->   Operation 237 'partselect' 'p_Result_s' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_17 : Operation 238 [1/1] (0.00ns)   --->   "%exp_V = zext i11 %p_Result_s to i12" [divergent.cpp:78]   --->   Operation 238 'zext' 'exp_V' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_17 : Operation 239 [1/1] (0.00ns)   --->   "%trunc_ln331 = trunc i64 %reg_V to i8" [divergent.cpp:78]   --->   Operation 239 'trunc' 'trunc_ln331' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_17 : Operation 240 [1/1] (2.78ns)   --->   "%icmp_ln326 = icmp eq i63 %trunc_ln310, 0" [divergent.cpp:78]   --->   Operation 240 'icmp' 'icmp_ln326' <Predicate = (!icmp_ln68)> <Delay = 2.78> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 241 [1/1] (1.54ns)   --->   "%sh_amt = sub i12 1075, %exp_V" [divergent.cpp:78]   --->   Operation 241 'sub' 'sh_amt' <Predicate = (!icmp_ln68)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 242 [1/1] (1.88ns)   --->   "%icmp_ln330 = icmp eq i11 %p_Result_s, -973" [divergent.cpp:78]   --->   Operation 242 'icmp' 'icmp_ln330' <Predicate = (!icmp_ln68)> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 243 [1/1] (1.99ns)   --->   "%icmp_ln332 = icmp sgt i12 %sh_amt, 0" [divergent.cpp:78]   --->   Operation 243 'icmp' 'icmp_ln332' <Predicate = (!icmp_ln68)> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 244 [1/1] (1.99ns)   --->   "%icmp_ln333 = icmp slt i12 %sh_amt, 54" [divergent.cpp:78]   --->   Operation 244 'icmp' 'icmp_ln333' <Predicate = (!icmp_ln68)> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 245 [1/1] (0.97ns)   --->   "%or_ln330 = or i1 %icmp_ln326, %icmp_ln330" [divergent.cpp:78]   --->   Operation 245 'or' 'or_ln330' <Predicate = (!icmp_ln68)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 246 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_2)   --->   "%trunc_ln318_1 = trunc i64 %reg_V_1 to i52" [divergent.cpp:79]   --->   Operation 246 'trunc' 'trunc_ln318_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00>
+ST_17 : Operation 247 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_2)   --->   "%tmp_8 = call i53 @_ssdm_op_BitConcatenate.i53.i1.i52(i1 true, i52 %trunc_ln318_1)" [divergent.cpp:79]   --->   Operation 247 'bitconcatenate' 'tmp_8' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00>
+ST_17 : Operation 248 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_2)   --->   "%sext_ln329_1 = sext i12 %sh_amt_2 to i32" [divergent.cpp:79]   --->   Operation 248 'sext' 'sext_ln329_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00>
+ST_17 : Operation 249 [1/1] (1.54ns)   --->   "%sh_amt_3 = sub i12 0, %sh_amt_2" [divergent.cpp:79]   --->   Operation 249 'sub' 'sh_amt_3' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 250 [1/1] (0.00ns) (grouped into LUT with out node select_ln326_1)   --->   "%trunc_ln342_1 = trunc i12 %sh_amt_3 to i8" [divergent.cpp:79]   --->   Operation 250 'trunc' 'trunc_ln342_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00>
+ST_17 : Operation 251 [1/1] (0.00ns)   --->   "%tmp_12 = call i8 @_ssdm_op_PartSelect.i8.i12.i32.i32(i12 %sh_amt_3, i32 3, i32 10)" [divergent.cpp:79]   --->   Operation 251 'partselect' 'tmp_12' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00>
+ST_17 : Operation 252 [1/1] (1.55ns)   --->   "%icmp_ln343_1 = icmp slt i8 %tmp_12, 1" [divergent.cpp:79]   --->   Operation 252 'icmp' 'icmp_ln343_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 253 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_2)   --->   "%zext_ln334_1 = zext i32 %sext_ln329_1 to i53" [divergent.cpp:79]   --->   Operation 253 'zext' 'zext_ln334_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00>
+ST_17 : Operation 254 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_2)   --->   "%lshr_ln334_1 = lshr i53 %tmp_8, %zext_ln334_1" [divergent.cpp:79]   --->   Operation 254 'lshr' 'lshr_ln334_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 3.14> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 255 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_2)   --->   "%trunc_ln334_1 = trunc i53 %lshr_ln334_1 to i8" [divergent.cpp:79]   --->   Operation 255 'trunc' 'trunc_ln334_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00>
+ST_17 : Operation 256 [1/1] (0.00ns) (grouped into LUT with out node select_ln326_1)   --->   "%shl_ln345_1 = shl i8 %trunc_ln331_1, %trunc_ln342_1" [divergent.cpp:79]   --->   Operation 256 'shl' 'shl_ln345_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 3.14> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 257 [1/1] (0.00ns) (grouped into LUT with out node and_ln332_1)   --->   "%xor_ln330_1 = xor i1 %or_ln330_1, true" [divergent.cpp:79]   --->   Operation 257 'xor' 'xor_ln330_1' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 258 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln332_1 = and i1 %icmp_ln332_1, %xor_ln330_1" [divergent.cpp:79]   --->   Operation 258 'and' 'and_ln332_1' <Predicate = (!icmp_ln68)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 259 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_2)   --->   "%and_ln333_2 = and i1 %and_ln332_1, %icmp_ln333_1" [divergent.cpp:79]   --->   Operation 259 'and' 'and_ln333_2' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 260 [1/1] (4.61ns) (out node of the LUT)   --->   "%select_ln333_2 = select i1 %and_ln333_2, i8 %trunc_ln334_1, i8 0" [divergent.cpp:79]   --->   Operation 260 'select' 'select_ln333_2' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 4.61> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_17 : Operation 261 [1/1] (0.00ns) (grouped into LUT with out node and_ln343_1)   --->   "%or_ln332_1 = or i1 %or_ln330_1, %icmp_ln332_1" [divergent.cpp:79]   --->   Operation 261 'or' 'or_ln332_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 262 [1/1] (0.00ns) (grouped into LUT with out node and_ln343_1)   --->   "%xor_ln332_1 = xor i1 %or_ln332_1, true" [divergent.cpp:79]   --->   Operation 262 'xor' 'xor_ln332_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 263 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln343_1 = and i1 %icmp_ln343_1, %xor_ln332_1" [divergent.cpp:79]   --->   Operation 263 'and' 'and_ln343_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 264 [1/1] (0.00ns) (grouped into LUT with out node select_ln326_1)   --->   "%select_ln343_1 = select i1 %and_ln343_1, i8 %shl_ln345_1, i8 %select_ln333_2" [divergent.cpp:79]   --->   Operation 264 'select' 'select_ln343_1' <Predicate = (!icmp_ln68 & !icmp_ln326_1)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_17 : Operation 265 [1/1] (3.14ns) (out node of the LUT)   --->   "%select_ln326_1 = select i1 %icmp_ln326_1, i8 0, i8 %select_ln343_1" [divergent.cpp:79]   --->   Operation 265 'select' 'select_ln326_1' <Predicate = (!icmp_ln68)> <Delay = 3.14> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 8.74>
+ST_18 : Operation 266 [1/1] (0.00ns) (grouped into LUT with out node select_ln333)   --->   "%trunc_ln318 = trunc i64 %reg_V to i52" [divergent.cpp:78]   --->   Operation 266 'trunc' 'trunc_ln318' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00>
+ST_18 : Operation 267 [1/1] (0.00ns) (grouped into LUT with out node select_ln333)   --->   "%tmp = call i53 @_ssdm_op_BitConcatenate.i53.i1.i52(i1 true, i52 %trunc_ln318)" [divergent.cpp:78]   --->   Operation 267 'bitconcatenate' 'tmp' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00>
+ST_18 : Operation 268 [1/1] (0.00ns) (grouped into LUT with out node select_ln333)   --->   "%sext_ln329 = sext i12 %sh_amt to i32" [divergent.cpp:78]   --->   Operation 268 'sext' 'sext_ln329' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00>
+ST_18 : Operation 269 [1/1] (1.54ns)   --->   "%sh_amt_1 = sub i12 0, %sh_amt" [divergent.cpp:78]   --->   Operation 269 'sub' 'sh_amt_1' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 270 [1/1] (0.00ns) (grouped into LUT with out node select_ln326)   --->   "%trunc_ln342 = trunc i12 %sh_amt_1 to i8" [divergent.cpp:78]   --->   Operation 270 'trunc' 'trunc_ln342' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00>
+ST_18 : Operation 271 [1/1] (0.00ns)   --->   "%tmp_9 = call i8 @_ssdm_op_PartSelect.i8.i12.i32.i32(i12 %sh_amt_1, i32 3, i32 10)" [divergent.cpp:78]   --->   Operation 271 'partselect' 'tmp_9' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00>
+ST_18 : Operation 272 [1/1] (1.55ns)   --->   "%icmp_ln343 = icmp slt i8 %tmp_9, 1" [divergent.cpp:78]   --->   Operation 272 'icmp' 'icmp_ln343' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 273 [1/1] (0.00ns) (grouped into LUT with out node select_ln333)   --->   "%zext_ln334 = zext i32 %sext_ln329 to i53" [divergent.cpp:78]   --->   Operation 273 'zext' 'zext_ln334' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00>
+ST_18 : Operation 274 [1/1] (0.00ns) (grouped into LUT with out node select_ln333)   --->   "%lshr_ln334 = lshr i53 %tmp, %zext_ln334" [divergent.cpp:78]   --->   Operation 274 'lshr' 'lshr_ln334' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 3.14> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 275 [1/1] (0.00ns) (grouped into LUT with out node select_ln333)   --->   "%trunc_ln334 = trunc i53 %lshr_ln334 to i8" [divergent.cpp:78]   --->   Operation 275 'trunc' 'trunc_ln334' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00>
+ST_18 : Operation 276 [1/1] (0.00ns) (grouped into LUT with out node select_ln326)   --->   "%shl_ln345 = shl i8 %trunc_ln331, %trunc_ln342" [divergent.cpp:78]   --->   Operation 276 'shl' 'shl_ln345' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 3.14> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 277 [1/1] (0.00ns) (grouped into LUT with out node and_ln332)   --->   "%xor_ln330 = xor i1 %or_ln330, true" [divergent.cpp:78]   --->   Operation 277 'xor' 'xor_ln330' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 278 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln332 = and i1 %icmp_ln332, %xor_ln330" [divergent.cpp:78]   --->   Operation 278 'and' 'and_ln332' <Predicate = (!icmp_ln68)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 279 [1/1] (0.00ns) (grouped into LUT with out node select_ln333)   --->   "%and_ln333 = and i1 %and_ln332, %icmp_ln333" [divergent.cpp:78]   --->   Operation 279 'and' 'and_ln333' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 280 [1/1] (4.61ns) (out node of the LUT)   --->   "%select_ln333 = select i1 %and_ln333, i8 %trunc_ln334, i8 0" [divergent.cpp:78]   --->   Operation 280 'select' 'select_ln333' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 4.61> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 281 [1/1] (0.00ns) (grouped into LUT with out node and_ln343)   --->   "%or_ln332 = or i1 %or_ln330, %icmp_ln332" [divergent.cpp:78]   --->   Operation 281 'or' 'or_ln332' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 282 [1/1] (0.00ns) (grouped into LUT with out node and_ln343)   --->   "%xor_ln332 = xor i1 %or_ln332, true" [divergent.cpp:78]   --->   Operation 282 'xor' 'xor_ln332' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 283 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln343 = and i1 %icmp_ln343, %xor_ln332" [divergent.cpp:78]   --->   Operation 283 'and' 'and_ln343' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 284 [1/1] (0.00ns) (grouped into LUT with out node select_ln326)   --->   "%select_ln343 = select i1 %and_ln343, i8 %shl_ln345, i8 %select_ln333" [divergent.cpp:78]   --->   Operation 284 'select' 'select_ln343' <Predicate = (!icmp_ln68 & !icmp_ln326)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 285 [1/1] (3.14ns) (out node of the LUT)   --->   "%select_ln326 = select i1 %icmp_ln326, i8 0, i8 %select_ln343" [divergent.cpp:78]   --->   Operation 285 'select' 'select_ln326' <Predicate = (!icmp_ln68)> <Delay = 3.14> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 286 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_3)   --->   "%tmp_13 = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %reg_V_1, i32 63)" [divergent.cpp:79]   --->   Operation 286 'bitselect' 'tmp_13' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_18 : Operation 287 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_3)   --->   "%select_ln336_1 = select i1 %tmp_13, i8 -1, i8 0" [divergent.cpp:79]   --->   Operation 287 'select' 'select_ln336_1' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 288 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_3)   --->   "%xor_ln333_1 = xor i1 %icmp_ln333_1, true" [divergent.cpp:79]   --->   Operation 288 'xor' 'xor_ln333_1' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 289 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_3)   --->   "%and_ln333_3 = and i1 %and_ln332_1, %xor_ln333_1" [divergent.cpp:79]   --->   Operation 289 'and' 'and_ln333_3' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 290 [1/1] (1.24ns) (out node of the LUT)   --->   "%select_ln333_3 = select i1 %and_ln333_3, i8 %select_ln336_1, i8 %select_ln326_1" [divergent.cpp:79]   --->   Operation 290 'select' 'select_ln333_3' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 291 [1/1] (0.00ns) (grouped into LUT with out node select_ln330_1)   --->   "%xor_ln326_1 = xor i1 %icmp_ln326_1, true" [divergent.cpp:79]   --->   Operation 291 'xor' 'xor_ln326_1' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 292 [1/1] (0.00ns) (grouped into LUT with out node select_ln330_1)   --->   "%and_ln330_1 = and i1 %icmp_ln330_1, %xor_ln326_1" [divergent.cpp:79]   --->   Operation 292 'and' 'and_ln330_1' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 293 [1/1] (1.24ns) (out node of the LUT)   --->   "%select_ln330_1 = select i1 %and_ln330_1, i8 %trunc_ln331_1, i8 %select_ln333_3" [divergent.cpp:79]   --->   Operation 293 'select' 'select_ln330_1' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 294 [1/1] (1.91ns)   --->   "%sub_ln461_1 = sub i8 0, %select_ln330_1" [divergent.cpp:79]   --->   Operation 294 'sub' 'sub_ln461_1' <Predicate = (!icmp_ln68 & p_Result_5)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 295 [1/1] (1.24ns)   --->   "%select_ln351_1 = select i1 %p_Result_5, i8 %sub_ln461_1, i8 %select_ln330_1" [divergent.cpp:79]   --->   Operation 295 'select' 'select_ln351_1' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 296 [1/1] (0.00ns)   --->   "%tmp_20 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %select_ln351_1, i32 1, i32 7)" [divergent.cpp:92]   --->   Operation 296 'partselect' 'tmp_20' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 297 [1/1] (1.48ns)   --->   "%icmp_ln895_6 = icmp eq i7 %tmp_20, 0" [divergent.cpp:92]   --->   Operation 297 'icmp' 'icmp_ln895_6' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 298 [1/1] (0.00ns)   --->   "br i1 %icmp_ln895_6, label %Loop_x_1_end, label %8" [divergent.cpp:92]   --->   Operation 298 'br' <Predicate = true> <Delay = 0.00>
+
+State 19 <SV = 18> <Delay = 7.14>
+ST_19 : Operation 299 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_1)   --->   "%tmp_10 = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %reg_V, i32 63)" [divergent.cpp:78]   --->   Operation 299 'bitselect' 'tmp_10' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_19 : Operation 300 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_1)   --->   "%select_ln336 = select i1 %tmp_10, i8 -1, i8 0" [divergent.cpp:78]   --->   Operation 300 'select' 'select_ln336' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 301 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_1)   --->   "%xor_ln333 = xor i1 %icmp_ln333, true" [divergent.cpp:78]   --->   Operation 301 'xor' 'xor_ln333' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 302 [1/1] (0.00ns) (grouped into LUT with out node select_ln333_1)   --->   "%and_ln333_1 = and i1 %and_ln332, %xor_ln333" [divergent.cpp:78]   --->   Operation 302 'and' 'and_ln333_1' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 303 [1/1] (1.24ns) (out node of the LUT)   --->   "%select_ln333_1 = select i1 %and_ln333_1, i8 %select_ln336, i8 %select_ln326" [divergent.cpp:78]   --->   Operation 303 'select' 'select_ln333_1' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 304 [1/1] (0.00ns) (grouped into LUT with out node select_ln330)   --->   "%xor_ln326 = xor i1 %icmp_ln326, true" [divergent.cpp:78]   --->   Operation 304 'xor' 'xor_ln326' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 305 [1/1] (0.00ns) (grouped into LUT with out node select_ln330)   --->   "%and_ln330 = and i1 %icmp_ln330, %xor_ln326" [divergent.cpp:78]   --->   Operation 305 'and' 'and_ln330' <Predicate = (!icmp_ln68)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 306 [1/1] (1.24ns) (out node of the LUT)   --->   "%select_ln330 = select i1 %and_ln330, i8 %trunc_ln331, i8 %select_ln333_1" [divergent.cpp:78]   --->   Operation 306 'select' 'select_ln330' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 307 [1/1] (1.91ns)   --->   "%sub_ln461 = sub i8 0, %select_ln330" [divergent.cpp:78]   --->   Operation 307 'sub' 'sub_ln461' <Predicate = (!icmp_ln68 & p_Result_3)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 308 [1/1] (1.24ns)   --->   "%select_ln351 = select i1 %p_Result_3, i8 %sub_ln461, i8 %select_ln330" [divergent.cpp:78]   --->   Operation 308 'select' 'select_ln351' <Predicate = (!icmp_ln68)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.24> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 309 [1/1] (3.25ns)   --->   "store i8 %select_ln351_1, i8* %g7_V_addr, align 1" [divergent.cpp:79]   --->   Operation 309 'store' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_19 : Operation 310 [1/1] (0.00ns)   --->   "%tmp_19 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %select_ln351, i32 1, i32 7)" [divergent.cpp:90]   --->   Operation 310 'partselect' 'tmp_19' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 311 [1/1] (1.48ns)   --->   "%icmp_ln895_5 = icmp eq i7 %tmp_19, 0" [divergent.cpp:90]   --->   Operation 311 'icmp' 'icmp_ln895_5' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 312 [1/1] (0.00ns)   --->   "br i1 %icmp_ln895_5, label %._crit_edge2355, label %7" [divergent.cpp:90]   --->   Operation 312 'br' <Predicate = true> <Delay = 0.00>
+
+State 20 <SV = 19> <Delay = 3.25>
+ST_20 : Operation 313 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([18 x i8]* @Loop_y_1_Loop_x_1_st)"   --->   Operation 313 'specloopname' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_20 : Operation 314 [1/1] (0.00ns)   --->   "%empty_23 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16384, i64 16384, i64 16384)"   --->   Operation 314 'speclooptripcount' 'empty_23' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_20 : Operation 315 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str443) nounwind" [divergent.cpp:71]   --->   Operation 315 'specloopname' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_20 : Operation 316 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str241) nounwind" [divergent.cpp:72]   --->   Operation 316 'specpipeline' <Predicate = (!icmp_ln68)> <Delay = 0.00>
+ST_20 : Operation 317 [1/1] (3.25ns)   --->   "store i8 %select_ln351, i8* %g6_V_addr, align 1" [divergent.cpp:78]   --->   Operation 317 'store' <Predicate = (!icmp_ln68)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_20 : Operation 318 [1/1] (3.25ns)   --->   "store i8 1, i8* %g7_V_addr, align 1" [divergent.cpp:93]   --->   Operation 318 'store' <Predicate = (!icmp_ln895_6)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_20 : Operation 319 [1/1] (0.00ns)   --->   "br label %Loop_x_1_end" [divergent.cpp:93]   --->   Operation 319 'br' <Predicate = (!icmp_ln895_6)> <Delay = 0.00>
+
+State 21 <SV = 20> <Delay = 3.25>
+ST_21 : Operation 320 [1/1] (3.25ns)   --->   "store i8 1, i8* %g6_V_addr, align 1" [divergent.cpp:91]   --->   Operation 320 'store' <Predicate = (!icmp_ln895_5)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16384> <RAM>
+ST_21 : Operation 321 [1/1] (0.00ns)   --->   "br label %._crit_edge2355" [divergent.cpp:91]   --->   Operation 321 'br' <Predicate = (!icmp_ln895_5)> <Delay = 0.00>
+
+State 22 <SV = 2> <Delay = 0.00>
+ST_22 : Operation 322 [1/1] (0.00ns)   --->   "ret void" [divergent.cpp:114]   --->   Operation 322 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten', divergent.cpp:68) with incoming values : ('add_ln68', divergent.cpp:68) [12]  (1.77 ns)
+
+ <State 2>: 8.36ns
+The critical path consists of the following:
+	'phi' operation ('y_0', divergent.cpp:73) with incoming values : ('select_ln73_1', divergent.cpp:73) [13]  (0 ns)
+	'add' operation ('add_ln74_1', divergent.cpp:74) [23]  (1.92 ns)
+	'select' operation ('select_ln73_1', divergent.cpp:73) [24]  (1.25 ns)
+	'add' operation ('add_ln215', divergent.cpp:73) [39]  (1.94 ns)
+	'getelementptr' operation ('f_V_addr_1', divergent.cpp:73) [41]  (0 ns)
+	'load' operation ('f_V_load_1', divergent.cpp:73) on array 'f_V' [67]  (3.25 ns)
+
+ <State 3>: 7.11ns
+The critical path consists of the following:
+	'add' operation ('x', divergent.cpp:73) [57]  (1.92 ns)
+	'add' operation ('add_ln215_3', divergent.cpp:73) [59]  (1.94 ns)
+	'getelementptr' operation ('f_V_addr', divergent.cpp:73) [61]  (0 ns)
+	'load' operation ('f_V_load', divergent.cpp:73) on array 'f_V' [66]  (3.25 ns)
+
+ <State 4>: 8.29ns
+The critical path consists of the following:
+	'sub' operation ('ret.V', divergent.cpp:79) [175]  (1.92 ns)
+	'mul' operation of DSP[180] ('ret.V', divergent.cpp:79) [177]  (3.36 ns)
+	'sub' operation of DSP[180] ('ret.V', divergent.cpp:79) [180]  (3.02 ns)
+
+ <State 5>: 7.37ns
+The critical path consists of the following:
+	'mul' operation ('ret.V', divergent.cpp:78) [109]  (4.35 ns)
+	'sub' operation of DSP[119] ('ret.V', divergent.cpp:78) [119]  (3.02 ns)
+
+ <State 6>: 6.92ns
+The critical path consists of the following:
+	'add' operation ('add_ln214_2', divergent.cpp:75) [86]  (0 ns)
+	'add' operation ('add_ln214_3', divergent.cpp:75) [87]  (3.67 ns)
+	'store' operation ('store_ln75', divergent.cpp:75) of variable 'add_ln214_3', divergent.cpp:75 on array 'g3_V' [88]  (3.25 ns)
+
+ <State 7>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('i_op', divergent.cpp:78) [121]  (6.28 ns)
+
+ <State 8>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('i_op', divergent.cpp:78) [121]  (6.28 ns)
+
+ <State 9>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('i_op', divergent.cpp:78) [121]  (6.28 ns)
+
+ <State 10>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('i_op', divergent.cpp:78) [121]  (6.28 ns)
+
+ <State 11>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('val', divergent.cpp:79) [186]  (8.23 ns)
+
+ <State 12>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('val', divergent.cpp:78) [125]  (8.23 ns)
+
+ <State 13>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('val', divergent.cpp:78) [125]  (8.23 ns)
+
+ <State 14>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('val', divergent.cpp:78) [125]  (8.23 ns)
+
+ <State 15>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('val', divergent.cpp:78) [125]  (8.23 ns)
+
+ <State 16>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('val', divergent.cpp:78) [125]  (8.23 ns)
+
+ <State 17>: 8.74ns
+The critical path consists of the following:
+	'xor' operation ('xor_ln330_1', divergent.cpp:79) [212]  (0 ns)
+	'and' operation ('and_ln332_1', divergent.cpp:79) [213]  (0.978 ns)
+	'and' operation ('and_ln333_2', divergent.cpp:79) [214]  (0 ns)
+	'select' operation ('select_ln333_2', divergent.cpp:79) [215]  (4.61 ns)
+	'select' operation ('select_ln343_1', divergent.cpp:79) [219]  (0 ns)
+	'select' operation ('select_ln326_1', divergent.cpp:79) [220]  (3.15 ns)
+
+ <State 18>: 8.74ns
+The critical path consists of the following:
+	'xor' operation ('xor_ln330', divergent.cpp:78) [151]  (0 ns)
+	'and' operation ('and_ln332', divergent.cpp:78) [152]  (0.978 ns)
+	'and' operation ('and_ln333', divergent.cpp:78) [153]  (0 ns)
+	'select' operation ('select_ln333', divergent.cpp:78) [154]  (4.61 ns)
+	'select' operation ('select_ln343', divergent.cpp:78) [158]  (0 ns)
+	'select' operation ('select_ln326', divergent.cpp:78) [159]  (3.15 ns)
+
+ <State 19>: 7.15ns
+The critical path consists of the following:
+	'select' operation ('select_ln336', divergent.cpp:78) [148]  (0 ns)
+	'select' operation ('select_ln333_1', divergent.cpp:78) [162]  (1.25 ns)
+	'select' operation ('select_ln330', divergent.cpp:78) [165]  (1.25 ns)
+	'sub' operation ('sub_ln461', divergent.cpp:78) [166]  (1.92 ns)
+	'select' operation ('select_ln351', divergent.cpp:78) [167]  (1.25 ns)
+	'icmp' operation ('icmp_ln895_5', divergent.cpp:90) [266]  (1.49 ns)
+
+ <State 20>: 3.25ns
+The critical path consists of the following:
+	'store' operation ('store_ln78', divergent.cpp:78) of variable 'select_ln351', divergent.cpp:78 on array 'g6_V' [168]  (3.25 ns)
+
+ <State 21>: 3.25ns
+The critical path consists of the following:
+	'store' operation ('store_ln91', divergent.cpp:91) of constant 1 on array 'g6_V' [269]  (3.25 ns)
+
+ <State 22>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

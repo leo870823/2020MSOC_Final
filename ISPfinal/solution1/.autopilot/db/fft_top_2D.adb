@@ -5053,7 +5053,7 @@
             <Obj>
               <type>0</type>
               <id>145</id>
-              <name>tmp_4</name>
+              <name>tmp_3</name>
               <fileName>fft_top.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>223</lineNumber>
@@ -5077,7 +5077,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_4_fu_575_p3</rtlName>
+              <rtlName>tmp_3_fu_575_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>15</bitwidth>
@@ -14321,7 +14321,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_4_fu_575</first>
+        <first>tmp_3_fu_575</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
