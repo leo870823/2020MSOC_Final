@@ -145,7 +145,7 @@ void dummy_proc_fe(
 {
     int i; 
     config->setDir(direction);
-    config->setSch(0x2AB);
+    //config->setSch(0x2AB);
     for (i=0; i< FFT_LENGTH; i++)
         out[i] = in[i];
 }
@@ -159,7 +159,7 @@ void dummy_proc_be(
     int i; 
     for (i=0; i< FFT_LENGTH; i++)
         out[i] = in[i];
-    *ovflo = status_in->getOvflo() & 0x1;
+    //*ovflo = status_in->getOvflo() & 0x1;
 }
 
 

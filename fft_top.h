@@ -113,6 +113,8 @@ struct config1 : hls::ip_fft::params_t {
     static const unsigned input_width  = FFT_INPUT_WIDTH ;
     static const unsigned output_width = FFT_OUTPUT_WIDTH;
     static const unsigned max_nfft =FFT_NFFT_MAX;
+    static const unsigned scaling_opt = hls::ip_fft::block_floating_point;
+    static const unsigned rounding_opt = hls::ip_fft::convergent_rounding;
 };
 
 typedef hls::ip_fft::config_t<config1> config_t;

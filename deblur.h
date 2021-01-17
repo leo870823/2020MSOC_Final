@@ -1,5 +1,6 @@
 #include "proximal.h"
 #include "divergent.h"
+void array_display(int k,cmpxDataIn data_out[HEIGHT][WIDTH]);
 void array_initialize(eita_t y_1[HEIGHT][WIDTH],
                       eita_t y_2[HEIGHT][WIDTH],
                       eita_t y_3[HEIGHT][WIDTH],

@@ -35,8 +35,14 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]);
 void read_coe(fft_operation denom[128][128],proxGSDataIn xn_input[128][128],const char* file_name_real,const char* file_name_imag,const char* file_name_denominator);
 void COMPUTE_PSNR(eita_t blurred_R[HEIGHT][WIDTH],eita_t blurred_G[HEIGHT][WIDTH],eita_t blurred_B[HEIGHT][WIDTH],eita_t data_R[HEIGHT][WIDTH],eita_t data_G[HEIGHT][WIDTH],eita_t data_B[HEIGHT][WIDTH]);
 void txt2bmp(const char* txt,const char* bmp);
+void COMPUTE_MSE(eita_t data_a[HEIGHT][WIDTH],eita_t data_b[HEIGHT][WIDTH]);
+void TEST_2D_FFT();
+void TEST_Prox_GS();
 void init();
 int main(){
+	//TEST_2D_FFT();
+	//TEST_Prox_GS();
+
 	unsigned short int y,x;
 	int value;
 // Read ground truth image
@@ -81,7 +87,6 @@ int main(){
 	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_G.bmp",blurred_G);
 	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_B.bmp",blurred_B);
 
-
 }
 //===========================
 //===== utility function ====
@@ -111,7 +116,7 @@ void readImage(const char* path, eita_t img[WIDTH][HEIGHT]){
 		for (int y = 0; y < W; y++)
 		{
 			img[x][y]=eita_t(imageSrc.at<unsigned char>(y,x));
-			printf( "%d\n",int(imageSrc.at<unsigned char>(y,x)) );
+			//printf( "%d\n",int(imageSrc.at<unsigned char>(y,x)) );
 			//printf( "After  %d\n",int(img[x][y]) );
 		}
 
@@ -146,7 +151,7 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 
 		}
 		saveImage(std::string(file_name) ,imgCvOut);
-		printf( "output file %s :\n",file_name );
+		//printf( "output file %s :\n",file_name );
 }
 
 void read_coe(fft_operation denom[128][128],proxGSDataIn xn_input[128][128],const char* file_name_real,const char* file_name_imag,const char* file_name_denominator){
@@ -383,4 +388,50 @@ void init(){
 }
  //txt2bmp("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt","C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp");
 
+void TEST_2D_FFT(){
+	const float sc_fft = ldexpf(1.0, 6);
+	eita_t data_in[HEIGHT][WIDTH],data_ground[HEIGHT][WIDTH];
+	cmpxDataIn data_in_complex[HEIGHT][WIDTH], data_out_complex[HEIGHT][WIDTH];
+	bool  fft_ovflo,ifft_ovflo;
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_in);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_ground);
+	P2S(data_in,data_in_complex);
+	fft_top_2D(1,data_in_complex,data_out_complex,&fft_ovflo);
+	FFT_scale(1/sc_fft,data_out_complex,data_in_complex);
+	
+	fft_top_2D(0,data_in_complex,data_out_complex,&ifft_ovflo);
+	FFT_scale(sc_fft,data_out_complex,data_in_complex);
+	S2P(data_in_complex,data_in);
+	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/After_FFT.bmp",data_in);
+	COMPUTE_MSE(data_in,data_ground);
+}
 
+void TEST_Prox_GS(){
+	const float sc_fft = ldexpf(1.0, 6);
+	eita_t data_in[HEIGHT][WIDTH],data_ground[HEIGHT][WIDTH];
+	fft_operation coe_b[HEIGHT][WIDTH];
+
+	cmpxDataIn data_in_complex[HEIGHT][WIDTH], data_out_complex[HEIGHT][WIDTH],coe_a[HEIGHT][WIDTH];
+	//coe_a={cmpxDataIn(0,0)};
+	for(int x=0;x<H;x++){for(int y=0;y<W;y++){coe_b[x][y]=1;coe_a[x][y]=cmpxDataIn(0,0);}}
+	bool  fft_ovflo,ifft_ovflo;
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_in);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_ground);
+	for(int x=0;x<H;x++)
+	{	ProxGS(data_in,coe_a,coe_b);
+		COMPUTE_MSE(data_in,data_ground);
+	}
+	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/After_FFT.bmp",data_in);
+}
+void COMPUTE_MSE(eita_t data_a[HEIGHT][WIDTH],eita_t data_b[HEIGHT][WIDTH]){
+	double MSE=0.0;
+		for (int y = 0; y < H; y++)
+		{
+			for (int x = 0; x < W; x++)
+			{
+				MSE=MSE+(data_a[y][x]-data_b[y][x])*(data_a[y][x]-data_b[y][x]);
+			}
+		}
+	MSE=MSE/H/W;
+	printf("MSE error %f\n",MSE);
+}
