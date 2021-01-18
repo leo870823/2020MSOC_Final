@@ -6363,12 +6363,12 @@ inline bool operator!=(
 
 typedef ap_uint<8> eita_t;
 # 13 "./divergent.h"
-void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128]);
+void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],float g1 [128][128],float g2 [128][128],float g3 [128][128],float g4 [128][128],float g5 [128][128],float g6 [128][128],float g7 [128][128]);
 void Relax(eita_t x[128][128],eita_t x_old[128][128],eita_t x_bar[128][128]);
 # 2 "divergent.cpp" 2
 void my_filter_fx( eita_t data_out[128][128],
          eita_t data_in[128][128])
-{_ssdm_SpecArrayDimSize(data_out, 128);_ssdm_SpecArrayDimSize(data_in, 128);
+{
 
   for_y : for (int y = 0; y < 128; y++)
   {
@@ -6384,7 +6384,7 @@ void my_filter_fx( eita_t data_out[128][128],
 
 void my_filter_fy( eita_t data_out[128][128],
    eita_t data_in[128][128])
-{_ssdm_SpecArrayDimSize(data_out, 128);_ssdm_SpecArrayDimSize(data_in, 128);
+{
 
   for_y : for (int y = 0; y < 128; y++)
   {
@@ -6400,7 +6400,7 @@ void my_filter_fy( eita_t data_out[128][128],
 
 void ProxFS (eita_t data_out[128][128],
     eita_t data_in[128][128])
-{_ssdm_SpecArrayDimSize(data_out, 128);_ssdm_SpecArrayDimSize(data_in, 128);
+{
 
   for_y : for (int y = 0; y < 128; y++)
   {
@@ -6419,16 +6419,16 @@ void ProxFS (eita_t data_out[128][128],
 void my_filter_v1( eita_t f_n[128][128],
        eita_t f[128][128],
        eita_t adjChImg[128][128],
-       eita_t g1 [128][128],
-       eita_t g2 [128][128],
-       eita_t g3 [128][128],
-       eita_t g4 [128][128],
-       eita_t g5 [128][128],
-       eita_t g6 [128][128],
-       eita_t g7 [128][128]
+       float g1 [128][128],
+       float g2 [128][128],
+       float g3 [128][128],
+       float g4 [128][128],
+       float g5 [128][128],
+       float g6 [128][128],
+       float g7 [128][128]
          )
 
-{_ssdm_SpecArrayDimSize(f_n, 128);_ssdm_SpecArrayDimSize(f, 128);_ssdm_SpecArrayDimSize(adjChImg, 128);_ssdm_SpecArrayDimSize(g1, 128);_ssdm_SpecArrayDimSize(g2, 128);_ssdm_SpecArrayDimSize(g3, 128);_ssdm_SpecArrayDimSize(g4, 128);_ssdm_SpecArrayDimSize(g5, 128);_ssdm_SpecArrayDimSize(g6, 128);_ssdm_SpecArrayDimSize(g7, 128);
+{
 
 
 
@@ -6437,13 +6437,13 @@ void my_filter_v1( eita_t f_n[128][128],
   Loop_x_1 : for (int x = 0; x < 128; x++)
      {
 #pragma HLS PIPELINE
- g1[y][x] = g1[y][x] + eita_t(1.0) * (f[y][x+1]- f[y][x]) ;
-   g2[y][x] = g2[y][x] + eita_t(1.0) * (f[y+1][x]- f[y][x]) ;
-   g3[y][x] = g3[y][x] + eita_t(1.0) * (f[y][x+2]- 2*f[y][x+1] + f[y][x]) ;
-   g4[y][x] = g4[y][x] + eita_t(1.0) * (f[y+2][x]- 2*f[y+1][x] + f[y][x]) ;
-   g5[y][x] = g5[y][x] + eita_t(1.0) * (f[y+1][x+1]- f[y+1][x] - f[y][x+1] + f[y][x] ) ;
-   g6[y][x] = g6[y][x] + eita_t(1.0) * (1.0 * 1.0) * ( adjChImg[y][x] * (f[y][x+1]- f[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * f[y][x] );
-   g7[y][x] = g7[y][x] + eita_t(1.0) * (1.0 * 1.0) * ( adjChImg[y][x] * (f[y+1][x]- f[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * f[y][x] );
+ g1[y][x] = g1[y][x] + float(1.0) * (f[y][x+1]- f[y][x]) ;
+   g2[y][x] = g2[y][x] + float(1.0) * (f[y+1][x]- f[y][x]) ;
+   g3[y][x] = g3[y][x] + float(1.0) * (f[y][x+2]- 2*f[y][x+1] + f[y][x]) ;
+   g4[y][x] = g4[y][x] + float(1.0) * (f[y+2][x]- 2*f[y+1][x] + f[y][x]) ;
+   g5[y][x] = g5[y][x] + float(1.0) * (f[y+1][x+1]- f[y+1][x] - f[y][x+1] + f[y][x] ) ;
+   g6[y][x] = g6[y][x] + float(1.0) * (1.0 * 1.0) * ( adjChImg[y][x] * (f[y][x+1]- f[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * f[y][x] );
+   g7[y][x] = g7[y][x] + float(1.0) * (1.0 * 1.0) * ( adjChImg[y][x] * (f[y+1][x]- f[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * f[y][x] );
    if(g1[y][x]>1)
     g1[y][x] = 1 ;
    if(g2[y][x]>1)
@@ -6466,13 +6466,13 @@ void my_filter_v1( eita_t f_n[128][128],
   Loop_x_4 : for (int x = 0; x < 128; x++)
      {
 #pragma HLS PIPELINE
- f_n[y][x] = f_n[y][x] - eita_t(0.02) *
-   ((g1[y][x+1]- g1[y][x]) + (g2[y+1][x]- g2[y][x])
+ f_n[y][x] = eita_t(rint(float(f_n[y][x]) - float(0.02) *((g1[y][x+1]- g1[y][x]) + (g2[y+1][x]- g2[y][x])
    + (g3[y][x+2]- 2*g3[y][x+1] + g3[y][x])
    + (g4[y+2][x]- 2*g4[y+1][x] + g4[y][x])
    + (g5[y+1][x+1]- g5[y+1][x] - g5[y][x+1] + g5[y][x] )
-   + eita_t(1.0 * 1.0) * ( (adjChImg[y][x+1] * g6[y][x+1] - adjChImg[y][x] * g6[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * g6[y][x] )
-   + eita_t(1.0 * 1.0) * ( (adjChImg[y+1][x] * g7[y+1][x] - adjChImg[y][x] * g7[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * g7[y][x] )) ;
+   + float(1.0 * 1.0) * float( (adjChImg[y][x+1] * g6[y][x+1] - adjChImg[y][x] * g6[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * g6[y][x] )
+   + float(1.0 * 1.0) * float( (adjChImg[y+1][x] * g7[y+1][x] - adjChImg[y][x] * g7[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * g7[y][x] ))
+   ));
 
         }
     }
@@ -6484,13 +6484,13 @@ void my_filter_v1( eita_t f_n[128][128],
 void Relax(eita_t x[128][128],
      eita_t x_old[128][128],
            eita_t x_bar[128][128])
-{_ssdm_SpecArrayDimSize(x, 128);_ssdm_SpecArrayDimSize(x_old, 128);_ssdm_SpecArrayDimSize(x_bar, 128);
+{
     for_y : for (int j = 0; j < 128; j++)
         {
             for_x : for (int i = 0; i < 128; i++)
             {
 #pragma HLS PIPELINE
- x_bar[j][i] = eita_t(1.0)*(x[j][i]-x_old[j][i]);
+ x_bar[j][i] = eita_t(rint( float(1.0)*float(x[j][i]-x_old[j][i])));
             }
         }
 }

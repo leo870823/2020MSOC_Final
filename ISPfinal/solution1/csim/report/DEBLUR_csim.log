@@ -24,7 +24,7 @@ B channel PSNR=12.716986
 G channel PSNR=11.607525 
 ====  After deblurring ====
 R channel PSNR=37.949336 
-B channel PSNR=12.479993 
-G channel PSNR=11.655485 
+B channel PSNR=-7.765685 
+G channel PSNR=-6.271540 
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

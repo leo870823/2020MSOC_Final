@@ -28996,6 +28996,8 @@ struct config1 : hls::ip_fft::params_t {
     static const unsigned input_width = FFT_INPUT_WIDTH ;
     static const unsigned output_width = FFT_OUTPUT_WIDTH;
     static const unsigned max_nfft =FFT_NFFT_MAX;
+    static const unsigned scaling_opt = hls::ip_fft::block_floating_point;
+    static const unsigned rounding_opt = hls::ip_fft::convergent_rounding;
 };
 
 typedef hls::ip_fft::config_t<config1> config_t;
@@ -29047,6 +29049,7 @@ typedef std::complex<fft_operation> proxGSDataIn;
 void P2S(eita_t data_in[128][128],cmpxDataIn data_out[128][128]);
 void S2P(cmpxDataIn data_in[128][128],eita_t data_out[128][128]);
 void ProxGS(eita_t x_io[128][128],proxGSDataIn coe_a[128][128],fft_operation coe_b[128][128]);
+void FFT_scale(float scale,cmpxDataIn data_in[128][128],cmpxDataIn data_out[128][128]);
 # 2 "proximal.cpp" 2
 # 1 "./divergent.h" 1
 # 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_int.h" 1
@@ -29054,11 +29057,12 @@ void ProxGS(eita_t x_io[128][128],proxGSDataIn coe_a[128][128],fft_operation coe
 
 typedef ap_uint<8> eita_t;
 # 13 "./divergent.h"
-void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128]);
+void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],float g1 [128][128],float g2 [128][128],float g3 [128][128],float g4 [128][128],float g5 [128][128],float g6 [128][128],float g7 [128][128]);
 void Relax(eita_t x[128][128],eita_t x_old[128][128],eita_t x_bar[128][128]);
 # 3 "proximal.cpp" 2
-const int FFT_SCALE =1<<17 ;
 
+const float FFT_SCALE = 1.0 ;
+const float PIXEL = 1.0;
 void ProxGS(
     eita_t x_io[128][128],
  proxGSDataIn coe_a[128][128],
@@ -29087,8 +29091,8 @@ void ProxGS(
 
 
             if(coe_b[y][x]!=0) {
-             input_data_re=(255.0*(fft_result[y][x].real())+2*float(0.02)*coe_a[y][x].real())/coe_b[y][x];
-             input_data_im=(255.0*(fft_result[y][x].imag())+2*float(0.02)*coe_a[y][x].imag())/coe_b[y][x];
+             input_data_re=(PIXEL*(fft_result[y][x].real())+coe_a[y][x].real())/coe_b[y][x];
+             input_data_im=(PIXEL*(fft_result[y][x].imag())+coe_a[y][x].imag())/coe_b[y][x];
             }else {
              input_data_re=0;
              input_data_im=0;
@@ -29102,6 +29106,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
         }
     }
 
+
     fft_top_2D(0,fft_result,tmp,&ifft_ovflo);
 
     S2P(tmp,x_io);
@@ -29113,7 +29118,7 @@ void P2S(eita_t data_in[128][128],cmpxDataIn data_out[128][128]){_ssdm_SpecArray
         for_x : for (int x = 0; x < 128; x++)
         {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- data_out[y][x]=cmpxDataIn( data_in_t(data_in[y][x].to_int()/float(255)),0);
+ data_out[y][x]=cmpxDataIn( data_in_t(data_in[y][x].to_int()/float(PIXEL)),0);
 
         }
     }
@@ -29129,8 +29134,19 @@ void S2P(cmpxDataIn data_in[128][128],eita_t data_out[128][128]){_ssdm_SpecArray
 
 
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- data_out[y][x]=eita_t(int(FFT_SCALE*data_in[y][x].real()/FFT_LENGTH));
+ data_out[y][x]=eita_t(rint(FFT_SCALE*data_in[y][x].real()/FFT_LENGTH));
 
+        }
+    }
+
+}
+
+void FFT_scale(float scale,cmpxDataIn data_in[128][128],cmpxDataIn data_out[128][128]){_ssdm_SpecArrayDimSize(data_in, 128);_ssdm_SpecArrayDimSize(data_out, 128);
+    for_y : for (int y = 0; y < 128; y++)
+    {
+        for_x : for (int x = 0; x < 128; x++)
+        {
+            data_out[y][x]=cmpxDataIn( scale*data_in[y][x].real(),scale*data_in[y][x].imag());
         }
     }
 }

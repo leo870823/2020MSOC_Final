@@ -1,7 +1,7 @@
 #include "fft_top.h"
 #include "ap_int.h"
 #include "ap_fixed.h"
-typedef  ap_uint<8>  eita_t;
+typedef  float  eita_t; //ap_uint<8>
 
 typedef  float fft_operation; //ap_fixed<24,16>
 typedef std::complex<fft_operation> proxGSDataIn;

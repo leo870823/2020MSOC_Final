@@ -14,7 +14,17 @@ for_y : for (int y = 0; y < HEIGHT; y++)
 }
 
 
-
+void array_display_int(eita_t data_out[HEIGHT][WIDTH])
+{   //data_in copy to data_out
+for_y : for (int y = 0; y < HEIGHT; y++)
+  {
+    for_x : for (int x = 0; x < WIDTH; x++)
+    {
+    printf("(x,y)=(%d,%d)\n",x,y);
+    printf("%d th array_dispaly %f \n",x,float(data_out[x][y]));
+    }
+  }
+}
 
 void array_copy(eita_t data_in[HEIGHT][WIDTH],
 		 	 	eita_t data_out[HEIGHT][WIDTH]) 
@@ -80,10 +90,11 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
 
     	  //printf("[DEBUG] array copy\n");
         array_copy(x,x_old);
-        //printf("[DEBUG] my_filter_v1\n");
         my_filter_v1(x,x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7); // ProxFS &&
+        //printf("%f\n",x[8][4]);
         ProxGS(x,coe_a,coe_b);
         Relax(x,x_old,x_bar);
+        
     }
     array_copy(x,Img);
 
@@ -92,9 +103,11 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
 void DEBLUR(eita_t refImg_R[HEIGHT][WIDTH],
 		    eita_t adjChImg_G[HEIGHT][WIDTH],
             eita_t adjChImg_B[HEIGHT][WIDTH],
+
 			proxGSDataIn nominator_R[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			fft_operation denominator_R[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			proxGSDataIn nominator_G[HEIGHT][WIDTH], //For ProxGS(FFT result)
+
 			fft_operation denominator_G[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			proxGSDataIn nominator_B[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			fft_operation denominator_B[HEIGHT][WIDTH]) //For ProxGS(FFT result)

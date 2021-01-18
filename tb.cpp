@@ -115,9 +115,9 @@ void readImage(const char* path, eita_t img[WIDTH][HEIGHT]){
 	{
 		for (int y = 0; y < W; y++)
 		{
-			img[x][y]=eita_t(imageSrc.at<unsigned char>(y,x));
+			img[x][y]=eita_t(imageSrc.at<unsigned char>(y,x))/255.0;
 			//printf( "%d\n",int(imageSrc.at<unsigned char>(y,x)) );
-			//printf( "After  %d\n",int(img[x][y]) );
+			//printf( "After  %f\n",float(img[x][y]) );
 		}
 
 	}
@@ -145,7 +145,7 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 		{
 			for (int x = 0; x < W; x++)
 			{
-				outImage[x][y]=char(out_array[y][x]);
+				outImage[x][y]=char(out_array[y][x]*255);
 				//printf( "output file %d :\n",int(outImage[x][y]) );
 			}
 
@@ -221,9 +221,9 @@ void COMPUTE_PSNR(
 	MSE_R = MSE_R/H/W ;
 	MSE_B = MSE_B/H/W ;
 	MSE_G = MSE_G/H/W ;
-	if(MSE_R!=0){PSNR_R = 10 * log10(255*255/MSE_R);}
-	if(MSE_B!=0){PSNR_B = 10 * log10(255*255/MSE_B);}
-	if(MSE_G!=0){PSNR_G = 10 * log10(255*255/MSE_G);}
+	if(MSE_R!=0){PSNR_R = 10 * log10(1/MSE_R);}
+	if(MSE_B!=0){PSNR_B = 10 * log10(1/MSE_B);}
+	if(MSE_G!=0){PSNR_G = 10 * log10(1/MSE_G);}
 
 	printf( "R channel PSNR=%f \n", PSNR_R);
 	printf( "B channel PSNR=%f \n", PSNR_B);

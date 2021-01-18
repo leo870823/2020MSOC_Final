@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'leo870823' on host 'desktop-t3r8mjh' (Windows NT_amd64 version 6.2) on Sun Jan 17 18:48:41 +0800 2021
+INFO: [HLS 200-10] For user 'leo870823' on host 'desktop-t3r8mjh' (Windows NT_amd64 version 6.2) on Mon Jan 18 22:33:45 +0800 2021
 INFO: [HLS 200-10] In directory 'C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final'
 Sourcing Tcl script 'C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1/csim.tcl'
 INFO: [HLS 200-10] Opening project 'C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal'.
@@ -152,7 +152,7 @@ B channel PSNR=12.716986
 G channel PSNR=11.607525 
 ====  After deblurring ====
 R channel PSNR=37.949336 
-B channel PSNR=12.479993 
-G channel PSNR=11.655485 
+B channel PSNR=-7.765685 
+G channel PSNR=-6.271540 
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************

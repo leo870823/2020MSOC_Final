@@ -99,14 +99,14 @@ void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
 		Loop_x_4 : for (int x = 0; x < WIDTH; x++)
     	{
 			#pragma HLS PIPELINE
-	  		f_n[y][x] = f_n[y][x] - eita_t(TAU) * 
-			((g1[y][x+1]- g1[y][x]) + (g2[y+1][x]- g2[y][x])  
-			+ (g3[y][x+2]- 2*g3[y][x+1] + g3[y][x]) 
-			+ (g4[y+2][x]- 2*g4[y+1][x] + g4[y][x]) 
+	  		f_n[y][x] = f_n[y][x] - eita_t(TAU) *
+			( (g1[y][x+1]- g1[y][x])
+			+ (g2[y+1][x]- g2[y][x])
+			+ (g3[y][x+2]- 2*g3[y][x+1] + g3[y][x])
+			+ (g4[y+2][x]- 2*g4[y+1][x] + g4[y][x])
 			+ (g5[y+1][x+1]- g5[y+1][x] - g5[y][x+1] + g5[y][x] )
-			+ eita_t(lambda_cross * cr_w) * ( (adjChImg[y][x+1] * g6[y][x+1] - adjChImg[y][x] * g6[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * g6[y][x] ) 
+			+ eita_t(lambda_cross * cr_w) * ( (adjChImg[y][x+1] * g6[y][x+1] - adjChImg[y][x] * g6[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * g6[y][x] )
 			+ eita_t(lambda_cross * cr_w) * ( (adjChImg[y+1][x] * g7[y+1][x] - adjChImg[y][x] * g7[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * g7[y][x] )) ;
-			
         }
     }
 
