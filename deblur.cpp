@@ -1,5 +1,14 @@
 #include "deblur.h"
-
+void gather_result(eita_t data_out[HEIGHT][WIDTH])
+{   //data_in copy to data_out
+for_y : for (int y = 0; y < HEIGHT; y++)
+  {
+    for_x : for (int x = 0; x < WIDTH; x++)
+    {
+    	if(data_out[x][y]<0) data_out[x][y]=0;
+    }
+  }
+}
 void array_display(int k,cmpxDataIn data_out[HEIGHT][WIDTH])
 {   //data_in copy to data_out
 for_y : for (int y = 0; y < HEIGHT; y++)
@@ -92,11 +101,13 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
         array_copy(x,x_old);
         my_filter_v1(x,x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7); // ProxFS &&
         //printf("%f\n",x[8][4]);
-        ProxGS(x,coe_a,coe_b);
+        //ProxGS(x,coe_a,coe_b);
         Relax(x,x_old,x_bar);
         
     }
+    gather_result(x);
     array_copy(x,Img);
+    //array_display_int(x);
 
 }
 

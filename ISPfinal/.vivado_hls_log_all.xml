@@ -9,6 +9,7 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-19T13:34:02.459+0800"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-18T20:37:33.256+0800"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-18T20:18:54.602+0800"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-18T19:59:14.486+0800"/>

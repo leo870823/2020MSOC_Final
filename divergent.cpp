@@ -69,28 +69,32 @@ void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
   	{
 		Loop_x_1 : for (int x = 0; x < WIDTH; x++)
     	{
-			#pragma HLS PIPELINE
-	  		g1[y][x] = g1[y][x] + eita_t(SIGMA) * (f[y][x+1]- f[y][x]) ;
-			g2[y][x] = g2[y][x] + eita_t(SIGMA) * (f[y+1][x]- f[y][x]) ;
-			g3[y][x] = g3[y][x] + eita_t(SIGMA) * (f[y][x+2]- 2*f[y][x+1] + f[y][x]) ;
-			g4[y][x] = g4[y][x] + eita_t(SIGMA) * (f[y+2][x]- 2*f[y+1][x] + f[y][x]) ;
-			g5[y][x] = g5[y][x] + eita_t(SIGMA) * (f[y+1][x+1]- f[y+1][x] - f[y][x+1] + f[y][x] ) ;
-			g6[y][x] = g6[y][x] + eita_t(SIGMA) * (lambda_cross * cr_w) * ( adjChImg[y][x] * (f[y][x+1]- f[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * f[y][x] );
-			g7[y][x] = g7[y][x] + eita_t(SIGMA) * (lambda_cross * cr_w) * ( adjChImg[y][x] * (f[y+1][x]- f[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * f[y][x] );
-			if(g1[y][x]>1)
-				g1[y][x] = 1 ;
-			if(g2[y][x]>1)
-				g2[y][x] = 1 ;
-			if(g3[y][x]>1)
-				g3[y][x] = 1 ;
-			if(g4[y][x]>1)
-				g4[y][x] = 1 ;
-			if(g5[y][x]>1)
-				g5[y][x] = 1 ;
-			if(g6[y][x]>1)
-				g6[y][x] = 1 ;
-			if(g7[y][x]>1)
-				g7[y][x] = 1 ;
+			//#pragma HLS PIPELINE
+			//if( ~(x==0 || x==WIDTH-1 || x==0 || x==HEIGHT-1) )
+			if( (x<=UPPER && x>=LOWER) && (y<=UPPER && y>=LOWER))
+			{
+	  			g1[y][x] = g1[y][x] + eita_t(SIGMA) * (f[y][x+1]- f[y][x]) ;
+	  			g2[y][x] = g2[y][x] + eita_t(SIGMA) * (f[y+1][x]- f[y][x]) ;
+	  			g3[y][x] = g3[y][x] + eita_t(SIGMA) * (f[y][x+2]- 2*f[y][x+1] + f[y][x]) ;
+	  			g4[y][x] = g4[y][x] + eita_t(SIGMA) * (f[y+2][x]- 2*f[y+1][x] + f[y][x]) ;
+	  			g5[y][x] = g5[y][x] + eita_t(SIGMA) * (f[y+1][x+1]- f[y+1][x] - f[y][x+1] + f[y][x] ) ;
+	  			g6[y][x] = g6[y][x] + eita_t(SIGMA) * (lambda_cross * cr_w) * ( adjChImg[y][x] * (f[y][x+1]- f[y][x]) - (adjChImg[y][x+1]- adjChImg[y][x]) * f[y][x] );
+	  			g7[y][x] = g7[y][x] + eita_t(SIGMA) * (lambda_cross * cr_w) * ( adjChImg[y][x] * (f[y+1][x]- f[y][x]) - (adjChImg[y+1][x]- adjChImg[y][x]) * f[y][x] );
+			}
+	  		if(g1[y][x]>1) g1[y][x] = 1 ;
+	  		else if(g1[y][x]<-1)   g1[y][x] = -1;
+			if(g2[y][x]>1) g2[y][x] = 1 ;
+			else if(g2[y][x]<-1)   g2[y][x] = -1;
+			if(g3[y][x]>1) g3[y][x] = 1 ;
+			else if(g3[y][x]<-1)   g3[y][x] = -1;
+			if(g4[y][x]>1) g4[y][x] = 1 ;
+			else if(g4[y][x]<-1)   g4[y][x] = -1;
+			if(g5[y][x]>1) g5[y][x] = 1 ;
+			else if(g5[y][x]<-1)   g5[y][x] = -1;
+			if(g6[y][x]>1) g6[y][x] = 1 ;
+			else if(g6[y][x]<-1)   g6[y][x] = -1;
+			if(g7[y][x]>1) g7[y][x] = 1 ;
+			else if(g7[y][x]<-1)   g7[y][x] = -1;
         }
     }
 
@@ -99,7 +103,9 @@ void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
 		Loop_x_4 : for (int x = 0; x < WIDTH; x++)
     	{
 			#pragma HLS PIPELINE
-	  		f_n[y][x] = f_n[y][x] - eita_t(TAU) *
+			//if( ~(x==0 || x==WIDTH-1 || x==0 || x==HEIGHT-1))
+			if( (x<=UPPER && x>=LOWER) && (y<=UPPER && y>=LOWER))
+			f_n[y][x] = f_n[y][x] - eita_t(TAU) *
 			( (g1[y][x+1]- g1[y][x])
 			+ (g2[y+1][x]- g2[y][x])
 			+ (g3[y][x+2]- 2*g3[y][x+1] + g3[y][x])

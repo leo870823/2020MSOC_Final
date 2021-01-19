@@ -111,11 +111,11 @@ void readImage(const char* path, eita_t img[WIDTH][HEIGHT]){
 	printf("Image Rows:%d Cols:%d\n",imageSrc.rows, imageSrc.cols);
 
 
-	for (int x = 0; x < H; x++)
+	for (int x = 0; x < W; x++)
 	{
-		for (int y = 0; y < W; y++)
+		for (int y = 0; y < H; y++)
 		{
-			img[x][y]=eita_t(imageSrc.at<unsigned char>(y,x))/255.0;
+			img[y][x]=eita_t(imageSrc.at<unsigned char>(y,x))/255.0;
 			//printf( "%d\n",int(imageSrc.at<unsigned char>(y,x)) );
 			//printf( "After  %f\n",float(img[x][y]) );
 		}
@@ -141,12 +141,12 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 	int value;
 	char outImage[WIDTH][HEIGHT];
 	cv::Mat imgCvOut(cv::Size(WIDTH,HEIGHT), CV_8UC1, outImage, cv::Mat::AUTO_STEP);
-		for (int y = 0; y < H; y++)
+		for (int x = 0; x < W; x++)
 		{
-			for (int x = 0; x < W; x++)
+			for (int y = 0; y < H; y++)
 			{
-				outImage[x][y]=char(out_array[y][x]*255);
-				//printf( "output file %d :\n",int(outImage[x][y]) );
+				outImage[y][x]=char(out_array[y][x]*255.0);
+				printf( "output file %d :\n",int(outImage[x][y]) );
 			}
 
 		}

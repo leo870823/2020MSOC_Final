@@ -13,6 +13,7 @@ void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
                           cmpxDataIn coe_a[HEIGHT][WIDTH],
                           eita_t coe_b[HEIGHT][WIDTH]);
 void array_copy(eita_t data_in[HEIGHT][WIDTH],eita_t data_out[HEIGHT][WIDTH]);
+void gather_result(eita_t data_out[HEIGHT][WIDTH]);
 void DEBLUR(eita_t refImg_R[HEIGHT][WIDTH],
 		    eita_t adjChImg_G[HEIGHT][WIDTH],
             eita_t adjChImg_B[HEIGHT][WIDTH],
