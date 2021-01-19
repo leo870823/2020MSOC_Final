@@ -46,7 +46,7 @@ void ProxGS(
         }
     }
     // inverse FFT
-    
+
     fft_top_2D(0,fft_result,tmp,&ifft_ovflo);
     // cmpxDataIn to eita_t
     S2P(tmp,x_io);

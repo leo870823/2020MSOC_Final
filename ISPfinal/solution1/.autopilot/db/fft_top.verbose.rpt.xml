@@ -1,0 +1,141 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'fft_top'" level="0">
+<item name = "Date">Tue Jan 19 21:42:25 2021
+</item>
+<item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
+<item name = "Project">ISPfinal</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 8.750 ns, 1.25 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">484, 484, 4.840 us, 4.840 us, 485, 485, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="dummy_proc_fe_1_U0">dummy_proc_fe_1, 257, 257, 2.570 us, 2.570 us, 257, 257, none</column>
+<column name="dummy_proc_be_1_U0">dummy_proc_be_1, 129, 129, 1.290 us, 1.290 us, 129, 129, none</column>
+<column name="fft_config1_U0">fft_config1_s, 484, 484, 4.840 us, 4.840 us, 484, 484, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 4, -</column>
+<column name="FIFO">8, -, 181, 190, -</column>
+<column name="Instance">6, 24, 10706, 8480, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, -, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">5, 10, 10, 16, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="dummy_proc_be_1_U0">dummy_proc_be_1, 0, 0, 11, 74, 0</column>
+<column name="dummy_proc_fe_1_U0">dummy_proc_fe_1, 0, 0, 21, 105, 0</column>
+<column name="fft_config1_U0">fft_config1_s, 6, 24, 10674, 8301, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+<column name="fft_config_data_V_U">0, 5, 0, -, 2, 16, 32</column>
+<column name="xk_channel_U">4, 88, 0, -, 128, 64, 8192</column>
+<column name="xn_channel_U">4, 88, 0, -, 128, 64, 8192</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_idle">and, 0, 0, 2, 1, 1</column>
+<column name="dummy_proc_fe_1_U0_start_full_n">and, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="direction">in, 1, ap_hs, direction, scalar</column>
+<column name="direction_ap_vld">in, 1, ap_hs, direction, scalar</column>
+<column name="direction_ap_ack">out, 1, ap_hs, direction, scalar</column>
+<column name="in_r_address0">out, 7, ap_memory, in_r, array</column>
+<column name="in_r_ce0">out, 1, ap_memory, in_r, array</column>
+<column name="in_r_d0">out, 64, ap_memory, in_r, array</column>
+<column name="in_r_q0">in, 64, ap_memory, in_r, array</column>
+<column name="in_r_we0">out, 1, ap_memory, in_r, array</column>
+<column name="in_r_address1">out, 7, ap_memory, in_r, array</column>
+<column name="in_r_ce1">out, 1, ap_memory, in_r, array</column>
+<column name="in_r_d1">out, 64, ap_memory, in_r, array</column>
+<column name="in_r_q1">in, 64, ap_memory, in_r, array</column>
+<column name="in_r_we1">out, 1, ap_memory, in_r, array</column>
+<column name="out_r_address0">out, 7, ap_memory, out_r, array</column>
+<column name="out_r_ce0">out, 1, ap_memory, out_r, array</column>
+<column name="out_r_d0">out, 64, ap_memory, out_r, array</column>
+<column name="out_r_q0">in, 64, ap_memory, out_r, array</column>
+<column name="out_r_we0">out, 1, ap_memory, out_r, array</column>
+<column name="out_r_address1">out, 7, ap_memory, out_r, array</column>
+<column name="out_r_ce1">out, 1, ap_memory, out_r, array</column>
+<column name="out_r_d1">out, 64, ap_memory, out_r, array</column>
+<column name="out_r_q1">in, 64, ap_memory, out_r, array</column>
+<column name="out_r_we1">out, 1, ap_memory, out_r, array</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, fft_top, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, fft_top, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, fft_top, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, fft_top, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, fft_top, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, fft_top, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, fft_top, return value</column>
+</table>
+</item>
+</section>
+</profile>

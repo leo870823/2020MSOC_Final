@@ -81,6 +81,7 @@ int main(){
 	COMPUTE_PSNR(blurred_R,blurred_G,blurred_B,data_R,data_G,data_B);	
 	printf("====  After deblurring ====\n");
 	DEBLUR(blurred_R,blurred_G,blurred_B,nominator_R,denom_R,nominator_G,denom_G,nominator_B,denom_B);
+	//cross_channel_deblur(blurred_B,blurred_R,blurred_G,nominator_B,denom_B);
 	COMPUTE_PSNR(blurred_R,blurred_G,blurred_B,data_R,data_G,data_B);
 	// output image
 	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/deblur_R.bmp",blurred_R);
@@ -145,15 +146,35 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 		{
 			for (int y = 0; y < H; y++)
 			{
-				outImage[y][x]=char(out_array[y][x]*255.0);
-				printf( "output file %d :\n",int(outImage[x][y]) );
+				outImage[y][x]=char(rint(out_array[y][x]*255));
+				//printf( "output file %f :\n",(out_array[y][x]) );
 			}
 
 		}
 		saveImage(std::string(file_name) ,imgCvOut);
 		//printf( "output file %s :\n",file_name );
 }
+/*
+void write_RGB_file(const char* file_name,eita_t R[WIDTH][HEIGHT],eita_t G[WIDTH][HEIGHT],eita_t B[WIDTH][HEIGHT]){
 
+	int value;
+	char outImage[WIDTH][HEIGHT];
+	cv::Mat imgCvOut(cv::Size(WIDTH,HEIGHT,3), CV_8UC1, outImage, cv::Mat::AUTO_STEP);
+		for (int x = 0; x < W; x++)
+		{
+			for (int y = 0; y < H; y++)
+			{
+				outImage[y][x][0]=char(R[y][x]*255.0);
+				outImage[y][x][1]=char(G[y][x]*255.0);
+				outImage[y][x][2]=char(B[y][x]*255.0);
+				//printf( "output file %d :\n",int(outImage[x][y]) );
+			}
+
+		}
+		saveImage(std::string(file_name) ,imgCvOut);
+		//printf( "output file %s :\n",file_name );
+}
+*/
 void read_coe(fft_operation denom[128][128],proxGSDataIn xn_input[128][128],const char* file_name_real,const char* file_name_imag,const char* file_name_denominator){
 
 	 float value_for_weight;

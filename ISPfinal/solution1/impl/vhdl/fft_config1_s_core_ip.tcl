@@ -17,9 +17,9 @@ set_property -dict [list \
     CONFIG.output_ordering {natural_order} \
     CONFIG.ovflo {1} \
     CONFIG.phase_factor_width {24} \
-    CONFIG.rounding_modes {truncation} \
+    CONFIG.rounding_modes {convergent_rounding} \
     CONFIG.run_time_configurable_transform_length {0} \
-    CONFIG.scaling_options {scaled} \
+    CONFIG.scaling_options {block_floating_point} \
     CONFIG.target_clock_frequency {100} \
     CONFIG.throttle_scheme {nonrealtime} \
     CONFIG.transform_length {128} \

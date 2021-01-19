@@ -29039,7 +29039,7 @@ void fft_top_2D(
 # 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_int.h" 1
 # 3 "./proximal.h" 2
 
-typedef ap_uint<8> eita_t;
+typedef float eita_t;
 
 typedef float fft_operation;
 typedef std::complex<fft_operation> proxGSDataIn;
@@ -29055,9 +29055,10 @@ void FFT_scale(float scale,cmpxDataIn data_in[128][128],cmpxDataIn data_out[128]
 # 1 "C:/Xilinx/Vivado/2019.2/common/technology/autopilot\\ap_int.h" 1
 # 2 "./divergent.h" 2
 
-typedef ap_uint<8> eita_t;
-# 13 "./divergent.h"
-void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],float g1 [128][128],float g2 [128][128],float g3 [128][128],float g4 [128][128],float g5 [128][128],float g6 [128][128],float g7 [128][128]);
+
+typedef float eita_t;
+# 16 "./divergent.h"
+void my_filter_v1( eita_t f_n[128][128],eita_t f[128][128],eita_t adjChImg[128][128],eita_t adjChImg2[128][128],eita_t g1 [128][128],eita_t g2 [128][128],eita_t g3 [128][128],eita_t g4 [128][128],eita_t g5 [128][128],eita_t g6 [128][128],eita_t g7 [128][128],eita_t g8 [128][128],eita_t g9 [128][128]);
 void Relax(eita_t x[128][128],eita_t x_old[128][128],eita_t x_bar[128][128]);
 # 3 "proximal.cpp" 2
 
@@ -29094,8 +29095,8 @@ void ProxGS(
              input_data_re=(PIXEL*(fft_result[y][x].real())+coe_a[y][x].real())/coe_b[y][x];
              input_data_im=(PIXEL*(fft_result[y][x].imag())+coe_a[y][x].imag())/coe_b[y][x];
             }else {
-             input_data_re=0;
-             input_data_im=0;
+             input_data_re=1.0;
+             input_data_im=1.0;
             }
 #pragma HLS PIPELINE
 
@@ -29118,7 +29119,7 @@ void P2S(eita_t data_in[128][128],cmpxDataIn data_out[128][128]){_ssdm_SpecArray
         for_x : for (int x = 0; x < 128; x++)
         {
 #pragma HLS PIPELINE
- data_out[y][x]=cmpxDataIn( data_in_t(data_in[y][x].to_int()/float(PIXEL)),0);
+ data_out[y][x]=cmpxDataIn( data_in_t(data_in[y][x]/float(PIXEL)),0);
 
         }
     }
@@ -29134,7 +29135,8 @@ void S2P(cmpxDataIn data_in[128][128],eita_t data_out[128][128]){_ssdm_SpecArray
 
 
 #pragma HLS PIPELINE
- data_out[y][x]=eita_t(rint(FFT_SCALE*data_in[y][x].real()/FFT_LENGTH));
+ data_out[y][x]=eita_t((FFT_SCALE*data_in[y][x].real()/FFT_LENGTH));
+
 
         }
     }

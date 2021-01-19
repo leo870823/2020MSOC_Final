@@ -1,0 +1,158 @@
+
+
+================================================================
+== Vivado HLS Report for 'fft_top'
+================================================================
+* Date:           Tue Jan 19 21:42:25 2021
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        ISPfinal
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.750 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |      484|      484| 4.840 us | 4.840 us |  485|  485| dataflow |
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------+-----------------+---------+---------+----------+----------+-----+-----+---------+
+        |                    |                 |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |      Instance      |      Module     |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +--------------------+-----------------+---------+---------+----------+----------+-----+-----+---------+
+        |dummy_proc_fe_1_U0  |dummy_proc_fe_1  |      257|      257| 2.570 us | 2.570 us |  257|  257|   none  |
+        |dummy_proc_be_1_U0  |dummy_proc_be_1  |      129|      129| 1.290 us | 1.290 us |  129|  129|   none  |
+        |fft_config1_U0      |fft_config1_s    |      484|      484| 4.840 us | 4.840 us |  484|  484|   none  |
+        +--------------------+-----------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|      4|    -|
+|FIFO             |        8|      -|     181|    190|    -|
+|Instance         |        6|     24|   10706|   8480|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|      -|    -|
+|Register         |        -|      -|       -|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |       14|     24|   10887|   8674|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        5|     10|      10|     16|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------+-----------------+---------+-------+-------+------+-----+
+    |      Instance      |      Module     | BRAM_18K| DSP48E|   FF  |  LUT | URAM|
+    +--------------------+-----------------+---------+-------+-------+------+-----+
+    |dummy_proc_be_1_U0  |dummy_proc_be_1  |        0|      0|     11|    74|    0|
+    |dummy_proc_fe_1_U0  |dummy_proc_fe_1  |        0|      0|     21|   105|    0|
+    |fft_config1_U0      |fft_config1_s    |        6|     24|  10674|  8301|    0|
+    +--------------------+-----------------+---------+-------+-------+------+-----+
+    |Total               |                 |        6|     24|  10706|  8480|    0|
+    +--------------------+-----------------+---------+-------+-------+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +---------------------+---------+----+----+-----+------+-----+---------+
+    |         Name        | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +---------------------+---------+----+----+-----+------+-----+---------+
+    |fft_config_data_V_U  |        0|   5|   0|    -|     2|   16|       32|
+    |xk_channel_U         |        4|  88|   0|    -|   128|   64|     8192|
+    |xn_channel_U         |        4|  88|   0|    -|   128|   64|     8192|
+    +---------------------+---------+----+----+-----+------+-----+---------+
+    |Total                |        8| 181|   0|    0|   258|  144|    16416|
+    +---------------------+---------+----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |ap_idle                          |    and   |      0|  0|   2|           1|           1|
+    |dummy_proc_fe_1_U0_start_full_n  |    and   |      0|  0|   2|           1|           1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |Total                            |          |      0|  0|   4|           2|           2|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++------------------+-----+-----+------------+--------------+--------------+
+|direction         |  in |    1|    ap_hs   |   direction  |    scalar    |
+|direction_ap_vld  |  in |    1|    ap_hs   |   direction  |    scalar    |
+|direction_ap_ack  | out |    1|    ap_hs   |   direction  |    scalar    |
+|in_r_address0     | out |    7|  ap_memory |     in_r     |     array    |
+|in_r_ce0          | out |    1|  ap_memory |     in_r     |     array    |
+|in_r_d0           | out |   64|  ap_memory |     in_r     |     array    |
+|in_r_q0           |  in |   64|  ap_memory |     in_r     |     array    |
+|in_r_we0          | out |    1|  ap_memory |     in_r     |     array    |
+|in_r_address1     | out |    7|  ap_memory |     in_r     |     array    |
+|in_r_ce1          | out |    1|  ap_memory |     in_r     |     array    |
+|in_r_d1           | out |   64|  ap_memory |     in_r     |     array    |
+|in_r_q1           |  in |   64|  ap_memory |     in_r     |     array    |
+|in_r_we1          | out |    1|  ap_memory |     in_r     |     array    |
+|out_r_address0    | out |    7|  ap_memory |     out_r    |     array    |
+|out_r_ce0         | out |    1|  ap_memory |     out_r    |     array    |
+|out_r_d0          | out |   64|  ap_memory |     out_r    |     array    |
+|out_r_q0          |  in |   64|  ap_memory |     out_r    |     array    |
+|out_r_we0         | out |    1|  ap_memory |     out_r    |     array    |
+|out_r_address1    | out |    7|  ap_memory |     out_r    |     array    |
+|out_r_ce1         | out |    1|  ap_memory |     out_r    |     array    |
+|out_r_d1          | out |   64|  ap_memory |     out_r    |     array    |
+|out_r_q1          |  in |   64|  ap_memory |     out_r    |     array    |
+|out_r_we1         | out |    1|  ap_memory |     out_r    |     array    |
+|ap_clk            |  in |    1| ap_ctrl_hs |    fft_top   | return value |
+|ap_rst            |  in |    1| ap_ctrl_hs |    fft_top   | return value |
+|ap_start          |  in |    1| ap_ctrl_hs |    fft_top   | return value |
+|ap_done           | out |    1| ap_ctrl_hs |    fft_top   | return value |
+|ap_ready          | out |    1| ap_ctrl_hs |    fft_top   | return value |
+|ap_idle           | out |    1| ap_ctrl_hs |    fft_top   | return value |
+|ap_continue       |  in |    1| ap_ctrl_hs |    fft_top   | return value |
++------------------+-----+-----+------------+--------------+--------------+
+

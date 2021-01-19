@@ -7,9 +7,12 @@ void array_initialize(eita_t y_1[HEIGHT][WIDTH],
                       eita_t y_4[HEIGHT][WIDTH],
                       eita_t y_5[HEIGHT][WIDTH],
                       eita_t y_6[HEIGHT][WIDTH],
-                      eita_t y_7[HEIGHT][WIDTH]);
+                      eita_t y_7[HEIGHT][WIDTH],
+                      eita_t y_8[HEIGHT][WIDTH],
+                      eita_t y_9[HEIGHT][WIDTH]);
 void cross_channel_deblur(eita_t Img[HEIGHT][WIDTH],
 		 	 	          eita_t adjChImg[HEIGHT][WIDTH],
+                          eita_t adjChImg2[HEIGHT][WIDTH],
                           cmpxDataIn coe_a[HEIGHT][WIDTH],
                           eita_t coe_b[HEIGHT][WIDTH]);
 void array_copy(eita_t data_in[HEIGHT][WIDTH],eita_t data_out[HEIGHT][WIDTH]);

@@ -1,0 +1,131 @@
+
+
+================================================================
+== Vivado HLS Report for 'dummy_proc_be_1'
+================================================================
+* Date:           Tue Jan 19 21:42:17 2021
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        ISPfinal
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 6.888 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      129|      129| 1.290 us | 1.290 us |  129|  129|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |      128|      128|         1|          -|          -|   128|    no    |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %in_r, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str83, i32 0, i32 0, [1 x i8]* @p_str84, [1 x i8]* @p_str85, [1 x i8]* @p_str86, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str87, [1 x i8]* @p_str88)"   --->   Operation 3 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (1.76ns)   --->   "br label %1" [fft_top.cpp:160]   --->   Operation 4 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 6.88>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%i_0 = phi i8 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 5 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (1.55ns)   --->   "%icmp_ln160 = icmp eq i8 %i_0, -128" [fft_top.cpp:160]   --->   Operation 6 'icmp' 'icmp_ln160' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 128, i64 128, i64 128)"   --->   Operation 7 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (1.91ns)   --->   "%i = add i8 %i_0, 1" [fft_top.cpp:160]   --->   Operation 8 'add' 'i' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "br i1 %icmp_ln160, label %3, label %2" [fft_top.cpp:160]   --->   Operation 9 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%zext_ln161 = zext i8 %i_0 to i64" [fft_top.cpp:161]   --->   Operation 10 'zext' 'zext_ln161' <Predicate = (!icmp_ln160)> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (3.63ns)   --->   "%in_read = call i64 @_ssdm_op_Read.ap_fifo.volatile.i64P(i64* %in_r)" [fft_top.cpp:161]   --->   Operation 11 'read' 'in_read' <Predicate = (!icmp_ln160)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 0> <FIFO>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%out_addr = getelementptr [128 x i64]* %out_r, i64 0, i64 %zext_ln161" [fft_top.cpp:161]   --->   Operation 12 'getelementptr' 'out_addr' <Predicate = (!icmp_ln160)> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (3.25ns)   --->   "store i64 %in_read, i64* %out_addr, align 8" [fft_top.cpp:161]   --->   Operation 13 'store' <Predicate = (!icmp_ln160)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 128> <RAM>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "br label %1" [fft_top.cpp:160]   --->   Operation 14 'br' <Predicate = (!icmp_ln160)> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "ret void" [fft_top.cpp:163]   --->   Operation 15 'ret' <Predicate = (icmp_ln160)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', fft_top.cpp:160) [6]  (1.77 ns)
+
+ <State 2>: 6.89ns
+The critical path consists of the following:
+	fifo read on port 'in_r' (fft_top.cpp:161) [13]  (3.63 ns)
+	'store' operation ('store_ln161', fft_top.cpp:161) of variable 'in_read', fft_top.cpp:161 on array 'out_r' [15]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
