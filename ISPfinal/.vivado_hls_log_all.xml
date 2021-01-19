@@ -3,6 +3,9 @@
   <errorLogs>
     <logs>
       <synLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ISPfinal" solutionName="solution1" date="2021-01-19T22:38:50.197+0800"/>
+      </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>
@@ -41,6 +44,7 @@
         <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'DEBLUR/nominator_R_M_imag_we0' to 0." projectName="ISPfinal" solutionName="solution1" date="2021-01-19T21:42:28.226+0800" type="Warning"/>
         <logs message="WARNING: [RTGEN 206-101] Port 'DEBLUR/nominator_R_M_imag_we0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="ISPfinal" solutionName="solution1" date="2021-01-19T21:42:28.219+0800" type="Warning"/>
       </synLog>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

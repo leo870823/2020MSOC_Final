@@ -14,17 +14,17 @@ add_files fft_top.h
 add_files proximal.cpp
 add_files proximal.h
 add_files -tb tb_files/DeconvolutionColorPrior/DENOM.txt
-add_files -tb tb_files/DeconvolutionColorPrior/DENOM2.txt
-add_files -tb tb_files/DeconvolutionColorPrior/DENOM3.txt
+add_files -tb pattern/DENOM2.txt
+add_files -tb pattern/DENOM3.txt
 add_files -tb tb_files/DeconvolutionColorPrior/IMAGINARY.txt
-add_files -tb tb_files/DeconvolutionColorPrior/IMAGINARY2.txt
-add_files -tb tb_files/DeconvolutionColorPrior/IMAGINARY3.txt
+add_files -tb pattern/IMAGINARY2.txt
+add_files -tb pattern/IMAGINARY3.txt
 add_files -tb tb_files/I_blurred_B.txt
 add_files -tb tb_files/I_blurred_G.txt
 add_files -tb tb_files/I_blurred_R.txt
 add_files -tb tb_files/DeconvolutionColorPrior/REAL.txt
-add_files -tb tb_files/DeconvolutionColorPrior/REAL2.txt
-add_files -tb tb_files/DeconvolutionColorPrior/REAL3.txt
+add_files -tb pattern/REAL2.txt
+add_files -tb pattern/REAL3.txt
 add_files -tb tb_files/ground_truth_B.txt
 add_files -tb tb_files/ground_truth_G.txt
 add_files -tb tb_files/ground_truth_R.txt

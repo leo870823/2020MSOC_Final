@@ -89,12 +89,12 @@
 		<link>
 			<name>testbench/DENOM2.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM2.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt</location>
 		</link>
 		<link>
 			<name>testbench/DENOM3.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM3.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt</location>
 		</link>
 		<link>
 			<name>testbench/IMAGINARY.txt</name>
@@ -104,12 +104,12 @@
 		<link>
 			<name>testbench/IMAGINARY2.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY2.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt</location>
 		</link>
 		<link>
 			<name>testbench/IMAGINARY3.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY3.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt</location>
 		</link>
 		<link>
 			<name>testbench/I_blurred_B.txt</name>
@@ -134,12 +134,12 @@
 		<link>
 			<name>testbench/REAL2.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL2.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt</location>
 		</link>
 		<link>
 			<name>testbench/REAL3.txt</name>
 			<type>1</type>
-			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL3.txt</location>
+			<location>C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt</location>
 		</link>
 		<link>
 			<name>testbench/ground_truth_B.txt</name>
