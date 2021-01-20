@@ -62,8 +62,8 @@ void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
 			//if( ~(x==0 || x==WIDTH-1 || x==0 || x==HEIGHT-1))
 			if( (x<=UPPER && x>=LOWER) && (y<=UPPER && y>=LOWER))
 			f_n[y][x] = f_n[y][x] - eita_t(TAU) *
-			( (g1[y][x+1]- g1[y][x])
-			+ (g2[y+1][x]- g2[y][x])
+			( -(g1[y][x+1]- g1[y][x])
+			+ (-(g2[y+1][x]- g2[y][x]))
 			+ (g3[y][x+2]- 2*g3[y][x+1] + g3[y][x])*eita_t(SET_DEBUG)
 			+ (g4[y+2][x]- 2*g4[y+1][x] + g4[y][x])*eita_t(SET_DEBUG)
 			+ (g5[y+1][x+1]- g5[y+1][x] - g5[y][x+1] + g5[y][x] )*eita_t(SET_DEBUG)

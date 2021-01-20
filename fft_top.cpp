@@ -215,7 +215,7 @@ void fft_top_2D(
 	// fft for col by col
 	for_column : for(int j=0;j<FFT_LENGTH;j++){
 		for_row_in : for(int i=0;i<FFT_LENGTH;i++){
-			buffer_in[i]=in[i][j];
+			buffer_in[i]=out[i][j];
 		}
 		fft_top(direction,buffer_in,buffer_out,&fft_ovflo);
 		*fft_ovflo_all |= fft_ovflo;

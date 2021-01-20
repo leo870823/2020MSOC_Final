@@ -16,8 +16,8 @@ for_y : for (int y = 0; y < HEIGHT; y++)
     for_x : for (int x = 0; x < WIDTH; x++)
     {
     //printf("(x,y)=(%d,%d)\n",x,y);
-    //printf("%d th array_dispaly %f \n",k,float(data_out[y][x].real()));
-    //printf("%d th array_dispaly %f \n",k,float(data_out[y][x].imag()));
+    printf("%d th array_dispaly %f \n",k,float(data_out[y][x].real()));
+    printf("%d th array_dispaly %f \n",k,float(data_out[y][x].imag()));
     }
   }
 }

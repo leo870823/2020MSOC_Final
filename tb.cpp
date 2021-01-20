@@ -30,6 +30,7 @@
 #define W 128
 
 // function declaration
+void D_DISPLAY (proxGSDataIn data_in[128][128] );
 void readImage(const char* path, eita_t inArr[WIDTH][HEIGHT]);
 void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]);
 void read_coe(fft_operation denom[128][128],proxGSDataIn xn_input[128][128],const char* file_name_real,const char* file_name_imag,const char* file_name_denominator);
@@ -40,8 +41,8 @@ void TEST_2D_FFT();
 void TEST_Prox_GS();
 void init();
 int main(){
-	//TEST_2D_FFT();
-	//TEST_Prox_GS();
+  //TEST_2D_FFT();
+  //TEST_Prox_GS();
 
 	unsigned short int y,x;
 	int value;
@@ -146,7 +147,7 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 		{
 			for (int y = 0; y < H; y++)
 			{
-				outImage[y][x]=char(rint(out_array[y][x]*255));
+				outImage[y][x]=char(rint(out_array[y][x]*255.0));
 				//printf( "output file %f :\n",(out_array[y][x]) );
 			}
 
@@ -416,13 +417,20 @@ void TEST_2D_FFT(){
 	bool  fft_ovflo,ifft_ovflo;
 	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_in);
 	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_ground);
-	P2S(data_in,data_in_complex);
+	P2S(data_in,data_in_complex); //0~1
+	//D_DISPLAY(data_in_complex);
 	fft_top_2D(1,data_in_complex,data_out_complex,&fft_ovflo);
-	FFT_scale(1/sc_fft,data_out_complex,data_in_complex);
+	//FFT_scale(1/sc_fft,data_out_complex,data_in_complex);
+
+	fft_top_2D(0,data_out_complex,data_in_complex,&ifft_ovflo);
 	
-	fft_top_2D(0,data_in_complex,data_out_complex,&ifft_ovflo);
-	FFT_scale(sc_fft,data_out_complex,data_in_complex);
+	//FFT_scale(1.0/64.0,data_in_complex,data_in_complex);
+	//D_DISPLAY (data_in_complex);
+	//FFT_scale(1.0/255.0,data_in_complex,data_in_complex);
+	//D_DISPLAY (data_in_complex);
+	//FFT_scale(sc_fft,data_out_complex,data_in_complex);
 	S2P(data_in_complex,data_in);
+
 	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/After_FFT.bmp",data_in);
 	COMPUTE_MSE(data_in,data_ground);
 }
@@ -438,7 +446,7 @@ void TEST_Prox_GS(){
 	bool  fft_ovflo,ifft_ovflo;
 	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_in);
 	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_ground);
-	for(int x=0;x<H;x++)
+	for(int x=0;x<20;x++)
 	{	ProxGS(data_in,coe_a,coe_b);
 		COMPUTE_MSE(data_in,data_ground);
 	}
@@ -455,4 +463,15 @@ void COMPUTE_MSE(eita_t data_a[HEIGHT][WIDTH],eita_t data_b[HEIGHT][WIDTH]){
 		}
 	MSE=MSE/H/W;
 	printf("MSE error %f\n",MSE);
+}
+
+void D_DISPLAY (proxGSDataIn data_in[128][128] ) {
+	for (int y = 0; y < H; y++)
+	{
+		for (int x = 0; x < W; x++)
+		{
+            printf("%f ",float(data_in[y][x].real()));
+		}
+		 printf("\n");
+	}
 }

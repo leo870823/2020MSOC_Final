@@ -33,21 +33,22 @@ void ProxGS(
             if(coe_b[y][x]!=0) {
             	input_data_re=(PIXEL*fft_result[y][x].real()+coe_a[y][x].real()*float(2*TAU))/(float(2*TAU)*coe_b[y][x]+1);
             	input_data_im=(PIXEL*fft_result[y][x].imag()+coe_a[y][x].imag()*float(2*TAU))/(float(2*TAU)*coe_b[y][x]+1);
+                //printf("FFT result %f \n",float(fft_result[y][x].real()));
+                //printf("FFT result %f \n",float(fft_result[y][x].imag()));
             }else {
             	input_data_re=1.0;
             	input_data_im=1.0;
             }
             #pragma HLS PIPELINE
-                //MAD[y][x]= cmpxDataIn(data_in_t(input_data_re/FFT_SCALE),data_in_t(input_data_im/FFT_SCALE));
             	fft_result[y][x]= cmpxDataIn(data_in_t(input_data_re/FFT_SCALE),data_in_t(input_data_im/FFT_SCALE));
 
-            //printf("FFT result %f \n",float(fft_result[y][x].real()));
-            //printf("FFT result %f \n",float(fft_result[y][x].imag()));
+
         }
     }
     // inverse FFT
 
     fft_top_2D(0,fft_result,tmp,&ifft_ovflo);
+    FFT_scale(1.0/128.0,tmp,tmp);
     // cmpxDataIn to eita_t
     S2P(tmp,x_io);
 }
@@ -76,10 +77,10 @@ void S2P(cmpxDataIn data_in[HEIGHT][WIDTH],eita_t data_out[HEIGHT][WIDTH]){
             #pragma HLS PIPELINE
         	data_out[y][x]=eita_t((FFT_SCALE*data_in[y][x].real()/FFT_LENGTH)); //float(data_in[y][x].real())*255.0
         	//data_out[y][x]=eita_t(rint(FFT_SCALE*data_in[y][x].real()/FFT_LENGTH)); //float(data_in[y][x].real())*255.0
-
+        	//printf("IFFT out %f \n",int(data_out[y][x]));
         }
     }
-    //printf("FFT result %f \n",float(FFT_SCALE*data_in[5][7].real()/FFT_LENGTH));
+
 }
 
 void FFT_scale(float scale,cmpxDataIn data_in[HEIGHT][WIDTH],cmpxDataIn data_out[HEIGHT][WIDTH]){
