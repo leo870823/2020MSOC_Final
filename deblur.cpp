@@ -56,7 +56,8 @@ void array_initialize(eita_t y_1[HEIGHT][WIDTH],
                       eita_t y_4[HEIGHT][WIDTH],
                       eita_t y_5[HEIGHT][WIDTH],
                       eita_t y_6[HEIGHT][WIDTH],
-                      eita_t y_7[HEIGHT][WIDTH])
+                      eita_t y_7[HEIGHT][WIDTH],
+                      eita_t img[HEIGHT][WIDTH])
                       //eita_t y_8[HEIGHT][WIDTH],
                       //eita_t y_9[HEIGHT][WIDTH])
 {
@@ -65,19 +66,19 @@ void array_initialize(eita_t y_1[HEIGHT][WIDTH],
             for_x : for (int x = 0; x < WIDTH; x++)
             {
                 #pragma HLS PIPELINE  
-                y_1[y][x] =  0 ;
+                y_1[y][x] =  img[y][x] ;
                 #pragma HLS PIPELINE  
-                y_2[y][x] =  0 ;
+                y_2[y][x] =  img[y][x] ;
                 #pragma HLS PIPELINE  
-                y_3[y][x] =  0 ;
+                y_3[y][x] =  img[y][x] ;
                 #pragma HLS PIPELINE  
-                y_4[y][x] =  0 ;
+                y_4[y][x] =  img[y][x] ;
                 #pragma HLS PIPELINE  
-                y_5[y][x] =  0 ;
+                y_5[y][x] =  img[y][x] ;
                 #pragma HLS PIPELINE  
-                y_6[y][x] =  0 ;
+                y_6[y][x] =  img[y][x] ;
                 #pragma HLS PIPELINE  
-                y_7[y][x] =  0 ;
+                y_7[y][x] =  img[y][x] ;
                 /*
                 #pragma HLS PIPELINE  
                 y_8[y][x] =  0 ;
@@ -102,7 +103,7 @@ void cross_channel_deblur(eita_t x[HEIGHT][WIDTH],
     
     array_copy(x,x_bar);//  x_bar = img
     //array_copy(Img,x);    //  x     = img
-    array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7);//,y_8,y_9);//  y_0   =Kx(ProxFs),initialize y_0(set flag=1 )
+    array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7,x);//,y_8,y_9);//  y_0   =Kx(ProxFs),initialize y_0(set flag=1 )
 
     for_iteration: for(int k=0;k<ITERATION;k++) {
 

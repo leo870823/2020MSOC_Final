@@ -1,0 +1,4 @@
+R=imread("deblur_R.bmp");
+G=imread("deblur_G.bmp");
+B=imread("deblur_B.bmp");
+RGB=cat([R,])

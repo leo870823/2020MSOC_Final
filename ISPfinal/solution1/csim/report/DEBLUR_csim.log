@@ -1,6 +1,5 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../tb.cpp in debug mode
    Compiling ../../../../deblur.cpp in debug mode
    Compiling ../../../../divergent.cpp in debug mode
    Compiling ../../../../proximal.cpp in debug mode
@@ -24,7 +23,7 @@ B channel PSNR=12.716986
 G channel PSNR=11.607525 
 ====  After deblurring ====
 R channel PSNR=37.949336 
-B channel PSNR=9.932351 
-G channel PSNR=15.773165 
+B channel PSNR=12.251240 
+G channel PSNR=15.155747 
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

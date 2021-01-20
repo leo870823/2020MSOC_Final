@@ -72,7 +72,7 @@ int main(){
 	// read coefficient(Real,Imaginary,Denominator)
 	fft_operation denom_R[128][128],denom_G[128][128],denom_B[128][128];
 	proxGSDataIn nominator_R[128][128],nominator_G[128][128],nominator_B[128][128];
-	read_coe(denom_R,nominator_R,"REAL.txt","IMAGINARY.txt","DENOM.txt");
+	//read_coe(denom_R,nominator_R,"REAL.txt","IMAGINARY.txt","DENOM.txt");
 	read_coe(denom_G,nominator_G,"REAL2.txt","IMAGINARY2.txt","DENOM2.txt");
 	read_coe(denom_B,nominator_B,"REAL3.txt","IMAGINARY3.txt","DENOM3.txt");
 
@@ -214,7 +214,7 @@ void read_coe(fft_operation denom[128][128],proxGSDataIn xn_input[128][128],cons
 	 			{
 	 				fscanf(file_DENOM, "%f ", &value_for_weight);
 	 				denom[y][x] = fft_operation(value_for_weight);
-	 				//cout<<value_for_weight<<endl;
+
 	 			}
 	 		}
 	 		fclose(file_DENOM);
@@ -289,125 +289,6 @@ void txt2bmp(const char* txt,const char* bmp){
 		readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_blurred.bmp",blurred_B);
  * */
 
-
-void init(){
-	int x,y,value;
-	FILE *file_truth_R = fopen("ground_truth_R.txt", "r");
-	if(!file_truth_R) printf("ERROR: could not open %s for reading\n","ground_truth_R.txt");
-	else printf("Open success file_truth_R\n");
-
-	eita_t data_R[128][128] ;
-
-	for (y = 0; y < H; y++)
-	{
-		for (x = 0; x < W; x++)
-		{   //printf("(x,y)=(%d,%d)\n",x,y);
-			fscanf(file_truth_R, "%d\n", &value);
-			data_R[y][x] = eita_t(value);
-			//printf("%d\n",int(value));
-		}
-
-	}
-	fclose(file_truth_R);
-
-	FILE *file_truth_G = fopen("ground_truth_G.txt", "r");
-		if(!file_truth_G) printf("ERROR: could not open %s for reading\n","ground_truth_G.txt");
-		else printf("Open success file_truth_G\n");
-
-		eita_t data_G[128][128] ;
-
-		for (y = 0; y < H; y++)
-		{
-			for (x = 0; x < W; x++)
-			{
-				fscanf(file_truth_G, "%d ", &value);
-				data_G[y][x] = eita_t(value);
-			}
-
-		}
-		fclose(file_truth_G);
-
-	FILE *file_truth_B = fopen("ground_truth_B.txt", "r");
-		if(!file_truth_B) printf("ERROR: could not open %s for reading\n","ground_truth_B.txt");
-		else printf("Open success file_truth_B\n");
-
-		eita_t data_B[128][128] ;
-
-		for (y = 0; y < H; y++)
-		{
-			for (x = 0; x < W; x++)
-			{
-				fscanf(file_truth_B, "%d ", &value);
-				data_B[y][x] = eita_t(value);
-			}
-
-		}
-		fclose(file_truth_B);
-
-		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_R);
-		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_ground.bmp",data_G);
-		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_ground.bmp",data_B);
-
-
-// Read blurred image
-
-	FILE *file_noise_R = fopen("I_blurred_R.txt", "r");
-	if(!file_noise_R) printf("ERROR: could not open %s for reading\n","noise_R.txt");
-	else printf("Open success I_blurred_R.txt\n");
-
-	eita_t blurred_R[128][128] ;
-
-	for (y = 0; y < H; y++)
-	{
-		for (x = 0; x < W; x++)
-		{
-			fscanf(file_noise_R, "%d ", &value);
-			//printf("%d\n",&value);
-
-			blurred_R[y][x] = eita_t(value);
-			//printf("%d\n",blurred_R[y][x]);
-		}
-	}
-	fclose(file_noise_R);
-
-
-	FILE *file_noise_G = fopen("I_blurred_G.txt", "r");
-	if(!file_noise_G) printf("ERROR: could not open %s for reading\n","noise_G.txt");
-	else printf("Open success I_blurred_G.txt\n");
-	eita_t blurred_G[128][128] ;
-
-	for (y = 0; y < H; y++)
-	{
-		for (x = 0; x < W; x++)
-		{
-			fscanf(file_noise_G, "%d ", &value);
-			blurred_G[y][x] = eita_t(value);
-		}
-	}
-	fclose(file_noise_G);
-
-
-
-
-	FILE *file_noise_B = fopen("I_blurred_B.txt", "r");
-		if(!file_noise_B) printf("ERROR: could not open %s for reading\n","noise_B.txt");
-		else printf("Open success I_blurred_B.txt\n");
-		eita_t blurred_B[128][128];
-
-		for (y = 0; y < H; y++)
-		{
-			for (x = 0; x < W; x++)
-			{
-				fscanf(file_noise_B, "%d ", &value);
-				blurred_B[y][x] = eita_t(value);
-			}
-		}
-		fclose(file_noise_B);
-
-		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_blurred.bmp",blurred_R);
-		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_blurred.bmp",blurred_G);
-		write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_blurred.bmp",blurred_B);
-}
  //txt2bmp("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt","C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp");
 
 void TEST_2D_FFT(){
