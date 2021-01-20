@@ -87,7 +87,7 @@ void Relax(eita_t x[HEIGHT][WIDTH],
             for_x : for (int i = 0; i < WIDTH; i++)
             {
                 #pragma HLS PIPELINE
-            	x_bar[j][i] =  eita_t(THETA)*(x[j][i]-x_old[j][i]);
+            	x_bar[j][i] =  x[j][i]+eita_t(THETA)*(x[j][i]-x_old[j][i]);
             }
         }
 }

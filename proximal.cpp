@@ -31,8 +31,8 @@ void ProxGS(
             //printf("FFT imag %f \n",float(fft_result[y][x].imag()));
             //printf("Coe_a %f \n",float(coe_a[y][x].real()));
             if(coe_b[y][x]!=0) {
-            	input_data_re=(PIXEL*fft_result[y][x].real()+coe_a[y][x].real()*float(2*TAU))/(float(2*TAU)*coe_b[y][x]+1);
-            	input_data_im=(PIXEL*fft_result[y][x].imag()+coe_a[y][x].imag()*float(2*TAU))/(float(2*TAU)*coe_b[y][x]+1);
+            	input_data_re=(PIXEL*fft_result[y][x].real()+coe_a[y][x].real()*float(2.0*TAU))/(float(2.0*TAU)*coe_b[y][x]+1.0);
+            	input_data_im=(PIXEL*fft_result[y][x].imag()+coe_a[y][x].imag()*float(2.0*TAU))/(float(2.0*TAU)*coe_b[y][x]+1.0);
                 //printf("FFT result %f \n",float(fft_result[y][x].real()));
                 //printf("FFT result %f \n",float(fft_result[y][x].imag()));
             }else {

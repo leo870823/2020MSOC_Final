@@ -105,38 +105,26 @@ void saveImage(const std::string path, cv::InputArray inArr)
 void readImage(const char* path, eita_t img[WIDTH][HEIGHT]){
 
 	int inArr[WIDTH][HEIGHT];
+	bool flag=0;
 	// Read input image
 	printf("Load image %s \n",path);
 	cv::Mat imageSrc(cv::Size(WIDTH,HEIGHT), CV_8UC1, inArr, cv::Mat::AUTO_STEP);
 	imageSrc=cv::imread(path, CV_LOAD_IMAGE_GRAYSCALE);
 	// Convert to grayscale
 	printf("Image Rows:%d Cols:%d\n",imageSrc.rows, imageSrc.cols);
-
-
+	//if(path == "C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_blurred.bmp") flag=1;
 	for (int x = 0; x < W; x++)
 	{
 		for (int y = 0; y < H; y++)
 		{
-			img[y][x]=eita_t(imageSrc.at<unsigned char>(y,x))/255.0;
+			img[y][x]=eita_t(imageSrc.at<unsigned char>(x,y))/255.0;
 			//printf( "%d\n",int(imageSrc.at<unsigned char>(y,x)) );
 			//printf( "After  %f\n",float(img[x][y]) );
+			if(flag) printf( "%d ",int(imageSrc.at<unsigned char>(x,y)) );
 		}
-
+		if(flag) printf( "\n" );
 	}
-	/*
-	printf("Load image %s \n",path);
-	IplImage* src = cvLoadImage(path);
-	cvShowImage("camera",src);
-	for (int y = 0; y < H; y++)
-	{
-		for (int x = 0; x < W; x++)
-		{
-			//img[x][y]=eita_t(inArr[y][x]);
-			//printf( "output file %lf :\n",cvGet2D(img,y,x).val[0] );
-		}
 
-	}
-	*/
 }
 void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 
@@ -147,7 +135,7 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 		{
 			for (int y = 0; y < H; y++)
 			{
-				outImage[y][x]=char(rint(out_array[y][x]*255.0));
+				outImage[x][y]=char(rint(out_array[y][x]*255.0));
 				//printf( "output file %f :\n",(out_array[y][x]) );
 			}
 

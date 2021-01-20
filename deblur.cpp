@@ -94,7 +94,6 @@ void array_initialize(eita_t y_1[HEIGHT][WIDTH],
 
 void cross_channel_deblur(eita_t x[HEIGHT][WIDTH],
 		 	 	          eita_t adjChImg[HEIGHT][WIDTH],
-                          eita_t adjChImg2[HEIGHT][WIDTH],
 						  proxGSDataIn coe_a[HEIGHT][WIDTH], //For ProxGS(FFT result)
 						  fft_operation coe_b[HEIGHT][WIDTH]) //For ProxGS(FFT result)
 {   //printf("[DEBUG] cross channel prior\n");
@@ -113,7 +112,7 @@ void cross_channel_deblur(eita_t x[HEIGHT][WIDTH],
         Relax(x,x_old,x_bar);
         
     }
-    //gather_result(x);
+    gather_result(x);
     //array_copy(x,Img);
     //array_display_int(x);
 
@@ -131,6 +130,6 @@ void DEBLUR(eita_t refImg_R[HEIGHT][WIDTH],
 			proxGSDataIn nominator_B[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			fft_operation denominator_B[HEIGHT][WIDTH]) //For ProxGS(FFT result)
 {   //cross_channel_deblur(  refImg_R,refImg_R,nominator_R,denominator_R);
-    cross_channel_deblur(adjChImg_G,refImg_R,adjChImg_B,nominator_G,denominator_G);
-    cross_channel_deblur(adjChImg_B,refImg_R,adjChImg_G,nominator_B,denominator_B);
+    cross_channel_deblur(adjChImg_G,refImg_R,nominator_G,denominator_G);
+    cross_channel_deblur(adjChImg_B,refImg_R,nominator_B,denominator_B);
 }
