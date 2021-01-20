@@ -18,8 +18,6 @@ void gather_result(eita_t data_out[HEIGHT][WIDTH]);
 void DEBLUR(eita_t refImg_R[HEIGHT][WIDTH],
 		    eita_t adjChImg_G[HEIGHT][WIDTH],
             eita_t adjChImg_B[HEIGHT][WIDTH],
-			proxGSDataIn nominator_R[HEIGHT][WIDTH], //For ProxGS(FFT result)
-			fft_operation denominator_R[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			proxGSDataIn nominator_G[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			fft_operation denominator_G[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			proxGSDataIn nominator_B[HEIGHT][WIDTH], //For ProxGS(FFT result)

@@ -5,7 +5,7 @@ for_y : for (int y = 0; y < HEIGHT; y++)
   {
     for_x : for (int x = 0; x < WIDTH; x++)
     {
-    	if(data_out[x][y]<0) data_out[x][y]=0;
+    	if(data_out[y][x]<0) data_out[y][x]=0;
     }
   }
 }
@@ -122,11 +122,9 @@ void DEBLUR(eita_t refImg_R[HEIGHT][WIDTH],
 		        eita_t adjChImg_G[HEIGHT][WIDTH],
             eita_t adjChImg_B[HEIGHT][WIDTH],
 
-			proxGSDataIn nominator_R[HEIGHT][WIDTH], //For ProxGS(FFT result)
-			fft_operation denominator_R[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			proxGSDataIn nominator_G[HEIGHT][WIDTH], //For ProxGS(FFT result)
-
 			fft_operation denominator_G[HEIGHT][WIDTH], //For ProxGS(FFT result)
+
 			proxGSDataIn nominator_B[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			fft_operation denominator_B[HEIGHT][WIDTH]) //For ProxGS(FFT result)
 {   //cross_channel_deblur(  refImg_R,refImg_R,nominator_R,denominator_R);

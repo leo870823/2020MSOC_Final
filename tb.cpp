@@ -62,9 +62,9 @@ int main(){
 	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_ground.bmp",data_G);
 	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_ground.bmp",data_B);
 
-	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_blurred.bmp",blurred_R);
-	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_blurred.bmp",blurred_G);
-	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_blurred.bmp",blurred_B);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/R_blurred.bmp",blurred_R);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/G_blurred.bmp",blurred_G);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/B_blurred.bmp",blurred_B);
 
 
 
@@ -81,7 +81,7 @@ int main(){
 	printf("==== Before deblurring ====\n");
 	COMPUTE_PSNR(blurred_R,blurred_G,blurred_B,data_R,data_G,data_B);	
 	printf("====  After deblurring ====\n");
-	DEBLUR(blurred_R,blurred_G,blurred_B,nominator_R,denom_R,nominator_G,denom_G,nominator_B,denom_B);
+	DEBLUR(blurred_R,blurred_G,blurred_B,nominator_G,denom_G,nominator_B,denom_B);
 	//cross_channel_deblur(blurred_B,blurred_R,blurred_G,nominator_B,denom_B);
 	COMPUTE_PSNR(blurred_R,blurred_G,blurred_B,data_R,data_G,data_B);
 	// output image
@@ -118,9 +118,9 @@ void readImage(const char* path, eita_t img[WIDTH][HEIGHT]){
 		for (int y = 0; y < H; y++)
 		{
 			img[y][x]=eita_t(imageSrc.at<unsigned char>(x,y))/255.0;
+			img[y][x]=img[y][x]*img[y][x];
 			//printf( "%d\n",int(imageSrc.at<unsigned char>(y,x)) );
 			//printf( "After  %f\n",float(img[x][y]) );
-			if(flag) printf( "%d ",int(imageSrc.at<unsigned char>(x,y)) );
 		}
 		if(flag) printf( "\n" );
 	}
@@ -135,7 +135,7 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 		{
 			for (int y = 0; y < H; y++)
 			{
-				outImage[x][y]=char(rint(out_array[y][x]*255.0));
+				outImage[x][y]=char(rint(sqrt(out_array[y][x])*255.0));
 				//printf( "output file %f :\n",(out_array[y][x]) );
 			}
 

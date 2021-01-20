@@ -1,6 +1,10 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-make: 'csim.exe' is up to date.
+   Compiling ../../../../tb.cpp in debug mode
+   Compiling ../../../../deblur.cpp in debug mode
+   Compiling ../../../../divergent.cpp in debug mode
+   Compiling ../../../../proximal.cpp in debug mode
+   Generating csim.exe
 128
 Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp 
 Image Rows:128 Cols:128
@@ -8,19 +12,19 @@ Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_ground.bmp
 Image Rows:128 Cols:128
 Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_ground.bmp 
 Image Rows:128 Cols:128
-Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_blurred.bmp 
+Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/R_blurred.bmp 
 Image Rows:128 Cols:128
-Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_blurred.bmp 
+Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/G_blurred.bmp 
 Image Rows:128 Cols:128
-Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_blurred.bmp 
+Load image C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/B_blurred.bmp 
 Image Rows:128 Cols:128
 ==== Before deblurring ====
-R channel PSNR=37.949336 
-B channel PSNR=12.716986 
-G channel PSNR=11.607525 
+R channel PSNR=0.000000 
+B channel PSNR=15.669370 
+G channel PSNR=16.855509 
 ====  After deblurring ====
-R channel PSNR=37.949336 
-B channel PSNR=11.026808 
-G channel PSNR=13.491458 
+R channel PSNR=0.000000 
+B channel PSNR=12.289250 
+G channel PSNR=12.703850 
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

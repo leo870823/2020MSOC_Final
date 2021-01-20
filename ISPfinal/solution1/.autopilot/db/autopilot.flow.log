@@ -19213,3 +19213,1862 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 Command   csim_design done; 4.567 sec.
 Command ap_source done; 6.637 sec.
 Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 19:21:14 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.157 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.288 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.456 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 3.642 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.076 sec.
+Command ap_source done; 5.54 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 19:40:55 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.172 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.295 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.458 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 3.701 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 6.284 sec.
+Command ap_source done; 7.747 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 20:00:43 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.153 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.275 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.441 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; error code: 1; 
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 6.414 sec.
+Command ap_source done; error code: 1; 7.859 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 20:02:11 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.157 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.282 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.447 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 3.624 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.016 sec.
+Command ap_source done; 5.467 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 20:07:10 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.205 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.378 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.576 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 3.66 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 9.938 sec.
+Command ap_source done; 11.518 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 20:27:59 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.177 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.303 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.473 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 5.659 sec.
+Command ap_source done; error code: 1; 7.136 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 20:30:08 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.158 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.281 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.451 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 3.67 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 11.479 sec.
+Command ap_source done; 12.934 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 20:56:07 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.101 sec.
+Command     ap_source done; 0.101 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.205 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.331 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.512 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.278 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 10.435 sec.
+Command ap_source done; 11.959 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 21:10:04 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.161 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.288 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.454 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.264 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 6.652 sec.
+Command ap_source done; 8.111 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 21:10:59 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.151 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.274 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.441 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 3.621 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 13.774 sec.
+Command ap_source done; 15.219 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 21:31:06 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.161 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.286 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.453 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 3.661 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 10.112 sec.
+Command ap_source done; 11.569 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 21:34:07 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.189 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.313 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.48 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 3.618 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 10.085 sec.
+Command ap_source done; 11.57 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/ISPfinal/solution1 opened at Wed Jan 20 21:34:29 +0800 2021
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+Command       ap_part_info done; 1.165 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.289 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.456 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/DENOM.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/DENOM3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/IMAGINARY.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/IMAGINARY3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/I_blurred_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/DeconvolutionColorPrior/REAL.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL2.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/pattern/REAL3.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_B.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_G.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_files/ground_truth_R.txt 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/deblur.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/divergent.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/fft_top.h 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.cpp 
+Execute     is_encrypted C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     is_xip C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/proximal.h 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 5.373 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 16.02 sec.
+Command ap_source done; 17.481 sec.
+Execute cleanup_all 

@@ -1,2 +1,2 @@
-blurred image PSNR=11.688
- deconvolution result PSNR=25.613
+blurred image PSNR=11.686
+ deconvolution result PSNR=19.859

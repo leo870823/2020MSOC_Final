@@ -116,7 +116,7 @@ verbose = 'brief';
 I_deconv_channels = channel_patch;
 I_deconv_channels = pd_joint_deconv(channel_patch, [], ...
                                 lambda_startup, ...
-                                200, 1e-4, verbose);
+                                1, 1e-4, verbose);
 
 %Gather result
 I_deconv = zeros(size(I));
