@@ -30,15 +30,11 @@ void ProxGS(
         {	//printf("FFT real %f \n",float(fft_result[y][x].real()));
             //printf("FFT imag %f \n",float(fft_result[y][x].imag()));
             //printf("Coe_a %f \n",float(coe_a[y][x].real()));
-            if(coe_b[y][x]!=0) {
-            	input_data_re=(PIXEL*fft_result[y][x].real()+coe_a[y][x].real()*float(2.0*TAU))/(float(2.0*TAU)*coe_b[y][x]+1.0);
-            	input_data_im=(PIXEL*fft_result[y][x].imag()+coe_a[y][x].imag()*float(2.0*TAU))/(float(2.0*TAU)*coe_b[y][x]+1.0);
+
+            	input_data_re=(PIXEL*fft_result[y][x].real()+coe_a[y][x].real()*float(2.0*TAU*LR))/(float(2.0*TAU*LR)*coe_b[y][x]+1.0);
+            	input_data_im=(PIXEL*fft_result[y][x].imag()+coe_a[y][x].imag()*float(2.0*TAU*LR))/(float(2.0*TAU*LR)*coe_b[y][x]+1.0);
                 //printf("FFT result %f \n",float(fft_result[y][x].real()));
                 //printf("FFT result %f \n",float(fft_result[y][x].imag()));
-            }else {
-            	input_data_re=1.0;
-            	input_data_im=1.0;
-            }
             #pragma HLS PIPELINE
             	fft_result[y][x]= cmpxDataIn(data_in_t(input_data_re/FFT_SCALE),data_in_t(input_data_im/FFT_SCALE));
 

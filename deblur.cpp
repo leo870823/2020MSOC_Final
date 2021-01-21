@@ -5,7 +5,7 @@ for_y : for (int y = 0; y < HEIGHT; y++)
   {
     for_x : for (int x = 0; x < WIDTH; x++)
     {
-    	if(data_out[y][x]<0) data_out[y][x]=0;
+    	if(data_out[y][x]<0.0) data_out[y][x]=0.0;
     }
   }
 }
@@ -102,11 +102,11 @@ void cross_channel_deblur(eita_t x[HEIGHT][WIDTH],
     
     array_copy(x,x_bar);//  x_bar = img
     //array_copy(Img,x);    //  x     = img
-    array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7,x);//,y_8,y_9);//  y_0   =Kx(ProxFs),initialize y_0(set flag=1 )
+    array_initialize(y_1,y_2,y_3,y_4,y_5,y_6,y_7,adjChImg);//,y_8,y_9);//  y_0   =Kx(ProxFs),initialize y_0(set flag=1 )
 
     for_iteration: for(int k=0;k<ITERATION;k++) {
 
-        array_copy(x,x_old);
+        array_copy(x,x_old);//x_old=x;
         my_filter_v1(x,x_bar,adjChImg,y_1,y_2,y_3,y_4,y_5,y_6,y_7);//,y_8,y_9); // ProxFS &&
         ProxGS(x,coe_a,coe_b);
         Relax(x,x_old,x_bar);
@@ -127,7 +127,7 @@ void DEBLUR(eita_t refImg_R[HEIGHT][WIDTH],
 
 			proxGSDataIn nominator_B[HEIGHT][WIDTH], //For ProxGS(FFT result)
 			fft_operation denominator_B[HEIGHT][WIDTH]) //For ProxGS(FFT result)
-{   //cross_channel_deblur(  refImg_R,refImg_R,nominator_R,denominator_R);
+{   //cross_channel_deblur(  refImg_R,refImg_R,nominator_G,denominator_G);
     cross_channel_deblur(adjChImg_G,refImg_R,nominator_G,denominator_G);
     cross_channel_deblur(adjChImg_B,refImg_R,nominator_B,denominator_B);
 }

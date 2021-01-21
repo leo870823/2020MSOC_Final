@@ -205,7 +205,7 @@ function [ res ] = pd_channel_deconv(channels, ch, x_0 , db_chs, ...
         x_0 = channels(ch).Image;
     end
     f = x_0;
-    g = Kmult(f, ch, db_chs, lambda_cross_ch, lambda_tv);
+    g = 0;Kmult(f, ch, db_chs, lambda_cross_ch, lambda_tv);
     f1 = f;
     
     

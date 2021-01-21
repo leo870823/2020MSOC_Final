@@ -21,11 +21,11 @@
     <originFiles name="ground_truth_G.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\ground_truth_G.txt"/>
     <originFiles name="ground_truth_R.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb_files\ground_truth_R.txt"/>
     <originFiles name="tb.cpp" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\tb.cpp"/>
-    <originFiles name="DENOM2.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\pattern\DENOM2.txt"/>
-    <originFiles name="DENOM3.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\pattern\DENOM3.txt"/>
-    <originFiles name="IMAGINARY2.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\pattern\IMAGINARY2.txt"/>
-    <originFiles name="IMAGINARY3.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\pattern\IMAGINARY3.txt"/>
-    <originFiles name="REAL2.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\pattern\REAL2.txt"/>
-    <originFiles name="REAL3.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\pattern\REAL3.txt"/>
+    <originFiles name="DENOM2.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\CPUfft-final\DENOM2.txt"/>
+    <originFiles name="DENOM3.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\CPUfft-final\DENOM3.txt"/>
+    <originFiles name="IMAGINARY2.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\CPUfft-final\IMAGINARY2.txt"/>
+    <originFiles name="IMAGINARY3.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\CPUfft-final\IMAGINARY3.txt"/>
+    <originFiles name="REAL2.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\CPUfft-final\REAL2.txt"/>
+    <originFiles name="REAL3.txt" path="C:\Users\leo870823\Desktop\MSOC\2020MSOC_Final\CPUfft-final\REAL3.txt"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

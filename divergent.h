@@ -2,12 +2,13 @@
 #include "ap_fixed.h"
 #include "math.h"
 typedef  float  eita_t; //ap_uint<8>
-#define ITERATION 30
+#define ITERATION 20
 #define SIGMA 1.0
 #define TAU 0.02
 #define First_Derivative 0.025 //0.25
 #define SET_DEBUG 0.075
 #define lambda_cross 1.0
+#define LR 1.0
 #define  cr_w 1.0
 #define THETA 1.0
 #define HEIGHT 128

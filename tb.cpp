@@ -30,6 +30,7 @@
 #define W 128
 
 // function declaration
+void D_DISPLAY_real (eita_t data_in[128][128] );
 void D_DISPLAY (proxGSDataIn data_in[128][128] );
 void readImage(const char* path, eita_t inArr[WIDTH][HEIGHT]);
 void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]);
@@ -39,10 +40,10 @@ void txt2bmp(const char* txt,const char* bmp);
 void COMPUTE_MSE(eita_t data_a[HEIGHT][WIDTH],eita_t data_b[HEIGHT][WIDTH]);
 void TEST_2D_FFT();
 void TEST_Prox_GS();
-void init();
 int main(){
+	//TEST_Prox_GS();
   //TEST_2D_FFT();
-  //TEST_Prox_GS();
+
 
 	unsigned short int y,x;
 	int value;
@@ -62,9 +63,9 @@ int main(){
 	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/G_ground.bmp",data_G);
 	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_ground.bmp",data_B);
 
-	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/R_blurred.bmp",blurred_R);
-	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/G_blurred.bmp",blurred_G);
-	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/cross/B_blurred.bmp",blurred_B);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/CPUfft-final/R_blurred.bmp",blurred_R);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/CPUfft-final/G_blurred.bmp",blurred_G);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/CPUfft-final/B_blurred.bmp",blurred_B);
 
 
 
@@ -103,7 +104,7 @@ void saveImage(const std::string path, cv::InputArray inArr)
 	cv::imwrite(path,adjMap);
 }
 void readImage(const char* path, eita_t img[WIDTH][HEIGHT]){
-
+	float tmp=0.0;
 	int inArr[WIDTH][HEIGHT];
 	bool flag=0;
 	// Read input image
@@ -116,14 +117,16 @@ void readImage(const char* path, eita_t img[WIDTH][HEIGHT]){
 	for (int x = 0; x < W; x++)
 	{
 		for (int y = 0; y < H; y++)
-		{
-			img[y][x]=eita_t(imageSrc.at<unsigned char>(x,y))/255.0;
-			img[y][x]=img[y][x]*img[y][x];
-			//printf( "%d\n",int(imageSrc.at<unsigned char>(y,x)) );
-			//printf( "After  %f\n",float(img[x][y]) );
+		{	tmp=eita_t(imageSrc.at<unsigned char>(y,x))/255.0;//;
+			img[y][x]=tmp;
+			//img[y][x]=tmp*tmp+1.0;
+			//printf( "%d",int(imageSrc.at<unsigned char>(x,y)) );
+			//printf( "After  %f\n",float(img[y][x]) );
+
 		}
 		if(flag) printf( "\n" );
 	}
+
 
 }
 void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
@@ -135,7 +138,8 @@ void write_file(const char* file_name,eita_t out_array[WIDTH][HEIGHT]){
 		{
 			for (int y = 0; y < H; y++)
 			{
-				outImage[x][y]=char(rint(sqrt(out_array[y][x])*255.0));
+				outImage[x][y]=char(rint(out_array[x][y]*255.0));
+				//outImage[x][y]=char(rint(sqrt(out_array[y][x]-1.0)*255.0));
 				//printf( "output file %f :\n",(out_array[y][x]) );
 			}
 
@@ -295,7 +299,7 @@ void TEST_2D_FFT(){
 	
 	//FFT_scale(1.0/64.0,data_in_complex,data_in_complex);
 	//D_DISPLAY (data_in_complex);
-	//FFT_scale(1.0/255.0,data_in_complex,data_in_complex);
+	FFT_scale(1.0/128.0,data_in_complex,data_in_complex);
 	//D_DISPLAY (data_in_complex);
 	//FFT_scale(sc_fft,data_out_complex,data_in_complex);
 	S2P(data_in_complex,data_in);
@@ -311,12 +315,16 @@ void TEST_Prox_GS(){
 
 	cmpxDataIn data_in_complex[HEIGHT][WIDTH], data_out_complex[HEIGHT][WIDTH],coe_a[HEIGHT][WIDTH];
 	//coe_a={cmpxDataIn(0,0)};
-	for(int x=0;x<H;x++){for(int y=0;y<W;y++){coe_b[x][y]=1;coe_a[x][y]=cmpxDataIn(0,0);}}
+	//for(int x=0;x<H;x++){for(int y=0;y<W;y++){coe_b[x][y]=0;coe_a[x][y]=cmpxDataIn(0,0);}}
+	read_coe(coe_b,coe_a,"REAL3.txt","IMAGINARY3.txt","DENOM3.txt");
 	bool  fft_ovflo,ifft_ovflo;
-	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_in);
-	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/R_ground.bmp",data_ground);
-	for(int x=0;x<20;x++)
-	{	ProxGS(data_in,coe_a,coe_b);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/CPUfft-final/B_blurred.bmp",data_in);
+	readImage("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/B_ground.bmp",data_ground);
+	for(int x=0;x<100;x++)
+	{
+		ProxGS(data_in,coe_a,coe_b);
+		//D_DISPLAY_real (data_in);
+		//D_DISPLAY (coe_a);
 		COMPUTE_MSE(data_in,data_ground);
 	}
 	write_file("C:/Users/leo870823/Desktop/MSOC/2020MSOC_Final/tb_log/After_FFT.bmp",data_in);
@@ -340,6 +348,17 @@ void D_DISPLAY (proxGSDataIn data_in[128][128] ) {
 		for (int x = 0; x < W; x++)
 		{
             printf("%f ",float(data_in[y][x].real()));
+		}
+		 printf("\n");
+	}
+}
+
+void D_DISPLAY_real (eita_t data_in[128][128] ) {
+	for (int y = 0; y < H; y++)
+	{
+		for (int x = 0; x < W; x++)
+		{
+            printf("%f ",float(data_in[y][x]));
 		}
 		 printf("\n");
 	}

@@ -38,6 +38,21 @@ void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
 	  			//g9[y][x] = g9[y][x] + eita_t(SIGMA) * (lambda_cross * cr_w) * ( adjChImg2[y][x] * (f[y+1][x]- f[y][x]) - (adjChImg2[y+1][x]- adjChImg2[y][x]) * f[y][x] );
 			
 			}
+	  		if(g1[y][x]>1.0) g1[y][x] = 1.0 ;
+	  		else if(g1[y][x]<-1.0)   g1[y][x] = -1.0;
+			if(g2[y][x]>1) g2[y][x] = 1.0 ;
+			else if(g2[y][x]<-1.0)   g2[y][x] = -1.0;
+			if(g3[y][x]>1) g3[y][x] = 1.0 ;
+			else if(g3[y][x]<-1.0)   g3[y][x] = -1.0;
+			if(g4[y][x]>1) g4[y][x] = 1.0 ;
+			else if(g4[y][x]<-1.0)   g4[y][x] = -1.0;
+			if(g5[y][x]>1) g5[y][x] = 1.0 ;
+			else if(g5[y][x]<-1.0)   g5[y][x] = -1.0;
+			if(g6[y][x]>1) g6[y][x] = 1.0 ;
+			else if(g6[y][x]<-1.0)   g6[y][x] = -1.0;
+			if(g7[y][x]>1) g7[y][x] = 1.0 ;
+			else if(g7[y][x]<-1.0)   g7[y][x] = -1.0;
+			/*
 			Vector_len = sqrt( g1[y][x] * g1[y][x] + g2[y][x] * g2[y][x] + g3[y][x] * g3[y][x] + g4[y][x] * g4[y][x] + g5[y][x] * g5[y][x] + g6[y][x] * g6[y][x] + g7[y][x] * g7[y][x] );//+ g8[y][x] * g8[y][x] +  g9[y][x] * g9[y][x]
 	  	    if(Vector_len > 1) {
 			  g1[y][x] = g1[y][x] / Vector_len ;
@@ -50,7 +65,7 @@ void my_filter_v1( eita_t f_n[HEIGHT][WIDTH],// x_bar
 			  //g8[y][x] = g8[y][x] / Vector_len ;
 			  //g9[y][x] = g9[y][x] / Vector_len ;
 			}
-
+			*/
         }
     }
 
