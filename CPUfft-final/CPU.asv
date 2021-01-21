@@ -135,20 +135,26 @@ fid = fopen('DENOM3.txt', 'wt');
 fprintf(fid, '%f\n', img1D);
 fclose(fid);
 
-imwrite(I_blurred(:,:,1),'R_blurred.jpg');
-imwrite(I_blurred(:,:,2),'G_blurred.jpg');
-imwrite(I_blurred(:,:,3),'B_blurred.');
+imwrite(I_blurred(:,:,1),'R_blurred.bmp');
+imwrite(I_blurred(:,:,2),'G_blurred.bmp');
+imwrite(I_blurred(:,:,3),'B_blurred.bmp');
 
 
 
 % utility function
+theta=1.0;
 tau=0.02;
 lambda_residual=1e-4;
 %imshow();
 B=I_blurred(:,:,3);
 ProxG = @(f,tau,l) solve_fft(Nomin1, Denom1, tau, l, f );
 I_blur_B =I_blurred(:,:,3);
-I_deblur_B = ProxG(I_blurred(:,:,3), tau, lambda_residual); % image
+subplot(1,2,1),imshow(I_blur_B );
+for i=1:2000
+    I_deblur_B_old=I_deblur_B;
+    I_deblur_B = ProxG(I_blurred(:,:,3), tau, lambda_residual); % image
+end
+subplot(1,2,2),imshow(I_deblur_B);
 
 function x = solve_fft(Nomin1, Denom1, tau, lambda, f )
 

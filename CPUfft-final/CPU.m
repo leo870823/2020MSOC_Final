@@ -142,6 +142,7 @@ imwrite(I_blurred(:,:,3),'B_blurred.bmp');
 
 
 % utility function
+theta=1.0;
 tau=0.02;
 lambda_residual=1e-4;
 %imshow();
@@ -149,8 +150,11 @@ B=I_blurred(:,:,3);
 ProxG = @(f,tau,l) solve_fft(Nomin1, Denom1, tau, l, f );
 I_blur_B =I_blurred(:,:,3);
 subplot(1,2,1),imshow(I_blur_B );
-for i=1:2000
-    I_deblur_B = ProxG(I_blurred(:,:,3), tau, lambda_residual); % image
+I_deblur_B=I_blur_B;
+for i=1:20
+    I_deblur_B_old=I_deblur_B;
+    I_deblur_B = ProxG(I_deblur_B, tau, lambda_residual); % image
+    I_deblur_B = I_deblur_B_old+theta*(I_deblur_B-I_deblur_B_old)
 end
 subplot(1,2,2),imshow(I_deblur_B);
 
